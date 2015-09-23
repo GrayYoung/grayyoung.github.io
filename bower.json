@@ -1,0 +1,36 @@
+{
+	"name": "Marching",
+	"version": "0.0.1",
+	"ignore": [
+		".jshintrc",
+		"*.txt",
+		"*.html",
+		"*.json",
+    	"*.md",
+    	"build",
+    	"speed",
+    	"test",
+    	"demos",
+    	"demo",
+    	"json-test",
+    	"example.*",
+    	"Gruntfile.js",
+    	"gulpfile.js"
+	],
+	"dependencies": {
+		"html5shiv" : "latest",
+		"respond" : "latest",
+		"modernizr" : "latest",
+		"bootstrap-sass-official" : "=3.3.5",
+		"angular" : "latest",
+		"angular-route" : "latest",
+		"angular-messages" : "latest",
+		"angular-animate" : "latest",
+		"requirejs" : "latest"
+	},
+	"resolutions": {
+	},
+	"devDependencies": {
+	},
+	"private": true
+}

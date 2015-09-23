@@ -1,0 +1,22 @@
+{
+  "name": "Marching",
+  "version": "0.0.1",
+  "dependencies": {},
+  "description": "Marching.Gray.Young@gmail.com Personal Project",
+  "main": "gulpfile.js",
+  "author": "Gray Young",
+  "license": "Copyright 2015",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-bower": "latest",
+    "gulp-clean": "latest",
+    "gulp-filter": "latest",
+    "gulp-flatten": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-sass": "latest",
+    "gulp-size": "latest",
+    "merge-stream" : "latest",
+    "requirejs": "latest"
+  }
+}
