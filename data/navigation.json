@@ -1,0 +1,15 @@
+{
+	"items" : [ {
+		"label" : "Home",
+		"icon" : "",
+		"url" : "/",
+		"children" : {
+		}
+	}, {
+		"label" : "Blogs",
+		"icon" : "",
+		"url" : "/blogs",
+		"children" : {
+		}
+	} ]
+}

@@ -3,7 +3,7 @@
  * 
  */
 
-var congfig = {
+var config = {
 	optimized : false
 }
 var gulp = require('gulp');
@@ -21,8 +21,8 @@ var pathNames = {
 	sourcesUrl : '',
 	targetUrl : 'dist',
 	bowerLib : 'bower_components',
-	styles : 'styles',
-	scripts : 'scripts',
+	styles : 'css',
+	scripts : 'js',
 	images : 'images',
 	fonts : 'fonts',
 	exclude : [ '!*/**/{build,demos,test,docs,versions,source/dev,source/jquery}/**/*' ],
@@ -70,15 +70,7 @@ gulp.task('styles', function() {
 	var est = false;
 
 	bcssStream = minifyCss(gulp.src(sourcesPaths.styles.base)).pipe(gulp.dest(targetPaths.styles)).pipe($.size());
-	/* Styles Need Bootstrap Sass */
-	path.exists(path.join(pathNames.sourcesUrl, pathNames.bowerLib, 'bootstrap-sass-official'), function(exists) {
-		est = exists;
-		if (est) {
-			scssStream = sassBootstrap();
-		} else {
-			gulp.start('init-styles');
-		}
-	});
+	scssStream = sassBootstrap();
 
 	return est ? mergeStream(bcssStream, scssStream) : bcssStream;
 });
