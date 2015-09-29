@@ -185,9 +185,9 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function(next) {
 	gulp.watch([ sourcesPaths.styles.base, sourcesPaths.styles.sass ], [ 'styles' ]);
-	gulp.watch(sourcesPaths.scripts.base, [ 'scripts' ]);
-	gulp.watch(sourcesPaths.images.base, [ 'images' ]);
-	gulp.watch(sourcesPaths.war, [ 'war' ]);
+	//gulp.watch(sourcesPaths.scripts.base, [ 'scripts' ]);
+	//gulp.watch(sourcesPaths.images.base, [ 'images' ]);
+	//gulp.watch(sourcesPaths.war, [ 'war' ]);
 	gulp.watch('bower.json', [ 'copy-bower' ]);
 });
 

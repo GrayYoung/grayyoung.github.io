@@ -1,0 +1,61 @@
+#subNavbar {
+  min-height: 30px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Chaparral Pro"; }
+  #subNavbar .nav > li {
+    margin-top: 7px;
+    margin-bottom: 7px; }
+    #subNavbar .nav > li.pull-right + .pull-right {
+      border-right: solid 1px #e4e2dd; }
+    #subNavbar .nav > li > a {
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 16px; }
+      #subNavbar .nav > li > a:not(.text-primary) {
+        color: #969789; }
+      #subNavbar .nav > li > a:hover, #subNavbar .nav > li > a:focus {
+        background-color: transparent; }
+        #subNavbar .nav > li > a:hover:not(.text-primary), #subNavbar .nav > li > a:focus:not(.text-primary) {
+          color: #e4e2dd; }
+
+nav.navbar {
+  border-top: dotted 1px #221f1f;
+  border-bottom: solid 8px #221f1f;
+  border-left-width: 0;
+  border-right-width: 0;
+  font-size: 12px;
+  font-weight: bold; }
+  nav.navbar .navbar-toggle .icon-bar {
+    background-color: #221f1f; }
+  nav.navbar .navbar-form {
+    margin-top: 6px;
+    margin-bottom: 6px; }
+    nav.navbar .navbar-form .form-group {
+      padding-right: 6px; }
+    nav.navbar .navbar-form .form-control {
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 126px;
+      height: 22px;
+      box-shadow: 0 1px 1px #222222 inset; }
+    nav.navbar .navbar-form .btn {
+      padding-top: 0;
+      padding-bottom: 0; }
+  nav.navbar .nav > li {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    border-left: solid 1px #9b9893; }
+    nav.navbar .nav > li > a {
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 1; }
+      nav.navbar .nav > li > a:hover, nav.navbar .nav > li > a:focus {
+        background-color: transparent; }
+
+.btn-inverse {
+  background-color: #221f1f;
+  color: white; }
+  .btn-inverse:hover, .btn-inverse:focus, .btn-inverse.focus {
+    color: #777777; }

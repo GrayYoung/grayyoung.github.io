@@ -1,1 +1,96 @@
 @import "variables";
+
+#subNavbar {
+	min-height: 30px;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+	font-family: "Chaparral Pro";
+
+	.nav > li {
+		margin-top: 7px;
+		margin-bottom: 7px;
+		
+		&.pull-right + .pull-right {
+			border-right: solid 1px $body-bg;
+		}
+
+		> a {
+			padding-top: 0;
+			padding-bottom: 0;
+			line-height: 16px;
+
+			&:not(.text-primary) {
+				color: #969789;
+			}
+
+			&:hover, &:focus {
+				background-color: transparent;
+
+				&:not(.text-primary) {
+					color: #e4e2dd;
+				}
+			}
+		}
+	}
+}
+
+nav.navbar {
+	border-top: dotted 1px $text-color;
+	border-bottom: solid 8px $text-color;
+	border-left-width: 0;
+	border-right-width: 0;
+	font-size: 12px;
+	font-weight: bold;
+
+	.navbar-toggle .icon-bar {
+		background-color: $text-color;
+	}
+
+	.navbar-form {
+		margin-top: 6px;
+		margin-bottom: 6px;
+
+		.form-group {
+			padding-right: 6px;
+		}
+
+		.form-control {
+			padding-top: 0;
+			padding-bottom: 0;
+			width: 126px;
+			height: 22px;
+			box-shadow: 0 1px 1px $gray-darker inset;
+		}
+
+		.btn {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	.nav > li {
+		margin-top: 11px;
+		margin-bottom: 11px;
+		border-left: solid 1px #9b9893;
+
+		> a {
+			padding-top: 0;
+			padding-bottom: 0;
+			line-height: 1;
+
+			&:hover, &:focus {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+.btn-inverse {
+	background-color: $text-color;
+	color: white;
+
+	&:hover, &:focus, &.focus {
+		color: $gray-light;
+	}
+}

@@ -15,7 +15,7 @@ require([ './config' ], function(config) {
 				$scope.navigation = data.items;
 			});
 		});
-		
+
 		angular.bootstrap(document, ['Marching']);
 	});
 });
