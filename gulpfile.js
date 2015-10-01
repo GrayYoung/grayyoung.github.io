@@ -25,7 +25,7 @@ var pathNames = {
 	scripts : 'js',
 	images : 'images',
 	fonts : 'fonts',
-	exclude : [ '!*/**/{build,demos,test,docs,versions,source/dev,source/jquery}/**/*' ],
+	exclude : [ '!*/**/{build,demos,test,docs,versions,source/dev,source/jquery,node_modules}/**/*', 'dist' ],
 	exBootstrap : '!*/**/bootstrap/**/*'
 };
 
@@ -188,22 +188,16 @@ gulp.task('watch', function(next) {
 	//gulp.watch(sourcesPaths.scripts.base, [ 'scripts' ]);
 	//gulp.watch(sourcesPaths.images.base, [ 'images' ]);
 	//gulp.watch(sourcesPaths.war, [ 'war' ]);
-	gulp.watch('bower.json', [ 'copy-bower' ]);
+	gulp.watch('bower.json', [ 'init-bower' ]);
 });
 
 // DEFAULT GULP TASK
 gulp.task('default', [ 'clean' ], function() {
-	var tasks = [ 'copy-bower', 'war', 'images', 'fonts', 'styles', config.optimized ? 'optimization' : 'scripts' ];
+	var tasks = [ 'war', 'images', 'fonts', 'styles', config.optimized ? 'optimization' : 'scripts' ];
 	
 	if(!config.optimized) {
 		tasks.push('watch');
 	}
-	gulp.start(tasks);
-});
-
-gulp.task('test', [ 'clean', 'init-bower' ], function() {
-	var tasks = [ 'copy-bower', 'images', 'fonts', 'styles', 'scripts', 'watch' ];
-
 	gulp.start(tasks);
 });
 

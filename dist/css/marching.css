@@ -1,6 +1,29 @@
+@font-face {
+  font-family: "Trade Gothic W01";
+  src: url("../../fonts/Trade Gothic W01.woff2") format("woff2");
+  font-weight: bold; }
+
+a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:focus {
+  color: #900000; }
+
+.btn-inverse {
+  background-color: #000000;
+  color: white; }
+  .btn-inverse:hover, .btn-inverse:focus, .btn-inverse.focus {
+    color: #777777; }
+
+.show-grid {
+  margin-bottom: 15px; }
+
+.navbar-brand {
+  letter-spacing: -6px;
+  font-weight: bold;
+  font-family: "Trade Gothic W01";
+  font-size: 90px;
+  color: #000000; }
+
 #subNavbar {
   min-height: 30px;
-  font-size: 12px;
   font-style: italic;
   font-weight: bold;
   font-family: "Chaparral Pro"; }
@@ -15,20 +38,38 @@
       line-height: 16px; }
       #subNavbar .nav > li > a:not(.text-primary) {
         color: #969789; }
-      #subNavbar .nav > li > a:hover, #subNavbar .nav > li > a:focus {
-        background-color: transparent; }
-        #subNavbar .nav > li > a:hover:not(.text-primary), #subNavbar .nav > li > a:focus:not(.text-primary) {
-          color: #e4e2dd; }
+      #subNavbar .nav > li > a:hover:not(.text-primary), #subNavbar .nav > li > a:focus:not(.text-primary) {
+        color: #e4e2dd; }
+  #subNavbar + .navbar {
+    min-height: 75px; }
+    #subNavbar + .navbar .navbar-brand {
+      height: 75px;
+      line-height: 60px; }
+    #subNavbar + .navbar .nav > li {
+      height: 75px; }
+      #subNavbar + .navbar .nav > li + li {
+        border-left: dotted 1px #000000; }
+      #subNavbar + .navbar .nav > li .fa {
+        vertical-align: top; }
+      #subNavbar + .navbar .nav > li > a > span {
+        display: inline-block;
+        max-width: 80px;
+        margin-left: 0.5em;
+        line-height: 1.2;
+        color: #000000; }
 
 nav.navbar {
-  border-top: dotted 1px #221f1f;
-  border-bottom: solid 8px #221f1f;
+  margin-top: 20px;
+  border-top: dotted 1px #000000;
+  border-bottom: solid 8px #000000;
   border-left-width: 0;
   border-right-width: 0;
-  font-size: 12px;
   font-weight: bold; }
+  nav.navbar .navbar-brand > img {
+    height: 30px;
+    margin-top: -5px; }
   nav.navbar .navbar-toggle .icon-bar {
-    background-color: #221f1f; }
+    background-color: #000000; }
   nav.navbar .navbar-form {
     margin-top: 6px;
     margin-bottom: 6px; }
@@ -51,11 +92,3 @@ nav.navbar {
       padding-top: 0;
       padding-bottom: 0;
       line-height: 1; }
-      nav.navbar .nav > li > a:hover, nav.navbar .nav > li > a:focus {
-        background-color: transparent; }
-
-.btn-inverse {
-  background-color: #221f1f;
-  color: white; }
-  .btn-inverse:hover, .btn-inverse:focus, .btn-inverse.focus {
-    color: #777777; }

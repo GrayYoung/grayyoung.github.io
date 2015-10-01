@@ -1,5 +1,5 @@
 /**
- * Default for the pages that don't need modules else.
+ * Data Paths
  */
 
 /* The following comment tell gulp-jshint variable define is require in another file. */

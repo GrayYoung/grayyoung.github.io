@@ -22,6 +22,7 @@
     "respond": "latest",
     "modernizr": "latest",
     "bootstrap-sass-official": "=3.3.5",
+    "fontawesome": "latest",
     "angular": "latest",
     "angular-route": "latest",
     "angular-messages": "latest",

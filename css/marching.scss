@@ -1,8 +1,35 @@
 @import "variables";
+@import "typography";
+
+a.text-danger, a .text-danger {
+	&:hover, &:focus {
+		color: darken($state-danger-text, 15%);
+	}
+}
+
+.btn-inverse {
+	background-color: $text-color;
+	color: white;
+
+	&:hover, &:focus, &.focus {
+		color: $gray-light;
+	}
+}
+
+.show-grid {
+	margin-bottom: $grid-gutter-width / 2;
+}
+
+.navbar-brand {
+	letter-spacing: -6px;
+	font-weight: bold;
+	font-family: "Trade Gothic W01";
+	font-size: 90px;
+	color: $text-color;
+}
 
 #subNavbar {
 	min-height: 30px;
-	font-size: 12px;
 	font-style: italic;
 	font-weight: bold;
 	font-family: "Chaparral Pro";
@@ -25,23 +52,55 @@
 			}
 
 			&:hover, &:focus {
-				background-color: transparent;
-
 				&:not(.text-primary) {
 					color: #e4e2dd;
 				}
 			}
 		}
 	}
+
+	+ .navbar {
+		min-height: 75px;
+
+		.navbar-brand {
+			height: 75px;
+			line-height: 60px;
+		}
+
+		.nav > li {
+			height: 75px;
+
+			+ li {
+				border-left: dotted 1px $text-color;
+			}
+
+			.fa {
+				vertical-align: top;
+			}
+
+			> a > span {
+				display: inline-block;
+				max-width: 80px;
+				margin-left: 0.5em;
+				line-height: 1.2;
+				color: $text-color;
+			}
+		}
+	}
 }
 
 nav.navbar {
+	margin-top: 20px;
 	border-top: dotted 1px $text-color;
 	border-bottom: solid 8px $text-color;
 	border-left-width: 0;
 	border-right-width: 0;
-	font-size: 12px;
 	font-weight: bold;
+
+	.navbar-brand > img {
+		height: 30px;
+		margin-top: -5px;
+	}
 
 	.navbar-toggle .icon-bar {
 		background-color: $text-color;
@@ -78,19 +137,6 @@ nav.navbar {
 			padding-top: 0;
 			padding-bottom: 0;
 			line-height: 1;
-
-			&:hover, &:focus {
-				background-color: transparent;
-			}
 		}
-	}
-}
-
-.btn-inverse {
-	background-color: $text-color;
-	color: white;
-
-	&:hover, &:focus, &.focus {
-		color: $gray-light;
 	}
 }
