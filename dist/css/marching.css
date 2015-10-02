@@ -135,6 +135,9 @@ nav.navbar {
     margin-bottom: 5px;
     border-style: dotted;
     border-color: #555555; }
+  .list-preview .row > hr {
+    margin-left: 6px;
+    margin-right: 6px; }
   .list-preview .col-md-3 {
     padding-left: 5px;
     padding-right: 5px; }

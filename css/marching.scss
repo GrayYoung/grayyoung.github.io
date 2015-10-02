@@ -156,6 +156,11 @@ nav.navbar {
 		border-color: $gray;
 	}
 
+	.row > hr {
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+
 	.col-md-3 {
 		padding-left: 5px;
 		padding-right: 5px;
