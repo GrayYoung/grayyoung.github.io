@@ -3,13 +3,28 @@
 		"label" : "Home",
 		"icon" : "",
 		"url" : "/",
-		"children" : {
-		}
+		"children" : []
 	}, {
 		"label" : "Blogs",
 		"icon" : "",
 		"url" : "/blogs",
-		"children" : {
-		}
+		"children" : []
+	}, {
+		"label" : "Media",
+		"icon" : "",
+		"url" : "/media",
+		"children" : [ {
+			"label" : "Music",
+			"thumb" : "",
+			"url" : "/music"
+		}, {
+			"label" : "Movie",
+			"thumb" : "",
+			"url" : "/movie"
+		}, {
+			"label" : "TV",
+			"thumb" : "",
+			"url" : "/tv"
+		} ]
 	} ]
 }

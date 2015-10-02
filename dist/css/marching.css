@@ -1,13 +1,37 @@
 @font-face {
-  font-family: "Trade Gothic W01";
-  font-weight: normal;
+  font-family: "Trade Gothic";
+  font-style: normal;
   src: url("../../fonts/Trade Gothic W01 Regular.woff2") format("woff2"), url("../../fonts/Trade Gothic W01 Regular.woff") format("woff"), url("../../fonts/Trade Gothic W01 Regular.ttf") format("truetype");
   font-weight: bold; }
 
 @font-face {
-  font-family: "Trade Gothic W01";
-  font-weight: bold;
+  font-family: "Trade Gothic";
+  font-style: normal;
   src: url("../../fonts/Trade Gothic W01 Bold.woff2") format("woff2"), url("../../fonts/Trade Gothic W01 Bold.woff") format("woff"), url("../../fonts/Trade Gothic W01 Bold.ttf") format("truetype");
+  font-weight: bold; }
+
+@font-face {
+  font-family: "Freight Text";
+  font-style: normal;
+  src: url("../../fonts/Freight Text W03 Regular.woff2") format("woff2"), url("../../fonts/Freight Text W03 Regular.woff") format("woff"), url("../../fonts/Freight Text W03 Regular.ttf") format("truetype");
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Freight Text";
+  font-style: italic;
+  src: url("../../fonts/Freight Text W03 Regular Italic.woff2") format("woff2"), url("../../fonts/Freight Text W03 Regular Italic.woff") format("woff"), url("../../fonts/Freight Text W03 Regular Italic.ttf") format("truetype");
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Freight Text";
+  font-style: normal;
+  src: url("../../fonts/Freight Text W03 Bold.woff2") format("woff2"), url("../../fonts/Freight Text W03 Bold.woff") format("woff"), url("../../fonts/Freight Text W03 Bold.ttf") format("truetype");
+  font-weight: bold; }
+
+@font-face {
+  font-family: "Freight Text";
+  font-style: italic;
+  src: url("../../fonts/Freight Text W03 Bold Italic.woff2") format("woff2"), url("../../fonts/Freight Text W03 Bold Italic.woff") format("woff"), url("../../fonts/Freight Text W03 Bold Italic.ttf") format("truetype");
   font-weight: bold; }
 
 a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:focus {
@@ -22,18 +46,18 @@ a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:f
 .show-grid {
   margin-bottom: 15px; }
 
+.nav {
+  font-family: "Trade Gothic", Helvetica, Arial, sans-serif; }
+
 .navbar-brand {
   letter-spacing: -6px;
   font-weight: bold;
-  font-family: "Trade Gothic W01";
+  font-family: "Trade Gothic";
   font-size: 90px;
   color: #000000; }
 
 #subNavbar {
-  min-height: 30px;
-  font-style: italic;
-  font-weight: bold;
-  font-family: "Chaparral Pro"; }
+  min-height: 30px; }
   #subNavbar .nav > li {
     margin-top: 7px;
     margin-bottom: 7px; }
@@ -42,7 +66,10 @@ a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:f
     #subNavbar .nav > li > a {
       padding-top: 0;
       padding-bottom: 0;
-      line-height: 16px; }
+      line-height: 16px;
+      font-style: italic;
+      font-weight: bold;
+      font-family: "Freight Text", "Times New Roman", Times, serif; }
       #subNavbar .nav > li > a:not(.text-primary) {
         color: #969789; }
       #subNavbar .nav > li > a:hover:not(.text-primary), #subNavbar .nav > li > a:focus:not(.text-primary) {
@@ -99,3 +126,70 @@ nav.navbar {
       padding-top: 0;
       padding-bottom: 0;
       line-height: 1; }
+
+.list-preview {
+  padding-left: 6px;
+  padding-right: 6px; }
+  .list-preview hr {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    border-style: dotted;
+    border-color: #555555; }
+  .list-preview .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px; }
+    .list-preview .col-md-3 .p-name {
+      margin-top: 10px;
+      margin-bottom: 2px; }
+  .list-preview .col-md-4 {
+    padding-left: 9px;
+    padding-right: 9px; }
+    .list-preview .col-md-4 .p-name {
+      margin-top: 20px;
+      margin-bottom: 2px; }
+  .list-preview .thumbnail {
+    border-width: 0; }
+    .list-preview .thumbnail .caption {
+      padding: 0; }
+  .list-preview .col-md-4 figure, .list-preview figure .box-figure {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 2px #777777; }
+  .list-preview .p-category, .list-preview .p-summary {
+    margin-bottom: 0;
+    font-style: italic;
+    font-family: "Freight Text";
+    font-size: 14px; }
+  .list-preview .u-url {
+    font-size: 14px; }
+
+@media (min-width: 992px) {
+  .list-preview .col-md-3 img {
+    height: 100px; }
+  .list-preview .col-md-4 img {
+    height: 150px; } }
+
+@media (min-width: 768px) {
+  .p-name, .p-summary {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.2; }
+  .col-md-4 .p-name, .col-md-4 .p-summary {
+    white-space: nowrap;
+    max-height: 1.2em; }
+  .col-md-4 .p-summary {
+    padding-right: 2em; }
+    .col-md-4 .p-summary + a {
+      position: absolute;
+      bottom: 40px;
+      right: 19px; }
+  .col-md-3 .thumbnail {
+    margin-bottom: 0; }
+  .col-md-3 .p-name {
+    max-height: 2.4em; }
+  .col-md-3 .p-summary {
+    max-height: 3.6em; } }
+
+@media (max-width: 767px) {
+  .list-preview img {
+    height: 200px; } }

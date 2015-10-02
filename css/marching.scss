@@ -20,19 +20,20 @@ a.text-danger, a .text-danger {
 	margin-bottom: $grid-gutter-width / 2;
 }
 
+.nav {
+	font-family: $font-family-sans-serif;
+}
+
 .navbar-brand {
 	letter-spacing: -6px;
 	font-weight: bold;
-	font-family: "Trade Gothic W01";
+	font-family: "Trade Gothic";
 	font-size: 90px;
 	color: $text-color;
 }
 
 #subNavbar {
 	min-height: 30px;
-	font-style: italic;
-	font-weight: bold;
-	font-family: "Chaparral Pro";
 
 	.nav > li {
 		margin-top: 7px;
@@ -46,6 +47,9 @@ a.text-danger, a .text-danger {
 			padding-top: 0;
 			padding-bottom: 0;
 			line-height: 16px;
+			font-style: italic;
+			font-weight: bold;
+			font-family: $font-family-serif;
 
 			&:not(.text-primary) {
 				color: #969789;
@@ -138,5 +142,123 @@ nav.navbar {
 			padding-bottom: 0;
 			line-height: 1;
 		}
+	}
+}
+
+.list-preview {
+	padding-left: 6px;
+	padding-right: 6px;
+
+	hr {
+		margin-top: 8px;
+		margin-bottom: 5px;
+		border-style: dotted;
+		border-color: $gray;
+	}
+
+	.col-md-3 {
+		padding-left: 5px;
+		padding-right: 5px;
+
+		.p-name {
+			margin-top: 10px;
+			margin-bottom: 2px;
+		}
+	}
+
+	.col-md-4 {
+		padding-left: 9px;
+		padding-right: 9px;
+
+		.p-name {
+			margin-top: 20px;
+			margin-bottom: 2px;
+		}
+	}
+
+	.thumbnail {
+		border-width: 0; 
+
+		.caption {
+			padding: 0;
+		}
+	}
+
+	.col-md-4 figure, figure .box-figure {
+		padding: 10px;
+		background-color: white;
+		box-shadow: 1px 1px 2px $gray-light;
+	}
+
+	.p-category, .p-summary {
+		margin-bottom: 0;
+		font-style: italic;
+		font-family: "Freight Text";
+		font-size: 14px;
+	}
+
+	.u-url {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: $screen-desktop) {
+	.list-preview {
+		.col-md-3 {	
+			img {
+				height: 100px;
+			}
+		}
+	
+		.col-md-4 {	
+			img {
+				height: 150px;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-tablet) {
+	.p-name, .p-summary {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		line-height: 1.2;
+	}
+
+	.col-md-4 {
+		.p-name, .p-summary {
+			white-space: nowrap;
+			max-height: 1.2em;
+		}
+
+		.p-summary {
+			padding-right: 2em;
+
+			+ a {
+				position: absolute;
+				bottom: 40px;
+				right: 19px;
+			}
+		}
+	}
+
+	.col-md-3 {
+		.thumbnail {
+			margin-bottom: 0;
+		}
+
+		.p-name {
+			max-height: 2.4em;
+		}
+
+		.p-summary {
+			max-height: 3.6em;
+		}
+	}
+}
+
+@media (max-width: $screen-tablet - 1) {
+	.list-preview img {
+		height: 200px;
 	}
 }

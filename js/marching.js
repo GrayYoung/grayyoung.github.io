@@ -11,8 +11,13 @@ require([ './config' ], function(config) {
 
 		marching.controller('NavigationController', function($scope, $http) {
 			$http.get(requests.navigation).success(function(data) {
-				console.log(data);
 				$scope.navigation = data.items;
+			});
+		});
+
+		marching.controller('PreviewController', function($scope, $http) {
+			$http.get(requests.blogs).success(function(data) {
+				$scope.previews = data.items;
 			});
 		});
 
