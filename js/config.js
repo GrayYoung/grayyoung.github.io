@@ -13,13 +13,19 @@ requirejs.config({
 		app : '../app',
 		angular : 'angular',
 		route : 'angular-route.min',
+		resource : 'angular-resource.min',
 		messages : 'angular-messages.min',
-		animate : 'angular-animate.min'
+		animate : 'angular-animate.min',
+		touch : 'angular-touch.min',
+		bootstrap : 'ui-bootstrap.min'
 	},
 	shim : {
 		route : [ 'angular' ],
 		messages : [ 'angular' ],
-		animate : [ 'angular' ]
+		resource : [ 'angular' ],
+		animate : [ 'angular' ],
+		touch : [ 'angular' ],
+		bootstrap : [ 'angular' ]
 	},
 	map : {
 	},

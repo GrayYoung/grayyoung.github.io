@@ -25,7 +25,7 @@ var pathNames = {
 	scripts : 'js',
 	images : 'images',
 	fonts : 'fonts',
-	exclude : [ '!*/**/{build,demos,test,docs,versions,source/dev,source/jquery,node_modules}/**/*', 'dist' ],
+	exclude : [ '!*/**/{build,demos,test,docs,versions,source/dev,source/jquery,node_modules}/**/*', '!dist' ],
 	exBootstrap : '!*/**/bootstrap/**/*'
 };
 

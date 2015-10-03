@@ -1,0 +1,45 @@
+<div class="clearfix list-preview" ng-controller="PreviewController">
+	<div class="col-sm-12 col-md-4 h-entry" ng-repeat="preview in previews | limitTo:1">
+		<figure class="thumbnail">
+			<p class="p-category">
+				<span ng-repeat="category in preview.categories">{{category + ($index == preview.categories.length - 1 ? '' : ': ')}}</span>&nbsp;
+			</p>
+			<hr />
+			<img ng-src="{{preview.figure}}" alt="Unavailable Photo">
+			<div class="caption">
+				<h3 class="p-name"><strong>{{preview.title}}</strong></h3>
+			</div>
+			<figcaption class="p-summary">{{preview.summary}}</figcaption>
+			<a class="u-url" ng-href="{{(setting.html5Mode ? '' : '#') + getDeepPath(preview.categories)}}"><strong><i>More</i></strong></a>
+			<div class="clearfix show-grid"></div>
+		</figure>
+	</div>
+	<div class="col-sm-12 col-md-8">
+		<div class="row">
+			<div class="col-sm-6 col-md-3 h-entry" ng-repeat="preview in previews  | limitTo:4:1">
+				<figure class="thumbnail">
+					<div class="box-figure">
+						<p class="p-category">
+							<span ng-repeat="category in preview.categories">{{category + ($index == preview.categories.length - 1 ? '' : ': ')}}</span>&nbsp;
+						</p>
+						<hr />
+						<img class="center-block" ng-src="{{preview.figure}}" alt="Unavailable Photo">
+					</div>
+					<figcaption>
+						<div class="caption">
+							<h3 class="p-name"><strong>{{preview.title}}</strong></h3>
+						</div>
+						<p class="p-summary">{{preview.summary}}{{preview.location = previews.more}}</p>
+					</figcaption>
+					<a class="u-url" ng-href="{{(setting.html5Mode ? '' : '#') + getDeepPath(preview.categories)}}"><strong><i>Read more...</i></strong></a>
+				</figure>
+			</div>
+			<div class="clearfix"></div>
+			<hr />
+			<div class="text-right">
+				<a class="btn btn-sm btn-inverse" href="javascript:void(0);"><i class="fa fa-lg fa-caret-left"></i></a>
+				<a class="btn btn-sm btn-inverse" href="javascript:void(0);"><i class="fa fa-lg fa-caret-right"></i></a>
+			</div>
+		</div>
+	</div>
+</div>

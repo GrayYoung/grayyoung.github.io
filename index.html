@@ -61,11 +61,10 @@
 				</ul>
 			</div>
 		</div>
-		<nav class="navbar navbar-default" ng-controller="NavigationController">
+		<nav class="navbar navbar-default" ng-controller="NavigationController" ng-init="isNavCollapsed = true">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
+					<button type="button" class="navbar-toggle collapsed" ng-click="isNavCollapsed = !isNavCollapsed">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -74,63 +73,33 @@
 					<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="/"><img class="img-responsive" alt="GRAY" src="images/logo.png" /></a>
 				</div>
 
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse"  collapse="isNavCollapsed" aria-expanded="false" aria-hidden="true">
 					<ul class="nav navbar-nav">
-						<li ng-repeat="item in navigation" ng-class="{dropdown : item.children}">
-							<a ng-class="{'dropdown-toggle' : item.children}" ng-href="{{item.url}}">{{item.label}}</a>
+						<li ng-repeat="(name, item) in navigation.children" ng-class="{dropdown : item.children}" dropdown>
+							<a class="dropdown-toggle" ng-href="{{(setting.html5Mode ? '' : '#') + item.path}}">
+								<strong>{{name}}</strong> 
+								<i class="fa fa-lg fa-caret-down" ng-if="!isEmpty(item.children)" dropdown-toggle></i>
+							</a>
 							<ul ng-if="item.children" class="dropdown-menu">
-								<li ng-repeat="subItem in item.children">
-									<a ng-href="{{subItem.url}}">{{subItem.label}}</a>
+								<li ng-repeat="(sName, sItem) in item.children">
+									<a ng-href="{{(setting.html5Mode ? '' : '#') + item.path + sItem.path}}"><strong>{{sName}}</strong></a>
 								</li>
 							</ul>
 						</li>
 					</ul>
 					<form class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="" />
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-inverse btn-sm"><strong>SEARCH</strong></button>
+							</span>
 						</div>
-						<button type="submit" class="btn btn-inverse btn-sm"><strong>SEARCH</strong></button>
 					</form>
 				</div>
 			</div>
 		</nav>
 		<div class="clearfix show-grid"></div>
-		<div class="clearfix list-preview" ng-controller="PreviewController">
-			<div class="col-sm-12 col-md-4 h-entry" ng-repeat="preview in previews | limitTo:1">
-				<figure class="thumbnail">
-					<p class="p-category">Video</p>
-					<hr />
-					<img ng-src="{{preview.figure}}" alt="Unavailable Photo">
-					<div class="caption">
-						<h3 class="p-name">{{preview.title}}</h3>
-					</div>
-					<figcaption class="p-summary">{{preview.summary}}</figcaption>
-					<a class="u-url" ng-href=""><strong><i>More</i></strong></a>
-					<div class="clearfix show-grid"></div>
-				</figure>
-			</div>
-			<div class="col-sm-12 col-md-8">
-				<div class="row">
-					<div class="col-sm-6 col-md-3 h-entry" ng-repeat="preview in previews  | limitTo:4:1">
-						<figure class="thumbnail">
-							<div class="box-figure">
-								<p class="p-category">Video</p>
-								<hr />
-								<img class="center-block" ng-src="{{preview.figure}}" alt="Unavailable Photo">
-							</div>
-							<figcaption>
-								<div class="caption">
-									<h3 class="p-name">{{preview.title}}</h3>
-								</div>
-								<p class="p-summary">{{preview.summary}}</p>
-							</figcaption>
-							<a class="u-url" ng-href=""><strong><i>Read more...</i></strong></a>
-						</figure>
-					</div>
-					<div class="clearfix"></div>
-					<hr />
-				</div>
-			</div>
+		<div ng-view autoscroll>
 		</div>
 		<footer class="text-center">
 			<div class="clearfix show-grid"></div>

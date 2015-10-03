@@ -27,6 +27,10 @@
     "angular-route": "latest",
     "angular-messages": "latest",
     "angular-animate": "latest",
+    "angular-resource": "latest",
+    "angular-sanitize": "latest",
+    "angular-touch": "latest",
+    "angular-bootstrap" : "latest",
     "requirejs": "latest"
   },
   "devDependencies": {},

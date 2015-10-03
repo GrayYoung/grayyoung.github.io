@@ -43,7 +43,7 @@ $link-hover-decoration: underline;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Trade Gothic", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  Helvetica, Arial, sans-serif;
 $font-family-serif:       "Freight Text", "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -108,8 +108,8 @@ $line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5;
 
 $border-radius-base:        0;
-$border-radius-large:       1px;
-$border-radius-small:       2px;
+$border-radius-large:       0;
+$border-radius-small:       0;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff;
@@ -491,10 +491,10 @@ $pager-disabled-color:                 $pagination-disabled-color;
 
 $jumbotron-padding:              30px;
 $jumbotron-color:                inherit;
-$jumbotron-bg:                   $gray-lighter;
+$jumbotron-bg:                   transparent;
 $jumbotron-heading-color:        inherit;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5));
-$jumbotron-heading-font-size:    ceil(($font-size-base * 4.5));
+$jumbotron-heading-font-size:    ceil(($font-size-base * 9));
 
 
 //== Form states and alerts
