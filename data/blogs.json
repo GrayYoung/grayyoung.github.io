@@ -1,5 +1,13 @@
 {
 	"items" : [ {
+		"title" : "AngularJs API<small>(1.4.7)</small>",
+		"categories" : [ "Web Development" ],
+		"published" : "",
+		"author" : "",
+		"figure" : "/API/angular-1.4.7/docs/img/angularjs-for-header-only.svg",
+		"summary" : "Welcome to the AngularJS API docs page. These pages contain the AngularJS reference materials for version 1.4.7 dense-dispersion.",
+		"contentURL" : "API/angular-1.4.7/docs"
+	}, {
 		"title" : "The Affair",
 		"categories" : [ "Media", "Music" ],
 		"published" : "2014",
@@ -7,14 +15,6 @@
 		"figure" : "http://ia.media-imdb.com/images/M/MV5BMTEzNTg5ODQ4NDleQTJeQWpwZ15BbWU4MDQwNjYwNjYx._V1_SY317_CR9,0,214,317_AL_.jpg",
 		"summary" : "The psychological effects of an affair between a married waitress at a Hamptons diner and a teacher who spends his summer at his in-laws' estate on the island.",
 		"content" : "The psychological effects of an affair between a married waitress at a Hamptons diner and a teacher who spends his summer at his in-laws' estate on the island."
-	}, {
-		"title" : "AngularJs API",
-		"categories" : [ "Web Development" ],
-		"published" : "",
-		"author" : "",
-		"figure" : "/API/angular-1.4.7/docs/img/angularjs-for-header-only.svg",
-		"summary" : "Welcome to the AngularJS API docs page. These pages contain the AngularJS reference materials for version 1.4.7 dense-dispersion.",
-		"content" : "<a href='/API/angular-1.4.7/docs'>AngularJS API 1.4.7</a>"
 	}, {
 		"title" : "The Affair",
 		"published" : "2014",

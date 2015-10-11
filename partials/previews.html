@@ -1,4 +1,4 @@
-<div class="clearfix list-preview" ng-controller="PreviewController">
+<div class="clearfix list-preview h-listing">
 	<div class="col-sm-12 col-md-4 h-entry" ng-repeat="preview in previews | limitTo:1">
 		<figure class="thumbnail">
 			<p class="p-category">
@@ -10,7 +10,7 @@
 				<h3 class="p-name"><strong>{{preview.title}}</strong></h3>
 			</div>
 			<figcaption class="p-summary">{{preview.summary}}</figcaption>
-			<a class="u-url" ng-href=""><strong><i>More</i></strong></a>
+			<a class="u-url" ng-href="preview.contentURL"><strong><i>More</i></strong></a>
 			<div class="clearfix show-grid"></div>
 		</figure>
 	</div>

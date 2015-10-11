@@ -1,0 +1,25 @@
+<div class="clearfix h-listing" >
+	<div class="col-xm-12 col-sm-6 col-md-4 col-lg-3 h-item h-review" ng-repeat="preview in previews">
+		<figure class="thumbnail">
+			<p class="p-category">
+				<span class="text-capitalize">{{preview.Type || preview.category}}</span>
+				<span ng-if="preview.Genre">: </span>
+				<span class="text-capitalize">{{preview.Genre}}</span>
+			</p>
+			<hr />
+			<img class="center-block" ng-src="{{preview.Poster}}" alt="Unavailable Photo">
+			<figcaption>
+				<div class="caption">
+					<h3 class="p-name"><strong>{{preview.Title || preview.title}}</strong></h3>
+					<p class="p-summary">{{preview.summary}}{{preview.location = previews.more}}</p>
+					<p class="p-rating" ng-style="{width : preview.imdbRating + 'em'}">
+						<span>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</span>
+					</p>
+				</div>
+			</figcaption>
+			<a class="u-url" target="_blank" ng-href="{{imdbHost + 'title/' + preview.imdb}}"><strong><i>Read more...</i></strong></a>
+		</figure>
+	</div>
+</div>

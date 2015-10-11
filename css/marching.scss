@@ -154,7 +154,7 @@ nav.navbar {
 	}
 }
 
-.list-preview {
+.h-listing {
 	hr {
 		margin-top: 8px;
 		margin-bottom: 5px;
@@ -162,21 +162,7 @@ nav.navbar {
 		border-color: $gray;
 	}
 
-	.row > hr {
-		margin-left: 6px;
-		margin-right: 6px;
-
-		+ div {
-			padding-left: 6px;
-			padding-right: 6px;
-		}
-	}
-
 	.col-md-3 {
-		.thumbnail {
-			padding: 0;
-		}
-
 		.p-name {
 			margin-top: 10px;
 			margin-bottom: 2px;
@@ -196,6 +182,10 @@ nav.navbar {
 		.caption {
 			padding: 0;
 		}
+
+		> img {
+			height: 426px;
+		}
 	}
 
 	.col-md-4 figure, figure .box-figure {
@@ -214,6 +204,27 @@ nav.navbar {
 
 	.u-url {
 		font-size: 14px;
+	}
+	
+	.p-rating {
+		height: 1.4em;
+		overflow: hidden;
+
+		> span {
+			width: 10em;
+		}
+	}
+}
+
+.list-preview {
+	.row > hr {
+		margin-left: 6px;
+		margin-right: 6px;
+
+		+ div {
+			padding-left: 6px;
+			padding-right: 6px;
+		}
 	}
 
 	.btn-sm {

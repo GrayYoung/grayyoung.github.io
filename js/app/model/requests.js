@@ -6,5 +6,6 @@
 /* global require */
 define({
 	navigation : 'data/navigation.json',
-	blogs : 'data/blogs.json'
+	blogs : 'data/blogs.json',
+	media : 'data/media.json'
 });

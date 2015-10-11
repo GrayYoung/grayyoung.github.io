@@ -14,18 +14,23 @@ requirejs.config({
 		angular : 'angular',
 		route : 'angular-route.min',
 		resource : 'angular-resource.min',
+		sanitize : 'angular-sanitize.min',
 		messages : 'angular-messages.min',
 		animate : 'angular-animate.min',
 		touch : 'angular-touch.min',
-		bootstrap : 'ui-bootstrap.min'
+		bootstrap : 'ui-bootstrap.min',
+		masonry : 'masonry.pkgd.min',
+		masonryDirective : 'angular-masonry-directive'
 	},
 	shim : {
 		route : [ 'angular' ],
-		messages : [ 'angular' ],
 		resource : [ 'angular' ],
+		sanitize : [ 'angular' ],
+		messages : [ 'angular' ],
 		animate : [ 'angular' ],
 		touch : [ 'angular' ],
-		bootstrap : [ 'angular' ]
+		bootstrap : [ 'angular' ],
+		masonryDirective : [ 'angular', 'masonry' ]
 	},
 	map : {
 	},
