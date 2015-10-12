@@ -151,8 +151,6 @@ nav.navbar {
   border-width: 0; }
   .h-listing .thumbnail .caption {
     padding: 0; }
-  .h-listing .thumbnail > img {
-    height: 426px; }
 
 .h-listing .col-md-4 figure, .h-listing figure .box-figure {
   padding: 10px;
@@ -164,16 +162,31 @@ nav.navbar {
   margin-bottom: 0;
   font-style: italic;
   font-family: "Freight Text";
-  font-size: 14px; }
+  font-size: 16px; }
 
 .h-listing .u-url {
   font-size: 14px; }
 
-.h-listing .p-rating {
-  height: 1.4em;
+.h-listing .p-rating .fa {
+  width: 1em; }
+
+.h-listing .p-rating .fa-lg {
+  vertical-align: baseline; }
+
+.h-listing .p-rating > span:first-child {
+  display: inline-block;
+  margin-right: 1em;
   overflow: hidden; }
-  .h-listing .p-rating > span {
+  .h-listing .p-rating > span:first-child > span {
+    display: inline-block;
     width: 10em; }
+
+.h-listing .p-votes {
+  vertical-align: 10%;
+  font-family: Helvetica, Arial, sans-serif; }
+
+.h-listing img + figcaption .p-name {
+  height: 2.2em; }
 
 .list-preview .row > hr {
   margin-left: 6px;

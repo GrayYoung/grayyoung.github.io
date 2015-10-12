@@ -182,10 +182,6 @@ nav.navbar {
 		.caption {
 			padding: 0;
 		}
-
-		> img {
-			height: 426px;
-		}
 	}
 
 	.col-md-4 figure, figure .box-figure {
@@ -199,20 +195,41 @@ nav.navbar {
 		margin-bottom: 0;
 		font-style: italic;
 		font-family: "Freight Text";
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	.u-url {
 		font-size: 14px;
 	}
-	
-	.p-rating {
-		height: 1.4em;
-		overflow: hidden;
 
-		> span {
-			width: 10em;
+	.p-rating {
+		.fa {
+			width: 1em;
 		}
+
+		.fa-lg {
+			vertical-align: baseline;
+		}
+
+		> span:first-child {
+			display: inline-block;
+			margin-right: 1em;
+			overflow: hidden;
+
+			> span {
+				display: inline-block;
+				width: 10em;
+			}
+		}
+	}
+
+	.p-votes {
+		vertical-align: 10%;
+		font-family: $font-family-sans-serif;
+	}
+
+	img + figcaption .p-name {
+		height: 2.2em;
 	}
 }
 

@@ -15,11 +15,11 @@ define([ 'app/model/requests' ], function(requests, $) {
 			angular.forEach($scope.previews, function(preview, index) {
 				if(preview.imdb) {
 					$http({
-						url : data.imdbHost,
+						url : 'http://www.omdbapi.com/',
 						type : 'get',
 						params : {
 							i : preview.imdb,
-							plot : 'full',
+							plot : 'short',
 							r : 'json'
 						}
 					}).then(function(response) {

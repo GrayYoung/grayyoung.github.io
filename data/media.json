@@ -1,72 +1,72 @@
 {
-	"imdbHost" : "http://www.omdbapi.com/",
+	"imdbHost" : "http://www.imdb.com/",
 	"items" : [ {
-		"title" : "12 Years A Slave",
-		"category" : "Movie",
+		"Title" : "12 Years A Slave",
+		"Type" : "Movie",
 		"imdb" : "tt2024544"
 	}, {
-		"title" : "22 Jump Street",
-		"category" : "Movie",
+		"Title" : "22 Jump Street",
+		"Type" : "Movie",
 		"imdb" : "tt2294449"
 	}, {
-		"title" : "47 Ronin",
-		"category" : "Movie",
+		"Title" : "47 Ronin",
+		"Type" : "Movie",
 		"imdb" : "tt1335975"
 	}, {
-		"title" : "102 Dalmatians",
-		"category" : "Movie",
+		"Title" : "102 Dalmatians",
+		"Type" : "Movie",
 		"imdb" : "tt0211181"
 	}, {
-		"title" : "10000 BC",
-		"category" : "Movie",
+		"Title" : "10000 BC",
+		"Type" : "Movie",
 		"imdb" : "tt0443649"
 	}, {
-		"title" : "A Christmas Horror Story",
-		"category" : "Movie",
+		"Title" : "A Christmas Horror Story",
+		"Type" : "Movie",
 		"imdb" : "tt3688406"
 	}, {
-		"title" : "A Man Apart",
-		"category" : "Movie",
+		"Title" : "A Man Apart",
+		"Type" : "Movie",
 		"imdb" : "tt0266465"
 	}, {
-		"title" : "A Million Ways To Die In The West",
-		"category" : "Movie",
+		"Title" : "A Million Ways To Die In The West",
+		"Type" : "Movie",
 		"imdb" : "tt2557490"
 	}, {
-		"title" : "A Single Man",
-		"category" : "Movie",
+		"Title" : "A Single Man",
+		"Type" : "Movie",
 		"imdb" : "tt1315981"
 	}, {
-		"title" : "About Time",
-		"category" : "Movie",
+		"Title" : "About Time",
+		"Type" : "Movie",
 		"imdb" : "tt2194499"
 	}, {
-		"title" : "All Creatures Big and Small",
-		"category" : "Movie",
+		"Title" : "All Creatures Big and Small",
+		"Type" : "Movie",
 		"imdb" : "tt3411432"
 	}, {
-		"title" : "Alpha and Omega",
-		"category" : "Movie",
+		"Title" : "Alpha and Omega",
+		"Type" : "Movie",
 		"imdb" : "tt1213012"
 	}, {
-		"title" : "Alpha and Omega 2",
-		"category" : "Movie",
+		"Title" : "Alpha and Omega 2",
+		"Type" : "Movie",
 		"imdb" : "tt3111728"
 	}, {
-		"title" : "Animal",
-		"category" : "Movie",
+		"Title" : "Animal",
+		"Type" : "Movie",
 		"imdb" : "tt2996684"
 	}, {
-		"title" : "Arrow",
-		"category" : "TV",
+		"Title" : "Arrow",
+		"Type" : "TV",
 		"imdb" : "tt2193021"
 	}, {
-		"title" : "August Rush",
-		"category" : "Movie",
+		"Title" : "August Rush",
+		"Type" : "Movie",
 		"imdb" : "tt0426931"
 	}, {
-		"title" : "Avengers Age of Ultron",
-		"category" : "Movie",
+		"Title" : "Avengers Age of Ultron",
+		"Type" : "Movie",
 		"imdb" : "tt2395427"
 	} ],
 	"more" : "/data/media/media-b.json"

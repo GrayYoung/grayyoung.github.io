@@ -1,8 +1,8 @@
-<div class="clearfix h-listing" >
-	<div class="col-xm-12 col-sm-6 col-md-4 col-lg-3 h-item h-review" ng-repeat="preview in previews">
+<div class="clearfix h-listing" style="display: flex; flex-flow: row wrap;">
+	<div class="col-xm-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate" ng-repeat="preview in previews">
 		<figure class="thumbnail">
 			<p class="p-category">
-				<span class="text-capitalize">{{preview.Type || preview.category}}</span>
+				<span class="text-capitalize">{{preview.Type}}</span>
 				<span ng-if="preview.Genre">: </span>
 				<span class="text-capitalize">{{preview.Genre}}</span>
 			</p>
@@ -10,11 +10,15 @@
 			<img class="center-block" ng-src="{{preview.Poster}}" alt="Unavailable Photo">
 			<figcaption>
 				<div class="caption">
-					<h3 class="p-name"><strong>{{preview.Title || preview.title}}</strong></h3>
-					<p class="p-summary">{{preview.summary}}{{preview.location = previews.more}}</p>
-					<p class="p-rating" ng-style="{width : preview.imdbRating + 'em'}">
-						<span>
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+					<h3 class="p-name"><strong>{{preview.Title}}</strong></h3>
+					<p><span class="text-muted">Director: </span><strong>{{preview.Director}}</strong></p>
+					<p><span class="text-muted">Actors: </span><strong>{{preview.Actors}}</strong></p>
+					<p class="p-summary"><span class="text-muted">Plot: </span>{{preview.Plot}}</p>
+					<p class="p-rating">
+						<span  ng-style="{width : preview.imdbRating + 'em'}"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
+						<span class="p-votes">
+							<span class="text-success fa-lg">{{preview.imdbRating}}</span> 
+							<small class="text-muted">({{preview.imdbVotes}})</small>
 						</span>
 					</p>
 				</div>
