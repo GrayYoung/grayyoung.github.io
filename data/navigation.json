@@ -28,9 +28,9 @@
 				}
 			}
 		}, 
-		"Web Development" : {
+		"About Me" : {
 			"icon" : "",
-			"path" : "/dev",
+			"path" : "/about",
 			"children" : {}
 		} 
 	}

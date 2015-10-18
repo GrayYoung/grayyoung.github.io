@@ -21,9 +21,10 @@ require([ './config' ], function(config) {
 			}).when('/home', {
 				templateUrl : '/partials/host.html',
 				controller : 'PreviewController'
-			}).when('/media/:category?', {
+			}).when('/media/:type?', {
 				templateUrl : '/partials/media.html',
-				controller : 'MediaController'
+				controller : 'MediaController',
+				controllerAs: 'media'
 			}).when('/:categories/blog/:blog', {
 				templateUrl : '/partials/detail.html',
 				controller : 'PreviewController'

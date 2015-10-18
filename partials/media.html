@@ -1,4 +1,4 @@
-<div class="clearfix h-listing" style="display: flex; flex-flow: row wrap;">
+<div id="containerListing" class="clearfix h-listing" style="display: flex; flex-flow: row wrap;">
 	<div class="col-xm-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate" ng-repeat="preview in previews">
 		<figure class="thumbnail">
 			<p class="p-category">
@@ -23,7 +23,7 @@
 					</p>
 				</div>
 			</figcaption>
-			<a class="u-url" target="_blank" ng-href="{{imdbHost + 'title/' + preview.imdb}}"><strong><i>Read more...</i></strong></a>
+			<a class="u-url" target="_blank" ng-href="{{imdbHost + 'title/' + preview.imdbID}}"><strong><i>Read more...</i></strong></a>
 		</figure>
 	</div>
 </div>

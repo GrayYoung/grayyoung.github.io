@@ -33,6 +33,8 @@
     "angular-bootstrap" : "latest",
     "requirejs": "latest"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  	"sizzle" : "latest"
+  },
   "private": true
 }
