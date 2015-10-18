@@ -14,7 +14,12 @@ define([ 'app/model/requests' ], function(requests, $) {
 		angular.element($window).bind('scroll', function() {
 			var cl = document.getElementById('containerListing');
 
-			if(!$scope.loading && (cl.offsetHeight + cl.offsetTop < ($window.scrollY || $window.pageYOffset) + $window.innerHeight) && $scope.more) {
+			if(!$scope.more) {
+				angular.element($window).unbind('scroll');
+
+				return false;
+			}
+			if(!$scope.loading && (cl.offsetHeight + cl.offsetTop < ($window.scrollY || $window.pageYOffset) + $window.innerHeight)) {
 				$scope.loading = true;
 				$http.get($scope.more).success(function(data) {
 					$scope.imdbHost = data.imdbHost || $scope.imdbHost;
@@ -33,6 +38,7 @@ define([ 'app/model/requests' ], function(requests, $) {
 					}
 					if(data.items.length === 0) {
 						$scope.loading = false;
+						angular.element($window).triggerHandler('scroll');
 
 						return false;
 					}
