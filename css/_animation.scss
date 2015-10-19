@@ -1,0 +1,94 @@
+//== Animation
+
+@keyframes loadingRotation {
+	from {
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg)
+	}
+
+	to {
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg)
+	}
+}
+
+@-webkit-keyframes loadingRotation {
+	from {
+		-webkit-transform:rotate(0deg)
+	}
+
+	to {
+		-webkit-transform:rotate(360deg)
+	}
+}
+
+@keyframes toggleRotation {
+	from {
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg)
+	}
+
+	to {
+		-webkit-transform:rotate(180deg);
+		transform:rotate(180deg)
+	}
+}
+
+@-webkit-keyframes toggleRotation {
+	from {
+		-webkit-transform:rotate(0deg)
+	}
+
+	to {
+		-webkit-transform:rotate(180deg)
+	}
+}
+
+@-webkit-keyframes progressCircular {
+	0% {
+		background: red;
+	}
+
+	25% {
+		background: yellow;
+	}
+
+	50% {
+		background: blue;
+	}
+
+	75% {
+		background: green;
+	}
+
+	100% {
+		background: red;
+	}
+}
+
+@keyframes progressCircular {
+	0% {
+		background: red;
+	}
+
+	25% {
+		background: yellow;
+	}
+
+	50% {
+		background: blue;
+	}
+
+	75% {
+		background: green;
+	}
+
+	100% {
+		background: red;
+	}
+}
+
+#fixedProgress.loading .progress-circular {
+	animation:loadingRotation 700ms linear infinite both;
+	-webkit-animation:loadingRotation 700ms linear infinite both;
+}

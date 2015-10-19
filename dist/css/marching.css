@@ -34,6 +34,62 @@
   src: url("../../fonts/Freight Text W03 Bold Italic.woff2") format("woff2"), url("../../fonts/Freight Text W03 Bold Italic.woff") format("woff"), url("../../fonts/Freight Text W03 Bold Italic.ttf") format("truetype");
   font-weight: bold; }
 
+@keyframes loadingRotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes loadingRotation {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes toggleRotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); } }
+
+@-webkit-keyframes toggleRotation {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(180deg); } }
+
+@-webkit-keyframes progressCircular {
+  0% {
+    background: red; }
+  25% {
+    background: yellow; }
+  50% {
+    background: blue; }
+  75% {
+    background: green; }
+  100% {
+    background: red; } }
+
+@keyframes progressCircular {
+  0% {
+    background: red; }
+  25% {
+    background: yellow; }
+  50% {
+    background: blue; }
+  75% {
+    background: green; }
+  100% {
+    background: red; } }
+
+#fixedProgress.loading .progress-circular {
+  animation: loadingRotation 700ms linear infinite both;
+  -webkit-animation: loadingRotation 700ms linear infinite both; }
+
 a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:focus {
   color: #900000; }
 
@@ -67,6 +123,7 @@ a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:f
       padding-top: 0;
       padding-bottom: 0;
       line-height: 16px;
+      font-size: 12px;
       font-style: italic;
       font-weight: bold;
       font-family: "Freight Text", "Times New Roman", Times, serif; }
@@ -148,6 +205,7 @@ nav.navbar {
   margin-bottom: 2px; }
 
 .h-listing .thumbnail {
+  padding-top: 0;
   border-width: 0; }
   .h-listing .thumbnail .caption {
     padding: 0; }
@@ -197,6 +255,61 @@ nav.navbar {
 
 .list-preview .btn-sm {
   padding: 0 5px; }
+
+body > section > footer {
+  padding: 15px 0 30px;
+  background-color: #000000;
+  color: white; }
+
+#fixedProgress {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 60px;
+  height: 60px; }
+  #fixedProgress .progress-circular {
+    width: 100%;
+    height: 100%;
+    border-top: solid 6px #D60059;
+    border-right: solid 6px #D75F00;
+    border-bottom: solid 6px #607D00;
+    border-left: solid 6px #006b87;
+    border-radius: 50%;
+    background-color: white; }
+  #fixedProgress .progress-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-origin: padding;
+    text-align: center;
+    line-height: 60px;
+    letter-spacing: -2px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #555555; }
+
+#progressBar {
+  position: relative;
+  height: 8px;
+  margin-top: -28px;
+  background-color: #000000; }
+
+#progressBar.loading {
+  background: -moz-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
+  /* FF3.6+ */
+  background: -webkit-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
+  /* IE10+ */
+  background: linear-gradient(to right, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f50065', endColorstr='#005065',GradientType=0 );
+  /* IE6-9 */ }
 
 @media (min-width: 992px) {
   .list-preview .col-md-3 {

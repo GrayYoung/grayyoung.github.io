@@ -35,7 +35,7 @@ require([ './config' ], function(config) {
 
 			$locationProvider.html5Mode(setting.html5Mode);
 		} ]);
-		marching.controller('NavigationController', function($rootScope, $scope, $http) {
+		marching.controller('NavigationController', function($rootScope, $scope, $http, $route) {
 			$rootScope.setting = setting;
 
 			$http.get(requests.navigation).success(function(data) {
@@ -45,7 +45,16 @@ require([ './config' ], function(config) {
 			$scope.isEmpty = function(data) {
 				return angular.equals(data, {});
 			}
+
+			$rootScope.$on('$routeChangeStart', function(){
+				angular.element(document.getElementById('progressBar')).addClass('loading');
+			});
+
+			$rootScope.$on('$routeChangeSuccess', function() {
+				angular.element(document.getElementById('progressBar')).removeClass('loading');
+			});
 		});
+
 		require([ 
 			'app/controller/preview',
 			'app/controller/media'
