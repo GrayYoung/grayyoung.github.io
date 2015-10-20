@@ -53,42 +53,71 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   to {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); } }
+    -webkit-transform: rotate(183.333333deg);
+    transform: rotate(183.333333deg); } }
 
 @-webkit-keyframes toggleRotation {
   from {
     -webkit-transform: rotate(0deg); }
   to {
-    -webkit-transform: rotate(180deg); } }
+    -webkit-transform: rotate(183.333333deg); } }
 
-@-webkit-keyframes progressCircular {
-  0% {
-    background: red; }
-  25% {
-    background: yellow; }
-  50% {
-    background: blue; }
-  75% {
-    background: green; }
-  100% {
-    background: red; } }
+@-webkit-keyframes progressBarA {
+  from {
+    position: absolute;
+    left: 0; }
+  to {
+    position: absolute;
+    left: 100%; } }
 
-@keyframes progressCircular {
-  0% {
-    background: red; }
-  25% {
-    background: yellow; }
-  50% {
-    background: blue; }
-  75% {
-    background: green; }
-  100% {
-    background: red; } }
+@keyframes progressBarA {
+  from {
+    position: absolute;
+    left: 0; }
+  to {
+    position: absolute;
+    left: 100%; } }
+
+@-webkit-keyframes progressBarB {
+  from {
+    position: absolute;
+    left: -100%; }
+  to {
+    position: absolute;
+    left: 0; } }
+
+@keyframes progressBarB {
+  from {
+    position: absolute;
+    left: -100%; }
+  to {
+    position: absolute;
+    left: 0; } }
 
 #fixedProgress.loading .progress-circular {
   animation: loadingRotation 700ms linear infinite both;
   -webkit-animation: loadingRotation 700ms linear infinite both; }
+
+#progressBar.loading:before, #progressBar.loading:after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: -moz-linear-gradient(left, #f50065 0%, #f50065 8.333333%, #d60059 8.333333%, #d60059 16.666666%, #b0004a 16.666666%, #b0004a 24.999999%, #b0004a 24.999999%, #f26b00 24.999999%, #f26b00 33.333333 0.333332%, #d75f00 33.333332%, #d75f00 41.666666%, #d75f00 41.666666%, #b24f00 41.666666%, #b24f00 50%, #b24f00 50%, #6e8f00 50%, #6e8f00 58.333333%, #6e8f00 58.333333%, #607d00 58.333333%, #607d00 66.666666%, #607d00 66.666666%, #496100 66.666666%, #496100 75%, #496100 75%, #007f9f 75%, #007f9f 83.333333%, #007f9f 83.333333%, #006b87 83.333333%, #006b87 91.666666%, #006b87 91.666666%, #005065 91.666666%);
+  background: -webkit-linear-gradient(left, #f50065 0%, #f50065 8.333333%, #d60059 8.333333%, #d60059 16.666666%, #b0004a 16.666666%, #b0004a 24.999999%, #b0004a 24.999999%, #f26b00 24.999999%, #f26b00 33.333332%, #d75f00 33.333332%, #d75f00 41.666666%, #d75f00 41.666666%, #b24f00 41.666666%, #b24f00 50%, #b24f00 50%, #6e8f00 50%, #6e8f00 58.333333%, #6e8f00 58.333333%, #607d00 58.333333%, #607d00 66.666666%, #607d00 66.666666%, #496100 66.666666%, #496100 75%, #496100 75%, #007f9f 75%, #007f9f 83.333333%, #007f9f 83.333333%, #006b87 83.333333%, #006b87 91.666666%, #006b87 91.666666%, #005065 91.666666%);
+  background: -ms-linear-gradient(left, #f50065 0%, #f50065 8.333333%, #d60059 8.333333%, #d60059 16.666666%, #b0004a 16.666666%, #b0004a 24.999999%, #b0004a 24.999999%, #f26b00 24.999999%, #f26b00 33.333332%, #d75f00 33.333332%, #d75f00 41.666666%, #d75f00 41.666666%, #b24f00 41.666666%, #b24f00 50%, #b24f00 50%, #6e8f00 50%, #6e8f00 58.333333%, #6e8f00 58.333333%, #607d00 58.333333%, #607d00 66.666666%, #607d00 66.666666%, #496100 66.666666%, #496100 75%, #496100 75%, #007f9f 75%, #007f9f 83.333333%, #007f9f 83.333333%, #006b87 83.333333%, #006b87 91.666666%, #006b87 91.666666%, #005065 91.666666%);
+  background: linear-gradient(to right, #f50065 0%, #f50065 8.333333%, #d60059 8.333333%, #d60059 16.666666%, #b0004a 16.666666%, #b0004a 24.999999%, #b0004a 24.999999%, #f26b00 24.999999%, #f26b00 33.333332%, #d75f00 33.333332%, #d75f00 41.666666%, #d75f00 41.666666%, #b24f00 41.666666%, #b24f00 50%, #b24f00 50%, #6e8f00 50%, #6e8f00 58.333333%, #6e8f00 58.333333%, #607d00 58.333333%, #607d00 66.666666%, #607d00 66.666666%, #496100 66.666666%, #496100 75%, #496100 75%, #007f9f 75%, #007f9f 83.333333%, #007f9f 83.333333%, #006b87 83.333333%, #006b87 91.666666%, #006b87 91.666666%, #005065 91.666666%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f50065', endColorstr='#005065',GradientType=0 ); }
+
+#progressBar.loading:after {
+  animation: progressBarA 2000ms linear infinite both;
+  -webkit-animation: progressBarA 1000ms linear infinite both; }
+
+#progressBar.loading:before {
+  animation: progressBarB 2000ms linear infinite both;
+  -webkit-animation: progressBarB 1000ms linear infinite both; }
 
 a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:focus {
   color: #900000; }
@@ -143,7 +172,6 @@ a.text-danger:hover, a.text-danger:focus, a .text-danger:hover, a .text-danger:f
       #subNavbar + .navbar .nav > li .fa {
         vertical-align: top; }
       #subNavbar + .navbar .nav > li > a > span {
-        display: inline-block;
         max-width: 80px;
         margin-left: 0.5em;
         line-height: 1.2;
@@ -293,23 +321,11 @@ body > section > footer {
 
 #progressBar {
   position: relative;
+  width: 100%;
   height: 8px;
   margin-top: -28px;
+  overflow: hidden;
   background-color: #000000; }
-
-#progressBar.loading {
-  background: -moz-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
-  /* FF3.6+ */
-  background: -webkit-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
-  /* IE10+ */
-  background: linear-gradient(to right, #f50065 0%, #f50065 8%, #d60059 8%, #d60059 16%, #b0004a 16%, #b0004a 24%, #b0004a 24%, #f26b00 24%, #f26b00 32%, #d75f00 32%, #d75f00 40%, #d75f00 40%, #b24f00 40%, #b24f00 48%, #b24f00 48%, #6e8f00 48%, #6e8f00 56%, #6e8f00 56%, #607d00 56%, #607d00 64%, #607d00 64%, #496100 64%, #496100 72%, #496100 72%, #007f9f 72%, #007f9f 80%, #007f9f 80%, #006b87 80%, #006b87 90%, #006b87 90%, #005065 90%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f50065', endColorstr='#005065',GradientType=0 );
-  /* IE6-9 */ }
 
 @media (min-width: 992px) {
   .list-preview .col-md-3 {
@@ -324,6 +340,8 @@ body > section > footer {
     height: 280px; } }
 
 @media (min-width: 768px) {
+  #subNavbar + .navbar .nav > li > a > span {
+    display: inline-block; }
   .list-preview .p-name, .list-preview .p-summary {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -344,8 +362,22 @@ body > section > footer {
     overflow: hidden; } }
 
 @media (max-width: 767px) {
+  #subNavbar + .navbar .navbar-header {
+    float: left; }
+  #subNavbar + .navbar .navbar-nav.navbar-right {
+    float: right !important; }
+  #subNavbar + .navbar .nav > li {
+    float: left; }
   .navbar-collapse.in .nav > li + li {
     border-bottom: solid 1px #333333; }
   .navbar-collapse.in .nav > li:first-child {
     border-top: solid 1px #333333;
-    border-bottom: solid 1px #333333; } }
+    border-bottom: solid 1px #333333; }
+  .navbar-collapse.in .nav > li > .dropdown-menu {
+    padding-top: 0;
+    padding-bottom: 0; }
+    .navbar-collapse.in .nav > li > .dropdown-menu > li > a, .navbar-collapse.in .nav > li > .dropdown-menu .dropdown-menu .dropdown-header {
+      padding: 10px 15px;
+      line-height: 1; }
+  .navbar-collapse.in .nav > li > a > .fa {
+    float: right; } }
