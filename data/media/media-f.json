@@ -4,6 +4,10 @@
 		"Type" : "Movie",
 		"imdbID" : "tt1016075"
 	}, {
+		"Title" : "Fantastic Four",
+		"Type" : "Movie",
+		"imdbID" : "tt1502712"
+	}, {
 		"Title" : "Frank",
 		"Type" : "Movie",
 		"imdbID" : "tt1605717"
