@@ -46,7 +46,7 @@ define([ 'app/model/requests' ], function(requests, $) {
 						if(preview.imdbID) {
 							$http({
 								url : 'http://www.omdbapi.com/',
-								type : 'get',
+								type : 'post',
 								params : {
 									i : preview.imdbID,
 									plot : 'short' || 'full',
