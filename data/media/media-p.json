@@ -28,6 +28,10 @@
 		"Type" : "Movie",
 		"imdbID" : "tt1854564"
 	}, {
+		"Title" : "Pinocchio",
+		"Type" : "Movie",
+		"imdbID" : "tt4242112"
+	}, {
 		"Title" : "Pirates of the Caribbean - on Stranger Tides",
 		"Type" : "Movie",
 		"imdbID" : "tt1298650"
