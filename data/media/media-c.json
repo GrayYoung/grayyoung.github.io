@@ -28,6 +28,10 @@
 		"Type" : "Movie",
 		"imdbID" : "tt1043903"
 	}, {
+		"Title" : "Cloudy with a Chance of Meatballs",
+		"Type" : "Movie",
+		"imdbID" : "tt0844471"
+	}, {
 		"Title" : "Comme Les Autres",
 		"Type" : "Movie",
 		"imdbID" : "tt1093352"
