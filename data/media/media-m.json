@@ -44,6 +44,10 @@
 		"Type" : "Movie",
 		"imdbID" : "tt2381249"
 	}, {
+		"Title" : "Monsters",
+		"Type" : "Movie",
+		"imdbID" : "tt1470827"
+	}, {
 		"Title" : "Monsters VS Aliens",
 		"Type" : "Movie",
 		"imdbID" : "tt0892782"
