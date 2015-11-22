@@ -356,11 +356,11 @@ body > section > footer {
     white-space: nowrap;
     max-height: 1.2em; }
   .list-preview .col-md-4 .p-summary {
-    padding-right: 2em; }
+    padding-right: 2.1em; }
     .list-preview .col-md-4 .p-summary + a {
       position: absolute;
-      bottom: 40px;
-      right: 19px; }
+      bottom: 42px;
+      right: 28px; }
   .list-preview .col-md-3 .thumbnail {
     margin-bottom: 0; }
   .list-preview .col-md-3 figcaption {

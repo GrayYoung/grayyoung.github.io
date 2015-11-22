@@ -8,7 +8,7 @@
 define([ 'app/model/requests' ], function(requests, $) {
 	var mController = function($rootScope, $scope, $http, $routeParams, $window) {
 		$scope.more = requests.media;
-		$scope.previews = [];
+		$scope.countPreview = 0;
 		$scope.loading = false;
 
 		angular.element($window).bind('scroll', function() {
@@ -22,6 +22,22 @@ define([ 'app/model/requests' ], function(requests, $) {
 			if(!$scope.loading && (cl.offsetHeight + cl.offsetTop < ($window.scrollY || $window.pageYOffset) + $window.innerHeight)) {
 				$scope.loading = true;
 				$http.get($scope.more).success(function(data) {
+					var elLContainer = angular.element(document.getElementById('containerListing'));
+					var createPreview = function(preview) {
+						return '<div class="col-xm-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">'
+						+ '<figure class="thumbnail"><p class="p-category"><span class="text-capitalize">' + preview.Type + '</span>'
+						+ (preview.Genre ? '<span ng-if="preview.Genre">: </span>' : '') + '<span class="text-capitalize">' + (preview.Genre || '') + '</span></p>'
+						+ '<hr />' + (preview.Poster ? '<img class="center-block" src="' + preview.Poster + '" alt="Unavailable Photo" />' : '')
+						+ '<figcaption><div class="caption"><h3 class="p-name"><strong>' + preview.Title + '</strong></h3>'
+						+ '<p><span class="text-muted">Director: </span><strong>' + (preview.Director || 'N/A') + '</strong></p>'
+						+ '<p><span class="text-muted">Actors: </span><strong>' + (preview.Actors || 'N/A') + '</strong></p>'
+						+ '<p class="p-summary"><span class="text-muted">Plot: </span>' +( preview.Plot || 'N/A') + '</p>'
+						+ '<p class="p-rating">' + (preview.imdbRating ? '<span style="width: ' + preview.imdbRating + 'em"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>' : '')
+						+ '<span class="p-votes">' + (preview.imdbRating ? '<span class="text-success fa-lg">' + preview.imdbRating + '</span>' : '')
+						+ (preview.imdbVotes ? '<small class="text-muted">(' + preview.imdbVotes + ')</small>' : '') + '</span></p></div></figcaption>'
+						+ (preview.imdbID ? '<a class="u-url" target="_blank" ng-href="' + $scope.imdbHost + 'title/' + preview.imdbID + '"><strong><i>Read more...</i></strong></a>' : '') + '</figure></div>';
+					};
+
 					$scope.imdbHost = data.imdbHost || $scope.imdbHost;
 					$scope.more = data.more;
 
@@ -42,7 +58,10 @@ define([ 'app/model/requests' ], function(requests, $) {
 
 						return false;
 					}
-					angular.forEach(data.items, function(preview, index) {
+					(function(index) {
+						var oneAfterOne = arguments.callee;
+						var preview = data.items[ index ];
+
 						if(preview.imdbID) {
 							$http({
 								url : 'http://www.omdbapi.com/',
@@ -53,17 +72,32 @@ define([ 'app/model/requests' ], function(requests, $) {
 									r : 'json'
 								}
 							}).then(function(response) {
-								$scope.previews.push(response.data);
+								elLContainer.append(createPreview(response.data));
+								++$scope.countPreview;
 								if(index === data.items.length - 1) {
 									$scope.loading = false;
+								} else {
+									oneAfterOne(index + 1);
 								}
 							}, function(response) {
+								elLContainer.append(createPreview(preview));
+								++$scope.countPreview;
 								if(index === data.items.length - 1) {
 									$scope.loading = false;
+								} else {
+									oneAfterOne(index + 1);
 								}
 							});
+						} else {
+							elLContainer.append(createPreview(preview));
+							++$scope.countPreview;
+							if(index === data.items.length - 1) {
+								$scope.loading = false;
+							} else {
+								oneAfterOne(index + 1);
+							}
 						}
-					});
+					})(0);
 				});
 			}
 		}).triggerHandler('scroll');

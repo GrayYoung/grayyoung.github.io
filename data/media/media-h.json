@@ -1,5 +1,37 @@
 {
 	"items" : [ {
+		"Title" : "Harry Potter and the Sorcerers Stone",
+		"Type" : "Movie",
+		"imdbID" : "tt0241527"
+	}, {
+		"Title" : "Harry Potter and the Chamber of Secrets",
+		"Type" : "Movie",
+		"imdbID" : "tt0295297"
+	}, {
+		"Title" : "Harry Potter and the Prisoner of Azkaban",
+		"Type" : "Movie",
+		"imdbID" : "tt0304141"
+	}, {
+		"Title" : "Harry Potter and the Goblet of Fire",
+		"Type" : "Movie",
+		"imdbID" : "tt0330373"
+	}, {
+		"Title" : "Harry Potter and the Order of the Phoenix",
+		"Type" : "Movie",
+		"imdbID" : "tt0373889"
+	}, {
+		"Title" : "Harry Potter and the Half-Blood Prince",
+		"Type" : "Movie",
+		"imdbID" : "tt0417741"
+	}, {
+		"Title" : "Harry Potter and the Deathly Hallows: Part 1",
+		"Type" : "Movie",
+		"imdbID" : "tt0926084"
+	}, {
+		"Title" : "Harry Potter and the Deathly Hallows: Part 2",
+		"Type" : "Movie",
+		"imdbID" : "tt1201607"
+	}, {
 		"Title" : "Heaven Is For Real",
 		"Type" : "Movie",
 		"imdbID" : "tt1929263"

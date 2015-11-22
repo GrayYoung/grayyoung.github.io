@@ -24,6 +24,10 @@
 		"Type" : "Movie",
 		"imdbID" : "tt2172584"
 	}, {
+		"Title" : "Maze Runner The Scorch Trials",
+		"Type" : "Movie",
+		"imdbID" : "tt4046784"
+	}, {
 		"Title" : "McFarland USA",
 		"Type" : "Movie",
 		"imdbID" : "tt2097298"
@@ -62,7 +66,7 @@
 	}, {
 		"Title" : "Mr. & Mrs. Smith",
 		"Type" : "Movie",
-		"imdbID" : "http://www.imdb.com/title/tt0356910/?ref_=fn_tt_tt_1"
+		"imdbID" : "tt0356910"
 	}, {
 		"Title" : "Mulligans",
 		"Type" : "Movie",
