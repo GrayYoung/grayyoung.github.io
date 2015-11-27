@@ -21,7 +21,9 @@ define([ 'app/model/requests' ], function(requests, $) {
 			}
 			if(!$scope.loading && (cl.offsetHeight + cl.offsetTop < ($window.scrollY || $window.pageYOffset) + $window.innerHeight)) {
 				$scope.loading = true;
-				$http.get($scope.more).success(function(data) {
+				$http.get($scope.more, {
+					cache : false
+				}).success(function(data) {
 					var elLContainer = angular.element(document.getElementById('containerListing'));
 					var createPreview = function(preview) {
 						return '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">'

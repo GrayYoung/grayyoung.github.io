@@ -18,9 +18,7 @@ requirejs.config({
 		messages : 'angular-messages.min',
 		animate : 'angular-animate.min',
 		touch : 'angular-touch.min',
-		bootstrap : 'ui-bootstrap.min',
-		masonry : 'masonry.pkgd.min',
-		masonryDirective : 'angular-masonry-directive'
+		bootstrap : 'ui-bootstrap.min'
 	},
 	shim : {
 		route : [ 'angular' ],
@@ -34,5 +32,37 @@ requirejs.config({
 	},
 	map : {
 	},
-	waitSeconds : 0
+	waitSeconds : 0,
+	modules : [ {
+		name : '../config',
+		include : [ 
+            'angular',
+            'route',
+            'sanitize',
+            'messages',
+            'animate',
+            'touch',
+            'bootstrap'
+        ]
+	}, {
+		name : '../marching',
+		exclude : [ 
+            '../config'
+        ],
+		include : [ 
+            'app/model/requests',
+            'app/controller/preview',
+            'app/controller/media'
+        ]
+	}, {
+		name : 'app/controller/preview',
+		exclude : [ 
+            'app/model/requests'
+        ]
+	}, {
+		name : 'app/controller/media',
+		exclude : [ 
+            'app/model/requests'
+        ]
+	}  ]
 });
