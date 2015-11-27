@@ -24,7 +24,7 @@ define([ 'app/model/requests' ], function(requests, $) {
 				$http.get($scope.more).success(function(data) {
 					var elLContainer = angular.element(document.getElementById('containerListing'));
 					var createPreview = function(preview) {
-						return '<div class="col-xm-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">'
+						return '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">'
 						+ '<figure class="thumbnail"><p class="p-category"><span class="text-capitalize">' + preview.Type + '</span>'
 						+ (preview.Genre ? '<span ng-if="preview.Genre">: </span>' : '') + '<span class="text-capitalize">' + (preview.Genre || '') + '</span></p>'
 						+ '<hr />' + (preview.Poster ? '<img class="center-block" src="' + preview.Poster + '" alt="Unavailable Photo" />' : '')
