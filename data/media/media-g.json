@@ -20,6 +20,10 @@
 		"Type" : "Movie",
 		"imdbID" : "tt0831387"
 	}, {
+		"Title" : "Goosebumps",
+		"Type" : "Movie",
+		"imdbID" : "tt1051904"
+	}, {
 		"Title" : "Golden Compass",
 		"Type" : "Movie",
 		"imdbID" : "tt0385752"
