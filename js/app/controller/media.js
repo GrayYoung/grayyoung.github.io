@@ -36,7 +36,7 @@ define([ 'app/model/requests' ], function(requests, $) {
 						return '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">'
 						+ '<figure class="thumbnail"><p class="p-category"><span class="text-capitalize">' + preview.Type + '</span>'
 						+ (preview.Genre ? '<span ng-if="preview.Genre">: </span>' : '') + '<span class="text-capitalize">' + (preview.Genre || '') + '</span></p>'
-						+ '<hr />' + (preview.Poster ? '<img onerror="console.log(this); this.parent.parent.style.backgroundImage = "url(' + preview.Poster + ')"; this.remove();" class="center-block" src="' + preview.Poster + '" alt="Unavailable Photo" />' : '')
+						+ '<hr />' + (preview.Poster ? '<img onerror="console.log(this); this.parent.parent.style.backgroundImage = \'url(' + preview.Poster + ')\'; this.remove();" class="center-block" src="' + preview.Poster + '" alt="Unavailable Photo" />' : '')
 						+ '<figcaption><div class="caption"><h3 class="p-name"><strong>' + preview.Title + '</strong></h3>'
 						+ '<p><span class="text-muted">Director: </span><strong>' + (preview.Director || 'N/A') + '</strong></p>'
 						+ '<p><span class="text-muted">Actors: </span><strong>' + (preview.Actors || 'N/A') + '</strong></p>'
