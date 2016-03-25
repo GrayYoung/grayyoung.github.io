@@ -5,107 +5,124 @@
 
 /* The following comment tell gulp-jshint variable define is require in another file. */
 /* global require */
-define([ 'app/model/requests' ], function(requests, $) {
-	var mController = function($rootScope, $scope, $http, $routeParams, $window) {
-		$scope.more = requests.media;
-		$scope.countPreview = 0;
-		$scope.loading = false;
+define([ 'app/model/requests', 'app/model/util', 'jquery', 'xlsx' ], function(requests, util, $) {
+	var $container = $('#containerListing');
+	var listItems = function(workbook) {
+		var sheet = workbook.Sheets[workbook.SheetNames[0]];
+		var type = util.getUrlParam('t', true);
+		var tPattern = new RegExp('\^\\s*' + type + '\\s*\$', 'i');
+		var createPreview = function(preview) {
+			return '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">'
+			+ '<figure class="thumbnail"><p class="p-category"><span class="text-capitalize">' + preview.Type + '</span>'
+			+ (preview.Genre ? '<span>: </span>' : '') + '<span class="text-capitalize">' + (preview.Genre || '') + '</span></p>'
+			+ '<hr />' + '<img onerror="this.src=\'' + preview.exPoster + '\'; this.onerror = null;" class="center-block" src="' + preview.Poster + '" alt="" aria-hidden="true">'
+			+ '<figcaption><div class="caption"><h3 class="p-name"><strong>' + preview.Title + '</strong></h3>'
+			+ '<p><span class="text-muted">Director: </span><strong>' + (preview.Director || 'N/A') + '</strong></p>'
+			+ '<p><span class="text-muted">Actors: </span><strong>' + (preview.Actors || 'N/A') + '</strong></p>'
+			+ '<p class="p-summary"><span class="text-muted">Plot: </span>' +( preview.Plot || 'N/A') + '</p>'
+			+ '<p class="p-rating">' + (preview.imdbRating ? '<span style="width: ' + preview.imdbRating + 'em"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>' : '')
+			+ '<span class="p-votes">' + (preview.imdbRating ? '<span class="text-success fa-lg">' + preview.imdbRating + '</span>' : '')
+			+ (preview.imdbVotes ? '<small class="text-muted">(' + preview.imdbVotes + ')</small>' : '') + '</span></p></div></figcaption>'
+			+ (preview.imdbID ? '<a class="u-url" target="_blank" href="http://www.imdb.com/title/' + preview.imdbID + '">Read more...</a>' : '') + '</figure></div>';
+		};
+		var callData = function(data) {
+			var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
 
-		angular.element($window).bind('scroll', function() {
-			var cl = document.getElementById('containerListing');
-
-			if(!$scope.more) {
-				angular.element($window).unbind('scroll');
-
-				return false;
+			if($.type(data.Title) === 'undefined' && $.type(data.imdbID) === 'undefined' && $.type(data.Type) === 'undefined') {
+				$container.data('loading', false);
+				$p.toggleClass('loading', false);
+				$(window).unbind('scroll.ls.media');
+			} else {
+				$container.append(createPreview(data));
+				$pLabel.text(parseInt($pLabel.text(), 10) + 1);
 			}
-			if(!$scope.loading && (cl.offsetHeight + cl.offsetTop < ($window.scrollY || $window.pageYOffset) + $window.innerHeight)) {
-				$scope.loading = true;
-				$http.get($scope.more, {
-					cache : false
-				}).success(function(data) {
-					var elLContainer = angular.element(document.getElementById('containerListing'));
-					var createPreview = function(preview) {
-						return '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">'
-						+ '<figure class="thumbnail"><p class="p-category"><span class="text-capitalize">' + preview.Type + '</span>'
-						+ (preview.Genre ? '<span ng-if="preview.Genre">: </span>' : '') + '<span class="text-capitalize">' + (preview.Genre || '') + '</span></p>'
-						+ '<hr />' + (preview.Poster ? '<img onerror="this.parentElement.style.backgroundImage = \'url(' + preview.Poster + ')\'; this.parentElement.setAttribute(\'class\', this.parentElement.getAttribute(\'class\') + \' has-bg\'); this.remove();" class="center-block" src="' + preview.Poster + '" alt="Unavailable Photo" />' : '')
-						+ '<figcaption><div class="caption"><h3 class="p-name"><strong>' + preview.Title + '</strong></h3>'
-						+ '<p><span class="text-muted">Director: </span><strong>' + (preview.Director || 'N/A') + '</strong></p>'
-						+ '<p><span class="text-muted">Actors: </span><strong>' + (preview.Actors || 'N/A') + '</strong></p>'
-						+ '<p class="p-summary"><span class="text-muted">Plot: </span>' +( preview.Plot || 'N/A') + '</p>'
-						+ '<p class="p-rating">' + (preview.imdbRating ? '<span style="width: ' + preview.imdbRating + 'em"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>' : '')
-						+ '<span class="p-votes">' + (preview.imdbRating ? '<span class="text-success fa-lg">' + preview.imdbRating + '</span>' : '')
-						+ (preview.imdbVotes ? '<small class="text-muted">(' + preview.imdbVotes + ')</small>' : '') + '</span></p></div></figcaption>'
-						+ (preview.imdbID ? '<a class="u-url" target="_blank" ng-href="' + $scope.imdbHost + 'title/' + preview.imdbID + '"><strong><i>Read more...</i></strong></a>' : '') + '</figure></div>';
-					};
+		};
 
-					$scope.imdbHost = data.imdbHost || $scope.imdbHost;
-					$scope.more = data.more;
+		(function(index) {
+			var oneAfterOne = arguments.callee;
+			var preview = {
+				Title : sheet[ 'A' + index ] ? sheet[ 'A' + index ].v : 'N/A',
+				imdbID : sheet[ 'B' + index ] ? sheet[ 'B' + index ].v : 'N/A',
+				Type : sheet[ 'C' + index ] ? sheet[ 'C' + index ].v : 'N/A',
+				Poster : sheet[ 'D' + index ] ? sheet[ 'D' + index ].v : ''
+			};
 
-					if($routeParams.type) {
-						for(var i = 0; i < data.items.length; i++) {
-							var preview = data.items[ i ];
-			
-							if(!(new RegExp($routeParams.type, 'i').test(preview.Type))) {
-								data.items.splice(i, 1);
-								--i;
-								continue;
-							}
+			if(type === '' || tPattern.test(preview.Type)) {
+				if(preview.imdbID) {
+					$.ajax({
+						url : 'http://www.omdbapi.com/',
+						type : 'get',
+						data : {
+							i : preview.imdbID,
+							plot : 'short' || 'full',
+							r : 'json'
+						},
+						success : function(imdbData) {
+							imdbData.exPoster = preview.Poster;
+							callData(imdbData);
+						},
+						error : function() {
+							callData(preview);
+						},
+						complete : function() {
+							oneAfterOne(index + 1);
 						}
-					}
-					if(data.items.length === 0) {
-						$scope.loading = false;
-						angular.element($window).triggerHandler('scroll');
-
-						return false;
-					}
-					(function(index) {
-						var oneAfterOne = arguments.callee;
-						var preview = data.items[ index ];
-
-						if(preview.imdbID) {
-							$http({
-								url : 'http://www.omdbapi.com/',
-								type : 'post',
-								params : {
-									i : preview.imdbID,
-									plot : 'short' || 'full',
-									r : 'json'
-								}
-							}).then(function(response) {
-								elLContainer.append(createPreview(response.data));
-								++$scope.countPreview;
-								if(index === data.items.length - 1) {
-									$scope.loading = false;
-								} else {
-									oneAfterOne(index + 1);
-								}
-							}, function(response) {
-								elLContainer.append(createPreview(preview));
-								++$scope.countPreview;
-								if(index === data.items.length - 1) {
-									$scope.loading = false;
-								} else {
-									oneAfterOne(index + 1);
-								}
-							});
-						} else {
-							elLContainer.append(createPreview(preview));
-							++$scope.countPreview;
-							if(index === data.items.length - 1) {
-								$scope.loading = false;
-							} else {
-								oneAfterOne(index + 1);
-							}
-						}
-					})(0);
-				});
+					});
+				} else {
+					callData(preview, index, oneAfterOne);
+					oneAfterOne(index + 1);
+				}
+			} else {
+				oneAfterOne(index + 1);
 			}
-		}).triggerHandler('scroll');
+		})(2);
 	};
+	
+	$container.data({
+		loading : false
+	});
 
-	mController.$inject = [ '$rootScope', '$scope', '$http', '$routeParams', '$window' ];
+	$(window).bind('scroll.ls.media', function(event) {
+		var $w = $(this), $p = $('#fixedProgress');
+		var xhRequest;
 
-	return mController;
+		if(!$container.data('loading') && ($container.height() + $container.offset().top < $w.scrollTop() + $w.height())) {
+			$container.data('loading', true);
+			$p.toggleClass('loading', true);
+
+			if(window.XMLHttpRequest) {
+				xhRequest = new XMLHttpRequest();
+			} else if(window.ActiveXObject) {
+				xhRequest = new ActiveXObject('MSXML2.XMLHTTP.3.0');
+			} else {
+				throw 'XHR unavailable for your browser';
+			}
+			xhRequest.open('GET', requests.media, true);
+			if(typeof Uint8Array !== 'undefined') {
+				xhRequest.responseType = "arraybuffer";
+				xhRequest.onload = function(e) {
+					var arraybuffer = xhRequest.response;
+					var data = new Uint8Array(arraybuffer);
+					var arr = new Array();
+
+					for(var i = 0; i != data.length; ++i) {
+						arr[i] = String.fromCharCode(data[i]);
+					}
+					listItems(XLSX.read(arr.join(''), {
+						type : 'binary'
+					}));
+				};
+			} else {
+				xhRequest.setRequestHeader('Accept-Charset', 'x-user-defined');	
+				xhRequest.onreadystatechange = function() {
+					if(xhRequest.readyState == 4 && xhRequest.status == 200) {
+						listItems(XLSX.read(xhRequest.responseBody, {
+							type : 'binary'
+						}));
+					} 
+				};
+			}
+			xhRequest.send();
+		}
+	}).triggerHandler('scroll.ls.media');
 });

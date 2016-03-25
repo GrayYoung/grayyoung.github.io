@@ -1,6 +1,6 @@
 {
   "name": "Marching",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "ignore": [
     ".jshintrc",
     "*.txt",
@@ -20,22 +20,13 @@
   "dependencies": {
     "html5shiv": "latest",
     "respond": "latest",
-    "modernizr": "latest",
     "bootstrap-sass-official": "~3.3.6",
     "fontawesome": "latest",
     "jquery": "latest",
-    "angular": "latest",
-    "angular-route": "latest",
-    "angular-messages": "latest",
-    "angular-animate": "latest",
-    "angular-resource": "latest",
-    "angular-sanitize": "latest",
-    "angular-touch": "latest",
-    "angular-bootstrap" : "latest",
-    "requirejs": "latest"
+    "requirejs": "latest",
+    "js-xlsx" : "latest"
   },
   "devDependencies": {
-  	"sizzle" : "latest"
   },
   "private": true
 }

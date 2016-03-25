@@ -1,0 +1,1 @@
+define(["app/model/requests","jquery","bootstrap"],function(requests,$){$(document).ready(function(){$("#progressBar").toggleClass("loading",!1);$("#containerListing").size()>0&&require(["app/controller/media"])})});

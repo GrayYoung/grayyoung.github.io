@@ -1,33 +1,147 @@
-<div id="containerListing" class="clearfix h-listing" style="display: flex; flex-flow: row wrap;">
-	<!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate" ng-repeat="preview in previews">
-		<figure class="thumbnail">
-			<p class="p-category">
-				<span class="text-capitalize">{{preview.Type}}</span>
-				<span ng-if="preview.Genre">: </span>
-				<span class="text-capitalize">{{preview.Genre}}</span>
-			</p>
-			<hr />
-			<img class="center-block" ng-src="{{preview.Poster}}" alt="Unavailable Photo">
-			<figcaption>
-				<div class="caption">
-					<h3 class="p-name"><strong>{{preview.Title}}</strong></h3>
-					<p><span class="text-muted">Director: </span><strong>{{preview.Director}}</strong></p>
-					<p><span class="text-muted">Actors: </span><strong>{{preview.Actors}}</strong></p>
-					<p class="p-summary"><span class="text-muted">Plot: </span>{{preview.Plot}}</p>
-					<p class="p-rating">
-						<span  ng-style="{width : preview.imdbRating + 'em'}"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
-						<span class="p-votes">
-							<span class="text-success fa-lg">{{preview.imdbRating}}</span> 
-							<small class="text-muted">({{preview.imdbVotes}})</small>
-						</span>
-					</p>
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/container.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="keywords" content="Gray Young" />
+<meta name="description" content="windpet@live.cn" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Media - Marching Gray Young</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<script type="text/javascript" src="/js/lib/jszip.js"></script>
+<!-- InstanceEndEditable -->
+<!-- saved from url=(0014)about:internet -->
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<link rel="stylesheet" href="/dist/css/all.css" />
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="/dist/js/lib/html5shiv.min.js"></script>
+	<script type="text/javascript" src="/dist/js/lib/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	var require = {
+		waitSeconds : 0
+	};
+</script>
+<script type="text/javascript" defer async data-main="/dist/js/marching.js" src="/dist/js/lib/require.js"></script>
+</head>
+	<section>
+		<h1 class="sr-only">Gray Young Personal Web Site</h1>
+		<div id="subNavbar" class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<ul class="nav nav-pills">
+					<li class="hidden" role="presentation"></li>
+					<li class="pull-right" role="presentation">
+						<a class="text-primary" target="_blank" href="mailto:marching.gray.young@gmail.com">Send a Email to Me</a>
+					</li>
+					<li class="pull-right" role="presentation">
+						<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2195034239&site=qq&menu=yes">QQ 2195034239</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">GRAY</a>
 				</div>
-			</figcaption>
-			<a class="u-url" target="_blank" ng-href="{{imdbHost + 'title/' + preview.imdbID}}"><strong><i>Read more...</i></strong></a>
-		</figure>
-	</div> -->
-</div>
-<div id="fixedProgress" ng-class="{loading : loading}">
-	<div class="progress-circular"></div>
-	<div class="progress-label" ng-bind="countPreview"></div>
-</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li role="presentation">
+						<a target="_blank" href="https://www.facebook.com/profile.php?id=100010823177377">
+							<i class="fa fa-facebook fa-4x" aria-hidden="true"></i> 
+							<span class="hidden-xs"><strong class="text-uppercase">Follow Me on Facebook</strong></span>
+						</a>
+					</li>
+					<li class="hidden-xs" role="presentation">
+						<a target="_blank" href="http://weibo.com/MarchGrayYoung/">
+							<i class="fa fa-weibo fa-4x text-danger" aria-hidden="true"></i> 
+							<span class="hidden-xs"><strong class="text-uppercase">Follow Me on Sina</strong></span>
+						</a>
+					</li>
+					<li role="presentation">
+						<a class="text-primary" target="_blank" href="https://plus.google.com/u/0/111891129703746085317/posts">
+							<i class="fa fa-google-plus fa-4x text-danger" aria-hidden="true"></i> 
+							<span class="hidden-xs"><strong class="text-uppercase">Follow Me on Google+</strong></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavBar" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="/">
+						<img class="img-responsive" alt="Gray Logo" src="/images/logo.png" />
+					</a>
+				</div>
+
+				<div id="mainNavBar" class="collapse navbar-collapse" aria-expanded="false" aria-hidden="true">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" href="/partials/media.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								Media
+								<i class="fa fa-lg fa-caret-down" aria-hidden="true"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/partials/media.html?t=music">Music</a>
+								</li>
+								<li>
+									<a href="/partials/media.html?t=movie">Movie</a>
+								</li>
+								<li>
+									<a href="/partials/media.html?t=tv">TV</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/partials/about.html">About</a>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="" />
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-inverse btn-sm"><strong>SEARCH</strong></button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div id="progressBar" class="loading"></div>
+		<div class="clearfix show-grid"></div>
+		<main role="main">
+		<!-- InstanceBeginEditable name="EditRegionMain" -->
+		<div id="containerListing" class="clearfix h-listing" style="display: flex; flex-flow: row wrap;">
+		</div>
+		<div id="fixedProgress" class="loading">
+			<div class="progress-circular"></div>
+			<div class="progress-label">0</div>
+		</div>
+		<!-- InstanceEndEditable -->
+		</main>
+		<div class="clearfix show-grid"></div>
+		<div class="clearfix show-grid"></div>
+		<footer class="text-center">
+			<span>Copyright&copy; by marching.gray.young@gmail.com. All Rights Reserved.</span>
+			<div class="clearfix show-grid"></div>
+		</footer>
+	</section>
+<body>
+</body>
+<!-- InstanceEnd --></html>

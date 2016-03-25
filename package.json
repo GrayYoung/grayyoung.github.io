@@ -5,7 +5,7 @@
   "description": "Marching.Gray.Young@gmail.com Personal Project",
   "main": "gulpfile.js",
   "author": "Gray Young",
-  "license": "Copyright 2015",
+  "license": "Copyright 2016",
   "devDependencies": {
     "gulp": "latest",
     "gulp-bower": "latest",

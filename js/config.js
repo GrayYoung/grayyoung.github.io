@@ -8,27 +8,16 @@
  */
 /* global requirejs */
 requirejs.config({
-	baseUrl : 'js/lib',
+	baseUrl : '/js/lib',
 	paths : {
 		app : '../app',
-		angular : 'angular',
-		route : 'angular-route.min',
-		resource : 'angular-resource.min',
-		sanitize : 'angular-sanitize.min',
-		messages : 'angular-messages.min',
-		animate : 'angular-animate.min',
-		touch : 'angular-touch.min',
-		bootstrap : 'ui-bootstrap.min'
+		jquery : 'jquery.min',
+		bootstrap : 'bootstrap.min',
+		zip : 'jszip',
+		xlsx : 'xlsx.min'
 	},
 	shim : {
-		route : [ 'angular' ],
-		resource : [ 'angular' ],
-		sanitize : [ 'angular' ],
-		messages : [ 'angular' ],
-		animate : [ 'angular' ],
-		touch : [ 'angular' ],
-		bootstrap : [ 'angular' ],
-		masonryDirective : [ 'angular', 'masonry' ]
+		bootstrap : [ 'jquery' ]
 	},
 	map : {
 	},
@@ -36,12 +25,7 @@ requirejs.config({
 	modules : [ {
 		name : '../config',
 		include : [ 
-            'angular',
-            'route',
-            'sanitize',
-            'messages',
-            'animate',
-            'touch',
+            'jquery',
             'bootstrap'
         ]
 	}, {
@@ -51,18 +35,18 @@ requirejs.config({
         ],
 		include : [ 
             'app/model/requests',
-            'app/controller/preview',
+            'app/controller/global',
             'app/controller/media'
         ]
 	}, {
-		name : 'app/controller/preview',
-		exclude : [ 
-            'app/model/requests'
-        ]
-	}, {
 		name : 'app/controller/media',
+		include : [ 
+           'app/model/util',
+            'app/model/requests',
+            'xlsx'
+        ],
 		exclude : [ 
             'app/model/requests'
         ]
-	}  ]
+	} ]
 });
