@@ -272,7 +272,7 @@ nav.navbar {
 	}
 }
 
-body > section > footer {
+body > * > footer {
 	padding: 30px 0 75px;
 	background-color: $text-color;
 	color: white;
@@ -418,12 +418,14 @@ body > section > footer {
 		}
 	}
 
-	.navbar-collapse {
+	.navbar .navbar-collapse {
 		.nav > li + li {
 			border-bottom: solid 1px $gray-dark;
 		}
 
 		.nav > li {
+			border-left-width: 0;
+
 			&:first-child {
 				border-top: solid 1px $gray-dark;
 				border-bottom: solid 1px $gray-dark;
