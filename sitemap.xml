@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+	xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>http://grayyoung.github.io/</loc>
+		<image:image>
+			<image:loc>http://grayyoung.github.io/API/angular-1.4.7/docs/img/angularjs-for-header-only.svg</image:loc>
+			<image:caption>AngularJS logo</image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://grayyoung.github.io/partials/Holy%20Bible-%20New%20International%20Version/cover.jpeg</image:loc>
+			<image:caption>Holy Bible - New International Version cover</image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>http://grayyoung.github.io/partials/media.html</loc>
+	</url>
+	<url>
+		<loc>http://grayyoung.github.io/partials/media.html?t=music</loc>
+	</url>
+	<url>
+		<loc>http://grayyoung.github.io/partials/media.html?t=movie</loc>
+	</url>
+	<url>
+		<loc>http://grayyoung.github.io/partials/media.html?t=tv</loc>
+	</url>
+	<url>
+		<loc>http://grayyoung.github.io/partials/printing.html</loc>
+	</url>
+	<url>
+		<loc>http://grayyoung.github.io/partials/about.html</loc>
+		<image:image>
+			<image:loc>http://grayyoung.github.io/images/me.png</image:loc>
+			<image:caption>The photo of Marching Gray Young</image:caption>
+		</image:image>
+	</url>
+</urlset>

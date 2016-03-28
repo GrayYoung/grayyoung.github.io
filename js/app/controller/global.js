@@ -25,5 +25,6 @@ define([ 'app/model/requests', 'jquery', 'bootstrap' ], function(requests, $) {
 	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 	ga('create', 'UA-51330074-5', 'auto');
+	ga('require', 'linkid');
 	ga('send', 'pageview');
 });
