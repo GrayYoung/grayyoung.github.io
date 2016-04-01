@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><!-- InstanceBegin template="/Templates/container-hb.dwt" codeOutsideHTMLIsLocked="false" -->
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,17 +11,11 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" /
 
-<title><!-- InstanceBeginEditable name="EditRegionTitle" --><!-- InstanceEndEditable -->Holy Bible: New International Version</title>
+<title><!-- TemplateBeginEditable name="EditRegionTitle" --><!-- TemplateEndEditable -->Holy Bible: New International Version</title>
 <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.css">
 </head>
 <body>
-<!-- InstanceBeginEditable name="EditRegionBody" -->
-	<section class="container container-cover">
-		<h1 class="text-center">
-			Holy Bible <small class="center-block">New International Version</small>
-		</h1>
-	</section>
-<!-- InstanceEndEditable -->
+<!-- TemplateBeginEditable name="EditRegionBody" -->EditRegionBody<!-- TemplateEndEditable -->
 </body>
-<!-- InstanceEnd --></html>
+</html>
