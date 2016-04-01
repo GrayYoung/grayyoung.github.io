@@ -8,14 +8,18 @@
 <meta name="apple-touch-fullscreen" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-<meta name="keywords" content="" />
-<meta name="description" content="" /
-
-<title><!-- TemplateBeginEditable name="EditRegionTitle" --><!-- TemplateEndEditable -->Holy Bible: New International Version</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<!-- TemplateBeginIf cond="OptionalRegionTitle" -->
+<!-- TemplateBeginEditable name="EditRegion3" -->
+<title>Holy Bible: New International Version</title>
+<!-- TemplateEndEditable --><!-- TemplateEndIf -->
 <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.css">
+<!-- TemplateParam name="OptionalRegionTitle" type="boolean" value="true" -->
 </head>
 <body>
-<!-- TemplateBeginEditable name="EditRegionBody" -->EditRegionBody<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="EditRegionBody" -->
+<!-- TemplateEndEditable -->
 </body>
 </html>
