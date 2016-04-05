@@ -330,6 +330,24 @@ body > * > footer {
 	background-color: $text-color;
 }
 
+.list-grid {
+	display: flex;
+	flex-flow: row wrap;
+	padding-left: 0;
+	list-style-position: inside;
+
+	> * {
+		padding-top: $grid-gutter-width;
+		padding-bottom: $grid-gutter-width;
+
+		> ol {
+			padding-top: $grid-gutter-width / 3;
+			border-top: solid 1px $gray-light;
+			margin-top: $grid-gutter-width / 3;
+		}
+	}
+}
+
 @media (min-width: $screen-desktop) {
 	.list-preview {
 		.col-md-3 {
