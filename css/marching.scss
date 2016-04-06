@@ -60,6 +60,25 @@ a.text-danger, a .text-danger {
 	}
 }
 
+.list-grid {
+	display: flex;
+	flex-flow: row wrap;
+	padding-left: 0;
+	list-style-position: inside;
+
+	> * {
+		> ol {
+			padding-top: $grid-gutter-width / 3;
+			border-top: solid 1px $gray-light;
+			margin-top: $grid-gutter-width / 3;
+		}
+	}
+}
+
+section > p {
+	text-indent: 1em;
+}
+
 .nav {
 	font-family: $font-family-sans-serif;
 }
@@ -344,21 +363,6 @@ body > * > footer {
 	margin-top: -28px;
 	overflow: hidden;
 	background-color: $text-color;
-}
-
-.list-grid {
-	display: flex;
-	flex-flow: row wrap;
-	padding-left: 0;
-	list-style-position: inside;
-
-	> * {
-		> ol {
-			padding-top: $grid-gutter-width / 3;
-			border-top: solid 1px $gray-light;
-			margin-top: $grid-gutter-width / 3;
-		}
-	}
 }
 
 @media (min-width: $screen-desktop) {
