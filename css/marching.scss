@@ -353,9 +353,6 @@ body > * > footer {
 	list-style-position: inside;
 
 	> * {
-		padding-top: $grid-gutter-width;
-		padding-bottom: $grid-gutter-width;
-
 		> ol {
 			padding-top: $grid-gutter-width / 3;
 			border-top: solid 1px $gray-light;
