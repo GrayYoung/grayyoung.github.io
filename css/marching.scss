@@ -44,6 +44,22 @@ a.text-danger, a .text-danger {
 	} */
 }
 
+.scalingBox {
+	position: relative;
+
+	&.squareBox {
+		padding-top: 100%;
+	}
+
+	> .scalingcontent {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+
 .nav {
 	font-family: $font-family-sans-serif;
 }

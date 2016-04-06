@@ -14,7 +14,8 @@ requirejs.config({
 		jquery : 'jquery.min',
 		bootstrap : 'bootstrap.min',
 		zip : 'jszip',
-		xlsx : 'xlsx.min'
+		xlsx : 'xlsx.min',
+		googleMap : 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en'
 	},
 	shim : {
 		bootstrap : [ 'jquery' ]
@@ -36,7 +37,16 @@ requirejs.config({
 		include : [ 
             'app/model/requests',
             'app/controller/global',
+            'app/controller/locatorMap',
             'app/controller/media'
+        ]
+	}, {
+		name : '../article',
+		exclude : [ 
+            '../config'
+        ],
+		include : [ 
+            'app/controller/global'
         ]
 	}, {
 		name : 'app/controller/media',
