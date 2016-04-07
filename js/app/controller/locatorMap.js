@@ -76,6 +76,7 @@ define(function() {
 	}
 
 	window.initMap = function() {
+		var eLocatorMap = document.getElementById('locatorMap');
 		var latlng = new google.maps.LatLng(30.543533, 104.043466);
 		var locator = {
 			name: 'Marching Printing',
@@ -88,8 +89,11 @@ define(function() {
 		};
 		var bounds = new google.maps.LatLngBounds();
 
+		if(eLocatorMap === null) {
+			return false;
+		}
 		storeMap.infoWindow = new google.maps.InfoWindow();
-		storeMap.map = new google.maps.Map(document.getElementById('locatorMap'));
+		storeMap.map = new google.maps.Map(eLocatorMap);
 
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {

@@ -75,8 +75,10 @@ a.text-danger, a .text-danger {
 	}
 }
 
-section > p {
-	text-indent: 1em;
+section, blockquote{
+	> p {
+		text-indent: 1em;
+	}
 }
 
 .nav {
@@ -196,11 +198,12 @@ nav.navbar {
 
 	.nav > li {
 		border-left: solid 1px #9b9893;
+		font-weight: bold;
 
-			@media (min-width: $screen-tablet) {
-				margin-top: 11px;
-				margin-bottom: 11px;
-			}
+		@media (min-width: $screen-tablet) {
+			margin-top: 11px;
+			margin-bottom: 11px;
+		}
 
 		> a {
 			line-height: 1;
