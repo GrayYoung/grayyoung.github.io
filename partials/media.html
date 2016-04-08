@@ -170,12 +170,44 @@
 		<div class="clearfix show-grid hidden-print"></div>
 		<main role="main">
 		<!-- InstanceBeginEditable name="EditRegionMain" -->
-		<div id="containerListing" class="clearfix list-grid h-listing">
-		</div>
+		<ul id="containerListing" class="clearfix list-unstyled list-grid h-listing">
+		</ul>
 		<div id="fixedProgress" class="loading">
 			<div class="progress-circular"></div>
 			<div class="progress-label">0</div>
 		</div>
+		<template id="tl-modalPreview">
+			<div id="modalPreview" class="modal fade modal-preview" tabindex="-1" role="dialog" aria-labelledby="mediaTitle">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="mediaTitle"></h4>
+						</div>
+						<div class="modal-body">
+							<div id="carousel-modalPreview" class="carousel slide">
+								<div class="carousel-inner">
+									<div class="item active">
+										<img class="img-responsive center-block" src="" alt="">
+										<div class="carousel-caption">
+										</div>
+									</div>
+								</div>
+								<a class="left carousel-control" href="javascript:void(0);" role="button">
+									<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="right carousel-control" href="javascript:void(0);" role="button">
+									<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
+						<div class="modal-footer"></div>
+					</div>
+				</div>
+			</div>
+		</template>
 		<!-- InstanceEndEditable -->
 		</main>
 		<div class="clearfix show-grid hidden-print"></div>
