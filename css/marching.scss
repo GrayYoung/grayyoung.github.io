@@ -1,4 +1,5 @@
 @import "variables";
+@import "components/mixins/animation";
 @import "components/typography";
 @import "components/animation";
 @import "components/resume";
@@ -81,6 +82,17 @@ a.text-danger, a .text-danger {
 section, blockquote{
 	> p {
 		text-indent: 1em;
+	}
+}
+
+.view-perspective {
+	transition-property: transform;
+	transition-duration: 0.5s;
+
+
+	&:hover, &:focus {
+		z-index: 10;
+		transform: matrix(1.1, 0, 0, 1.1, 0, 0) rotateY(0deg);
 	}
 }
 
@@ -170,8 +182,13 @@ nav.navbar {
 		margin-top: -5px;
 	}
 
-	.navbar-toggle .icon-bar {
-		background-color: $text-color;
+	.navbar-toggle {
+		padding-left: 0;
+		padding-right: 0;
+
+		.icon-bar {
+			background-color: $text-color;
+		}
 	}
 
 	.navbar-form {
@@ -378,6 +395,16 @@ body > * > footer {
 
 	.carousel-control {
 		background-image: none;
+
+		&.disabled {
+			pointer-events: none;
+			cursor: not-allowed;
+			text-shadow: none;
+			box-shadow: none;
+			opacity: 0.25;
+			filter: alpha(opacity=25);
+			color: $gray-lighter;
+		}
 	}
 }
 
@@ -465,30 +492,53 @@ body > * > footer {
 			height: 100%;
 			margin: 0;
 		}
-	
-		.modal-content {
-			padding-top: $modal-title-padding * 2 + $line-height-base * $font-size-h4;
-		}
-	
-		.modal-header {
+
+		.modal-header, .modal-body, .modal-footer {
 			position: absolute;
 			top: 0;
+			right: 0;
+		}
+
+		.modal-header {
 			width: 100%;
-			background-color: white;
+			z-index: 1;
 		}
-	
+
+		.modal-body {
+			width: 56.25%;
+			height: 100%;
+			padding-top: $modal-title-padding * 2 + $line-height-base * $font-size-h4 + $grid-gutter-width / 2;
+		}
+
 		.modal-footer {
-			position: absolute;
-			bottom: 0;
-			background-color: white;
+			left: 0;
+			right: auto;
+			width: 43.75%;
+			height: 100%;
+			padding-top: $modal-title-padding * 2 + $line-height-base * $font-size-h4;
+			padding-bottom: 0;
+
+			.panel {
+				height: 100%;
+				margin-bottom: 0;
+				overflow: auto;
+			}
 		}
-	
+
 		.carousel-control {
 			.glyphicon-chevron-left, .glyphicon-chevron-right, .icon-next, .icon-prev {
 				height: 100px;
 				margin-top: -70px;
 				font-size: 100px;
 			}
+		}
+
+		.carousel, .carousel-inner, .carousel-inner .item {
+			height: 100%;
+		}
+
+		#posterCanvas {
+			height: 100%;
 		}
 	}
 }

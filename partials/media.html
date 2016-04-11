@@ -8,7 +8,6 @@
 <meta name="apple-touch-fullscreen" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
 <!-- InstanceParam name="OptionalRegionDescription" type="boolean" value="true" -->
 
 <!-- InstanceBeginEditable name="EditRegionMetaDescription" -->
@@ -16,18 +15,15 @@
 <meta name="description" content="Here are movies or TVs that I have watched, music that I like. And the details of the medias are from IMDB.">
 <!-- InstanceEndEditable -->
 
-
 <meta property="og:title" content="Marching Gray Young">
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://grayyoung.github.io/">
 <meta property="og:image" content="http://grayyoung.github.io/images/me.png">
 <meta property="og:image:width" content="300">
 <meta property="og:image:height" content="300">
-
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
-<meta property='fb:app_id' content='100010823177377'>
-
+<meta property="fb:app_id" content="100010823177377">
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Media - Marching Gray Young</title>
 <!-- InstanceEndEditable -->
@@ -48,7 +44,12 @@
 		waitSeconds : 0
 	};
 </script>
-<script type="text/javascript" defer async data-main="/dist/js/marching.js" src="/dist/js/lib/require.js"></script>
+<!-- InstanceParam name="OptionalRegionJS" type="boolean" value="true" -->
+
+<!-- InstanceBeginEditable name="EditRegionJS" -->
+<script type="text/javascript" defer async data-main="/dist/js/media.js" src="/dist/js/lib/require.js"></script>
+<!-- InstanceEndEditable -->
+
 </head>
 <body>
 	<div>
@@ -149,6 +150,9 @@
 							</ul>
 						</li>
 						<li>
+							<a href="/partials/design.html">Design Collection</a>
+						</li>
+						<li>
 							<a href="/partials/printing.html">Printing</a>
 						</li>
 						<li>
@@ -166,48 +170,132 @@
 				</div>
 			</div>
 		</nav>
-		<div id="progressBar" class="loading hidden-print"></div>
+		<div id="progressBar" class="progress loading hidden-print">
+			<div class="progress-bar" role="progressbar"></div>
+			<div class="progress-bar" role="progressbar"></div>
+			<div class="progress-bar" role="progressbar"></div>
+			<div class="progress-bar" role="progressbar"></div>
+		</div>
 		<div class="clearfix show-grid hidden-print"></div>
 		<main role="main">
 		<!-- InstanceBeginEditable name="EditRegionMain" -->
-		<ul id="containerListing" class="clearfix list-unstyled list-grid h-listing">
-		</ul>
-		<div id="fixedProgress" class="loading">
-			<div class="progress-circular"></div>
-			<div class="progress-label">0</div>
-		</div>
-		<template id="tl-modalPreview">
-			<div id="modalPreview" class="modal fade modal-preview" tabindex="-1" role="dialog" aria-labelledby="mediaTitle">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="mediaTitle"></h4>
-						</div>
-						<div class="modal-body">
-							<div id="carousel-modalPreview" class="carousel slide">
-								<div class="carousel-inner">
-									<div class="item active">
-										<img class="img-responsive center-block" src="" alt="">
-										<div class="carousel-caption">
+			<ul id="containerListing" class="clearfix list-unstyled list-grid h-listing">
+			</ul>
+			<div id="fixedProgress" class="loading">
+				<div class="progress-circular"></div>
+				<div class="progress-label">0</div>
+			</div>
+			<template id="tl-preview">
+				<li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">
+					<figure class="thumbnail">
+						<p class="p-category">
+							<span class="text-capitalize"></span><span>: </span>
+							<span class="text-capitalize"></span>
+						</p>
+						<hr />
+						<img class="center-block" src="" alt="" aria-hidden="true">
+						<figcaption>
+							<div class="caption">
+								<h3 class="p-name"><strong></strong></h3>
+								<p class="p-summary">
+									<span class="text-muted">Plot: </span>
+								</p>
+								<p class="p-rating">
+									<span style="width: 0em;"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
+									<span class="p-votes">
+										<span class="text-success fa-lg"></span>
+										<small class="text-muted"></small>
+									</span>
+								</p>
+							</div>
+						</figcaption>
+						<a class="u-url" target="_blank" href="http://www.imdb.com/title/">Read more...</a>
+					</figure>
+				</li>
+			</template>
+			<template id="tl-modalPreview">
+				<div id="modalPreview" class="modal fade modal-preview" tabindex="-1" role="dialog" aria-labelledby="mediaTitle">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="mediaTitle"></h4>
+							</div>
+							<div class="modal-body">
+								<div id="carousel-modalPreview" class="carousel slide">
+									<div class="carousel-inner">
+										<div class="item active">
+											<canvas id="posterCanvas" width="900" height="1600" class="img-responsive center-block"></canvas>
+											<div class="carousel-caption">
+											</div>
 										</div>
 									</div>
+									<a class="left carousel-control" href="javascript:void(0);" role="button">
+										<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="right carousel-control" href="javascript:void(0);" role="button">
+										<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
 								</div>
-								<a class="left carousel-control" href="javascript:void(0);" role="button">
-									<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
-									<span class="sr-only">Previous</span>
-								</a>
-								<a class="right carousel-control" href="javascript:void(0);" role="button">
-									<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
-									<span class="sr-only">Next</span>
-								</a>
+							</div>
+							<div class="modal-footer">
+								<div class="panel">
+									<div class="panel-body">
+										<dl class="dl-horizontal">
+											<dt>Awards</dt>
+											<dd class="p-awards"></dd>
+											<dt>Plot</dt>
+											<dd class="p-plot"></dd>
+											<dt>Genre</dt>
+											<dd class="p-genre"></dd>
+											<dt>Type</dt>
+											<dd class="p-type"></dd>
+											<dt>Rated</dt>
+											<dd class="p-rated"></dd>
+										</dl>
+										<hr>
+										<dl class="dl-horizontal">
+											<dt>Director</dt>
+											<dd class="p-director"></dd>
+											<dt>Writer</dt>
+											<dd class="p-writer"></dd>
+											<dt>Actors</dt>
+											<dd class="p-actors"></dd>
+										</dl>
+										<hr>
+										<dl class="dl-horizontal">
+											<dt>Year</dt>
+											<dd class="p-year"></dd>
+											<dt>Released</dt>
+											<dd class="p-released"></dd>
+										</dl>
+										<hr>
+										<dl class="dl-horizontal">
+											<dt>Metascore</dt>
+											<dd class="p-metascore"></dd>
+											<dt>Rating</dt>
+											<dd class="p-rating"></dd>
+											<dt>Votes</dt>
+											<dd class="p-votes"></dd>
+										</dl>
+										<hr>
+										<dl class="dl-horizontal">
+											<dt>Country</dt>
+											<dd class="p-country"></dd>
+											<dt>Language</dt>
+											<dd class="p-language"></dd>
+											<dt>Runtime</dt>
+											<dd class="p-runtime"></dd>
+										</dl>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="modal-footer"></div>
 					</div>
 				</div>
-			</div>
-		</template>
+			</template>
 		<!-- InstanceEndEditable -->
 		</main>
 		<div class="clearfix show-grid hidden-print"></div>

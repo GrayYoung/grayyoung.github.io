@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"><!-- InstanceBegin template="/Templates/container.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,13 +8,13 @@
 <meta name="apple-touch-fullscreen" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-<!-- TemplateParam name="OptionalRegionDescription" type="boolean" value="true" -->
-<!-- TemplateBeginIf cond="OptionalRegionDescription" -->
-<!-- TemplateBeginEditable name="EditRegionMetaDescription" -->
-<meta name="keywords" content="Marching Gray Young|web|front-end|developer|designer" />
-<meta name="description" content="I am web front-end developer, as well as a web designer. In here, you can find my resume, movies or TVs that I have watched, music that I like, and some JavaScript packages I build." />
-<!-- TemplateEndEditable -->
-<!-- TemplateEndIf -->
+<!-- InstanceParam name="OptionalRegionDescription" type="boolean" value="true" -->
+
+<!-- InstanceBeginEditable name="EditRegionMetaDescription" -->
+<meta name="keywords" content="media|movie|tv|music|imdb|Marching Gray Young|web|front-end|developer|designer">
+<meta name="description" content="Here are movies or TVs that I have watched, music that I like. And the details of the medias are from IMDB.">
+<!-- InstanceEndEditable -->
+
 <meta property="og:title" content="Marching Gray Young">
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://grayyoung.github.io/">
@@ -24,11 +24,12 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta property="fb:app_id" content="100010823177377">
-<!-- TemplateBeginEditable name="doctitle" -->
-<title>Untitled Document</title>
-<!-- TemplateEndEditable -->
-<!-- TemplateBeginEditable name="head" -->
-<!-- TemplateEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Work Collection - Marching Gray Young</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<script type="text/javascript" src="/js/lib/jszip.js"></script>
+<!-- InstanceEndEditable -->
 <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 <link rel="stylesheet" type="text/css" href="/dist/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.css">
@@ -43,12 +44,12 @@
 		waitSeconds : 0
 	};
 </script>
-<!-- TemplateParam name="OptionalRegionJS" type="boolean" value="true" -->
-<!-- TemplateBeginIf cond="OptionalRegionJS" -->
-<!-- TemplateBeginEditable name="EditRegionJS" -->
-<script type="text/javascript" defer async data-main="/dist/js/marching.js" src="/dist/js/lib/require.js"></script>
-<!-- TemplateEndEditable -->
-<!-- TemplateEndIf -->
+<!-- InstanceParam name="OptionalRegionJS" type="boolean" value="true" -->
+
+<!-- InstanceBeginEditable name="EditRegionJS" -->
+<script type="text/javascript" defer async data-main="/js/work.js" src="/js/lib/require.js"></script>
+<!-- InstanceEndEditable -->
+
 </head>
 <body>
 	<div>
@@ -177,7 +178,66 @@
 		</div>
 		<div class="clearfix show-grid hidden-print"></div>
 		<main role="main">
-		<!-- TemplateBeginEditable name="EditRegionMain" -->EditRegionMain<!-- TemplateEndEditable -->
+		<!-- InstanceBeginEditable name="EditRegionMain" -->
+			<ul id="containerListing" class="clearfix list-unstyled list-grid h-listing">
+			</ul>
+			<div id="fixedProgress" class="loading">
+				<div class="progress-circular"></div>
+				<div class="progress-label">0</div>
+			</div>
+			<template id="tl-preview">
+				<li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">
+					<figure class="thumbnail">
+						<img class="center-block" src="" alt="" aria-hidden="true">
+						<figcaption>
+							<div class="caption">
+								<h3 class="p-name"><strong></strong></h3>
+								<p class="p-summary">
+								</p>
+							</div>
+						</figcaption>
+						<a class="u-url" role="button" href="javascript:void(0);">View more...</a>
+					</figure>
+				</li>
+			</template>
+			<template id="tl-modalPreview">
+				<div id="modalPreview" class="modal fade modal-preview" tabindex="-1" role="dialog" aria-labelledby="mediaTitle">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="mediaTitle"></h4>
+							</div>
+							<div class="modal-body">
+								<div id="carousel-modalPreview" class="carousel slide">
+									<div class="carousel-inner">
+										<div class="item active">
+											<canvas id="posterCanvas" width="900" height="1600" class="img-responsive center-block"></canvas>
+											<div class="carousel-caption">
+											</div>
+										</div>
+									</div>
+									<a class="left carousel-control" href="javascript:void(0);" role="button">
+										<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="right carousel-control" href="javascript:void(0);" role="button">
+										<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div class="panel">
+									<div class="panel-body">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</template>
+		<!-- InstanceEndEditable -->
 		</main>
 		<div class="clearfix show-grid hidden-print"></div>
 		<div class="clearfix show-grid hidden-print"></div>
@@ -187,4 +247,4 @@
 		</footer>
 	</div>
 </body>
-</html>
+<!-- InstanceEnd --></html>

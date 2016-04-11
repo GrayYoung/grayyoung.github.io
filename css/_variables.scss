@@ -871,5 +871,27 @@ $dl-horizontal-offset:        $component-offset-horizontal;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter;
 
+//**********************************************************************************************************************
+
+//** Paper
 $A4-width:						8.267in;
 $A4-height:						11.693in;
+
+//** 12 Colors
+$redA:							#f50065;
+$redB:							#d60059;
+$redC:							#b0004a;
+$yellowA:						#f26b00;
+$yellowB:						#d75f00;
+$yellowC:						#b24f00;
+$greenA:						#6e8f00;
+$greenB:						#607d00;
+$greenC:						#496100;
+$blueA:							#007f9f;
+$blueB:							#006b87;
+$blueC:							#005065;
+
+//** Navbar Toggle
+$toggleCircleSize: 30px;
+$lineSize: 22px;
+$borderWidth: 2px;

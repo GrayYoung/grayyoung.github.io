@@ -1,1 +1,1 @@
-define({media:"/data/media.xlsx"});
+define({media:"/data/media.xlsx",work:"/data/work.xlsx"});

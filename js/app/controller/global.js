@@ -8,9 +8,6 @@
 define([ 'app/model/requests', 'jquery', 'bootstrap' ], function(requests, $) {
 	$(document).ready(function() {
 		$('#progressBar').toggleClass('loading', false);
-		if($('#containerListing').size() > 0) {
-			require([ 'app/controller/media' ]);
-		}
 	});
 
 	(function(i, s, o, g, r, a, m) {

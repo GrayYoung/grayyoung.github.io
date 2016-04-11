@@ -5,5 +5,5 @@
 /* The following comment tell gulp-jshint variable define is require in another file. */
 /* global require */
 require([ './config' ], function(config) {
-	require([ 'app/controller/global' ]);
+	require([ 'app/controller/global', 'app/controller/locatorMap' ]);
 });

@@ -35,10 +35,7 @@ requirejs.config({
             '../config'
         ],
 		include : [ 
-            'app/model/requests',
-            'app/controller/global',
-            'app/controller/locatorMap',
-            'app/controller/media'
+            'app/controller/global'
         ]
 	}, {
 		name : '../article',
@@ -49,14 +46,38 @@ requirejs.config({
             'app/controller/global'
         ]
 	}, {
-		name : 'app/controller/media',
+		name : '../media',
 		include : [ 
-           'app/model/util',
+            'app/model/util',
+            'app/model/excelRequest',
             'app/model/requests',
+            'app/controller/global',
             'xlsx'
         ],
 		exclude : [ 
+            '../config',
             'app/model/requests'
+        ]
+	}, {
+		name : '../work',
+		include : [ 
+            'app/model/excelRequest',
+            'app/model/requests',
+            'app/controller/global',
+            'xlsx'
+        ],
+		exclude : [ 
+            '../config'
+        ]
+	}, {
+		name : '../printing',
+		include : [ 
+            'app/model/util',
+            'app/controller/global',
+            'app/controller/locatorMap',
+        ],
+		exclude : [ 
+            '../config'
         ]
 	} ]
 });
