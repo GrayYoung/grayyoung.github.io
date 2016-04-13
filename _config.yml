@@ -1,10 +1,14 @@
-﻿markdown: kramdown
+markdown: kramdown
 highlighter: pygments
 permalink: /news/:year/:month/:day/:title/
 excerpt_separator: ""
 
-repository: https://github.com/GrayYoung/grayyoung.github.io
-help_url: https://github.com/GrayYoung/grayyoung.github.io/jekyll-help
+gauges_id: 503c5af6613f5d0f19000027
+google_analytics_id: UA-50755011-1
+google_site_verification: onQcXpAvtHBrUI5LlroHNE_FP0b2qvFyPq7VZw36iEY
+
+repository: https://github.com/jekyll/jekyll
+help_url: https://github.com/jekyll/jekyll-help
 
 timezone: America/Los_Angeles
 
@@ -12,14 +16,14 @@ collections:
   docs:
     output: true
 
-name: Marching Gray Young • Web front-end, blog-aware, static sites
-description: The Blog website of Marching Gray Young
-url: http://grayyoung.github.io
+name: Jekyll • Simple, blog-aware, static sites
+description: Transform your plain text into static websites and blogs
+url: https://jekyllrb.com
 
 twitter:
   username: jekyllrb
 
-logo: imgages/logo.png
+logo: img/logo-2x.png
 
 gems:
   - jekyll-feed
