@@ -1,0 +1,30 @@
+markdown: kramdown
+highlighter: pygments
+permalink: /news/:year/:month/:day/:title/
+excerpt_separator: ""
+
+repository: https://github.com/jekyll/jekyll
+help_url: https://github.com/jekyll/jekyll-help
+
+timezone: America/Los_Angeles
+
+collections:
+  docs:
+    output: true
+
+name: Marching Gray Young • Web front-end, blog-aware, static sites
+description: The Blog website of Marching Gray Young
+url: http://grayyoung.github.io
+
+twitter:
+  username: jekyllrb
+
+logo: img/logo-2x.png
+
+gems:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-avatar
