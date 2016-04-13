@@ -1,10 +1,10 @@
-markdown: kramdown
+﻿markdown: kramdown
 highlighter: pygments
 permalink: /news/:year/:month/:day/:title/
 excerpt_separator: ""
 
-repository: https://github.com/jekyll/jekyll
-help_url: https://github.com/jekyll/jekyll-help
+repository: https://github.com/GrayYoung/grayyoung.github.io
+help_url: https://github.com/GrayYoung/grayyoung.github.io/jekyll-help
 
 timezone: America/Los_Angeles
 
@@ -19,7 +19,7 @@ url: http://grayyoung.github.io
 twitter:
   username: jekyllrb
 
-logo: img/logo-2x.png
+logo: imgages/logo.png
 
 gems:
   - jekyll-feed
