@@ -1,0 +1,39 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="keywords" content="Marching Gray Young|web|front-end|developer|designer" />
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="og:title" content="Marching Gray Young">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://grayyoung.github.io/">
+	<meta property="og:image" content="http://grayyoung.github.io/images/me.png">
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta property="fb:app_id" content="100010823177377">
+	<meta name="generator" content="Jekyll v{{ jekyll.version }}">
+	<title>{% if page.title %}{{ page.title | escape }} | {{ site.title  | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+	<link rel="stylesheet" href="{{ "/dist/css/font-awesome.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/dist/css/bootstrap.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/dist/css/marching.css" | prepend: site.baseurl }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<!-- saved from url=(0014)about:internet -->
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="/dist/js/lib/html5shiv.min.js"></script>
+		<script type="text/javascript" src="/dist/js/lib/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+		var require = {
+			waitSeconds : 0
+		};
+	</script>
+	<script type="text/javascript" defer async data-main="/dist/js/{% if page.js %}{{ page.js }}{% else %}marching{% endif %}.js" src="/dist/js/lib/require.js"></script>
+</head>

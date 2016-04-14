@@ -1,0 +1,43 @@
+//#== Fonts
+
+@font-face {
+	font-family: "Trade Gothic";
+	font-style: normal;
+	src: url("../../fonts/Trade Gothic W01 Regular.woff2") format("woff2"), url("../../fonts/Trade Gothic W01 Regular.woff") format("woff"), url("../../fonts/Trade Gothic W01 Regular.ttf") format("truetype");
+	font-weight: normal;
+ }
+ 
+@font-face {
+	font-family: "Trade Gothic";
+	font-style: normal;
+	src: url("../../fonts/Trade Gothic W01 Bold.woff2") format("woff2"), url("../../fonts/Trade Gothic W01 Bold.woff") format("woff"), url("../../fonts/Trade Gothic W01 Bold.ttf") format("truetype");
+	font-weight: bold;
+ }
+ 
+@font-face {
+	font-family: "Freight Text";
+	font-style: normal;
+	src: url("../../fonts/Freight Text W03 Regular.woff2") format("woff2"), url("../../fonts/Freight Text W03 Regular.woff") format("woff"), url("../../fonts/Freight Text W03 Regular.ttf") format("truetype");
+	font-weight: normal;
+ }
+ 
+@font-face {
+	font-family: "Freight Text";
+	font-style: italic;
+	src: url("../../fonts/Freight Text W03 Regular Italic.woff2") format("woff2"), url("../../fonts/Freight Text W03 Regular Italic.woff") format("woff"), url("../../fonts/Freight Text W03 Regular Italic.ttf") format("truetype");
+	font-weight: normal;
+ }
+ 
+@font-face {
+	font-family: "Freight Text";
+	font-style: normal;
+	src: url("../../fonts/Freight Text W03 Bold.woff2") format("woff2"), url("../../fonts/Freight Text W03 Bold.woff") format("woff"), url("../../fonts/Freight Text W03 Bold.ttf") format("truetype");
+	font-weight: bold;
+ }
+ 
+@font-face {
+	font-family: "Freight Text";
+	font-style: italic;
+	src: url("../../fonts/Freight Text W03 Bold Italic.woff2") format("woff2"), url("../../fonts/Freight Text W03 Bold Italic.woff") format("woff"), url("../../fonts/Freight Text W03 Bold Italic.ttf") format("truetype");
+	font-weight: bold;
+ }
