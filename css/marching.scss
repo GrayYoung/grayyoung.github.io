@@ -1,9 +1,12 @@
+---
+---
+
 @import "variables";
-@import "components/mixins/animation";
-@import "components/typography";
-@import "components/animation";
-@import "components/resume";
-@import "components/printing";
+@import "mixins/animation";
+@import "typography";
+@import "animation";
+@import "resume";
+@import "printing";
 
 a.text-danger, a .text-danger {
 	&:hover, &:focus {

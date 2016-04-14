@@ -93,22 +93,22 @@
 		text-align: center;
 	
 		&:first-child {
-			background-color: $redA;
+			background-color: $brand-danger;
 			animation: progressBarB 4s linear infinite;
 		}
 	
 		&:nth-child(2) {
-			background-color: $yellowA;
+			background-color: $brand-warning;
 			animation: progressBarB 4s linear 1s infinite;
 		}
 	
 		&:nth-child(3) {
-			background-color: $greenA;
+			background-color: $brand-success;
 			animation: progressBarB 4s linear 2s infinite;
 		}
 	
 		&:nth-child(4) {
-			background-color: $blueA;
+			background-color: $brand-info;
 			animation: progressBarB 4s linear 3s infinite;
 		}
 	}

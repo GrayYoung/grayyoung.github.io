@@ -1,7 +1,6 @@
 // Animation
 
 @mixin generateAnimations($startDelay, $stopDelay, $secondAnimationStartDelay) {
-	//[$startDelay ∧ $stopDelay ∊ (0;100 - $secondAnimationStartDelay)] && [$startDelay + $stopDelay < 100 - $secondAnimationStartDelay]
 	$startSecond: $startDelay + $secondAnimationStartDelay;
 	$secondAnimationTime: 100 - $startDelay - $stopDelay - $secondAnimationStartDelay;
 

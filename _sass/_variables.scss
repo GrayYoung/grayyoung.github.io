@@ -15,11 +15,11 @@ $gray:                   lighten($gray-base, 33.5%); // #555
 $gray-light:             lighten($gray-base, 46.7%); // #777
 $gray-lighter:           lighten($gray-base, 93.5%); // #eee
 
-$brand-primary:         #239ed2;
-$brand-success:         #72ab5d;
+$brand-primary:         #0087be; // #239ed2
+$brand-success:         #69c4bd;
 $brand-info:            #2b669f;
-$brand-warning:         #d8cb30;
-$brand-danger:          #dc0000;
+$brand-warning:         #fec536;
+$brand-danger:          #f15441; //#dc0000;
 
 
 //== Scaffolding
