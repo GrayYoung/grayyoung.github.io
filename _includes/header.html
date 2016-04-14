@@ -1,11 +1,3 @@
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-
 	<header>
 		<div id="subNavbar" class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -100,15 +92,13 @@
 								</li>
 							</ul>
 						</li>
-						<li>
-							<a href="/partials/design.html">Design Collection</a>
-						</li>
-						<li>
-							<a href="/partials/printing.html">Printing</a>
-						</li>
-						<li>
-							<a href="/partials/about.html">About</a>
-						</li>
+						{% for my_page in site.pages %}
+							{% if my_page.title %}
+							<li>
+								<a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+							</li>
+							{% endif %}
+						{% endfor %}
 					</ul>
 					<form class="navbar-form navbar-right" role="search">
 						<div class="input-group">

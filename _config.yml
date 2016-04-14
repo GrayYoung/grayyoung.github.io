@@ -21,3 +21,7 @@ markdown: kramdown
 exclude:
   - bower_components
   - node_modules
+
+sass:
+  sass_dir: _sass
+  style: compressed

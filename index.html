@@ -22,42 +22,46 @@ layout: default
 
 
 			<div class="clearfix list-preview h-listing">
+				{% for preview in site.data.previewCollection limit:1 %}
 				<div class="col-sm-12 col-md-4 h-entry">
 					<figure class="thumbnail">
 						<p class="p-category">
-							<span>Web Development</span>&nbsp;
+							<span>{{ preview.category }}</span>&nbsp;
 						</p>
 						<hr />
-						<img src="/images/common/AngularJS-large.png" alt="" aria-hidden="true">
+						<img src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
 						<div class="clearfix"></div>
 						<div class="caption">
-							<h3 class="p-name">AngularJs API<small>(1.4.10)</small></h3>
+							<h3 class="p-name">{{ preview.title }}</small></h3>
 						</div>
-						<figcaption class="p-summary">Welcome to the AngularJS API docs page. These pages contain the AngularJS reference materials for version 1.4.7 dense-dispersion.</figcaption>
-						<a class="u-url" href="/API/angular-1.4.10/docs">More</a>
+						<figcaption class="p-summary">{{ preview.summary }}</figcaption>
+						<a class="u-url" href="{{ preview.url }}">More</a>
 						<div class="clearfix show-grid"></div>
 					</figure>
 				</div>
+				{% endfor %}
 				<div class="col-sm-12 col-md-8">
 					<div class="row">
+						{% for preview in site.data.previewCollection offset:1 limit:4 %}
 						<div class="col-sm-6 col-md-3 h-entry">
 							<figure class="thumbnail">
 								<div class="box-figure">
 									<p class="p-category">
-										<span>Book</span>&nbsp;
+										<span>{{ preview.category }}</span>&nbsp;
 									</p>
 									<hr />
-									<img class="center-block" src="/partials/Holy Bible- New International Version/cover.jpeg" alt="" aria-hidden="true">
+									<img class="center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
 								</div>
 								<figcaption>
 									<div class="caption">
-										<h3 class="p-name">Holy Bible - New International Version</h3>
+										<h3 class="p-name">{{ preview.title }}</h3>
 									</div>
-									<p class="p-summary"></p>
+									<p class="p-summary">{{ preview.summary }}</p>
 								</figcaption>
-								<a class="u-url" href="/partials/Holy Bible- New International Version/dummy_split_000.html">Read more...</a>
+								<a class="u-url" href="{{ preview.url }}">Read more...</a>
 							</figure>
 						</div>
+						{% endfor %}
 						<div class="clearfix"></div>
 						<hr class="hidden" aria-hidden="true" />
 						<div class="text-right hidden">

@@ -1,16 +1,14 @@
 ---
 layout: default
-title: Holy Bible: New International Version
+title: Holy Bible - New International Version
 ---
 
-
-			<article id="filepos276012" class="container">
-				<header>
-					<h1>{{ page.chapterTitle }}</h1>
-				</header>
-				<section>
-					<h2><a href="{{ page.anchor }}">{{ page.title }}</a>
-					</h2>
-					{{ content }}
-				</section>
-			</article>
+<article id="filepos276012" class="container">
+	<header>
+		<h1>{{ page.title }}</h1>
+	</header>
+	<section>
+		<h2><a href="{{ page.anchor }}">{{ page.chapterTitle }}</a></h2>
+		{{ content }}
+	</section>
+</article>
