@@ -1,4 +1,35 @@
 - label: Books
-  url: /API/angular-1.4.10/docs
-  - label: Holy Bible
-    url: /partials/Holy Bible- New International Version/dummy_split_002.html
+  url: /books/
+  subs:
+    - label: Holy Bible
+      url: /partials/Holy Bible- New International Version/dummy_split_002.html
+
+- label: Web Front-end
+  url: /web/
+  subs:
+    - label: AngularJS API<small>(1.4.10)</small>
+      url: /API/angular-1.4.10/docs
+
+- label: Media
+  url: /media/
+  subs:
+    - label: Music
+      url: /partials/media.html?t=music
+
+    - label: Movie
+      url: /partials/media.html?t=movie
+
+    - label: TV
+      url: /partials/media.html?t=tv
+
+- label: Blogs
+  url: /blog/
+
+- label: Design Collection
+  url: /design/
+
+- label: Printing
+  url: /Printing/
+
+- label: About Me
+  url: /about/

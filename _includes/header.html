@@ -65,39 +65,23 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" href="/partials/media.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							Web Front-end <i class="fa fa-lg fa-caret-down" aria-hidden="true"></i>
-						</a>
+					{% for item in site.data.navigation %}
+					<li>
+						{% if item.subs %}
 						<ul class="dropdown-menu">
+							<a href="{{ item.url | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								{{ item.label }} <i class="fa fa-lg fa-caret-down" aria-hidden="true"></i>
+							</a>
+							{% for sub in item.subs %}
 							<li>
-								<a href="/API/angular-1.4.10/docs">AngularJS API<small>(1.4.10)</small></a>
+								<a href="{{ sub.url | prepend: site.baseurl }}">{{ sub.label }}</a>
 							</li>
+							{% endfor %}
 						</ul>
-					</li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" href="/partials/media.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							Media
-							<i class="fa fa-lg fa-caret-down" aria-hidden="true"></i>
-						</a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="/partials/media.html?t=music">Music</a>
-							</li>
-							<li>
-								<a href="/partials/media.html?t=movie">Movie</a>
-							</li>
-							<li>
-								<a href="/partials/media.html?t=tv">TV</a>
-							</li>
-						</ul>
-					</li>
-					{% for my_page in site.pages %}
-						{% if my_page.title && (my_page.chapterTitle != "Holy Bible - New International Version" || my_page.chapterTitle != "The Old Testament") %}
-						<li>
-							<a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-						</li>
+						{% else %}
+							<a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a>
 						{% endif %}
+					</li>
 					{% endfor %}
 				</ul>
 				<form class="navbar-form navbar-right" role="search">

@@ -31,8 +31,8 @@ var pathNames = {
 
 var sourcesPaths = {
 	styles : {
-		base : path.join(pathNames.sourcesUrl, pathNames.styles, '**', '*.css'),
-		sass : path.join(pathNames.sourcesUrl, pathNames.styles, '**', formats.style)
+		base : path.join(pathNames.sourcesUrl, pathNames.styles, '**', formats.style),
+		sass : path.join(pathNames.sourcesUrl, '_sass', '**', formats.style)
 	},
 	scripts : {
 		base : [ path.join(pathNames.sourcesUrl, pathNames.scripts, '**', formats.script), path.join(pathNames.sourcesUrl, pathNames.scripts, '**', '*.json') ]
@@ -49,13 +49,13 @@ gulp.task('init-styles', [ 'init-bower' ], function() {
 });
 
 gulp.task('styles', function() {
-	return gulp.src(sourcesPaths.styles.sass).pipe($.sass({
+	return gulp.src(sourcesPaths.styles.base).pipe($.sass({
 		outputStyle : config.optimized ? 'compact' : 'expanded',
 		precision : 8
 	})).pipe($.minifyCss({
 		keepSpecialComments : 0,
 		processImport : false
-	})).pipe(gulp.dest(targetPaths.styles)).pipe($.size({
+	})).pipe(gulp.dest(path.join('_site', pathNames.styles))).pipe($.size({
 		title : 'Styles Sass'
 	}));
 });
