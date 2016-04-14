@@ -1,4 +1,5 @@
 node_modules/
 bower_components/
-_site/
 dist/js/build.txt
+_site/
+.sass-cache
