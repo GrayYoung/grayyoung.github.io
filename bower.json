@@ -23,6 +23,7 @@
     "bootstrap-sass-official": "~3.3.6",
     "fontawesome": "latest",
     "jquery": "latest",
+    "slick-carousel": "latest",
     "requirejs": "latest",
     "js-xlsx" : "latest"
   },

@@ -35,6 +35,7 @@ requirejs.config({
             '../config'
         ],
 		include : [ 
+            'slick',
             'app/controller/global'
         ]
 	}, {

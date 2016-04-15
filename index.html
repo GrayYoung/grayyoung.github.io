@@ -2,11 +2,13 @@
 layout: default
 ---
 
-<div id="carousel-sliding" class="carousel slide" data-ride="carousel">
+<div id="carousel-sliding" class="carousel slide">
 	<div class="carousel-inner" role="listbox">
 		{% for slide in site.data.slides limit:1 %}
 		<div class="item active">
-			<a href="{{ slide.url }}"><img class="center-block" src="{{ slide.image }}" alt="{{ slide.alt }}"></a>
+			<a href="{{ slide.url }}">
+				<img class="img-responsive center-block" src="{{ slide.image }}" alt="{{ slide.alt }}">
+			</a>
 			<div class="carousel-caption">{{ slide.title }}</div>
 		</div>
 		{% endfor %}
@@ -31,7 +33,7 @@ layout: default
 				<span>{{ preview.category }}</span>&nbsp;
 			</p>
 			<hr />
-			<img src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
+			<img class="img-responsive center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
 			<div class="clearfix"></div>
 			<div class="caption">
 				<h3 class="p-name">{{ preview.title }}</h3>
@@ -52,7 +54,7 @@ layout: default
 							<span>{{ preview.category }}</span>&nbsp;
 						</p>
 						<hr />
-						<img class="center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
+						<img class="img-responsive center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
 					</div>
 					<figcaption>
 						<div class="caption">

@@ -3,6 +3,7 @@
 
 @import "variables";
 @import "mixins/animation";
+@import "slick";
 @import "typography";
 @import "animation";
 @import "resume";
@@ -444,12 +445,6 @@ body > * > footer {
 				margin-bottom: 21px;
 			}
 		}
-	}
-}
-
-@media (max-width: $screen-sm-max) {
-	.list-preview img {
-		height: 280px;
 	}
 }
 
