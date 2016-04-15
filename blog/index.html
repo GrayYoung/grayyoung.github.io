@@ -1,0 +1,59 @@
+---
+layout: default
+title: Blogs
+---
+
+<section class="container-fluid">
+	<h1>Blogs</h1>
+	<ul class="list-unstyled">
+		{% for post in paginator.posts %}
+		<li class="media">
+			<div class="media-left">
+				<a href="{{ post.url | prepend: site.baseurl }}">
+					<img class="media-object" src="../partials/..." alt="{{ post.date | date: "%b %-d, %Y" }}">
+				</a>
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading">{{ post.title }}</h4>
+				<p>{{ post.excerpt }}</p>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+	{% if paginator.total_pages > 1 %}
+	<nav>
+		<ul class="pagination">
+			{% if paginator.previous_page %}
+			<li>
+				<a href="{{ paginator.previous_page_path }}" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			{% endif %}
+
+			{% for page in (1..paginator.total_pages) %}
+				{% if page == paginator.page %}
+					<li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
+				{% elsif page == 1 %}
+					<li>
+						<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+
+			{% if paginator.next_page %}
+			<li>
+				<a href="{{ paginator.next_page_path }}" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+			{% endif %}
+		</ul>
+	</nav>
+	{% endif %}
+	<p class="rss-subscribe"> subscribe <a href="../partials/{{ " /feed.xml" | prepend:site.baseurl }}">via RSS</a> </p>
+</section>

@@ -20,6 +20,16 @@ markdown: kramdown
 exclude:
   - bower_components
   - node_modules
+  - js
+  - [LICENSE, README.md, bower.json, package.json, gulpfile.js]
 
 sass:
   style: compressed
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+gems:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap

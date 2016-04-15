@@ -10,17 +10,23 @@
     - label: AngularJS API<small>(1.4.10)</small>
       url: /API/angular-1.4.10/docs
 
+    - label: jQuery.UI.Extension
+      url: https://github.com/GrayYoung/jQuery.UI.Extension
+
+    - label: jQuery.Utilities
+      url: https://github.com/GrayYoung/jQuery.Utilities
+
 - label: Media
   url: /media/
   subs:
     - label: Music
-      url: /partials/media.html?t=music
+      url: /media?t=music
 
     - label: Movie
-      url: /partials/media.html?t=movie
+      url: /media?t=movie
 
     - label: TV
-      url: /partials/media.html?t=tv
+      url: /media?t=tv
 
 - label: Blogs
   url: /blog/

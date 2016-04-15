@@ -35,5 +35,8 @@
 			waitSeconds : 0
 		};
 	</script>
-	<script type="text/javascript" defer async data-main="/dist/js/{% if page.js %}{{ page.js }}{% else %}marching{% endif %}.js" src="/dist/js/lib/require.js"></script>
+	{% for script in page.extraJS %}
+	<script type="text/javascript" src="{{ script }}"></script>
+	{% endfor %}
+	<script type="text/javascript" defer async data-main="/dist/js/{% if page.pageName %}{{ page.pageName }}{% else %}marching{% endif %}.js" src="/dist/js/lib/require.js"></script>
 </head>

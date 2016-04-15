@@ -2,6 +2,27 @@
 layout: default
 ---
 
+<div id="carousel-sliding" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner" role="listbox">
+		{% for slide in site.data.slides limit:1 %}
+		<div class="item active">
+			<a href="{{ slide.url }}"><img class="center-block" src="{{ slide.image }}" alt="{{ slide.alt }}"></a>
+			<div class="carousel-caption">{{ slide.title }}</div>
+		</div>
+		{% endfor %}
+	</div>
+
+	<a class="left carousel-control" href="#carousel-sliding" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#carousel-sliding" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+<div class="clearfix show-grid"></div>
+<div class="clearfix show-grid"></div>
 <div class="clearfix list-preview h-listing">
 	{% for preview in site.data.previewCollection limit:1 %}
 	<div class="col-sm-12 col-md-4 h-entry">
@@ -13,7 +34,7 @@ layout: default
 			<img src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
 			<div class="clearfix"></div>
 			<div class="caption">
-				<h3 class="p-name">{{ preview.title }}</small></h3>
+				<h3 class="p-name">{{ preview.title }}</h3>
 			</div>
 			<figcaption class="p-summary">{{ preview.summary }}</figcaption>
 			<a class="u-url" href="{{ preview.url }}">More</a>

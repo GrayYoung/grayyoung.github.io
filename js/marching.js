@@ -6,4 +6,8 @@
 /* global require */
 require([ './config' ], function(config) {
 	require([ 'app/controller/global' ]);
+	require([], function() {
+		$(document).ready(function(e) {
+		});
+	});
 });
