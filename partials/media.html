@@ -6,120 +6,120 @@ pageName: media
 extraJS: [/js/lib/jszip.js]
 ---
 
-			<ul id="containerListing" class="clearfix list-unstyled list-grid h-listing">
-			</ul>
-			<div id="fixedProgress" class="loading">
-				<div class="progress-circular"></div>
-				<div class="progress-label">0</div>
-			</div>
-			<template id="tl-preview">
-				<li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">
-					<figure class="thumbnail">
-						<p class="p-category">
-							<span class="text-capitalize"></span><span>: </span>
-							<span class="text-capitalize"></span>
-						</p>
-						<hr />
-						<img class="center-block" src="" alt="" aria-hidden="true">
-						<figcaption>
-							<div class="caption">
-								<h3 class="p-name"><strong></strong></h3>
-								<p class="p-summary">
-									<span class="text-muted">Plot: </span>
-								</p>
-								<p class="p-rating">
-									<span style="width: 0em;"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
-									<span class="p-votes">
-										<span class="text-success fa-lg"></span>
-										<small class="text-muted"></small>
-									</span>
-								</p>
-							</div>
-						</figcaption>
-						<a class="u-url" target="_blank" href="http://www.imdb.com/title/">Read more...</a>
-					</figure>
-				</li>
-			</template>
-			<template id="tl-modalPreview">
-				<div id="modalPreview" class="modal fade modal-preview" tabindex="-1" role="dialog" aria-labelledby="mediaTitle">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="mediaTitle"></h4>
-							</div>
-							<div class="modal-body">
-								<div id="carousel-modalPreview" class="carousel slide">
-									<div class="carousel-inner">
-										<div class="item active">
-											<canvas id="posterCanvas" width="900" height="1600" class="img-responsive center-block"></canvas>
-											<div class="carousel-caption">
-											</div>
-										</div>
-									</div>
-									<a class="left carousel-control" href="javascript:void(0);" role="button">
-										<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
-										<span class="sr-only">Previous</span>
-									</a>
-									<a class="right carousel-control" href="javascript:void(0);" role="button">
-										<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
-										<span class="sr-only">Next</span>
-									</a>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<div class="panel">
-									<div class="panel-body">
-										<dl class="dl-horizontal">
-											<dt>Awards</dt>
-											<dd class="p-awards"></dd>
-											<dt>Plot</dt>
-											<dd class="p-plot"></dd>
-											<dt>Genre</dt>
-											<dd class="p-genre"></dd>
-											<dt>Type</dt>
-											<dd class="p-type"></dd>
-											<dt>Rated</dt>
-											<dd class="p-rated"></dd>
-										</dl>
-										<hr>
-										<dl class="dl-horizontal">
-											<dt>Director</dt>
-											<dd class="p-director"></dd>
-											<dt>Writer</dt>
-											<dd class="p-writer"></dd>
-											<dt>Actors</dt>
-											<dd class="p-actors"></dd>
-										</dl>
-										<hr>
-										<dl class="dl-horizontal">
-											<dt>Year</dt>
-											<dd class="p-year"></dd>
-											<dt>Released</dt>
-											<dd class="p-released"></dd>
-										</dl>
-										<hr>
-										<dl class="dl-horizontal">
-											<dt>Metascore</dt>
-											<dd class="p-metascore"></dd>
-											<dt>Rating</dt>
-											<dd class="p-rating"></dd>
-											<dt>Votes</dt>
-											<dd class="p-votes"></dd>
-										</dl>
-										<hr>
-										<dl class="dl-horizontal">
-											<dt>Country</dt>
-											<dd class="p-country"></dd>
-											<dt>Language</dt>
-											<dd class="p-language"></dd>
-											<dt>Runtime</dt>
-											<dd class="p-runtime"></dd>
-										</dl>
-									</div>
+<ul id="containerListing" class="clearfix list-unstyled list-grid h-listing">
+</ul>
+<div id="fixedProgress" class="loading">
+	<div class="progress-circular"></div>
+	<div class="progress-label">0</div>
+</div>
+<template id="tl-preview">
+	<li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">
+		<figure class="thumbnail">
+			<p class="p-category">
+				<span class="text-capitalize"></span><span>: </span>
+				<span class="text-capitalize"></span>
+			</p>
+			<hr />
+			<img class="center-block" src="" alt="" aria-hidden="true">
+			<figcaption>
+				<div class="caption">
+					<h3 class="p-name"><strong></strong></h3>
+					<p class="p-summary">
+						<span class="text-muted">Plot: </span>
+					</p>
+					<p class="p-rating">
+						<span style="width: 0em;"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
+						<span class="p-votes">
+							<span class="text-success fa-lg"></span>
+							<small class="text-muted"></small>
+						</span>
+					</p>
+				</div>
+			</figcaption>
+			<a class="u-url" target="_blank" href="http://www.imdb.com/title/">Read more...</a>
+		</figure>
+	</li>
+</template>
+<template id="tl-modalPreview">
+	<div id="modalPreview" class="modal fade modal-preview" tabindex="-1" role="dialog" aria-labelledby="mediaTitle">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="mediaTitle"></h4>
+				</div>
+				<div class="modal-body">
+					<div id="carousel-modalPreview" class="carousel slide">
+						<div class="carousel-inner">
+							<div class="item active">
+								<canvas id="posterCanvas" width="900" height="1600" class="img-responsive center-block"></canvas>
+								<div class="carousel-caption">
 								</div>
 							</div>
 						</div>
+						<a class="left carousel-control" href="javascript:void(0);" role="button">
+							<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="javascript:void(0);" role="button">
+							<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
 					</div>
 				</div>
-			</template>
+				<div class="modal-footer">
+					<div class="panel">
+						<div class="panel-body">
+							<dl class="dl-horizontal">
+								<dt>Awards</dt>
+								<dd class="p-awards"></dd>
+								<dt>Plot</dt>
+								<dd class="p-plot"></dd>
+								<dt>Genre</dt>
+								<dd class="p-genre"></dd>
+								<dt>Type</dt>
+								<dd class="p-type"></dd>
+								<dt>Rated</dt>
+								<dd class="p-rated"></dd>
+							</dl>
+							<hr>
+							<dl class="dl-horizontal">
+								<dt>Director</dt>
+								<dd class="p-director"></dd>
+								<dt>Writer</dt>
+								<dd class="p-writer"></dd>
+								<dt>Actors</dt>
+								<dd class="p-actors"></dd>
+							</dl>
+							<hr>
+							<dl class="dl-horizontal">
+								<dt>Year</dt>
+								<dd class="p-year"></dd>
+								<dt>Released</dt>
+								<dd class="p-released"></dd>
+							</dl>
+							<hr>
+							<dl class="dl-horizontal">
+								<dt>Metascore</dt>
+								<dd class="p-metascore"></dd>
+								<dt>Rating</dt>
+								<dd class="p-rating"></dd>
+								<dt>Votes</dt>
+								<dd class="p-votes"></dd>
+							</dl>
+							<hr>
+							<dl class="dl-horizontal">
+								<dt>Country</dt>
+								<dd class="p-country"></dd>
+								<dt>Language</dt>
+								<dd class="p-language"></dd>
+								<dt>Runtime</dt>
+								<dd class="p-runtime"></dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

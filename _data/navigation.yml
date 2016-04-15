@@ -16,6 +16,9 @@
     - label: jQuery.Utilities
       url: https://github.com/GrayYoung/jQuery.Utilities
 
+    - label: Design Collection
+      url: /design/
+
 - label: Media
   url: /media/
   subs:
@@ -30,9 +33,6 @@
 
 - label: Blogs
   url: /blog/
-
-- label: Design Collection
-  url: /design/
 
 - label: Printing
   url: /printing/

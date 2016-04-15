@@ -54,9 +54,11 @@ require([ './config' ], function(config) {
 		}).ready(function(){
 			var $container = $('#containerListing');
 			var listItems = function(workbook) {
-				var sheet = workbook.Sheets[workbook.SheetNames[0]];
+				var sheet = (workbook && workbook.Sheets[workbook.SheetNames[0]]) || $container.data('sheet');
+				var offset = $container.data('offset') || 2, count = 0;
 				var type = util.getUrlParam('t', true);
 				var tPattern = new RegExp('\^\\s*' + type + '\\s*\$', 'i');
+				var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
 				var callData = function(data) {
 					var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
 					var $preview = $(document.getElementById('tl-preview').content).children().clone().data('imdbData', data);
@@ -79,16 +81,24 @@ require([ './config' ], function(config) {
 						$pLabel.text(parseInt($pLabel.text(), 10) + 1);
 					}
 				};
-		
+
+				$container.data('sheet', sheet);
 				(function(index) {
 					var oneAfterOne = arguments.callee;
-					var preview = {
+					var preview;
+
+					$container.data('offset', index);
+					if(count > 20) {
+						$container.data('loading', false);
+						$p.toggleClass('loading', false);
+						return false;
+					}
+					preview = {
 						Title : sheet[ 'A' + index ] ? sheet[ 'A' + index ].v : 'N/A',
 						imdbID : sheet[ 'B' + index ] ? sheet[ 'B' + index ].v : 'N/A',
 						Type : sheet[ 'C' + index ] ? sheet[ 'C' + index ].v : 'N/A',
 						Poster : sheet[ 'D' + index ] ? sheet[ 'D' + index ].v : ''
 					};
-		
 					if(type === '' || tPattern.test(preview.Type)) {
 						if(preview.imdbID) {
 							$.ajax({
@@ -117,20 +127,25 @@ require([ './config' ], function(config) {
 					} else {
 						oneAfterOne(index + 1);
 					}
-				})(2);
+					count++;
+				})(offset);
 			};
-			
+
 			$container.data({
 				loading : false
 			});
-		
+
 			$(window).bind('scroll.ls.media', function(event) {
 				var $w = $(this), $p = $('#fixedProgress');
 		
 				if(!$container.data('loading') && ($container.height() + $container.offset().top < $w.scrollTop() + $w.height())) {
 					$container.data('loading', true);
 					$p.toggleClass('loading', true);
-					excelRequest('GET', requests.media, listItems);
+					if($container.data('sheet')) {
+						listItems();
+					} else {
+						excelRequest('GET', requests.media, listItems);
+					}
 				}
 			}).triggerHandler('scroll.ls.media');
 		});
