@@ -1,6 +1,9 @@
 - title: Holy Bible - New International Version
   category: Book
   alt: We believe core truths for Christian living
+  background:
+    color: white
+    image: 
   image: /images/banner/bible.png
   page:
   url: /partials/Holy Bible - New International Version/dummy_split_000.html

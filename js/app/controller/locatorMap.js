@@ -25,7 +25,7 @@ define(function() {
 		context.fillStyle = 'white';
 		context.fill();
 		context.font = '57.5px FontAwesome';
-		context.fillStyle = '#ce1126';
+		context.fillStyle = '#f15441';
 		context.fillText('\uf041', 0, 46);
 		context.font = '10px "Myriad Pro"';
 		context.fillStyle = '#ce1126';
@@ -103,8 +103,9 @@ define(function() {
 					mapTypeId : google.maps.MapTypeId.ROADMAP
 				});
 				storeMap.createMarker(latlng, 'P', locator);
-				bounds.extend(latlng);
-				storeMap.map.fitBounds(bounds);
+				//bounds.extend(latlng);
+				//storeMap.map.fitBounds(bounds);
+				storeMap.setCenter(latlng);
 			}, function(positionError) {
 				storeMap.map.setOptions({
 					center : latlng,
@@ -113,8 +114,8 @@ define(function() {
 				});
 				console.log(positionError);
 				storeMap.createMarker(latlng, 'P', locator);
-				bounds.extend(latlng);
-				storeMap.map.fitBounds(bounds);
+				//bounds.extend(latlng);
+				//storeMap.map.fitBounds(bounds);
 			});
 		}
 	};

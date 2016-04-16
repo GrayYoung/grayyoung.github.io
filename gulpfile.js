@@ -55,8 +55,14 @@ gulp.task('styles', function() {
 	})).pipe($.minifyCss({
 		keepSpecialComments : 0,
 		processImport : false
-	})).pipe(gulp.dest(path.join('_site', pathNames.styles))).pipe($.size({
+	})).pipe(gulp.dest(targetPaths.styles)).pipe($.size({
 		title : 'Styles Sass'
+	}));
+});
+
+gulp.task('js', function() {
+	return gulp.src(sourcesPaths.scripts.base).pipe(gulp.dest(path.join('_site', targetPaths.scripts))).pipe($.size({
+		title : 'JS'
 	}));
 });
 

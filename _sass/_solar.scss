@@ -199,10 +199,11 @@
 /* scene wrapper */
 .solar {
 	position: relative;
-	left: 5%;
+	left: 50%;
 	display: block;
-	width: 90%;
+	width: 1000px;
 	height: 300px;
+	margin-left: -500px;
 	perspective: 1000px;
 	perspective-origin: 60% 50%;
 	transform: rotate(-10deg);
@@ -239,17 +240,24 @@
 	background-color: transparent;
 	animation-iteration-count: infinite;
 	overflow: hidden;
-}
 
-.shadow {
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
-	background: transparent url(/images/solar/shadow.png) 0% 0% no-repeat;
-	background-size: cover;
-	border-radius: 100%;
+	> a, > .shadow {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	> a {
+		z-index: 10;
+	}
+
+	.shadow {
+		background: transparent url(/images/solar/shadow.png) 0% 0% no-repeat;
+		background-size: cover;
+		border-radius: 100%;
+	}
 }
 
 .mercury {

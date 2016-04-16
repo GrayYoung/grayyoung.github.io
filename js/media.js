@@ -49,37 +49,32 @@ require([ './config' ], function(config) {
 				canvas.width = this.width, canvas.height = this.height;
 				cvsContext.drawImage(img, 0, 0);
 			};
-			img.src = imdbData.exPoster;
+			img.src = (imdbData.Posters && imdbData.Posters[0]) || ('http://grayyoung.github.io/Flickr/poster/' + imdbData.Title + '.jpg');
 			event.preventDefault();
 		}).ready(function(){
 			var $container = $('#containerListing');
 			var listItems = function(workbook) {
 				var sheet = (workbook && workbook.Sheets[workbook.SheetNames[0]]) || $container.data('sheet');
-				var offset = $container.data('offset') || 2, count = 0;
+				var offset = $container.data('offset') || 2, count = 1;
 				var type = util.getUrlParam('t', true);
 				var tPattern = new RegExp('\^\\s*' + type + '\\s*\$', 'i');
 				var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
 				var callData = function(data) {
 					var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
 					var $preview = $(document.getElementById('tl-preview').content).children().clone().data('imdbData', data);
-		
-					if($.type(data.Title) === 'undefined' && $.type(data.imdbID) === 'undefined' && $.type(data.Type) === 'undefined') {
-						$container.data('loading', false);
-						$p.toggleClass('loading', false);
-						$(window).unbind('scroll.ls.media');
-					} else {
-						$preview.find('.p-category').children().first().text(data.Type).end().last().text(data.Genre);
-						$preview.find('img').attr('src', data.Poster).get(0).onerror = function() {
-							this.src = data.exPoster;
-							this.onerror = null;
-						};
-						$preview.find('.p-name').children().text(data.Title);
-						$preview.find('.p-summary').append(data.Plot);
-						$preview.find('.p-rating').children().first().css('width', data.imdbRating + 'em').next().children().first().text(data.imdbRating).next().text(data.imdbVotes);
-						$preview.find('.u-url').attr('href', 'http://www.imdb.com/title/' + data.imdbID);
-						$container.append($preview);
-						$pLabel.text(parseInt($pLabel.text(), 10) + 1);
-					}
+
+					$preview.find('.p-category').children().first().text(data.Type).end().last().text(data.Genre);
+					$preview.find('img').attr('src', data.Poster).get(0).onerror = function() {
+						this.src = (data.Posters && data.Posters[0]) || ('http://grayyoung.github.io/Flickr/poster/' + data.Title + '.jpg');
+						this.onerror = null;
+					};
+					$preview.find('.p-name').children().text(data.Title);
+					//$preview.find('.p-summary').append(data.Plot);
+					$preview.find('.p-rating').children().first().css('width', data.imdbRating + 'em').next().children().first().text(data.imdbRating).next().text(data.imdbVotes);
+					$preview.find('.u-url').attr('href', 'http://www.imdb.com/title/' + data.imdbID);
+					$container.append($preview);
+					$pLabel.text(parseInt($pLabel.text(), 10) + 1);
+					count++;
 				};
 
 				$container.data('sheet', sheet);
@@ -88,17 +83,30 @@ require([ './config' ], function(config) {
 					var preview;
 
 					$container.data('offset', index);
+					preview = {
+						Title : sheet[ 'A' + index ] && sheet[ 'A' + index ].v,
+						imdbID : sheet[ 'B' + index ] && sheet[ 'B' + index ].v,
+						Type : sheet[ 'C' + index ] && sheet[ 'C' + index ].v,
+						PosterList : sheet[ 'D' + index ] && sheet[ 'D' + index ].v
+					};
+					console.log(index);
+					if($.type(preview.Title) === 'undefined' && $.type(preview.imdbID) === 'undefined') {
+						$container.data('loading', false);
+						$p.toggleClass('loading', false);
+						$(window).unbind('scroll.ls.media');
+
+						return false;
+					}
 					if(count > 20) {
 						$container.data('loading', false);
 						$p.toggleClass('loading', false);
-						return false;
+
+						return true;
 					}
-					preview = {
-						Title : sheet[ 'A' + index ] ? sheet[ 'A' + index ].v : 'N/A',
-						imdbID : sheet[ 'B' + index ] ? sheet[ 'B' + index ].v : 'N/A',
-						Type : sheet[ 'C' + index ] ? sheet[ 'C' + index ].v : 'N/A',
-						Poster : sheet[ 'D' + index ] ? sheet[ 'D' + index ].v : ''
-					};
+					delete sheet[ 'A' + index ];
+					delete sheet[ 'B' + index ];
+					delete sheet[ 'C' + index ];
+					delete sheet[ 'D' + index ];
 					if(type === '' || tPattern.test(preview.Type)) {
 						if(preview.imdbID) {
 							$.ajax({
@@ -110,7 +118,9 @@ require([ './config' ], function(config) {
 									r : 'json'
 								},
 								success : function(imdbData) {
-									imdbData.exPoster = preview.Poster;
+									if(preview.PosterList) {
+										imdbData.Posters = preview.PosterList.split(',');
+									}
 									callData(imdbData);
 								},
 								error : function() {
@@ -121,13 +131,12 @@ require([ './config' ], function(config) {
 								}
 							});
 						} else {
-							callData(preview, index, oneAfterOne);
+							callData(preview);
 							oneAfterOne(index + 1);
 						}
 					} else {
 						oneAfterOne(index + 1);
 					}
-					count++;
 				})(offset);
 			};
 

@@ -8,11 +8,12 @@
  */
 /* global requirejs */
 requirejs.config({
-	baseUrl : '/js/lib',
+	baseUrl : '/dist/js/lib',
 	paths : {
 		app : '../app',
 		jquery : 'jquery.min',
 		bootstrap : 'bootstrap.min',
+		browser: 'jquery.browser.min',
 		zip : 'jszip',
 		xlsx : 'xlsx.min',
 		googleMap : 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en'
@@ -27,7 +28,8 @@ requirejs.config({
 		name : '../config',
 		include : [ 
             'jquery',
-            'bootstrap'
+            'bootstrap',
+			'browser'
         ]
 	}, {
 		name : '../marching',
@@ -56,8 +58,7 @@ requirejs.config({
             'xlsx'
         ],
 		exclude : [ 
-            '../config',
-            'app/model/requests'
+            '../config'
         ]
 	}, {
 		name : '../work',

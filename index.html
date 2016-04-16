@@ -5,7 +5,7 @@ layout: default
 <div id="carousel-sliding" class="carousel slide">
 	<div class="carousel-inner" role="listbox">
 		{% for slide in site.data.slides limit:1 %}
-		<div class="item active">
+		<div class="item active" style="background-color: {{ slide.background.color }}; background-image: {{ slide.background.image }};">
 			<a href="{{ slide.url }}">
 				<img class="img-responsive center-block" src="{{ slide.image }}" alt="{{ slide.alt }}">
 			</a>
@@ -25,6 +25,10 @@ layout: default
 </div>
 <div class="clearfix show-grid"></div>
 <div class="clearfix show-grid"></div>
+<div class="clearfix show-grid hidden-xs"></div>
+<div class="clearfix show-grid hidden-xs"></div>
+<div class="clearfix show-grid hidden-xs"></div>
+<div class="clearfix show-grid hidden-xs"></div>
 <div class="clearfix list-preview h-listing">
 	{% for preview in site.data.previewCollection limit:1 %}
 	<div class="col-sm-12 col-md-4 h-entry">
@@ -75,3 +79,7 @@ layout: default
 		</div>
 	</div>
 </div>
+<div class="clearfix show-grid hidden-xs"></div>
+<div class="clearfix show-grid hidden-xs"></div>
+<div class="clearfix show-grid"></div>
+<div class="clearfix show-grid"></div>

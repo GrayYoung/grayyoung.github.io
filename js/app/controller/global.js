@@ -5,9 +5,14 @@
 
 /* The following comment tell gulp-jshint variable define is require in another file. */
 /* global require */
-define([ 'app/model/requests', 'jquery', 'bootstrap' ], function(requests, $) {
+define([ 'app/model/requests', 'jquery', 'bootstrap', 'browser' ], function(requests, $) {
 	$(document).ready(function() {
 		$('#progressBar').toggleClass('loading', false);
+		if($.browser.msie) {
+			$('#tip-browser').removeClass('hidden');
+		} else {
+			$('#tip-browser').remove();
+		}
 	});
 
 	(function(i, s, o, g, r, a, m) {

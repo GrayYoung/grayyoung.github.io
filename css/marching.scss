@@ -25,6 +25,24 @@ a.text-danger, a .text-danger {
 	}
 }
 
+.carousel-control {
+	visibility: hidden;
+	background-image: none !important;
+	filter: none !important;
+
+	&:hover, &:focus {
+		visibility: visible;
+	}
+}
+
+.carousel-inner {
+	&:hover, &:focus {
+		+ .carousel-control, + .carousel-control + .carousel-control {
+			visibility: visible;
+		}
+	}
+}
+
 .show-grid {
 	margin-bottom: $grid-gutter-width / 2;
 }
@@ -403,8 +421,6 @@ body > * > footer {
 	}
 
 	.carousel-control {
-		background-image: none;
-
 		&.disabled {
 			pointer-events: none;
 			cursor: not-allowed;
@@ -556,20 +572,20 @@ body > * > footer {
 			}
 		}
 
-		.carousel-control {
-			.glyphicon-chevron-left, .glyphicon-chevron-right, .icon-next, .icon-prev {
-				height: 100px;
-				margin-top: -70px;
-				font-size: 100px;
-			}
-		}
-
 		.carousel, .carousel-inner, .carousel-inner .item {
 			height: 100%;
 		}
 
 		#posterCanvas {
 			height: 100%;
+		}
+	}
+
+	.carousel-control {
+		.glyphicon-chevron-left, .glyphicon-chevron-right, .icon-next, .icon-prev {
+			height: 100px;
+			margin-top: -70px;
+			font-size: 100px;
 		}
 	}
 }
