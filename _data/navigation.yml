@@ -1,5 +1,8 @@
-- label: Books
-  url: /books/
+- label: Blog
+  url: /blog/
+
+- label: Book
+  url: /book/
   subs:
     - label: Holy Bible
       url: /partials/Holy Bible - New International Version/dummy_split_002.html
@@ -27,9 +30,6 @@
 
     - label: TV
       url: /media?t=tv
-
-- label: Blogs
-  url: /blog/
 
 - label: Printing
   url: /printing/

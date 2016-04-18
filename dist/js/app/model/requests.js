@@ -1,1 +1,1 @@
-define({media:"/data/media.xlsx",work:"/data/work.xlsx"});
+define({imdb:"http://www.omdbapi.com/",media:"/data/media.xlsx",work:"/data/work.xlsx"});

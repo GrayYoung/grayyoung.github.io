@@ -7,10 +7,10 @@
 define(function() {
 	return function(method, url, callback) {
 		var xhRequest;
-	
-		if(window.XMLHttpRequest) {
+
+		if(XMLHttpRequest) {
 			xhRequest = new XMLHttpRequest();
-		} else if(window.ActiveXObject) {
+		} else if(ActiveXObject) {
 			xhRequest = new ActiveXObject('MSXML2.XMLHTTP.3.0');
 		} else {
 			throw 'XHR unavailable for your browser';

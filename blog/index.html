@@ -5,7 +5,7 @@ title: Blogs
 
 <section class="container-fluid">
 	<h1>Blogs</h1>
-	<ul class="list-unstyled">
+	<ul class="list-unstyled list-blog">
 		{% for post in paginator.posts %}
 		<li class="media">
 			<div class="media-left">
@@ -15,7 +15,7 @@ title: Blogs
 			</div>
 			<div class="media-body">
 				<h4 class="media-heading">{{ post.title }}</h4>
-				<p>{{ post.excerpt }}</p>
+				<p>{{ post.excerpt | strip_html }}</p>
 			</div>
 		</li>
 		{% endfor %}

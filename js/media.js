@@ -23,6 +23,7 @@ require([ './config' ], function(config) {
 					$(this).remove();
 				}).insertAfter($this).modal('show');
 			}
+			$modal.find('.loading').toggleClass('active', true);
 			$modal.find('.carousel-control').off('click').one('click', function(event) {
 				var $arrow = $(this);
 	
@@ -45,9 +46,23 @@ require([ './config' ], function(config) {
 			canvas = $modal.find('#posterCanvas').get(0);
 			cvsContext = canvas.getContext('2d');
 			cvsContext.clearRect(0, 0, canvas.width, canvas.height);
+			img.onerror = function() {
+				var gradient = cvsContext.createLinearGradient(0, 0, canvas.width, 0);
+
+				gradient.addColorStop(0.125, '#f15441');
+				gradient.addColorStop(0.375, '#fec536');
+				gradient.addColorStop(0.625, '#69c4bd');
+				gradient.addColorStop(0.875, '#2b669f');
+				cvsContext.fillRect(0, 0, canvas.width, canvas.height);
+				cvsContext.fillStyle = gradient;
+				cvsContext.fill();
+				$modal.find('.loading').toggleClass('active', false);
+			};
 			img.onload = function() {
 				canvas.width = this.width, canvas.height = this.height;
 				cvsContext.drawImage(img, 0, 0);
+				$modal.find('.loading').addClass('active');
+				$modal.find('.loading').toggleClass('active', false);
 			};
 			img.src = (imdbData.Posters && imdbData.Posters[0]) || ('http://grayyoung.github.io/Flickr/poster/' + imdbData.Title + '.jpg');
 			event.preventDefault();
@@ -76,9 +91,7 @@ require([ './config' ], function(config) {
 					$pLabel.text(parseInt($pLabel.text(), 10) + 1);
 					count++;
 				};
-
-				$container.data('sheet', sheet);
-				(function(index) {
+				var iterateItem = function(sheet, index) {
 					var oneAfterOne = arguments.callee;
 					var preview;
 
@@ -89,7 +102,6 @@ require([ './config' ], function(config) {
 						Type : sheet[ 'C' + index ] && sheet[ 'C' + index ].v,
 						PosterList : sheet[ 'D' + index ] && sheet[ 'D' + index ].v
 					};
-					console.log(index);
 					if($.type(preview.Title) === 'undefined' && $.type(preview.imdbID) === 'undefined') {
 						$container.data('loading', false);
 						$p.toggleClass('loading', false);
@@ -110,7 +122,7 @@ require([ './config' ], function(config) {
 					if(type === '' || tPattern.test(preview.Type)) {
 						if(preview.imdbID) {
 							$.ajax({
-								url : 'http://www.omdbapi.com/',
+								url : requests.imdb,
 								type : 'get',
 								data : {
 									i : preview.imdbID,
@@ -127,17 +139,20 @@ require([ './config' ], function(config) {
 									callData(preview);
 								},
 								complete : function() {
-									oneAfterOne(index + 1);
+									oneAfterOne(sheet, index + 1);
 								}
 							});
 						} else {
 							callData(preview);
-							oneAfterOne(index + 1);
+							oneAfterOne(sheet, index + 1);
 						}
 					} else {
-						oneAfterOne(index + 1);
+						oneAfterOne(sheet, index + 1);
 					}
-				})(offset);
+				};
+
+				$container.data('sheet', sheet);
+				iterateItem(sheet, offset);
 			};
 
 			$container.data({
@@ -153,7 +168,20 @@ require([ './config' ], function(config) {
 					if($container.data('sheet')) {
 						listItems();
 					} else {
-						excelRequest('GET', requests.media, listItems);
+						if(window.Worker) {
+							var xlsxWorker = new Worker('/dist/js/app/worker/xlsx.js');
+							
+							xlsxWorker.onmessage = function(event) {
+								listItems(event.data);
+								xlsxWorker.terminate();
+							};
+							xlsxWorker.onerror = function(error) {
+								excelRequest('GET', requests.media, listItems);
+								xlsxWorker.terminate();
+							};
+						} else {
+							excelRequest('GET', requests.media, listItems);
+						}
 					}
 				}
 			}).triggerHandler('scroll.ls.media');

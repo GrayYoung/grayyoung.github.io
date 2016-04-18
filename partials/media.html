@@ -46,6 +46,12 @@ extraJS: [/dist/js/lib/jszip.js]
 					<h4 class="modal-title" id="mediaTitle"></h4>
 				</div>
 				<div class="modal-body">
+					<div class="progress loading active hidden-print">
+						<div class="progress-bar" role="progressbar"></div>
+						<div class="progress-bar" role="progressbar"></div>
+						<div class="progress-bar" role="progressbar"></div>
+						<div class="progress-bar" role="progressbar"></div>
+					</div>
 					<div id="carousel-modalPreview" class="carousel slide">
 						<div class="carousel-inner">
 							<div class="item active">
@@ -100,9 +106,9 @@ extraJS: [/dist/js/lib/jszip.js]
 								<dt>Metascore</dt>
 								<dd class="p-metascore"></dd>
 								<dt>Rating</dt>
-								<dd class="p-rating"></dd>
+								<dd class="p-rating p-imdbrating"></dd>
 								<dt>Votes</dt>
-								<dd class="p-votes"></dd>
+								<dd class="p-votes p-imdbvotes"></dd>
 							</dl>
 							<hr>
 							<dl class="dl-horizontal">

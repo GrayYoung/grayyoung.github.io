@@ -60,7 +60,9 @@
 	animation: loadingRotation 700ms linear infinite both;
 }
 
-#progressBar.loading {
+.loading.active {
+	visibility: visible;
+
 	/* &:before, &:after {
 		content: " ";
 		display: block;

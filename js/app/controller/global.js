@@ -7,7 +7,7 @@
 /* global require */
 define([ 'app/model/requests', 'jquery', 'bootstrap', 'browser' ], function(requests, $) {
 	$(document).ready(function() {
-		$('#progressBar').toggleClass('loading', false);
+		$('#progressBar').toggleClass('active', false);
 		if($.browser.msie) {
 			$('#tip-browser').removeClass('hidden');
 		} else {

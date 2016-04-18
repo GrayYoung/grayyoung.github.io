@@ -111,6 +111,23 @@ gulp.task('init-bower', function() {
 	});
 });
 
+gulp.task('update-sources', function() {
+	var sources = [
+		['jquery', path.join(pathNames.bowerLib, 'jquery', 'dist', 'jquery.min.js,jquery.slim.min.js')], 
+		['slick-carousel', path.join(pathNames.bowerLib, 'bootstrap-sass-official', 'assets', 'javascripts', 'bootstrap.min.js')], 
+		['slick-carousel', path.join(pathNames.bowerLib, 'slick-carousel', 'slick', 'slick.min.js')], 
+		['html5shiv', path.join(pathNames.bowerLib, 'html5shiv', 'dist', 'html5shiv.min.js,html5shiv-printshiv.min.js')], 
+		['js-xlsx', path.join(pathNames.bowerLib, 'js-xlsx', 'dist', 'xlsx.min.js')], 
+		['requirejs', path.join(pathNames.bowerLib, 'requirejs', 'requirejs.js')], 
+		['respond', path.join(pathNames.bowerLib, 'respond', 'dest', 'respond.min.js')], 
+	];
+	for(var s in sources) {
+		gulp.src(sources[s][1]).pipe(gulp.dest(path.join(pathNames.sourcesUrl, pathNames.scripts, 'lib'))).pipe($.size({
+			title : sources[s][0]
+		}));
+	}
+});
+
 gulp.task('doNothing', function() {
 	return null;
 });
@@ -125,7 +142,7 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function(next) {
 	gulp.watch([ sourcesPaths.styles.base, sourcesPaths.styles.sass ], [ 'styles' ]);
-	gulp.watch(sourcesPaths.scripts.base, [ 'scripts' ]);
+	gulp.watch(sourcesPaths.scripts.base, [ 'js' ]);
 	gulp.watch('bower.json', [ 'init-bower' ]);
 });
 
