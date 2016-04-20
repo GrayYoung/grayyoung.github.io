@@ -23,10 +23,11 @@
     "bootstrap-sass-official": "~3.3.6",
     "fontawesome": "latest",
     "jquery": "latest",
-    "jquery-utilties": "latest",
+    "jquery-utilties": "https://github.com/GrayYoung/jQuery.Utilities.git",
     "slick-carousel": "latest",
     "requirejs": "latest",
-    "js-xlsx" : "latest"
+    "js-xlsx": "latest",
+    "ajax": "latest"
   },
   "devDependencies": {
   },

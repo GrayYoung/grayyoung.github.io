@@ -17,6 +17,7 @@ requirejs.config({
 		slick: 'slick.min',
 		zip: 'jszip',
 		xlsx: 'xlsx.min',
+		ajax: 'ajax.min',
 		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en'
 	},
 	shim: {
@@ -55,6 +56,7 @@ requirejs.config({
             'app/model/util',
             'app/model/excelRequest',
             'app/model/requests',
+            'app/model/iterateMedia',
             'app/controller/global'
         ],
 		exclude: [ 
@@ -80,6 +82,11 @@ requirejs.config({
         ],
 		exclude: [ 
             '../config'
+        ]
+	}, {
+		name: 'app/model/iterateMedia',
+		include: [ 
+            'ajax'
         ]
 	} ]
 });

@@ -20,7 +20,6 @@ markdown: kramdown
 exclude:
   - bower_components
   - node_modules
-  - js
   - [LICENSE, README.md, bower.json, package.json, gulpfile.js]
 
 sass:
