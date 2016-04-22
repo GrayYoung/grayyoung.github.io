@@ -25,7 +25,7 @@ require([ './config' ], function(config) {
 				if(pageNO > 1) {
 					$pagination.find('.pagination').prepend(creatItem(pageNO - 1, 'fa-angle-double-left'));
 				}
-				$('body').append($pagination);
+				$('main').append($pagination);
 			}
 
 			$('a[href]').filter(function() {

@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: withBreadcrumbs
 title: Holy Bible - New International Version
 js: article
 ---
 
 <article id="content" class="container">
 	<header>
-		<h1>{{ page.title }}</h1>
+		<h1>{{ page.categories.last }}</h1>
 	</header>
 	<section>
 		<h2><a href="{{ page.anchor }}">{{ page.chapterTitle }}</a></h2>
