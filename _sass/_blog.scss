@@ -1,4 +1,10 @@
 .list-blog {
+	> li + li {
+		padding-top: $grid-gutter-width / 2;
+		padding-bottom: $grid-gutter-width / 2;
+		border-top: double 4px $text-color;
+	}
+
 	.media-left img {
 		width: 200px;
 	}

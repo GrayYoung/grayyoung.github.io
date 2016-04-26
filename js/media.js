@@ -7,8 +7,35 @@
 /* global require */
 require([ './config' ], function(config) {
 	require([ 'app/controller/global' ]);
-	require([ 'app/model/requests', 'app/model/util', 'app/model/excelRequest', 'jquery', 'bootstrap', 'xlsx' ], function(requests, util, excelRequest, $) {
-		$(document).on('click', '#containerListing a.u-url', function(event) {
+	require([ 'app/model/util', 'app/model/requests', 'app/model/excelRequest', 'app/model/iterateMedia', 'jquery', 'bootstrap', 'xlsx' ], function(util, requests, excelRequest, iterateMedia, $) {
+		$(document).on('mousewheel.ls.media', function(event) {
+			if(event.deltaY > 0 && $(document).scrollTop() <= 0) {
+				$('#containerListing').trigger('update', 'top');
+			} else if(event.deltaY < 0 && $(document).scrollTop() >= $(document).height() - $(window).height()) {
+				$('#containerListing').trigger('update', 'bottom');
+			}
+		}).on('touchstart.ls.media', function(event) {
+			var $document = $(this);
+
+			$document.data('touch', {
+				pageX : event.originalEvent.changedTouches[0].pageX,
+				pageY : event.originalEvent.changedTouches[0].pageY,
+				startTime : new Date().getTime()
+			});
+		}).on('touchend.ls.media', function(event) {
+			var $document = $(this);
+			var touchData = $document.data('touch');
+			var distance = event.originalEvent.changedTouches[0].pageY - touchData.pageY;
+
+			if(new Date().getTime() - touchData.startTime <= 300) {
+				if(distance >= 60 && $(document).scrollTop() <= 0) {
+					$('#containerListing').trigger('update', 'top');
+				} else if(distance <= 60 && $(document).scrollTop() >= $(document).height() - $(window).height()) {
+					$('#containerListing').trigger('update', 'bottom');
+				}
+				//event.preventDefault();
+			}
+		}).on('click', '#containerListing a.u-url', function(event) {
 			var $this = $(this), $preview = $this.closest('.h-item'), $canvas;
 			//var imdbID = /(?:\/)(tt\d+)$/g.exec($this.attr('href'))[1];
 			var $modal = $('#modalPreview');
@@ -68,15 +95,20 @@ require([ './config' ], function(config) {
 			event.preventDefault();
 		}).ready(function(){
 			var $container = $('#containerListing');
+			var setting = {
+				pageSize : 20
+			};
+			var type = util.getUrlParam('t', true);
 			var listItems = function(workbook) {
 				var sheet = (workbook && workbook.Sheets[workbook.SheetNames[0]]) || $container.data('sheet');
-				var offset = $container.data('offset') || 2, count = 1;
-				var type = util.getUrlParam('t', true);
-				var tPattern = new RegExp('\^\\s*' + type + '\\s*\$', 'i');
+				var offset = $container.data('offset') || 2;
 				var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
 				var callData = function(data) {
 					var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
-					var $preview = $(document.getElementById('tl-preview').content).children().clone().data('imdbData', data);
+					var $preview = $(document.getElementById('tl-preview').content).children().clone().data({
+						imdbData: data,
+						page: parseInt(offset / setting.pageSize, 10) + 1
+					});
 
 					$preview.find('.p-category').children().first().text(data.Type).end().last().text(data.Genre);
 					$preview.find('img').attr('src', data.Poster).get(0).onerror = function() {
@@ -89,102 +121,124 @@ require([ './config' ], function(config) {
 					$preview.find('.u-url').attr('href', 'http://www.imdb.com/title/' + data.imdbID);
 					$container.append($preview);
 					$pLabel.text(parseInt($pLabel.text(), 10) + 1);
-					count++;
 				};
-				var iterateItem = function(sheet, index) {
-					var oneAfterOne = arguments.callee;
-					var preview;
 
-					$container.data('offset', index);
-					preview = {
-						Title : sheet[ 'A' + index ] && sheet[ 'A' + index ].v,
-						imdbID : sheet[ 'B' + index ] && sheet[ 'B' + index ].v,
-						Type : sheet[ 'C' + index ] && sheet[ 'C' + index ].v,
-						PosterList : sheet[ 'D' + index ] && sheet[ 'D' + index ].v
-					};
-					if($.type(preview.Title) === 'undefined' && $.type(preview.imdbID) === 'undefined') {
-						$container.data('loading', false);
-						$p.toggleClass('loading', false);
-						$(window).unbind('scroll.ls.media');
+				if(window.Worker) {
+					var ajaxWorker = new Worker('/js/app/worker/ajaxToIMDB.js');
 
-						return false;
-					}
-					if(count > 20) {
-						$container.data('loading', false);
-						$p.toggleClass('loading', false);
-
-						return true;
-					}
-					delete sheet[ 'A' + index ];
-					delete sheet[ 'B' + index ];
-					delete sheet[ 'C' + index ];
-					delete sheet[ 'D' + index ];
-					if(type === '' || tPattern.test(preview.Type)) {
-						if(preview.imdbID) {
-							$.ajax({
-								url : requests.imdb,
-								type : 'get',
-								data : {
-									i : preview.imdbID,
-									plot : 'full',
-									r : 'json'
-								},
-								success : function(imdbData) {
-									if(preview.PosterList) {
-										imdbData.Posters = preview.PosterList.split(',');
-									}
-									callData(imdbData);
-								},
-								error : function() {
-									callData(preview);
-								},
-								complete : function() {
-									oneAfterOne(sheet, index + 1);
-								}
+					ajaxWorker.onmessage = function(event) {
+						if(event.data.status === 1) {
+							ajaxWorker.postMessage({
+								sheet: sheet,
+								offset: offset,
+								setting: setting,
+								type: type
 							});
-						} else {
-							callData(preview);
-							oneAfterOne(sheet, index + 1);
+						} else if(event.data.offset) {
+							callData(event.data.media);
+							$container.data('offset', event.data.offset);
+						} else if(event.data.pause === true) {
+							$container.data('loading', false);
+							$p.toggleClass('loading', false);
+						} else if(event.data.stopProgress === true) {
+							$container.data('loading', false);
+							$p.toggleClass('loading', false);
+							$(document).off('scroll.ls.media mousewheel.ls.media touchstart.ls.media touchend.ls.media');
+							$container.unbind('update');
 						}
-					} else {
-						oneAfterOne(sheet, index + 1);
-					}
-				};
-
-				$container.data('sheet', sheet);
-				iterateItem(sheet, offset);
+					};
+				} else {
+					iterateMedia({
+						sheet: sheet,
+						offset: offset,
+						setting: setting,
+						type: type,
+						pause: function() {
+							$container.data('loading', false);
+							$p.toggleClass('loading', false);
+						},
+						end: function() {
+							$container.data('loading', false);
+							$p.toggleClass('loading', false);
+							$(document).off('scroll.ls.media mousewheel.ls.media touchstart.ls.media touchend.ls.media');
+							$container.unbind('update');
+						},
+						success: function(data) {
+							callData(data.media);
+							$container.data('offset', data.offset);
+						},
+						error: function(data) {
+							callData(data.media);
+							$container.data('offset', data.offset);
+						}
+					});
+				}
 			};
 
 			$container.data({
 				loading : false
 			});
 
-			$(window).bind('scroll.ls.media', function(event) {
-				var $w = $(this), $p = $('#fixedProgress');
-		
-				if(!$container.data('loading') && ($container.height() + $container.offset().top < $w.scrollTop() + $w.height())) {
-					$container.data('loading', true);
-					$p.toggleClass('loading', true);
-					if($container.data('sheet')) {
-						listItems();
-					} else {
-						if(window.Worker) {
-							var xlsxWorker = new Worker('/dist/js/app/worker/xlsx.js');
-							
-							xlsxWorker.onmessage = function(event) {
-								listItems(event.data);
-								xlsxWorker.terminate();
-							};
-							xlsxWorker.onerror = function(error) {
-								excelRequest('GET', requests.media, listItems);
-								xlsxWorker.terminate();
-							};
-						} else {
+			$('#containerListing').bind('update', function(event, direction) {
+				var $container = $(this), $p = $('#fixedProgress');
+
+				if($container.data('loading') === true || direction === 'top') {
+					return false;
+				}
+				$container.data('loading', true);
+				$p.toggleClass('loading', true);
+				if($container.data('sheet')) {
+					listItems();
+				} else {
+					if(window.Worker) {
+						var xlsxWorker = new Worker('/js/app/worker/xlsx.js');
+						
+						xlsxWorker.onmessage = function(event) {
+							listItems(event.data);
+							xlsxWorker.terminate();
+						};
+						xlsxWorker.onerror = function(error) {
 							excelRequest('GET', requests.media, listItems);
-						}
+							xlsxWorker.terminate();
+						};
+					} else {
+						excelRequest('GET', requests.media, listItems);
 					}
 				}
-			}).triggerHandler('scroll.ls.media');
+			});
+			$(document).data('oddScrollTop', $(document).scrollTop()).on('scroll.ls.media', function(event) {
+				var updatedURL = location.search.substr(1), page = 1;
+				var pattern = /(^|\&)(page=[^\&]*)(\&|$)/gi;
+				var $document = $(this), $container = $('#containerListing'), $item;
+				var newScrollTop = $document.scrollTop(), oddScrollTop = $document.data('oddScrollTop');
+				var wHeight = $(window).height(), containerTop = $container.offset().top, containerHeight = $container.height(), el_top, el_height;
+
+				if(newScrollTop < oddScrollTop && newScrollTop <= containerTop - Math.min(wHeight, containerTop) / 2) {
+					$container.trigger('update', 'top');
+				} else if(newScrollTop >= oddScrollTop && newScrollTop >= containerTop + containerHeight - wHeight + Math.min(wHeight, $document.height() - containerTop - containerHeight) / 2) {
+					$container.trigger('update', 'bottom');
+				}
+				$document.data('oddScrollTop', newScrollTop).find('.h-item').each(function() {
+					$item = $(this);
+					el_top = $item.offset().top, el_height = $item.height();
+
+					if((el_top + el_height * 0.75 > newScrollTop) && (el_top < (newScrollTop + el_height))) {
+						page = $item.data('page') || $container.data('originalpage');
+						if(updatedURL !== '') {
+							if(pattern.test(updatedURL)){
+								updatedURL = updatedURL.replace(pattern, '$1page=' + page + '$3');
+							} else {
+								updatedURL += '&page=' + page;
+							}
+						} else {
+							updatedURL = 'page=' + page;
+						}
+						history.replaceState(null, null, location.pathname + '?' + updatedURL.replace(/(^|\&)(page=1)(\&|$)/gi, '$3').replace(/^\&+/g, ''));
+
+						return false;
+					}
+				});
+			}).trigger('scroll.ls.media');
 		});
 	});
 });
