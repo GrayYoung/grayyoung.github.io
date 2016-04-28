@@ -15,8 +15,10 @@ showBC: true
 				</a>
 			</div>
 			<div class="media-body">
-				<h4 class="media-heading">{{ post.title }}</h4>
-				<p>{{ post.excerpt | strip_html }}</p>
+				<h2 class="media-heading">{{ post.title }}</h2>
+				<div><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time></div>
+				<div class="clearfix show-grid"></div>
+				<p>{{ post.excerpt | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
 			</div>
 		</li>
 		{% endfor %}

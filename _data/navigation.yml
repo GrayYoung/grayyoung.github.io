@@ -11,7 +11,7 @@
   url: /web/
   subs:
     - label: AngularJS API<small>(1.4.10)</small>
-      url: /angular.js/angular-1.4.10/docs
+      url: /Document/angular-1.4.10/docs
 
     - label: jQuery.UI.Extension
       url: https://github.com/GrayYoung/jQuery.UI.Extension

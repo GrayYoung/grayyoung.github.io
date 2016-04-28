@@ -1,11 +1,27 @@
 .list-blog {
-	> li + li {
-		padding-top: $grid-gutter-width / 2;
+	> li {
+		padding-top: $grid-gutter-width;
 		padding-bottom: $grid-gutter-width / 2;
-		border-top: double 4px $text-color;
+	}
+
+	> li + li {
+		border-top: double 4px $gray-light;
 	}
 
 	.media-left img {
 		width: 200px;
+	}
+
+	.media-heading {
+		padding-bottom: $grid-gutter-width / 2;
+		border-bottom: solid 1px $gray-light;
+	}
+
+	time {
+		font-size: 1.3em;
+	}
+
+	a {
+		font-weight: bold;
 	}
 }
