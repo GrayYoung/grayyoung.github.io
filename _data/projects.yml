@@ -1,0 +1,24 @@
+- name: Visionworks
+  description: Visionworks official e-commerce site. Including a back-end system —— ACMC, it's a management for client to manage orders, prescriptions uploaded by customers, action logs of agents, and others.
+  startDate:  2015-07-01
+  endDate:  2016-04-18
+  url: https://www.w3.org/TR/html5/
+  features:
+  - Suppot WCAG2.0
+  - Responsive design
+
+- name: Ashford
+  description: Ashford official e-commerce site.
+  startDate:  2015-04-01
+  endDate:  2015-07-01
+  url: http://www.ashford.com
+  features:
+  - Responsive design
+
+- name: Donaldson Catalog
+  description: Donaldson catalog advanced search.
+  startDate:  2014-10-20
+  endDate:  2015-01-31
+  url: https://catalog.donaldson.com/
+  features:
+  - Responsive design
