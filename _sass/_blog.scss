@@ -24,4 +24,8 @@
 	a {
 		font-weight: bold;
 	}
+
+	a + a {
+		margin-right: 10px;
+	}
 }
