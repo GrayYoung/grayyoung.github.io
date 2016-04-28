@@ -18,41 +18,8 @@ showBC: true
 				<h2 class="media-heading">{{ post.title }}</h2>
 				<div>
 					<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
-					<a class="pull-right" title="Share on Google+" href="https://plus.google.com/share?url={{ page.url | prepend: site.url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-						<span class="fa-stack fa-lg" aria-hidden="true">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-						</span>
-						<span class="sr-only">Share on Google+</span>
-					</a>
-					<a class="pull-right" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | prepend: site.url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-						<span class="fa-stack fa-lg" aria-hidden="true">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-						</span>
-						<span class="sr-only">Share on Facebook</span>
-					</a>
-					<a class="pull-right" title="Share on Twitter" href="https://twitter.com/home?status={{ page.url | prepend: site.url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-						<span class="fa-stack fa-lg" aria-hidden="true">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-						</span>
-						<span class="sr-only">Share on Twitter</span>
-					</a>
-					<a class="pull-right" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | prepend: site.url }}&title=&summary=&source=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-						<span class="fa-stack fa-lg" aria-hidden="true">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-						</span>
-						<span class="sr-only">Share on LinkedIn</span>
-					</a>
-					<a class="pull-right" title="Pin on Pinterest" href="https://pinterest.com/pin/create/button/?url={{ page.url | prepend: site.url }}&media=&description=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-						<span class="fa-stack fa-lg" aria-hidden="true">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
-						</span>
-						<span class="sr-only">Pin on Pinterest</span>
-					</a>
+					{% assign fullURL = post.url | prepend: site.url %}
+					{% include shareLinks.html url=fullURL %}
 				</div>
 				<div class="clearfix show-grid"></div>
 				<p>{{ post.excerpt | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
