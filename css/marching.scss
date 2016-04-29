@@ -11,6 +11,10 @@
 @import "printing";
 @import "solar";
 
+ul, ol {
+	list-style-position: outside;
+}
+
 a.text-danger, a .text-danger {
 	&:hover, &:focus {
 		color: darken($state-danger-text, 15%);
@@ -289,6 +293,7 @@ nav.navbar {
 	.thumbnail {
 		padding-top: 0;
 		border-width: 0; 
+		box-shadow: none;
 
 		.caption {
 			padding: 0;
