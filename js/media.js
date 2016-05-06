@@ -93,7 +93,9 @@ require([ './config' ], function(config) {
 			};
 			img.src = (imdbData.Posters && imdbData.Posters[0]) || ('http://grayyoung.github.io/Flickr/poster/' + imdbData.Title + '.jpg');
 			event.preventDefault();
-		}).ready(function(){
+		}).on('scroll.ls.media', function(event) {
+			util.throttle(listing);
+		}).trigger('scroll.ls.media').ready(function(){
 			var $container = $('#containerListing');
 			var setting = {
 				pageSize : 20
@@ -206,39 +208,41 @@ require([ './config' ], function(config) {
 					}
 				}
 			});
-			$(document).data('oddScrollTop', $(document).scrollTop()).on('scroll.ls.media', function(event) {
-				var updatedURL = location.search.substr(1), page = 1;
-				var pattern = /(^|\&)(page=[^\&]*)(\&|$)/gi;
-				var $document = $(this), $container = $('#containerListing'), $item;
-				var newScrollTop = $document.scrollTop(), oddScrollTop = $document.data('oddScrollTop');
-				var wHeight = $(window).height(), containerTop = $container.offset().top, containerHeight = $container.height(), el_top, el_height;
-
-				if(newScrollTop < oddScrollTop && newScrollTop <= containerTop - Math.min(wHeight, containerTop) / 2) {
-					$container.trigger('update', 'top');
-				} else if(newScrollTop >= oddScrollTop && newScrollTop >= containerTop + containerHeight - wHeight + Math.min(wHeight, $document.height() - containerTop - containerHeight) / 2) {
-					$container.trigger('update', 'bottom');
-				}
-				$document.data('oddScrollTop', newScrollTop).find('.h-item').each(function() {
-					$item = $(this);
-					el_top = $item.offset().top, el_height = $item.height();
-
-					if((el_top + el_height * 0.75 > newScrollTop) && (el_top < (newScrollTop + el_height))) {
-						page = $item.data('page') || $container.data('originalpage');
-						if(updatedURL !== '') {
-							if(pattern.test(updatedURL)){
-								updatedURL = updatedURL.replace(pattern, '$1page=' + page + '$3');
-							} else {
-								updatedURL += '&page=' + page;
-							}
-						} else {
-							updatedURL = 'page=' + page;
-						}
-						history.replaceState(null, null, location.pathname + '?' + updatedURL.replace(/(^|\&)(page=1)(\&|$)/gi, '$3').replace(/^\&+/g, ''));
-
-						return false;
-					}
-				});
-			}).trigger('scroll.ls.media');
+			$(document).data('oddScrollTop', $(document).scrollTop());
 		});
+
+		function listing() {
+			var updatedURL = location.search.substr(1), page = 1;
+			var pattern = /(^|\&)(page=[^\&]*)(\&|$)/gi;
+			var $document = $(document), $container = $('#containerListing'), $item;
+			var newScrollTop = $document.scrollTop(), oddScrollTop = $document.data('oddScrollTop');
+			var wHeight = $(window).height(), containerTop = $container.offset().top, containerHeight = $container.height(), el_top, el_height;
+
+			if(newScrollTop < oddScrollTop && newScrollTop <= containerTop - Math.min(wHeight, containerTop) / 2) {
+				$container.trigger('update', 'top');
+			} else if(newScrollTop >= oddScrollTop && newScrollTop >= containerTop + containerHeight - wHeight + Math.min(wHeight, $document.height() - containerTop - containerHeight) / 2) {
+				$container.trigger('update', 'bottom');
+			}
+			$document.data('oddScrollTop', newScrollTop).find('.h-item').each(function() {
+				$item = $(this);
+				el_top = $item.offset().top, el_height = $item.height();
+
+				if((el_top + el_height * 0.75 > newScrollTop) && (el_top < (newScrollTop + el_height))) {
+					page = $item.data('page') || $container.data('originalpage');
+					if(updatedURL !== '') {
+						if(pattern.test(updatedURL)){
+							updatedURL = updatedURL.replace(pattern, '$1page=' + page + '$3');
+						} else {
+							updatedURL += '&page=' + page;
+						}
+					} else {
+						updatedURL = 'page=' + page;
+					}
+					history.replaceState(null, null, location.pathname + '?' + updatedURL.replace(/(^|\&)(page=1)(\&|$)/gi, '$3').replace(/^\&+/g, ''));
+
+					return false;
+				}
+			});
+		}
 	});
 });

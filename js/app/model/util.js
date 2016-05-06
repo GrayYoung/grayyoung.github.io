@@ -21,5 +21,11 @@ define({
 		}
 
 		return '';
+	},
+	throttle : function(method, context) {
+		clearTimeout(method.timeoutId);
+		method.timeoutId = setTimeout(function() {
+			method.call(context);
+		}, 100);
 	}
 });

@@ -7,23 +7,36 @@
 define(function() {
 	function createXHR() {
 		if(typeof XMLHttpRequest != 'undefined') {
-			return new XMLHttpRequest();
+			createXHR = function() {
+				return new XMLHttpRequest();
+			}
 		} else if(typeof ActiveXObject != 'undefined') {
-			var versions = ['MSXML2.XMLHttp.6.0', 'MSXML2.XMLHttp.3.0', 'MSXML2.XMLHttp'];
+			createXHR = function() {
+				if(typeof arguments.callee.activeXString != 'string') {
+					var versions = ['MSXML2.XMLHttp.6.0', 'MSXML2.XMLHttp.3.0', 'MSXML2.XMLHttp'];
 
-			for(var i = 0, len = versions.length; i < len; i++) {
-				try {
-					var xhr = new ActiveXObject(versions[i]);
+					for(var i = 0, len = versions.length; i < len; i++) {
+						try {
+							var xhr = new ActiveXObject(versions[i]);
+		
+							arguments.callee.activeXString = versions[i];
 
-					arguments.callee.activeXString = versions[i];
-					return xhr;
-				} catch(error) {
-					console.log('Failed to create XMLHttpRequest: ' + versions[i]);
+							return xhr;
+						} catch(error) {
+							console.log('Failed to create XMLHttpRequest: ' + versions[i]);
+						}
+					}
 				}
+
+				return new ActiveXObject(arguments.callee.activeXString);
 			}
 		} else {
-			throw new Error('No XHR object availabel.');
+			createXHR = function() {
+				throw new Error('No XHR object availabel.');
+			}
 		}
+
+		return createXHR();
 	}
 
 	return function(method, url, callback) {
