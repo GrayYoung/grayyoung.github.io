@@ -18,7 +18,6 @@ define(['app/model/requests', 'ajax'], function(requests, ajax) {
 		if(typeof tPattern === 'undefined') {
 			tPattern = new RegExp('\^\\s*' + _thisParam.type + '\\s*\$', 'i');
 		}
-		_thisParam.offset++;
 		if(typeof _thisParam.init === 'function') {
 			_thisParam.init();
 		}
@@ -32,7 +31,6 @@ define(['app/model/requests', 'ajax'], function(requests, ajax) {
 			if(typeof _thisParam.end === 'function') {
 				_thisParam.end();
 			}
-			_thisParam = null, _thisF = null;
 			count = null, preview = null, tPattern = null;
 
 			return false;
@@ -49,6 +47,7 @@ define(['app/model/requests', 'ajax'], function(requests, ajax) {
 		delete _thisParam.sheet[ 'B' + _thisParam.offset ];
 		delete _thisParam.sheet[ 'C' + _thisParam.offset ];
 		delete _thisParam.sheet[ 'D' + _thisParam.offset ];
+		_thisParam.offset++;
 		if(_thisParam.type === '' || tPattern.test(preview.Type)) {
 			if(preview.imdbID) {
 				ajax().get(requests.imdb + '?i=' + preview.imdbID + '&plot=full&r=json').then(function(response, xhrObject) {

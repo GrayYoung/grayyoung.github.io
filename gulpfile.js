@@ -86,7 +86,7 @@ gulp.task('scripts', function() {
 				}
 			},
 			warnings : true,
-			mangle : false
+			mangle : true
 		},
 		preserveLicenseComments : false,
 		waitSeconds : 0

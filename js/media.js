@@ -124,7 +124,7 @@ require([ './config' ], function(config) {
 					$container.append($preview);
 					$pLabel.text(parseInt($pLabel.text(), 10) + 1);
 				};
-
+				$container.data('sheet', sheet);
 				if(window.Worker) {
 					var ajaxWorker = new Worker('/js/app/worker/ajaxToIMDB.js');
 

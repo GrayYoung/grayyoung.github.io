@@ -63,17 +63,6 @@ requirejs.config({
             '../config'
         ]
 	}, {
-		name: '../work',
-		include: [ 
-            'app/model/excelRequest',
-            'app/model/requests',
-            'app/controller/global',
-            'xlsx'
-        ],
-		exclude: [ 
-            '../config'
-        ]
-	}, {
 		name: '../printing',
 		include: [ 
             'app/model/util',
