@@ -4,153 +4,156 @@ title: About Me
 permalink: /about/
 ---
 
-			<article class="container-fluid h-resume hresume">
-				<h1 class="h1 col-sm-8 col-xs-12 p-name"><img class="img-circle center-block" width="100" height="100" alt="" src="/images/me.png" aria-hidden="true"><strong>Gray</strong> Young <small>Advanced Web front-end developer & web designer</small></h1>
-				<div class="col-sm-4 col-xs-12">
-					<dl class="dl-horizontal">
-						<dt>Email:</dt>
-						<dd><a href="mailto:windpet@live.cn">windpet@live.cn</a></dd>
-						<dt>Tel:</dt>
-						<dd><a href="tel:***********">***********</a></dd>
-					</dl>
-				</div>
-				<div class="clearfix"></div>
-				<hr />
-				<div class="row">
-					<div class="pull-right col-sm-4 col-xs-12">
-						<section class="p-contact contact">
-							<h2>About Me</h2>
-							<dl class="dl-horizontal h-card vcard">
-								<dt>Name:</dt>
-								<dd class="p-name fn">
-									<span class="p-given-name given-name">Gray</span> 
-									<span class="p-family-name family-name">Young</span>
-								</dd>
-								<dt>Birthday:</dt>
-								<dd class="dt-bday bday">3/29/1991</dd>
-								<dt>Nationality:</dt>
-								<dd>Han</dd>
-								<dt>Address:</dt>
-								<dd class="p-adr h-adr adr">
-									<span class="p-street-address street-address">Fuhua S Rd NO.1606 <small class="text-muted">(Poly XinyuShanghu)</small></span>,<br />
-									<span class="p-locality locality">Chengdu</span>
-									<span class="p-region region">Sichuan</span>
-									<span class="p-country-name country-name">China</span>
-									<span class="p-postal-code postal-code">610000</span>
-								</dd>
-								<dt>Experience:</dt>
-								<dd>4 Years</dd>
-								<dt>Availability:</dt>
-								<dd>Partime or Fulltime</dd>
-							</dl>
-						</section>
-					</div>
-					<div class="col-sm-8 col-xs-12">
-						<section class="p-education education">
-							<h2>Education</h2>
-							<ol class="list-unstyled list-history">
-								{% for education in site.data.educations %}
-								<li class="h-event vevent">
-									<h3 class="p-name summary">{{ education.school }}</h3>
-									<p class="p-category category">{{ education.degree }}</p>
-									<p class="p-description description">{{ education.description }}</p>
-									<time class="dt-duration duration" datatime="PT635D">{{ education.startDate | date: "%Y" }}-{% if education.endDate == "now" %}Present{% else %}{{ education.endDate | date: "%Y" }}{% endif %}</time>
-								</li>
+{% assign nowDate = "now" | date: "%s" | minus : 604800 %}
+
+<article class="container-fluid h-resume hresume">
+	<h1 class="h1 col-sm-8 col-xs-12 p-name"><img class="img-circle center-block" width="100" height="100" alt="" src="/images/me.png" aria-hidden="true"><strong>Gray</strong> Young <small>Senior Web front-end developer &amp; web designer</small></h1>
+	<div class="col-sm-4 col-xs-12">
+		<dl class="dl-horizontal">
+			<dt>Email:</dt>
+			<dd><a href="mailto:windpet@live.cn">windpet@live.cn</a></dd>
+			<dt>Tel:</dt>
+			<dd><a href="tel:***********">***********</a></dd>
+		</dl>
+	</div>
+	<div class="clearfix"></div>
+	<hr />
+	<div class="row">
+		<div class="pull-right col-sm-4 col-xs-12">
+			<section class="p-contact contact">
+				<h2>About Me</h2>
+				<dl class="dl-horizontal h-card vcard">
+					<dt>Name:</dt>
+					<dd class="p-name fn">
+						<span class="p-given-name given-name">Gray</span> 
+						<span class="p-family-name family-name">Young</span>
+					</dd>
+					<dt>Birthday:</dt>
+					<dd class="dt-bday bday">3/29/1991</dd>
+					<dt>Nationality:</dt>
+					<dd>Han</dd>
+					<dt>Address:</dt>
+					<dd class="p-adr h-adr adr">
+						<span class="p-street-address street-address">Fuhua S Rd NO.1606 <small class="text-muted">(Poly XinyuShangfu)</small></span>,<br />
+						<span class="p-locality locality">Chengdu</span>
+						<span class="p-region region">Sichuan</span>
+						<span class="p-country-name country-name">China</span>
+						<span class="p-postal-code postal-code">610000</span>
+					</dd>
+					<dt>Experience:</dt>
+					{% assign workSDate = "2012-09-24" | date: "%s" | minus: 604800 %}
+					{% assign workDuration = nowDate | minus: workSDate | round: 2 | divided_by: 3600 | divided_by: 24 | divided_by: 365 | round: 0 %}
+					<dd>{{workDuration}} Years</dd>
+					<dt>Availability:</dt>
+					<dd>Partime or Fulltime</dd>
+				</dl>
+			</section>
+		</div>
+		<div class="col-sm-8 col-xs-12">
+			<section class="p-education education">
+				<h2>Education</h2>
+				<ol class="list-unstyled list-history">
+					{% for education in site.data.educations %}
+					<li class="h-event vevent">
+						<h3 class="p-name summary">{{ education.school }}</h3>
+						<p class="p-category category">{{ education.degree }}</p>
+						<p class="p-description description">{{ education.description }}</p>
+						<time class="dt-duration duration" datatime="PT635D">{{ education.startDate | date: "%Y" }}-{% if education.endDate == "now" %}Present{% else %}{{ education.endDate | date: "%Y" }}{% endif %}</time>
+					</li>
+					{% endfor %}
+				</ol>
+			</section>
+		</div>
+	</div>
+	<div class="row">
+		<div class="pull-right col-sm-4 col-xs-12">
+			<section class="p-summary summary">
+				<h2>Objective</h2>
+				<p>Programing is a game, it's funny. And JavaScript is the most interesting program language.</p>
+			</section>
+		</div>
+		<div class="col-sm-8 col-xs-12">
+			<section class="p-experience experience">
+				<h2>Work Experience</h2>
+				<ol class="list-unstyled list-history">
+					{% for experience in site.data.experiences %}
+					<li class="h-event vevent">
+						<h3 class="p-name summary">{{ experience.company }}</h3>
+						<p class="p-category category">{{ experience.position }}</p>
+						<p class="p-description description">{{ experience.description }}</p>
+						<time class="dt-duration duration" datatime="PT635D">{{ experience.startDate | date: "%Y" }}-{% if experience.endDate == "now" %}Present{% else %}{{ experience.endDate | date: "%Y" }}{% endif %}</time>
+					</li>
+					{% endfor %}
+				</ol>
+			</section>
+		</div>
+	</div>
+	<div class="row">
+		<div class="pull-right col-sm-4 col-xs-12">
+			<section class="p-skill skill">
+				<h2>Skills</h2>
+				<dl class="dl-horizontal">
+					<dt aria-hidden="true">&nbsp;</dt>
+					<dd aria-hidden="true">
+						<table class="table table-bordered">
+							<caption>10 Years</caption>
+							<thead>
+								<tr>
+									<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+								</tr>
+							</thead>
+						</table>
+					</dd>
+				</dl>
+				{% for skill in site.data.skills %}
+				{% assign thisDate = skill.startDate | date: "%s" | minus: 604800 %}
+				{% assign duration = nowDate | minus: thisDate | round: 2 | divided_by: 3600 | divided_by: 24 | divided_by: 365 | round: 2 %}
+				<dl class="dl-horizontal competency skill">
+					<dt class="summary">{% if skill.url %}<a target="_blank" href="{{ skill.url }}">{{ skill.name }}</a>{% else %}{{ skill.name }}{% endif %}</dt>
+					<dd>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="10" style="width: {{ duration | times: 10 }}%;">
+								<time class="sr-only duration" datetime="P1096Y">{{ duration }} years</time>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				{% endfor %}
+			</section>
+		</div>
+		<div class="col-sm-8 col-xs-12">
+			<section class="p-experience">
+				<h2>Online Projects</h2>
+				<ol class="list-unstyled list-history">
+					{% for project in site.data.projects %}
+					<li class="h-event vevent">
+						<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ skill.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
+						<p class="p-description description">{{ project.description }}</p>
+						{% if project.features.size > 0%}
+						<div class="clearfix show-grid"></div>
+						<section>
+							<h4 class="h5">Features:</h4>
+							<ul>
+								{% for feature in project.features %}
+								<li>{{ feature }}</li>
 								{% endfor %}
-							</ol>
+							</ul>
 						</section>
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right col-sm-4 col-xs-12">
-						<section class="p-summary summary">
-							<h2>Objective</h2>
-							<p>Programing is a game, it's funny. And JavaScript is the most interesting program language.</p>
-						</section>
-					</div>
-					<div class="col-sm-8 col-xs-12">
-						<section class="p-experience experience">
-							<h2>Work Experience</h2>
-							<ol class="list-unstyled list-history">
-								{% for experience in site.data.experiences %}
-								<li class="h-event vevent">
-									<h3 class="p-name summary">{{ experience.company }}</h3>
-									<p class="p-category category">{{ experience.position }}</p>
-									<p class="p-description description">{{ experience.description }}</p>
-									<time class="dt-duration duration" datatime="PT635D">{{ experience.startDate | date: "%Y" }}-{% if experience.endDate == "now" %}Present{% else %}{{ experience.endDate | date: "%Y" }}{% endif %}</time>
-								</li>
-								{% endfor %}
-							</ol>
-						</section>
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right col-sm-4 col-xs-12">
-						<section class="p-skill skill">
-							<h2>Skills</h2>
-							<dl class="dl-horizontal">
-								<dt aria-hidden="true">&nbsp;</dt>
-								<dd aria-hidden="true">
-									<table class="table table-bordered">
-										<caption>10 Years</caption>
-										<thead>
-											<tr>
-												<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
-											</tr>
-										</thead>
-									</table>
-								</dd>
-							</dl>
-							{% assign nowDate = "now" | date: "%s" | minus : 604800 %}
-							{% for skill in site.data.skills %}
-							{% assign thisDate = skill.startDate | date: "%s" | minus: 604800 %}
-							{% assign duration = nowDate | minus: thisDate | round: 2 | divided_by: 3600 | divided_by: 24 | divided_by: 365 | round: 2 %}
-							<dl class="dl-horizontal competency skill">
-								<dt class="summary">{% if skill.url %}<a target="_blank" href="{{ skill.url }}">{{ skill.name }}</a>{% else %}{{ skill.name }}{% endif %}</dt>
-								<dd>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="10" style="width: {{ duration | times: 10 }}%;">
-											<time class="sr-only duration" datetime="P1096Y">{{ duration }} years</time>
-										</div>
-									</div>
-								</dd>
-							</dl>
-							{% endfor %}
-						</section>
-					</div>
-					<div class="col-sm-8 col-xs-12">
-						<section class="p-experience">
-							<h2>Online Projects</h2>
-							<ol class="list-unstyled list-history">
-								{% for project in site.data.projects %}
-								<li class="h-event vevent">
-									<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ skill.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
-									<p class="p-description description">{{ project.description }}</p>
-									{% if project.features.size > 0%}
-									<div class="clearfix show-grid"></div>
-									<section>
-										<h4 class="h5">Features:</h4>
-										<ul>
-											{% for feature in project.features %}
-											<li>{{ feature }}</li>
-											{% endfor %}
-										</ul>
-									</section>
-									{% endif %}
-									<time class="dt-duration duration" datatime="PT270D">{{ project.startDate | date: "%m/%Y" }}-{{ project.endDate | date: "%m/%Y" }}</time>
-								</li>
-								{% endfor %}
-							</ol>
-						</section>
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right col-sm-4 col-xs-12">
-						<section class="">
-							<h2>Reference</h2>
-							<p>N/A</p>
-						</section>
-					</div>
-				</div>
-				<hr />
-			</article>
+						{% endif %}
+						<time class="dt-duration duration" datatime="PT270D">{{ project.startDate | date: "%m/%Y" }}-{{ project.endDate | date: "%m/%Y" }}</time>
+					</li>
+					{% endfor %}
+				</ol>
+			</section>
+		</div>
+	</div>
+	<div class="row">
+		<div class="pull-right col-sm-4 col-xs-12">
+			<section class="">
+				<h2>Reference</h2>
+				<p>N/A</p>
+			</section>
+		</div>
+	</div>
+	<hr />
+</article>
