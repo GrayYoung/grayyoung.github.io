@@ -22,7 +22,7 @@ showBC: true
 					{% include shareLinks.html url=fullURL %}
 				</div>
 				<div class="clearfix show-grid"></div>
-				<p>{{ post.excerpt | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
+				<p>{{ post.excerpt | split:"<!-- more -->" | first | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
 			</div>
 		</li>
 		{% endfor %}
