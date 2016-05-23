@@ -8,8 +8,8 @@
 		border-top: double 4px $gray-light;
 	}
 
-	.media-left img {
-		width: 200px;
+	.media-left {
+		width: 10%;
 	}
 
 	.media-heading {
@@ -27,5 +27,13 @@
 
 	a + a {
 		margin-right: 10px;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.list-blog {
+		.media-left {
+			width: 20%;
+		}
 	}
 }

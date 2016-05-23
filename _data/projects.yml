@@ -1,10 +1,10 @@
-- name: Visionworks
+﻿- name: Visionworks
   description: Visionworks official e-commerce site. Including a back-end system —— ACMC, it's a management for client to manage orders, prescriptions uploaded by customers, action logs of agents, and others.
   startDate:  2015-07-01
   endDate:  2016-04-18
   url: https://www.w3.org/TR/html5/
   features:
-  - Suppot WCAG2.0
+  - WCAG2.0
   - Responsive design
 
 - name: Ashford
