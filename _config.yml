@@ -18,6 +18,7 @@ github_username:  grayyoung
 markdown: kramdown
 
 exclude:
+  - _site
   - bower_components
   - node_modules
   - [LICENSE, README.md, bower.json, package.json, gulpfile.js]
@@ -25,7 +26,7 @@ exclude:
 sass:
   style: compressed
 
-paginate: 5
+paginate: 20
 paginate_path: "/blog/page:num/"
 
 collections:

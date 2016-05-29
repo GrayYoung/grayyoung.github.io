@@ -53,12 +53,12 @@ $font-size-base:          14px;
 $font-size-large:         ceil(($font-size-base * 1.25));
 $font-size-small:         ceil(($font-size-base * 0.85));
 
-$font-size-h1:            floor(($font-size-base * 2.6));
-$font-size-h2:            floor(($font-size-base * 2.15));
-$font-size-h3:            ceil(($font-size-base * 1.7));
-$font-size-h4:            ceil(($font-size-base * 1.25));
-$font-size-h5:            $font-size-base;
-$font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
+$font-size-h1:            floor(($font-size-base * 4));
+$font-size-h2:            floor(($font-size-base * 3.5));
+$font-size-h3:            ceil(($font-size-base * 3));
+$font-size-h4:            ceil(($font-size-base * 2.5));
+$font-size-h5:            ceil(($font-size-base * 2));
+$font-size-h6:            ceil(($font-size-base * 1.5));
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429; // 20/14
@@ -795,13 +795,13 @@ $badge-border-radius:         10px;
 $breadcrumb-padding-vertical:   8px;
 $breadcrumb-padding-horizontal: 15px;
 //** Breadcrumb background color
-$breadcrumb-bg:                 #f5f5f5;
+$breadcrumb-bg:                 transparent;
 //** Breadcrumb text color
 $breadcrumb-color:              #ccc;
 //** Text color of current page in the breadcrumb
 $breadcrumb-active-color:       $gray-light;
 //** Textual separator for between breadcrumb elements
-$breadcrumb-separator:          "/";
+$breadcrumb-separator:          "\203A";
 
 
 //== Carousel
