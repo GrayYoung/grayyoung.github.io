@@ -1,6 +1,7 @@
 .heading-blog {
 	margin-left: calc(10% + 20px);
 	margin-bottom: $grid-gutter-width * 3;
+	font-size: $font-size-base * 4;
 }
 
 .list-blog {
@@ -34,7 +35,7 @@
 	.media-left {
 		width: 10%;
 		padding-right: 20px;
-		border-right: solid 10px $gray-light;
+		border-right: solid 5px $gray-light;
 	}
 
 	.media-body {
@@ -51,7 +52,7 @@
 	}
 
 	time {
-		font-size: 0.3em;
+		font-size: $font-size-small;
 		font-weight: normal;
 	}
 
@@ -66,8 +67,14 @@
 
 .post-title {
 	border-bottom: solid 5px;
-	line-height: 0.55;
+	line-height: 0.8;
 	font-weight: bold;
+
+	> span {
+		display: inline-block;
+		transform-origin: bottom left;
+		transform: scaleY(1.85);
+	}
 }
 
 @media (max-width: $grid-float-breakpoint-max) {

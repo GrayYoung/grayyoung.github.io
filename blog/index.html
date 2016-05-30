@@ -15,8 +15,9 @@ showBC: true
 				</a>
 			</div>
 			<div class="media-body">
-				<h2 class="media-heading">{{ post.title }} <time class="label label-default" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time></h2>
+				<h2 class="media-heading">{{ post.title }}</h2>
 				<div>
+					<time class="label label-default" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
 					{% assign fullURL = post.url | prepend: site.url %}
 					{% include shareLinks.html url=fullURL %}
 				</div>
