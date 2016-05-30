@@ -53,7 +53,7 @@ thumbnail: /images/thumb/tb-css-hacks.jpg
 					</thead>
 					<tbody>
 						<tr>
-							<th><code>*</code></th>
+							<th><code style="*background-color: lightgray;">*</code></th>
 							<td>√</td>
 							<td>√</td>
 							<td></td>
@@ -61,35 +61,35 @@ thumbnail: /images/thumb/tb-css-hacks.jpg
 							<td></td>
 							<td></td>
 							<td></td>
-							<td>×</td>
+							<td></td>
 						</tr>
 						<tr>
-							<th><code>!important;</code></th>
-							<td>×</td>
+							<th><code style="background-color: lightgray !important;">!important;</code></th>
+							<td></td>
 							<td>√</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
 							<td>√</td>
 						</tr>
 						<tr>
-							<th><code>_</code></th>
+							<th><code style="_background-color: lightgray;">_</code></th>
 							<td>√</td>
-							<td>×</td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
-							<td>×</td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
-							<th><code>\9</code></th>
-							<td></td>
-							<td></td>
-							<td></td>
+							<th><code style="background-color: lightgray \9;">\9</code></th>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -193,7 +193,7 @@ html &gt; body #box{
 			</pre>
 		</li>
 		<li>
-			<p>IE捉迷藏的问题</p>
+			<p>IE 捉迷藏的问题</p>
 			<p>当 div 应用复杂的时候每个栏中又有一些链接，div 等这个时候容易发生捉迷藏的问题。有些内容显示不出来，当鼠标选择这个区域是发现内容确实在页面。解决办法：对<code>#layout</code>使用<code>line-height</code>属性 或者给<code>#layout</code>使用固定高和宽。页面结构尽量简单。</p>
 		</li>
 	</ul>
