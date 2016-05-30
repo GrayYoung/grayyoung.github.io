@@ -207,7 +207,7 @@ nav.navbar {
 
 	.navbar-brand > img {
 		height: 30px;
-		margin-top: -5px;
+		margin-top: -2px;
 	}
 
 	.navbar-toggle {
@@ -607,7 +607,7 @@ body > * > footer {
 	}
 }
 
-@media (max-width: $screen-xs-max) {
+@media (max-width: $grid-float-breakpoint-max) {
 	#subNavbar + .navbar {
 		.navbar-header {
 			float: left;
@@ -623,34 +623,41 @@ body > * > footer {
 	}
 
 	.navbar .navbar-collapse {
+		background-color: white;
+
 		.nav > li + li {
 			border-bottom: solid 1px $gray-dark;
 		}
 
-		.nav > li {
-			border-left-width: 0;
+		.nav {
+			border-top: solid 8px $text-color;
+			margin-top: 0;
 
-			&:first-child {
-				border-top: solid 1px $gray-dark;
-				border-bottom: solid 1px $gray-dark;
-			}
-
-			> .dropdown-menu {
-				padding-top: 0;
-				padding-bottom: 0;
-
-				> li {
-					border-top: solid 1px $gray-light;
-
-					> a, &.dropdown-header {
-						padding: 10px 15px;
-						line-height: 1;
+			> li {
+				border-left-width: 0;
+	
+				&:first-child {
+					border-top: solid 1px $gray-dark;
+					border-bottom: solid 1px $gray-dark;
+				}
+	
+				> .dropdown-menu {
+					padding-top: 0;
+					padding-bottom: 0;
+	
+					> li {
+						border-top: solid 1px $gray-light;
+	
+						> a, &.dropdown-header {
+							padding: 10px 15px;
+							line-height: 1;
+						}
 					}
 				}
-			}
-
-			> a > .fa {
-				float: right;
+	
+				> a > .fa {
+					float: right;
+				}
 			}
 		}
 	}
