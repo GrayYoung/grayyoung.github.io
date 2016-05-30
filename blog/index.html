@@ -5,19 +5,18 @@ showBC: true
 ---
 
 <section class="container-fluid">
-	<h1>Blogs</h1>
+	<h1 class="heading-blog text-uppercase">Blogs</h1>
 	<ul class="list-unstyled list-blog">
 		{% for post in paginator.posts %}
 		<li class="media">
 			<div class="media-left">
 				<a href="{{ post.url | prepend: site.baseurl }}">
-					<img class="media-object img-responsive center-block" src="{{ post.thumbnail }}" alt="{{ post.date | date: "%b %-d, %Y" }}">
+					<img class="media-object img-responsive center-block img-circle" src="{{ post.thumbnail }}" alt="{{ post.date | date: "%b %-d, %Y" }}">
 				</a>
 			</div>
 			<div class="media-body">
-				<h2 class="media-heading">{{ post.title }}</h2>
+				<h2 class="media-heading">{{ post.title }} <time class="label label-default" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time></h2>
 				<div>
-					<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
 					{% assign fullURL = post.url | prepend: site.url %}
 					{% include shareLinks.html url=fullURL %}
 				</div>
