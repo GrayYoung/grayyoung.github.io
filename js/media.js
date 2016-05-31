@@ -95,7 +95,7 @@ require([ './config' ], function(config) {
 			event.preventDefault();
 		}).on('scroll.ls.media', function(event) {
 			util.throttle(listing);
-		}).trigger('scroll.ls.media').ready(function(){
+		}).ready(function(){
 			var $container = $('#containerListing');
 			var setting = {
 				pageSize : 20
@@ -113,16 +113,20 @@ require([ './config' ], function(config) {
 					});
 
 					$preview.find('.p-category').children().first().text(data.Type).end().last().text(data.Genre);
-					$preview.find('img').attr('src', data.Poster).get(0).onerror = function() {
+					$preview.find('img').attr('src', data.Poster)/* .get(0).onerror = function() {
 						this.src = (data.Posters && data.Posters[0]) || ('http://grayyoung.github.io/Flickr/poster/' + data.Title + '.jpg');
 						this.onerror = null;
-					};
+					} */;
 					$preview.find('.p-name').children().text(data.Title);
 					//$preview.find('.p-summary').append(data.Plot);
 					$preview.find('.p-rating').children().first().css('width', data.imdbRating + 'em').next().children().first().text(data.imdbRating).next().text(data.imdbVotes);
 					$preview.find('.u-url').attr('href', 'http://www.imdb.com/title/' + data.imdbID);
 					$container.append($preview);
 					$pLabel.text(parseInt($pLabel.text(), 10) + 1);
+
+					window.parent.postMessage({
+						docHeight: $(document).height()
+					}, '*');
 				};
 				$container.data('sheet', sheet);
 				if(window.Worker) {
@@ -208,7 +212,7 @@ require([ './config' ], function(config) {
 					}
 				}
 			});
-			$(document).data('oddScrollTop', $(document).scrollTop());
+			$(document).data('oddScrollTop', $(document).scrollTop()).trigger('scroll.ls.media');
 		});
 
 		function listing() {

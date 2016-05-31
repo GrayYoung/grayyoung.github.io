@@ -43,14 +43,28 @@ define(function() {
 		var xhRequest = createXHR();
 
 		if(typeof Uint8Array !== 'undefined') {
-			xhRequest.responseType = "arraybuffer";
+			try {
+				xhRequest.responseType = 'arraybuffer';
+			} catch(error) {
+				console.log(error);
+			}
 			xhRequest.onload = function(e) {
 				var arraybuffer = xhRequest.response;
-				var data = new Uint8Array(arraybuffer);
-				var arr = new Array();
-	
-				for(var i = 0; i != data.length; ++i) {
-					arr[i] = String.fromCharCode(data[i]);
+				var data, arr = new Array();
+				var unitLimited = false;
+
+				try {
+					data = new Uint8Array(arraybuffer)
+					for(var i = 0; i != data.length; ++i) {
+						arr[i] = String.fromCharCode(data[i]);
+					}
+				} catch(error) {
+					console.log(error);
+					data = new Uint8Array(arraybuffer.length)
+					for(var i = 0; i != arraybuffer.length; ++i) {
+						data[i] = arraybuffer[i];
+						arr[i] = String.fromCharCode(data[i]);
+					}
 				}
 				callback(XLSX.read(arr.join(''), {
 					type : 'binary'
