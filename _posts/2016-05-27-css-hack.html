@@ -23,8 +23,10 @@ thumbnail: /images/thumb/tb-css-hacks.jpg
 	</section>
 	<section>
 		<h3>Explain</h3>
-		<p>因为 IE 系列浏览器可读<code>\9</code>，而IE6和IE7可读<code>*</code>，另外IE6可辨识<code>_</code>，因此可以依照顺序写下來，就会让浏览器正确的读取到自己看得懂的CSS语法，所以就可以有效区分 IE 各版本和非IE浏览器(像是 Firefox、Opera、Google Chrome、Safari 等)</p>
-		<p>CSS hack：针对 IE6，IE7，Firefox 显示不同效果做网站时经常会用到，衡量一个DIV+CSS架构师的水平时，这个也很重要。区别不同浏览器的CSS hack写法：</p>
+		<p><img class="img-responsive center-block img-circle show-grid" aria-hidden="true" alt="" src="/images/thumb/tb-css-hacks.jpg"></p>
+		<p>因为 IE 系列浏览器可读<code>\9</code>，而 IE6 和 IE7 可读<code>*</code>，另外 IE6 可辨识<code>_</code>，因此可以依照顺序写下來，就会让浏览器正确的读取到自己看得懂的 CSS 语法，所以就可以有效区分 IE 各版本和非 IE 浏览器(像是 Firefox、Opera、Google Chrome、Safari 等)</p>
+<!-- more -->
+		<p>CSS hack：针对 IE6，IE7，Firefox 显示不同效果做网站时经常会用到，衡量一个 DIV+CSS 架构师的水平时，这个也很重要。区别不同浏览器的 CSS hack 写法：</p>
 		<dl class="dl-horizontal">
 			<dt>区别 IE6 与 FF： </dt>
 			<dd><code>background: orange;</code> <code>*background: blue;</code></dd>
@@ -115,86 +117,4 @@ thumbnail: /images/thumb/tb-css-hacks.jpg
 		</pre>
 		<p>注意: *+html 对IE7的HACK 必须保证HTML顶部有如下声明：<code>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</code></p>
 	</section>
-</section>
-<!-- more -->
-<section>
-	<h2 id="chapter2">Other Compatibility Technologies</h2>
-	<ul>
-		<li>
-			<p>FF 和 IE 对 BOX 理解的差异导致相差 2px 的还有设为 float 的 div 在 IE 下 margin 加倍等问题.</p>
-		</li>
-		<li>
-			<p>浮动 IE 产生的双倍距离</p>
-			<pre>
-				<code>
-#box {
-	float: left;
-	width: 100px;
-	margin: 0 0 0 100px; /* 这种情况之下IE会产生200px的距离 */
-	display:inline; /* 使浮动忽略 */
-}
-				 </code>
-			</pre>
-			<p>这里细说一下block,inline两个元素,Block元素的特点是:总是在新行上开始,高度,宽度,行高,边距都可以控制(块元素);Inline元素的特点是:和其他元素在同一行上,...不可控制(内嵌元素)。</p>
-		</li>
-		<li>
-			<p>IE 与宽度和高度的问题</p>
-			<p>IE不认得<code>min-</code>这个定义，但实际上它把正常的 width 和 height 当作有min的情况来使。这样问题就大了，如果只用宽度和高度，正常的浏览器里这两个值就不会变，如果只用<code>min-width</code>和<code>min-height</code>的话，IE下面根本等于没有设置宽度和高度。比如要设置背景图片，这个宽度是比较重要的。要解决这个问题，可以这样：</p>
-			<pre>
-				<code>
-#box {
-	width: 80px;
-	height: 35px;
-}
-html &gt; body #box{
-	width: auto;
-	height: auto;
-	min-width: 80px;
-	min-height: 35px;
-}
-				</code>
-			</pre>
-			<p>第一个<code>min-width</code>是正常的；但第2行的 width 使用了 Javascript，这只有 IE 才认得，这也会让你的HTML文档不太正规。它实际上通过 Javascript 的判断来实现最小宽度。			</p>
-			<pre>
-				<code>
-					#container {
-						min-width: 600px;
-						width: expression(document.body.clientWidth &lt; 600 ? "600px" : "auto" );
-					}
-				</code>
-			</pre>
-		</li>
-		<li>
-			<p>DIV 浮动 IE 文本产生 3px 的 bug</p>
-			<p>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距。</p>
-			<pre>
-				<code>
-#box {
-	float: left;
-	width: 800px;
-}
-#left {
-	float: left;
-	width: 50%;
-}
-#right {
-	width: 50%;
-}
-*html #left {
-	<strong class="text-danger">margin-right: -3px;</strong>
-}
-				</code>
-				<code>
-&lt;div id="box"&gt;
-	&lt;div id="left"&gt;&lt;&frasl;div&gt;
-	&lt;div id="right"&gt;&lt;&frasl;div&gt;
-&lt;&frasl;div&gt;
-				</code>
-			</pre>
-		</li>
-		<li>
-			<p>IE 捉迷藏的问题</p>
-			<p>当 div 应用复杂的时候每个栏中又有一些链接，div 等这个时候容易发生捉迷藏的问题。有些内容显示不出来，当鼠标选择这个区域是发现内容确实在页面。解决办法：对<code>#layout</code>使用<code>line-height</code>属性 或者给<code>#layout</code>使用固定高和宽。页面结构尽量简单。</p>
-		</li>
-	</ul>
 </section>

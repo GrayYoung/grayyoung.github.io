@@ -248,22 +248,12 @@ nav.navbar {
 		border-left: solid 1px #9b9893;
 		font-weight: bold;
 
-		@media (min-width: $screen-tablet) {
-			margin-top: 11px;
-			margin-bottom: 11px;
+		&.open .fa-caret-down:before {
+			content: "\f0d8";
 		}
 
 		> a {
 			line-height: 1;
-
-			@media (min-width: $screen-tablet) {
-				padding-top: 0;
-				padding-bottom: 0;
-
-				& + .dropdown-menu {
-					margin-top: 11px;
-				}
-			}
 		}
 	}
 }
@@ -481,7 +471,7 @@ body > * > footer {
 	}
 }
 
-@media (min-width: $screen-tablet) {
+@media (min-width: $grid-float-breakpoint) {
 	#subNavbar + .navbar .nav > li > a > span {
 		display: inline-block;
 	}
@@ -494,9 +484,20 @@ body > * > footer {
 			> a {
 				padding-top: 0;
 				padding-bottom: 0;
+			}
 
-				& + .dropdown-menu {
-					margin-top: 10px;
+			> .dropdown-menu {
+				top: 0;
+				padding: 1.8em 0 0;
+				margin-top: 0;
+				margin-left: -2px;
+				border-width: 0 0 1px 3px;
+				border-color: #9b9893;
+				background-color: transparent;
+				box-shadow: none;
+	
+				> li {
+					background-color: white;
 				}
 			}
 		}
