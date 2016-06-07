@@ -32,6 +32,15 @@ a.text-danger, a .text-danger {
 	}
 }
 
+.show-grid {
+	margin-bottom: $grid-gutter-width / 2;
+}
+
+//# BEGIN - Carousel
+main > .carousel.slide:first-child {
+	margin-top: -45px;
+}
+
 .carousel-control {
 	visibility: hidden;
 	background-image: none !important;
@@ -54,9 +63,33 @@ a.text-danger, a .text-danger {
 	}
 }
 
-.show-grid {
-	margin-bottom: $grid-gutter-width / 2;
+.carousel-indicators {
+	display: flex !important;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+
+	> li {
+		flex: 1;
+		border-radius: 0;
+		border: none;
+		background-color: $text-color;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.slick-active {
+			background-color: $carousel-indicator-active-bg;
+		}
+	}
 }
+//# END - Carousel
 
 .list-grid {
 	display: flex;
@@ -407,10 +440,6 @@ body > * > footer {
 		margin-top: -10px;
 		margin-bottom: 0;
 	}
-}
-
-#carousel-sliding {
-	margin-top: -45px;
 }
 
 .container-404 {
