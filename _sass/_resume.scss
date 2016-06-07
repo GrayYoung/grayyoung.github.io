@@ -181,6 +181,13 @@
 }
 
 @media (min-width: $grid-float-breakpoint) {
+	.h-resume > h2 > img {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -250px;
+	}
+
 	.p-skill .dl-horizontal {
 		dt {
 			text-align: right;

@@ -2,12 +2,28 @@
   category: Web Front-end
   thumbnail: /images/common/AngularJS-large.png
   summary: Welcome to the AngularJS API docs page. These pages contain the AngularJS reference materials for  version 1.4.7 dense-dispersion.
-  page:
   url: /Document/angular-1.4.10/docs
 
 - title: Holy Bible - New International Version
   category: Book
-  thumbnail: /partials/Holy Bible/cover.jpeg
+  thumbnail: /images/thumb/tb-bible.jpg
   summary: 
-  page:
   url: /partials/Holy Bible/dummy_split_000.html
+
+- title: the Old Wolf in Aaxis
+  category: Blog
+  thumbnail: http://grayyoung.github.io/Flickr/the old wolf in aaxis/thumb-the_old_wolf_in_aaxis.jpg
+  summary: 本故事是对真实事件的叙述，并非虚构。故事发生在安科思软件(成都)有限公司，围绕一位老油条对一位年轻漂亮的妹儿的单相思展开。本文截图均来自小灰灰与云的聊天记录，以此证明云对倩倩妹儿的情意。
+  url: /blog/story/2016/05/23/the-old-wolf-in-aaxis.html
+
+- title: CSS Hack
+  category: Blog
+  thumbnail: /images/thumb/tb-css-hacks.jpg
+  summary: 区别 IE6、IE7、IE8、Firefox Example #tip { background: blue; /* Firefox */ background: red \9; /* IE8 */ *background: black; /* IE7 */ _background: orange; /* IE6 */ } Explain 因为 IE 系列浏览器可读\9，而 IE6 和 IE7 可读*，另外 IE6 可辨识_，因此可以依照顺序写下來，就会让浏览器正确的读取到自己看得懂的 CSS 语法，所以就可以有效区分 IE 各版本和非 IE 浏览器(像是 Firefox、Opera、Google Chrome、Safari 等)
+  url: /blog/develop/2016/05/27/css-hack.html
+
+- title: Browser Compatibility
+  category: Blog
+  thumbnail: /images/thumb/tb-cross-browser.png
+  summary: Browser Compatibility Technologies FF 和 IE 对 BOX 理解的差异导致相差 2px 的还有设为 float 的 div 在 IE 下 margin 加倍等问题。
+  url: /blog/develop/2016/06/06/browser-compatibility.html

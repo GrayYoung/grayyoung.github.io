@@ -5,5 +5,13 @@
     color: white
     image: 
   image: /images/banner/bible.png
-  page:
   url: /partials/Holy Bible/dummy_split_000.html
+
+- title: 
+  category: Media
+  alt: We believe core truths for Christian living
+  background:
+    color: 
+    image: url(/images/banner/music.png)
+  image: /images/banner/music.png
+  url: /media?t=music

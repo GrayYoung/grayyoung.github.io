@@ -3,8 +3,10 @@
 
 @import "variables";
 @import "mixins/animation";
+@import "mixins/row-framework";
 @import "slick";
 @import "typography";
+@import "grid-rows";
 @import "animation";
 @import "blog";
 @import "resume";
@@ -41,6 +43,10 @@ a.text-danger, a .text-danger {
 }
 
 .carousel-inner {
+	.slick-slide {
+		position: relative;
+	}
+
 	&:hover, &:focus {
 		+ .carousel-control, + .carousel-control + .carousel-control {
 			visibility: visible;
@@ -50,46 +56,6 @@ a.text-danger, a .text-danger {
 
 .show-grid {
 	margin-bottom: $grid-gutter-width / 2;
-}
-
-.A4 {
-	position: relative;
-	width: $A4-width;
-	max-width: 100%;
-	background-color: white;
-
-	/* &:before {
-		content: "";
-		display: block;
-		padding-top: percentage($A4-height / $A4-width);
-	}
-
-	> .content {
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-	} */
-}
-
-.scalingBox {
-	position: relative;
-
-	&.squareBox {
-		padding-top: 100%;
-	}
-
-	> .scalingcontent {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-	}
 }
 
 .list-grid {
@@ -259,6 +225,10 @@ nav.navbar {
 }
 
 .h-listing {
+	.h-entry {
+		margin-bottom: $grid-gutter-width;
+	}
+
 	hr {
 		margin-top: 8px;
 		margin-bottom: 5px;
@@ -281,7 +251,7 @@ nav.navbar {
 	}
 
 	.thumbnail {
-		padding-top: 0;
+		padding: 0;
 		border-width: 0; 
 		box-shadow: none;
 
@@ -301,7 +271,6 @@ nav.navbar {
 		margin-bottom: 0;
 		font-style: italic;
 		font-family: "Freight Text";
-		font-size: 16px;
 	}
 
 	.u-url {
@@ -456,10 +425,6 @@ body > * > footer {
 	.list-preview {
 		.col-md-3 {
 			padding-left: 0;
-
-			img {
-				height: 100px;
-			}
 		}
 	
 		.col-md-4 {	
@@ -505,9 +470,10 @@ body > * > footer {
 
 	.list-preview {
 		.p-name, .p-summary, {
-			text-overflow: ellipsis;
+			height: 2.15em;
 			overflow: hidden;
 			line-height: 1.2;
+			text-overflow: ellipsis;
 		}
 
 		.col-md-4 {
@@ -520,9 +486,8 @@ body > * > footer {
 				padding-right: 2.1em;
 
 				+ a {
-					position: absolute;
-					bottom: 42px;
-					right: 28px;
+					float: right;
+					margin-top: -20px;
 				}
 			}
 		}
@@ -531,19 +496,7 @@ body > * > footer {
 			.thumbnail {
 				margin-bottom: 0;
 			}
-
-			figcaption {
-				height: 7.5em;
-				overflow: hidden;
-			}
 		}
-	}
-
-	.h-resume > h2 > img {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		margin-left: -250px;
 	}
 
 	.modal-preview {

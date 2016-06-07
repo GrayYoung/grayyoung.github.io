@@ -1,0 +1,42 @@
+// Framework row part of grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin make-grid-rows-content($i: 1, $list: ".row-xs-#{$i}, .row-sm-#{$i}, .row-md-#{$i}, .row-lg-#{$i}") {
+	@for $i from (1 + 1) through ($grid-rows * 2) {
+		$list: "#{$list}, .row-xs-#{$i}, .row-sm-#{$i}, .row-md-#{$i}, .row-lg-#{$i}";
+	}
+
+	#{$list} {
+		position: relative;
+	}
+}
+
+@mixin calc-grid-rows($index, $class, $type) {
+	@if ($type == height) and ($index > 0) {
+		.row-#{$class}-#{$index} {
+			padding-top: percentage(($index / $grid-rows));
+
+			> .content-fixed {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-rows($columns, $class, $type) {
+	@for $i from 0 through $columns {
+		@include calc-grid-rows($i, $class, $type);
+	}
+}
+
+
+// Create grid for specific class
+@mixin make-grid-rows($class) {
+	@include loop-grid-rows($grid-rows * 2, $class, height);
+}

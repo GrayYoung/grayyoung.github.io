@@ -4,8 +4,8 @@ layout: default
 
 <div id="carousel-sliding" class="carousel slide">
 	<div class="carousel-inner" role="listbox">
-		{% for slide in site.data.slides limit:1 %}
-		<div class="item active" style="background-color: {{ slide.background.color }}; background-image: {{ slide.background.image }};">
+		{% for slide in site.data.slides %}
+		<div class="item" style="background-color: {{ slide.background.color }}; background-image: {{ slide.background.image }};">
 			<a href="{{ slide.url }}">
 				<img class="img-responsive center-block" src="{{ slide.image }}" alt="{{ slide.alt }}">
 			</a>
@@ -32,42 +32,52 @@ layout: default
 <div class="clearfix list-preview h-listing">
 	{% for preview in site.data.previewCollection limit:1 %}
 	<div class="col-sm-12 col-md-4 h-entry">
-		<figure class="thumbnail">
-			<p class="p-category">
-				<span>{{ preview.category }}</span>&nbsp;
-			</p>
-			<hr />
-			<img class="img-responsive center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
-			<div class="clearfix"></div>
-			<div class="caption">
-				<h3 class="p-name">{{ preview.title }}</h3>
-			</div>
-			<figcaption class="p-summary">{{ preview.summary }}</figcaption>
-			<a class="u-url" href="{{ preview.url }}">More</a>
-			<div class="clearfix show-grid"></div>
-		</figure>
+		<div class="row-md-5">
+			<figure class="content-fixed thumbnail">
+					<p class="p-category">
+						<span>{{ preview.category }}</span>&nbsp;
+					</p>
+					<hr />
+					<div class="row-xs-5 row-md-3">
+						<div class="content-fixed">
+							<img class="img-responsive center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="caption">
+						<h3 class="p-name">{{ preview.title }}</h3>
+					</div>
+					<figcaption class="p-summary">{{ preview.summary }}</figcaption>
+					<a class="u-url" href="{{ preview.url }}">More</a>
+					<div class="clearfix show-grid"></div>
+			</figure>
+		</div>
 	</div>
 	{% endfor %}
 	<div class="col-sm-12 col-md-8">
 		<div class="row">
 			{% for preview in site.data.previewCollection offset:1 limit:4 %}
 			<div class="col-sm-6 col-md-3 h-entry">
-				<figure class="thumbnail">
-					<div class="box-figure">
-						<p class="p-category">
-							<span>{{ preview.category }}</span>&nbsp;
-						</p>
-						<hr />
-						<img class="img-responsive center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
-					</div>
-					<figcaption>
-						<div class="caption">
-							<h3 class="p-name">{{ preview.title }}</h3>
-						</div>
-						<p class="p-summary">{{ preview.summary }}</p>
-					</figcaption>
-					<a class="u-url" href="{{ preview.url }}">Read more...</a>
-				</figure>
+				<div class="row-md-10">
+					<figure class="content-fixed thumbnail">
+							<div class="box-figure">
+								<p class="p-category">
+									<span>{{ preview.category }}</span>&nbsp;
+								</p>
+								<hr />
+								<div class="row-xs-5">
+									<div class="content-fixed">
+										<img class="img-responsive center-block" src="{{ preview.thumbnail }}" alt="" aria-hidden="true">
+									</div>
+								</div>
+							</div>
+							<figcaption class="caption">
+								<h3 class="p-name">{{ preview.title }}</h3>
+								<p class="p-summary">{{ preview.summary }}</p>
+								<a class="u-url" href="{{ preview.url }}">Read more...</a>
+							</figcaption>
+					</figure>
+				</div>
 			</div>
 			{% endfor %}
 			<div class="clearfix"></div>
