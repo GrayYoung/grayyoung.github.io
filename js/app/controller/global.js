@@ -21,7 +21,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 				} else {
 					element.execute(searchEntry);
 				}
-				history.pushState(null, null, $(this).attr('action') + '?' + $search.attr('name') + '=' + searchEntry);
+				history.pushState(null, null, '?' + $search.attr('name') + '=' + encodeURIComponent(searchEntry));
 
 				event.preventDefault();
 			});
