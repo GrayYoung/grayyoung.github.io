@@ -1,6 +1,6 @@
-- title: Holy Bible - New International Version
+- title: <span class="text-uppercase"><span class="h1">We <strong>believe</strong></span><br> <span class="h4" style="font-weight: normal;">core truths for Christian living</span></span>
   category: Book
-  alt: We believe core truths for Christian living
+  alt: Holy Bible - New International Version
   background:
     color: white
     image: 
@@ -9,7 +9,7 @@
 
 - title: 
   category: Media
-  alt: We believe core truths for Christian living
+  alt: 
   background:
     color: 
     image: url(/images/banner/music.png)

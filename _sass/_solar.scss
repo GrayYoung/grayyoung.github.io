@@ -255,6 +255,7 @@
 
 	.shadow {
 		background: transparent url(/images/solar/shadow.png) 0% 0% no-repeat;
+		background-image: url('data:image/svg+xml;charset=utf-8,<svg id="solar-shadow" data-name="Solar Shadow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 250"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="8.81" y1="98.07" x2="754" y2="98.07" gradientTransform="translate(-8.96 -8.02) scale(1.07 1.11)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="0.25"/><stop offset="0.75" stop-color="#000"/><stop offset="1" stop-opacity="0"/></linearGradient></defs><title>Shadow</title><rect class="cls-1" x="0.5" y="0.5" width="800" height="250"/></svg>');
 		background-size: cover;
 		border-radius: 100%;
 	}
