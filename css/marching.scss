@@ -56,6 +56,10 @@ main > .carousel.slide:first-child {
 	.slick-slide {
 		position: relative;
 		background-size: contain;
+
+		img {
+			display: inline-block;
+		}
 	}
 
 	&:hover, &:focus {
