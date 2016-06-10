@@ -120,7 +120,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 			}
 		}
 	};
-	/* require(['https://www.google.com/jsapi'], function() {
+	/* require(['googleAPI'], function() {
 		google.load('search', '1', {
 			nocss: true,
 			callback: function() {
@@ -130,7 +130,6 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 			}
 		});
 	}); */
-	require(['https://cse.google.com/cse.js?cx=001907108702964322728:jc6j-dfwhfq']);
 	// Attach the Google branding watermark
-	require(['//www.google.com/cse/brand?form=form-cse-search&inputbox=input-cse-search']);
+	require(['googleCSE', 'googleWatermark']);
 });

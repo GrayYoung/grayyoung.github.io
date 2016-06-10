@@ -246,10 +246,16 @@ nav.navbar {
 			padding-top: 0;
 			padding-bottom: 0;
 			height: 22px;
+			border-color: $input-border !important;
 			box-shadow: 0 1px 1px $gray-darker inset;
 
 			@media (min-width: $screen-tablet) {
 				width: 126px;
+			}
+
+			&:focus {
+				border-color: $brand-primary !important;
+				box-shadow: 0 1px 1px $brand-primary inset;
 			}
 		}
 

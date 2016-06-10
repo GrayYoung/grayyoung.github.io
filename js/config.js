@@ -18,7 +18,10 @@ requirejs.config({
 		zip: 'jszip',
 		xlsx: 'xlsx.min',
 		ajax: 'ajax.min',
-		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en'
+		googleAPI: 'https://www.google.com/jsapi',
+		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en',
+		googleCSE: 'https://cse.google.com/cse.js?cx=001907108702964322728:jc6j-dfwhfq',
+		googleWatermark: '//www.google.com/cse/brand?form=form-cse-search&inputbox=input-cse-search'
 	},
 	shim: {
 		bootstrap: ['jquery']

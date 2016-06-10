@@ -1,11 +1,6 @@
 - label: Blog
   url: /blog/
 
-- label: Book
-  url: /book/
-  subs:
-    - label: Holy Bible
-      url: /partials/Holy Bible/dummy_split_002.html
 
 - label: Web Front-end
   url: /web/
