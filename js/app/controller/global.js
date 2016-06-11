@@ -7,8 +7,8 @@
 /* global require */
 define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick', 'browser' ], function(requests, util, $) {
 	$(document).on('submit', '#form-cse-search', function(event) {
-		var $this = $(this);
-		var pattern = new RegExp('^' + $this.attr('action'), 'i');
+		var $this = $(this), searchPath = $this.attr('action');
+		var pattern = new RegExp('^' + searchPath, 'i');
 
 		if(pattern.test(location.pathname)) {
 			$(document).off('submit', '#form-cse-search').on('submit', '#form-cse-search', function(event) {
@@ -26,8 +26,18 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 				event.preventDefault();
 			});
 			$this.submit();
-			event.preventDefault();
+		} else {
+			$.ajax({
+				url: searchPath,
+				success: function(data) {
+					$('main').replaceWith($(data).find('main'));
+					google.search.cse.element.go('searchResults');
+					history.pushState(null, null, searchPath);
+					$this.submit();
+				}
+			});
 		}
+		event.preventDefault();
 	}).ready(function() {
 		/**
 		 * Global Status

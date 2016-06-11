@@ -11,3 +11,18 @@
 .gsc-url-bottom {
 	display: none !important;
 }
+
+.gsc-results .gsc-cursor-box {
+	.gsc-cursor-page {
+		transform: scale(1.4, 2);
+		display: inline-block !important;
+		margin-right: 15px !important;
+		font-size: $font-size-h1;
+		font-family: $font-family-sans-serif;
+		font-weight: bold !important;
+	}
+
+	.gsc-cursor-current-page {
+		background-color: transparent !important;
+	}
+}
