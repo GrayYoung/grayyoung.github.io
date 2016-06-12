@@ -29,8 +29,12 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 		} else {
 			$.ajax({
 				url: searchPath,
+				dataType: 'html',
 				success: function(data) {
-					$('main').replaceWith($(data).find('main'));
+					var $documentB = $(data);
+
+					document.title = $documentB.filter('title').text();
+					$('main').replaceWith($documentB.find('main'));
 					google.search.cse.element.go('searchResults');
 					history.pushState(null, null, searchPath);
 					$this.submit();
