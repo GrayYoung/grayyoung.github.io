@@ -69,6 +69,10 @@ main > .carousel.slide:first-child {
 		}
 	}
 
+	.container {
+		height: 480px;
+	}
+
 	.content-fixed img {
 		width: auto;
 		height: 100%;
@@ -78,8 +82,8 @@ main > .carousel.slide:first-child {
 .carousel-caption {
 	top: 10%;
 	left: 10%;
-	right: auto;
-	bottom: auto;
+	right: 10%;
+	bottom: 10%;
 	text-align: left;
 	text-shadow: none;
 }
