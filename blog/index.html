@@ -28,39 +28,72 @@ showBC: true
 		{% endfor %}
 	</ul>
 	{% if paginator.total_pages > 1 %}
-	<nav>
-		<ul class="pagination">
+	<nav class="hidden-xs">
+		<ul class="pagination-primary list-unstyled">
 			{% if paginator.previous_page %}
 			<li>
-				<a href="{{ paginator.previous_page_path }}" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
+				<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
+					<span aria-hidden="true">&#8249; Previous</span>
 				</a>
 			</li>
 			{% endif %}
 
 			{% for page in (1..paginator.total_pages) %}
 				{% if page == paginator.page %}
-					<li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
+				<li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
 				{% elsif page == 1 %}
-					<li>
-						<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-					</li>
+				<li>
+					<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+				</li>
 				{% else %}
-					<li>
-						<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-					</li>
+				<li>
+					<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+				</li>
 				{% endif %}
 			{% endfor %}
 
 			{% if paginator.next_page %}
 			<li>
-				<a href="{{ paginator.next_page_path }}" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
+				<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next">
+					<span aria-hidden="true">Next &#8250;</span>
 				</a>
 			</li>
 			{% endif %}
 		</ul>
 	</nav>
 	{% endif %}
+	<div class="clearfix visible-xs-block">
+		<div class="clearfix show-grid"></div>
+		<div class="clearfix show-grid"></div>
+		<div class="btn-group btn-group-justified pagination-primary" role="group" aria-label="pagination">
+			{% if paginator.page > 2 %}
+			<div class="btn-group" role="group">
+				<a class="btn normal" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', 1 }}"><span class="fa fa-2x fa-angle-double-left"></span></a>
+			</div>
+			{% endif %}
+			{% if paginator.previous_page %}
+			<div class="btn-group" role="group">
+				<a class="btn normal" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+					<span class="fa fa-2x fa-angle-left"></span>
+				</a>
+			</div>
+			{% endif %}
+			<div class="btn-group text-center" role="group">{{paginator.page}}</div>
+			{% if paginator.next_page %}
+			<div class="btn-group" role="group">
+				<a class="btn normal" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+					<span class="fa fa-2x fa-angle-right"></span>
+				</a>
+			</div>
+			{% endif %}
+			{% if paginator.page > paginator.total_pages - 2 %}
+			<div class="btn-group" role="group">
+				<a class="btn normal" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}"><span class="fa fa-2x fa-angle-double-right"></span></a>
+			</div>
+			{% endif %}
+		</div>
+		<div class="clearfix show-grid"></div>
+		<div class="clearfix show-grid"></div>
+	</div>
 	<p class="rss-subscribe"> subscribe <a href="{{ "/feed.xml" | prepend:site.baseurl }}">via RSS</a> </p>
 </section>
