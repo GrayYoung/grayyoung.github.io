@@ -14,15 +14,27 @@
 
 .gsc-results .gsc-cursor-box {
 	.gsc-cursor-page {
-		transform: scale(1.4, 2);
 		display: inline-block !important;
-		margin-right: 15px !important;
+		padding: 10px 5px 70px;
+		margin-right: 0 !important;
+		text-decoration: none !important;
+		line-height: 1;
 		font-size: $font-size-h1;
 		font-family: $font-family-sans-serif;
 		font-weight: bold !important;
+
+		&:not(.gsc-cursor-current-page) {
+			&:hover, &:active, &:focus {
+				transform: scale(1.05, 1.05);
+				transform-origin: center center;
+				background-color: $text-color !important;
+				color: white !important;
+			}
+		}
 	}
 
 	.gsc-cursor-current-page {
 		background-color: transparent !important;
+		color: #9daeb3 !important;
 	}
 }

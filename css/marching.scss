@@ -264,13 +264,12 @@ nav.navbar {
 	}
 
 	.navbar-form {
-		margin-top: 3.5px;
-		margin-bottom: 4.5px;
+		margin-top: 3px;
 
 		.form-control {
 			padding-top: 0;
 			padding-bottom: 0;
-			height: 25px;
+			height: 22px;
 			border-color: $input-border !important;
 			box-shadow: 0 1px 1px $gray-darker inset;
 
@@ -291,6 +290,7 @@ nav.navbar {
 		.btn {
 			padding-top: 1px;
 			padding-bottom: 1px;
+			line-height: 18px;
 		}
 	}
 
