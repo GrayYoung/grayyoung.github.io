@@ -1,0 +1,66 @@
+
+
+@media (min-width: $screen-desktop) {
+	article {
+		> .col-md-9 {
+			padding-left: 0;
+	
+			+ nav.col-md-3 {
+				padding-right: 0;
+
+				& > ul.affix {
+					position: fixed !important;
+					top: $grid-gutter-width / 2;
+				}
+
+				li {
+					> a {
+						display: block;
+						overflow: hidden;
+						word-break: keep-all;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						color: $gray-light;
+
+						&:hover, &:active, &:hover {
+							color: $brand-primary;
+							text-decoration: none;
+						}
+					}
+
+					> ul {
+						display: none;
+					}
+
+					&.active {
+						> a {
+							margin-left: -2px;
+							border-left: solid 2px $brand-primary;
+						}
+
+						> ul {
+							display: block;
+						}
+					}
+				}
+
+				> ul > li {
+					> a {
+						padding-left: 1em;
+						font-weight: bold;
+					}
+
+					> ul > li {
+						> a {
+							padding-left: 2em;
+						}
+
+						> ul > li > a {
+							padding-left: 3em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
