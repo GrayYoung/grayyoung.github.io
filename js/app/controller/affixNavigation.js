@@ -11,7 +11,7 @@ define(['app/model/util', 'jquery', 'bootstrap'], function(util, $) {
 
 	function matchDestination() {
 		var $this, $current, $parent, $w = $(window);
-		var st = $document.scrollTop(), gap = 0;
+		var st = $document.scrollTop(), gap = 0, top = 0;
 
 		$document.find('main > article').find('section').each(function() {
 			$this = $(this);
@@ -22,10 +22,12 @@ define(['app/model/util', 'jquery', 'bootstrap'], function(util, $) {
 					$outline.data('oldActiveItems').removeClass('active');
 				}
 				$outline.data('oldActiveItems', $current.parents('li').addClass('active'));
-				gap = st + $w.height() - $current.offset().top - $current.height() - 15;
-				console.log(gap)
+				top = $current.offset().top;
+				gap = st + $w.height() - top - $current.height() - 15;
 				if(gap < 0) {
 					$outline.children('ul').css('top', gap);
+				} else if(top < st) {
+					$outline.children('ul').css('top', st - top);
 				}
 
 				return false;
@@ -63,5 +65,6 @@ define(['app/model/util', 'jquery', 'bootstrap'], function(util, $) {
 		}).on('affixed-top.bs.affix', function() {
 			$(this).css('top', '');
 		});
+		matchDestination();
 	});
 });
