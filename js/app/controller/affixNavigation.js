@@ -6,7 +6,10 @@
  * The following comment tell gulp-jshint variable define is require in another file.
  */ 
 /* global define */
-define(['app/model/util', 'jquery', 'bootstrap'], function(util, $) {
+define(['app/model/util', 'app/model/responsiveness', 'jquery', 'bootstrap'], function(util, rpss, $) {
+	if($(window).width() < rpss.desktop.width) {
+		return;
+	}
 	var $document = $(document), $outline = $('<nav class="col-lg-2 col-md-3 hidden-xs hidden-sm"/>');
 
 	function matchDestination() {
