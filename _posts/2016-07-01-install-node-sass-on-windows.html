@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "Install node-sass on Windows"
+date:   2016-07-01 20:21:12 +0800
+categories: blog develop
+thumbnail: https://rawgit.com/sass/node-sass/master/media/logo.svg
+---
+
+<blockquote>
+	<p><img class="pull-left" itemprop="image" style="margin: 0 10px 10px 0; vertical-align: top;" alt="" width="100" height="100" src="https://rawgit.com/sass/node-sass/master/media/logo.svg">This blog will help you to resolve several issues when install node-sass. If you install gulp-sass, node also will install node-sass.</p>
+	<div class="clearfix"></div>
+</blockquote>
+<!-- more -->
+<p>Try to execute <code>npm install node-sass</code></p>
+<blockquote>
+	<p>Compiling versions 0.9.4 and above on Windows machines requires Visual Studio 2013 WD. If you have multiple VS versions, use npm install with the <code>--msvs_version=2013</code> flag also use this flag when rebuilding the module with node-gyp or nw-gyp.</p>
+	<footer>See more detail in <a target="_blank" href="https://www.npmjs.com/package/node-sass"><cite title="install node-sass">node-sass</cite></a></footer>
+</blockquote>
+<p>If you happen to meet the problems this blog mentioned, try these prior tricks firstly:</p>
+<ul>
+	<li>
+		<p>Update internal node-gyp.(<abbr title="node package manager">npm</abbr> uses build system called gyp)</p>
+	</li>
+	<li>
+		<p>Reinstall Microsoft Visual C++ 2013 or <a target="_blank" title="Download Visual Studio 2013" href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx">Visual Studio 2013</a>.</p>
+	</li>
+</ul>
+<hr>
+<p>If throw a error to tell you are lack of <mark>python</mark></p>
+<blockquote>
+	<p>gyp verb `which` failed Error: not found: <mark>python2</mark></p>
+</blockquote>
+<p><strong class="text-danger">Don't install a python</strong>, you don't need python to install node-sass.</p>
+<hr>
+<p>If throw a error that "could not load VCBuild.exe", make sure you installed Visual Studio 2013 on your PC. <strong class="text-danger">Don't use Visual Studio 2015</strong>, or you will get another a error to make you install Windows 8.1 SDK, even you install the required windows SDK, the next error will drive you crazy. If you already installed Visual Studio 2013, there is the same issue again, make sure there is <var class="text-warning">GYP_MSVS_VERSION=2013</var> environment variables. Either you ignore this variable to execute <code>npm install --msvs_version=2013 node-sass</code>, or set npm global config <code>npm config set msvs_version 2013 --global</code>.</p>
+<blockquote>
+	<p>Could not load the Visual C++ component "VCBuild.exe". To fix this, 1) install the .NET Fram 
+ework 2.0 SDK, 2) install Microsoft Visual Studio 2005 or 3) add the location of the component to the system path if it is installed elsewhere.</p>
+</blockquote>
+<hr>
+<p>In the case, you are not luck, also throw a error than could not found <mark>Microsoft.Cpp.Default.props</mark>, add <var class="text-warning">MSBuildExtensionsPath = C:\Program Files (x86)\MSBuild</var> &amp; <var class="text-warning">MSBuildExtensionsPath32 = C:\Program Files (x86)\MSBuild</var> &amp; <var class="text-warning">MSBuildExtensionsPath64 = C:\Program Files\MSBuild</var> &amp; <var class="text-warning">VCTargetsPath = %MSBuildExtensionsPath32%\Microsoft.Cpp\v4.0\V120;</var> into environment variables.</p>
+<blockquote>
+	<p>The imported project "c:\Microsoft.Cpp.Default.props" was not found.</p>
+</blockquote>

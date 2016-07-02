@@ -11,7 +11,11 @@ showBC: true
 		<li class="media">
 			<div class="media-left" aria-hidden="true">
 				<a href="{{ post.url | prepend: site.baseurl }}">
+					{% if post.thumbnail %}
 					<img class="media-object img-responsive center-block img-circle" width="100" src="{{ post.thumbnail }}" alt="">
+					{% else %}
+					<canvas class="media-object img-responsive center-block img-circle" width="100" height="100" alt=""></canvas>
+					{% endif %}
 				</a>
 			</div>
 			<div class="media-body">

@@ -20,7 +20,7 @@
   "dependencies": {
     "html5shiv": "latest",
     "respond": "latest",
-    "bootstrap-sass-official": "~3.3.6",
+    "bootstrap-sass": "~3.*",
     "fontawesome": "latest",
     "jquery": "latest",
     "jquery-utilties": "https://github.com/GrayYoung/jQuery.Utilities.git",

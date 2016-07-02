@@ -18,6 +18,13 @@ ul, ol {
 	list-style-position: outside;
 }
 
+var.text-warning {
+	padding: 2px 4px;
+	background-color: $gray-dark;
+	border-radius: 2px;
+	font-size: 90%;
+}
+
 a.text-danger, a .text-danger {
 	&:hover, &:focus {
 		color: darken($state-danger-text, 15%);
@@ -418,6 +425,31 @@ body > * > footer {
 		margin-top: -40px;
 		margin-bottom: 30px;
 		border-top: solid 5px $text-color;
+	}
+
+	a {
+		color: white;
+
+		&:hover, &:active, &:focus {
+			color: $gray-lighter;
+
+			@media (min-width: $grid-float-breakpoint) {
+				& > span {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	@media (max-width: $grid-float-breakpoint-max) {
+		.navbar-nav > li {
+			text-align: center;
+
+			& + li {
+				float: left;
+				width: 25%;
+			}
+		}
 	}
 }
 

@@ -34,7 +34,7 @@ $text-color:            #000000;
 //** Global textual link color.
 $link-color:            $brand-primary;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 75%);
+$link-hover-color:      darken($link-color, 40%);
 //** Link hover decoration.
 $link-hover-decoration: underline;
 
@@ -501,20 +501,20 @@ $jumbotron-heading-font-size:    ceil(($font-size-base * 9));
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d;
-$state-success-bg:               #dff0d8;
+$state-success-text:             $brand-success;
+$state-success-bg:               lighten(adjust-hue($state-success-text, +30), 5%);
 $state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%);
 
-$state-info-text:                #31708f;
+$state-info-text:                $brand-info;
 $state-info-bg:                  #d9edf7;
 $state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%);
 
-$state-warning-text:             #8a6d3b;
-$state-warning-bg:               #fcf8e3;
+$state-warning-text:             $brand-warning;
+$state-warning-bg:               lighten(adjust-hue($state-warning-text, +10), 50%);
 $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%);
 
-$state-danger-text:              #dc0000;
-$state-danger-bg:                #f2dede;
+$state-danger-text:              $brand-danger;
+$state-danger-bg:                lighten(adjust-hue($state-danger-text, +30), 5%);
 $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%);
 
 
@@ -834,8 +834,8 @@ $close-text-shadow:           0 1px 0 #fff;
 //
 //##
 
-$code-color:                  #c7254e;
-$code-bg:                     #f9f2f4;
+$code-color:                  #7d21be;
+$code-bg:                     $gray-lighter;
 
 $kbd-color:                   #fff;
 $kbd-bg:                      #333;
