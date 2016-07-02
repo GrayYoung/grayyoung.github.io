@@ -50,7 +50,9 @@ requirejs.config({
 		exclude: [ 
             '../config'
         ],
-		include: [ 
+		include: [ ,
+            'app/model/util',
+            'app/model/responsiveness',
             'app/controller/global'
         ]
 	}, {
