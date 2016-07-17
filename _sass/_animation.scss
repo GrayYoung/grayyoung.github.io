@@ -56,6 +56,16 @@
 	}
 }
 
+@keyframes focusCircle {
+	from {
+		border-color: transparent;
+	}
+
+	to {
+		border-color: white;
+	}
+}
+
 #fixedProgress.loading .progress-circular {
 	animation: loadingRotation 700ms linear infinite both;
 }
