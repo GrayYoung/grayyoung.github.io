@@ -46,7 +46,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 		/**
 		 * Global Status
 		 */
-		$('#progressBar').toggleClass('active', false);
+		$('#progressBar').toggleClass('loading', false);
 		if($.browser.msie) {
 			$('#tip-browser').removeClass('hidden');
 		} else {

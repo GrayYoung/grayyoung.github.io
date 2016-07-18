@@ -2,13 +2,27 @@
 
 @keyframes loadingRotation {
 	from {
-		-webkit-transform:rotate(0deg);
-		transform:rotate(0deg)
+		box-shadow: 0 0 15px 1px $brand-primary;
+	}
+
+	30% {
+		box-shadow: 0 0 1px 1px $brand-success;
+	}
+
+	50% {
+		box-shadow: 0 0 30px 1px $brand-info;
+	}
+
+	65% {
+		box-shadow: 0 0 25px 1px $brand-warning;
+	}
+
+	80% {
+		box-shadow: 0 0 20px 1px $brand-danger;
 	}
 
 	to {
-		-webkit-transform:rotate(360deg);
-		transform:rotate(360deg)
+		box-shadow: 0 0 15px 1px $brand-primary;
 	}
 }
 
@@ -58,11 +72,11 @@
 
 @keyframes focusCircle {
 	from {
-		border-color: transparent;
+		box-shadow: 0 0 0 0 transparent;
 	}
 
 	to {
-		border-color: white;
+		box-shadow: 0 0 20px 1px $gray-lighter;
 	}
 }
 
@@ -70,8 +84,8 @@
 	animation: loadingRotation 700ms linear infinite both;
 }
 
-.loading.active {
-	visibility: visible;
+.progress.loading {
+	visibility: visible !important;
 
 	/* &:before, &:after {
 		content: " ";

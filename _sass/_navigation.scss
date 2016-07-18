@@ -186,7 +186,7 @@ body > * > footer {
 				margin-left: -0.75em;
 				border: solid 2px transparent;
 				border-radius: 50%;
-				animation: focusCircle 700ms ease-in-out 1 both;
+				animation: focusCircle 100ms ease-in 1 both;
 			}
 
 			@media (min-width: $grid-float-breakpoint) {

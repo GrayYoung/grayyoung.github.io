@@ -1,6 +1,6 @@
 //# BEGIN - Carousel
-main > .carousel.slide:first-child {
-	margin-top: -22px;
+main .carousel.slide:first-child {
+	margin-top: -$line-height-computed;
 }
 
 .carousel-control {
@@ -31,6 +31,7 @@ main > .carousel.slide:first-child {
 	}
 
 	.container {
+		position: relative;
 		height: 480px;
 
 		@media (max-height: 320px) {
@@ -63,7 +64,7 @@ main > .carousel.slide:first-child {
 		transform-origin: top left;
 
 		@media (min-width: $grid-float-breakpoint) {
-			font-size: $font-size-h1 * 2;
+			font-size: $font-size-h1 * 1.5;
 		}
 	}
 
@@ -75,7 +76,7 @@ main > .carousel.slide:first-child {
 		line-height: 1.3;
 
 		@media (min-width: $grid-float-breakpoint) {
-			font-size: $font-size-h4 * 2;
+			font-size: $font-size-h3;
 		}
 	}
 }
