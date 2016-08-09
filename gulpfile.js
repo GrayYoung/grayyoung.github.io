@@ -214,7 +214,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('clean', function() {
-	return gulp.src([path.join(paths.target.stc, '*'), path.join(paths.target.war, '*'), '!' + path.join(paths.sources.stc, paths.styles, 'web', 'interior_style.css')], {
+	return gulp.src([path.join(paths.target.stc, '*'), path.join(paths.target.war, '*')], {
 		read : false
 	}).pipe($.clean({
 		force : true
