@@ -1,0 +1,62 @@
+{
+	"fontawesomeFont": {
+		"flag": "font",
+		"src": ["fontawesome", "fonts", "*"],
+		"tag": [""]
+	},
+	"fontawesome": {
+		"flag": "style",
+		"src": ["fontawesome", "scss", "**", "*"],
+		"tag": ["../", "_sass", "fontawesome"]
+	},
+	"bootstrapCSS": {
+		"flag": "style",
+		"src": ["bootstrap-sass", "assets", "stylesheets", "bootstrap", "**", "*"],
+		"tag": ["../", "_sass", "bootstrap"]
+	},
+	"bootstrapCSSMain": {
+		"flag": "style",
+		"src": ["bootstrap-sass", "assets", "stylesheets", "bootstrap", "_bootstrap.scss"],
+		"tag": []
+	},
+	"jquery": {
+		"flag": "script",
+		"src": ["jquery", "dist", "jquery.min.js"],
+		"tag": []
+	},
+	"bootstrap": {
+		"flag": "script",
+		"src": ["bootstrap-sass", "assets", "javascripts", "bootstrap.min.js"],
+		"tag": []
+	},
+	"slick": {
+		"flag": "script",
+		"src": ["slick-carousel", "slick", "slick.min.js"],
+		"tag":[]
+	},
+	"jqueryUtilties": {
+		"flag": "script",
+		"src": ["jquery-utilties", "dist", "jquery.{browser}.min.js"],
+		"tag":[]
+	},
+	"xlsx": {
+		"flag": "script",
+		"src": ["js-xlsx", "dist", "xlsx.min.js"],
+		"tag":[]
+	},
+	"jszip": {
+		"flag": "script",
+		"src": ["js-xlsx", "jszip.js"],
+		"tag":[]
+	},
+	"ajax": {
+		"flag": "script",
+		"src": ["js-xlsx", "dist", "ajax.min.js"],
+		"tag":[]
+	},
+	"require": {
+		"flag": "script",
+		"src": ["requirejs", "require.js"],
+		"tag": []
+	}
+}

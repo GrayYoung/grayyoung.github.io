@@ -1,22 +1,28 @@
 {
   "name": "Marching",
-  "version": "0.0.1",
-  "dependencies": {},
-  "description": "Marching.Gray.Young@gmail.com Personal Project",
-  "main": "gulpfile.js",
-  "author": "Gray Young",
-  "license": "Copyright 2016",
-  "devDependencies": {
+  "version": "0.0.3",
+  "dependencies": {
     "gulp": "latest",
     "gulp-bower": "latest",
     "gulp-clean": "latest",
-    "gulp-filter": "latest",
-    "gulp-flatten": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-jshint": "latest",
     "gulp-load-plugins": "latest",
-    "gulp-minify-css": "latest",
-    "gulp-sass": "latest",
     "gulp-size": "latest",
-    "merge-stream" : "latest",
-    "requirejs": "latest"
+    "gulp-sass": "latest",
+    "jshint": "latest",
+    "jshint-stylish": "latest",
+    "requirejs": "latest",
+    "yargs": "latest"
+  },
+  "description": "Base AAXIS Commerce eShop Bootstrap UI",
+  "main": "gulpfile.js",
+  "author": {
+    "name" : "AAXIS Commerce",
+    "email" : "info@aaxiscommerce.com",
+    "url" : "http://www.aaxiscommerce.com/"
+  },
+  "license": "Copyright 2016",
+  "devDependencies": {
   }
 }

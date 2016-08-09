@@ -1,0 +1,6 @@
+{
+	"SRC_DOCROOT": "./",
+	"SRC_WARROOT": "./",
+	"DIST_DOCROOT": "./dist",
+	"DIST_WARROOT": "./_site"
+}
