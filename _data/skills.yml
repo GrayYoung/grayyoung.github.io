@@ -29,6 +29,18 @@
   startDate:  2016-08-09
   url: https://nodejs.org/
 
+- name: Jekyll
+  startDate:  2016-04-12
+  url: https://jekyllrb.com/
+
+- name: Liquid
+  startDate:  2016-04-12
+  url: https://shopify.github.io/liquid/
+
+- name: Markdown
+  startDate:  2016-04-12
+  url: https://daringfireball.net/projects/markdown/
+
 - name: Photoshop
   startDate:  2012-09-01
 

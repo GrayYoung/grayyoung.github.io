@@ -1,5 +1,5 @@
 ﻿- name: Visionworks
-  description: Visionworks official e-commerce site. Including a back-end system —— ACMC, it's a management for client to manage orders, prescriptions uploaded by customers, action logs of agents, and others.
+  description: Visionworks official e-commerce site. Including a back-end system —— ACMC, it's a management for client to manage orders, prescriptions uploaded by customers, action logs of agents, and others. Visionworks is a vendor that sell glasses and provide customize glasses service. <br> On this project, front-end aspect JavaScript & CSS files were packaged by a NodeJS modules named gulp. And modularize JavaScript codes via RequireJS. We used customized Bootstrap 3. <br> The site support 3 devices, desktop, tablet and mobile. Minimum screen size supported is screen size of iPhone 5. <br> The front-end code of ACMC written using AngularJS, also combine with RequireJS.
   startDate:  2015-07-01
   endDate:  2016-04-18
   url: https://www.visionworks.com/
@@ -16,7 +16,7 @@
   - Responsive design
 
 - name: Donaldson Catalog
-  description: Donaldson catalog advanced search.
+  description: Donaldson catalog advanced search. <br> The official site is http://catalog.donaldson.com. <br> Front-end aspect, <ol><li>Manage third-party frameworks via bower.</li><li>JavaScript & CSS files were packaged by a NodeJS modules named gulp. And modularize JavaScript codes via RequireJS.</li><li>We used customized Bootstrap 3. CSS codes coded using SASS, and compile by node-sass. The site support 3 devices, desktop, tablet and mobile. Minimum breakpoint is 480.  Minimum screen size supported is screen size of iPhone 4.</li><li>4. There are 2 jQuery plugins that were programmed by me base on jQuery.UI widget(https://github.com/GrayYoung/jQuery.UI.Extension)， including Zoom and Carousel.</li><li>There is a feature to manage attributes of products programmed via AngularJS.</li></ol>
   startDate:  2014-10-20
   endDate:  2015-01-31
   url: https://catalog.donaldson.com/

@@ -8,7 +8,7 @@
  */
 /* global requirejs */
 requirejs.config({
-	baseUrl: '/dist/js/lib',
+	baseUrl: '/js/lib',
 	paths: {
 		app: '../app',
 		jquery: 'jquery.min',
