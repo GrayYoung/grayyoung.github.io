@@ -1,0 +1,41 @@
+CACHE MANIFEST
+
+# vsersion 0.0.1
+
+# Styles
+css/font-awesome.css
+css/bootstrap.css
+css/marching.css
+
+# Scripts
+dist/js/config.js
+dist/js/marching.js
+dist/js/media.js
+dist/js/printing.js
+dist/js/article.js
+
+# Fonts
+fonts/fontawesome-webfont.woff2
+fonts/Freight Text W03 Bold Italic.woff2
+fonts/Freight Text W03 Bold.woff2
+fonts/Freight Text W03 Regular Italic.woff2
+fonts/Freight Text W03 Regular.woff2
+fonts/Trade Gothic W01 Bold.woff2
+fonts/Trade Gothic W01 Regular.woff2
+
+# Images
+images/solar/earch.png
+images/solar/jupiter.png
+images/solar/mars.png
+images/solar/mercury.png
+images/solar/venus.png
+images/solar/sun.png
+images/solar/shadow.png
+images/logo.png
+images/me.png
+images/logo-poly.png
+
+FALLBACK:
+
+NETWORK:
+*
