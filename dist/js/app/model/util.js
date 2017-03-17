@@ -1,1 +1,31 @@
-define({getUrlParam:function(t,e){var n="";return n=function(t){var n=new RegExp("(^|&)"+t+"=([^&]*)(&|$)",e?"i":"");return location.search.substr(1).match(n)}(t),null!=n?decodeURIComponent(n[2]):""},throttle:function(t,e,n){"number"!=typeof n&&(n=100),clearTimeout(t.timeoutId),t.timeoutId=setTimeout(function(){t.call(e)},n)}});
+/**
+ * Useful functions collection
+ */
+
+/* The following comment tell gulp-jshint variable define is defined in another file. */ 
+/* global define */
+define({
+	getUrlParam: function(name, ignoreCase) {
+		var r = '';
+
+		r = (function(name) {
+			var pattern = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', ignoreCase ? 'i' : '');
+
+			return location.search.substr(1).match(pattern);
+		})(name);
+		if (r != null) {
+			return decodeURIComponent(r[2]);
+		}
+
+		return '';
+	},
+	throttle: function(method, context, interval) {
+		if(typeof interval != 'number') {
+			interval = 100;
+		}
+		clearTimeout(method.timeoutId);
+		method.timeoutId = setTimeout(function() {
+			method.call(context);
+		}, interval);
+	}
+});

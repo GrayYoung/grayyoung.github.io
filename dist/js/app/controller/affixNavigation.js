@@ -1,1 +1,73 @@
-define(["app/model/util","app/model/responsiveness","jquery","bootstrap"],function(t,e,i){function n(){var t,e,n,d=i(window),s=o.scrollTop(),c=0,l=0;o.find("main > article").find("section").each(function(){return t=i(this),t.offset().top>s?(e=a.find('a[href="#'+t.attr("id")+'"]'),n=e.parent("li"),a.data("oldActiveItems")&&a.data("oldActiveItems").removeClass("active"),a.data("oldActiveItems",e.parents("li").addClass("active")),l=e.offset().top,c=s+d.height()-l-e.height()-15,0>c?a.children("ul").css("top",c):s>l&&a.children("ul").css("top",s-l),!1):void 0})}if(!(i(window).width()<e.desktop.width)){var o=i(document),a=i('<nav class="col-lg-2 col-md-3 hidden-xs hidden-sm"/>');o.on("scroll.ui.an",function(){t.throttle(n)}).ready(function(){var t=o.find("main > article"),e=function(t){var n=i('<ul class="list-unstyled"/>'),o=i("<li/>"),a=t.children("h1,h2,h3,h4,h5,h6").text(),d="chapter-"+a.replace(/\W/g,"");return n.append(o),o.append(i("<a/>").attr("href","#"+d).text(a)),t.attr("id",d),t.children("section").each(function(){o.append(e(i(this)))}),n};t.children("section").each(function(){a.append(e(i(this).addClass("col-lg-10 col-md-9")))}).end().append(a),console.log(o.height()-t.offset().top-t.height()),a.children("ul").affix({offset:{top:a.offset().top,bottom:o.height()-t.offset().top-t.height()}}).on("affixed-top.bs.affix",function(){i(this).css("top","")}),n()})}});
+/**
+ * Affix Navigation
+ */
+
+/*
+ * The following comment tell gulp-jshint variable define is require in another file.
+ */ 
+/* global define */
+define(['app/model/util', 'app/model/responsiveness', 'jquery', 'bootstrap'], function(util, rpss, $) {
+	if($(window).width() < rpss.desktop.width) {
+		return;
+	}
+	var $document = $(document), $outline = $('<nav class="col-lg-2 col-md-3 hidden-xs hidden-sm"/>');
+
+	function matchDestination() {
+		var $this, $current, $parent, $w = $(window);
+		var st = $document.scrollTop(), gap = 0, top = 0;
+
+		$document.find('main > article').find('section').each(function() {
+			$this = $(this);
+			if($this.offset().top > st) {
+				$current = $outline.find('a[href="#' + $this.attr('id') + '"]');
+				$parent = $current.parent('li');
+				if($outline.data('oldActiveItems')) {
+					$outline.data('oldActiveItems').removeClass('active');
+				}
+				$outline.data('oldActiveItems', $current.parents('li').addClass('active'));
+				top = $current.offset().top;
+				gap = st + $w.height() - top - $current.height() - 15;
+				if(gap < 0) {
+					$outline.children('ul').css('top', gap);
+				} else if(top < st) {
+					$outline.children('ul').css('top', st - top);
+				}
+
+				return false;
+			}
+		});
+	}
+
+	$document.on('scroll.ui.an', function() {
+		util.throttle(matchDestination);
+	}).ready(function() {
+		var $article = $document.find('main > article');
+		var outlineScanner = function($section) {
+			var $list = $('<ul class="list-unstyled"/>'), $item = $('<li/>');
+			var heading = $section.children('h1,h2,h3,h4,h5,h6').text(), id = 'chapter-' + heading.replace(/\W/g, '');
+	
+			$list.append($item);
+			$item.append($('<a/>').attr('href', '#' + id).text(heading));
+			$section.attr('id', id);
+			$section.children('section').each(function() {
+				$item.append(outlineScanner($(this)));
+			});
+	
+			return $list;
+		};
+
+		$article.children('section').each(function() {
+			$outline.append(outlineScanner($(this).addClass('col-lg-10 col-md-9')));
+		}).end().append($outline);
+		console.log($document.height() - $article.offset().top - $article.height());
+		$outline.children('ul').affix({
+			offset: {
+				top: $outline.offset().top,
+				bottom: $document.height() - $article.offset().top - $article.height()
+			}
+		}).on('affixed-top.bs.affix', function() {
+			$(this).css('top', '');
+		});
+		matchDestination();
+	});
+});

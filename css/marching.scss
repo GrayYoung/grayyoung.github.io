@@ -18,10 +18,36 @@
 @import "solar";
 @import "gsc";
 
+
+
+/*## Layout */
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: $zindex-navbar;
+	width: 200px;
+	height: 100%;
+	background-color: $gray-dark;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 3px;
+		border: solid 1px #ffffff;
+		background-color: $gray-light;
+	}
+}
+
+
 main {
 	padding-top: 30px;
-	background: url(/images/background/christmas.jpg) center top repeat-x #ECEBD9;
+	margin-left: 200px;
 }
+
 
 ul, ol {
 	list-style-position: outside;

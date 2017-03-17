@@ -1,1 +1,92 @@
-define([],function(){function e(){return(e="undefined"!=typeof XMLHttpRequest?function(){return new XMLHttpRequest}:"undefined"!=typeof ActiveXObject?function(){if("string"!=typeof arguments.callee.activeXString)for(var e=["MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp"],t=0,n=e.length;n>t;t++)try{var r=new ActiveXObject(e[t]);return arguments.callee.activeXString=e[t],r}catch(a){console.log("Failed to create XMLHttpRequest: "+e[t])}return new ActiveXObject(arguments.callee.activeXString)}:function(){throw new Error("No XHR object availabel.")})()}return function(t,n,r){var a=e();if("undefined"!=typeof Uint8Array){try{a.responseType="arraybuffer"}catch(o){console.log(o)}a.onload=function(e){var t,n=a.response,o=new Array;try{t=new Uint8Array(n);for(var c=0;c!=t.length;++c)o[c]=String.fromCharCode(t[c])}catch(s){console.log(s),t=new Uint8Array(n.length);for(var c=0;c!=n.length;++c)t[c]=n[c],o[c]=String.fromCharCode(t[c])}r(XLSX.read(o.join(""),{type:"binary"}))}}else a.setRequestHeader("Accept-Charset","x-user-defined"),a.onreadystatechange=function(){4==a.readyState&&(a.status>=200&&a.status<=300||304==a.status?r(XLSX.read(a.responseBody,{type:"binary"})):console.log("Request was unsuccessful: "+a.status))};return a.open(t,n,!0),a.send(),a}});
+/**
+ * Request Excel File
+ */
+
+/* The following comment tell gulp-jshint variable define is defined in another file. */ 
+/* global define */
+define(function() {
+	function createXHR() {
+		if(typeof XMLHttpRequest != 'undefined') {
+			createXHR = function() {
+				return new XMLHttpRequest();
+			}
+		} else if(typeof ActiveXObject != 'undefined') {
+			createXHR = function() {
+				if(typeof arguments.callee.activeXString != 'string') {
+					var versions = ['MSXML2.XMLHttp.6.0', 'MSXML2.XMLHttp.3.0', 'MSXML2.XMLHttp'];
+
+					for(var i = 0, len = versions.length; i < len; i++) {
+						try {
+							var xhr = new ActiveXObject(versions[i]);
+		
+							arguments.callee.activeXString = versions[i];
+
+							return xhr;
+						} catch(error) {
+							console.log('Failed to create XMLHttpRequest: ' + versions[i]);
+						}
+					}
+				}
+
+				return new ActiveXObject(arguments.callee.activeXString);
+			}
+		} else {
+			createXHR = function() {
+				throw new Error('No XHR object availabel.');
+			}
+		}
+
+		return createXHR();
+	}
+
+	return function(method, url, callback) {
+		var xhRequest = createXHR();
+
+		if(typeof Uint8Array !== 'undefined') {
+			try {
+				xhRequest.responseType = 'arraybuffer';
+			} catch(error) {
+				console.log(error);
+			}
+			xhRequest.onload = function(e) {
+				var arraybuffer = xhRequest.response;
+				var data, arr = new Array();
+				var unitLimited = false;
+
+				try {
+					data = new Uint8Array(arraybuffer)
+					for(var i = 0; i != data.length; ++i) {
+						arr[i] = String.fromCharCode(data[i]);
+					}
+				} catch(error) {
+					console.log(error);
+					data = new Uint8Array(arraybuffer.length)
+					for(var i = 0; i != arraybuffer.length; ++i) {
+						data[i] = arraybuffer[i];
+						arr[i] = String.fromCharCode(data[i]);
+					}
+				}
+				callback(XLSX.read(arr.join(''), {
+					type : 'binary'
+				}));
+			};
+		} else {
+			xhRequest.setRequestHeader('Accept-Charset', 'x-user-defined');	
+			xhRequest.onreadystatechange = function() {
+				if(xhRequest.readyState == 4) {
+					if((xhRequest.status >= 200 && xhRequest.status <= 300) || xhRequest.status == 304) {
+						callback(XLSX.read(xhRequest.responseBody, {
+							type : 'binary'
+						}));
+					} else {
+						console.log('Request was unsuccessful: ' + xhRequest.status);
+					}
+				} 
+			};
+		}
+		xhRequest.open(method, url, true);
+		xhRequest.send();
+	
+		return xhRequest;
+	};
+});

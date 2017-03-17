@@ -20,6 +20,7 @@
   "dependencies": {
     "html5shiv": "latest",
     "respond": "latest",
+	"tether": "latest",
     "bootstrap": "~4.*",
     "fontawesome": "latest",
     "jquery": "latest",

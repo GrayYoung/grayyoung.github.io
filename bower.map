@@ -29,6 +29,18 @@
 		"pipes": [0],
 		"dest": ["lib"]
 	},
+	"respond": {
+		"type": "script",
+		"src": ["respond", "dest", "respond.min.js"],
+		"pipes": [0],
+		"dest": ["lib"]
+	},
+	"tether": {
+		"type": "script",
+		"src": ["tether", "dist", "js", "tether.js"],
+		"pipes": [0],
+		"dest": ["lib"]
+	},
 	"jquery": {
 		"type": "script",
 		"src": ["jquery", "dist", "jquery.js"],

@@ -1,1 +1,36 @@
-importScripts("../../lib/require.js"),require(["../../config"],function(e){require(["app/model/iterateMedia"],function(e){onmessage=function(s){s.data.sheet&&e({sheet:s.data.sheet,offset:s.data.offset,setting:s.data.setting,type:s.data.type,pause:function(){postMessage({pause:!0})},end:function(){postMessage({stopProgress:!0})},success:function(e){postMessage(e)},error:function(e){postMessage(e)}})},postMessage({status:1})})});
+importScripts('../../lib/require.js');
+
+require([ '../../config' ], function(config) {
+	require(['app/model/iterateMedia'], function(iterateMedia) {
+		onmessage = function(event) {
+			if(event.data.sheet) {
+				iterateMedia({
+					sheet: event.data.sheet,
+					offset: event.data.offset,
+					setting: event.data.setting,
+					type: event.data.type,
+					pause: function() {
+						postMessage({
+							pause: true
+						});
+					},
+					end: function() {
+						postMessage({
+							stopProgress: true
+						});
+					},
+					success: function(data) {
+						postMessage(data);
+					},
+					error: function(data) {
+						postMessage(data);
+					}
+				});
+			}
+		};
+
+		postMessage({
+			status: 1
+		});
+	});
+});

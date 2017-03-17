@@ -178,7 +178,7 @@ gulp.task('scripts', function() {
 		devel: true,
 		jquery : true,
 		node : false
-	})).pipe($.jshint.reporter(require('jshint-stylish'))).pipe(gulp.dest(targetPaths.scripts)).pipe($.size({
+	}))/* .pipe($.jshint.reporter(require('jshint-stylish'))) */.pipe(gulp.dest(targetPaths.scripts)).pipe($.size({
 		title: '-> Scripts unoptimized'
 	}));
 });
