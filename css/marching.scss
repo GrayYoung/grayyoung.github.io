@@ -17,6 +17,11 @@
 @import "solar";
 @import "gsc";
 
+main {
+	padding-top: 30px;
+	background: url(/images/background/christmas.jpg) center top repeat-x #ECEBD9;
+}
+
 ul, ol {
 	list-style-position: outside;
 }
