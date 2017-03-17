@@ -1,5 +1,5 @@
 /**
- * Media
+ * Media 
  * 
  */
 
@@ -9,32 +9,14 @@ require([ './config' ], function(config) {
 	require([ 'app/controller/global' ]);
 	require([ 'app/model/util', 'app/model/requests', 'app/model/excelRequest', 'app/model/iterateMedia', 'jquery', 'bootstrap', 'xlsx' ], function(util, requests, excelRequest, iterateMedia, $) {
 		$(document).on('mousewheel.ls.media', function(event) {
-			if(event.deltaY > 0 && $(document).scrollTop() <= 0) {
-				$('#containerListing').trigger('update', 'top');
-			} else if(event.deltaY < 0 && $(document).scrollTop() >= $(document).height() - $(window).height()) {
-				$('#containerListing').trigger('update', 'bottom');
-			}
+			this.event = event;
+			util.throttle(scrollEventHandler, this);
 		}).on('touchstart.ls.media', function(event) {
-			var $document = $(this);
-
-			$document.data('touch', {
-				pageX : event.originalEvent.changedTouches[0].pageX,
-				pageY : event.originalEvent.changedTouches[0].pageY,
-				startTime : new Date().getTime()
-			});
+			this.event = event;
+			util.throttle(scrollEventHandler, this);
 		}).on('touchend.ls.media', function(event) {
-			var $document = $(this);
-			var touchData = $document.data('touch');
-			var distance = event.originalEvent.changedTouches[0].pageY - touchData.pageY;
-
-			if(new Date().getTime() - touchData.startTime <= 300) {
-				if(distance >= 60 && $(document).scrollTop() <= 0) {
-					$('#containerListing').trigger('update', 'top');
-				} else if(distance <= 60 && $(document).scrollTop() >= $(document).height() - $(window).height()) {
-					$('#containerListing').trigger('update', 'bottom');
-				}
-				//event.preventDefault();
-			}
+			this.event = event;
+			util.throttle(scrollEventHandler, this);
 		}).on('click', '#containerListing a.u-url', function(event) {
 			var $this = $(this), $preview = $this.closest('.h-item'), $canvas;
 			//var imdbID = /(?:\/)(tt\d+)$/g.exec($this.attr('href'))[1];
@@ -214,6 +196,44 @@ require([ './config' ], function(config) {
 			});
 			$(document).data('oddScrollTop', $(document).scrollTop()).trigger('scroll.ls.media');
 		});
+
+		function scrollEventHandler() {
+			var $document = $(this);
+			var event = this.event.originalEvent;
+
+			switch(event.type) {
+				case 'mousewheel': 
+					var deltaY = event.wheelDeltaY || event.deltaY;
+
+					if(deltaY > 0 && $document.scrollTop() <= 0) {
+						$('#containerListing').trigger('update', 'top');
+					} else if(deltaY < 0 && $document.scrollTop() >= $document.height() - $(window).height()) {
+						$('#containerListing').trigger('update', 'bottom');
+					}
+					break;
+				case 'touchstart':
+
+					$document.data('touch', {
+						pageX : event.changedTouches[0].pageX,
+						pageY : event.changedTouches[0].pageY,
+						startTime : new Date().getTime()
+					});
+					break;
+				case 'touchend':
+					var touchData = $document.data('touch');
+					var distance = event.changedTouches[0].pageY - touchData.pageY;
+
+					if(new Date().getTime() - touchData.startTime <= 300) {
+						if(distance >= 60 && $document.scrollTop() <= 0) {
+							$('#containerListing').trigger('update', 'top');
+						} else if(distance <= 60 && $document.scrollTop() >= $document.height() - $(window).height()) {
+							$('#containerListing').trigger('update', 'bottom');
+						}
+						//event.preventDefault();
+					}
+					break;
+			};
+		}
 
 		function listing() {
 			var updatedURL = location.search.substr(1), page = 1;

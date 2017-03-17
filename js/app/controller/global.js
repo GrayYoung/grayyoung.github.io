@@ -59,7 +59,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 		$('.carousel.slide').each(function() {
 			var $slider = $(this).find('.carousel-inner');
 
-			if($slider.children('.item').size() > 1) {
+			if($slider.children('.item').length > 1) {
 				$slider.slick({
 					autoplay : true,
 					autoplaySpeed : 5000,

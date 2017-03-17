@@ -69,7 +69,9 @@ permalink: /about/
 		<div class="pull-right col-sm-4 col-xs-12">
 			<section class="p-summary summary">
 				<h2>Objective</h2>
-				<p>Programing is a game, it's funny. And JavaScript is the most interesting program language.</p>
+				<p>I got enough knowledge and solutions from working experiences of years. And I also keep learning latest web front-end technologies and frameworks. I could work at my job easily because of these. 
+I am bigoted, I will do my best to crush any challenges. And I am a neat lover that love neat laconical codes. Though I am a senior web font-end developer, I want to be a designer more than front-end developer.
+I am also a good member of the team, looking for a opportunity to join a excellent professional team..</p>
 			</section>
 		</div>
 		<div class="col-sm-8 col-xs-12">
@@ -96,24 +98,25 @@ permalink: /about/
 					<dt aria-hidden="true">&nbsp;</dt>
 					<dd aria-hidden="true">
 						<table class="table table-bordered">
-							<caption>10 Years</caption>
 							<thead>
 								<tr>
-									<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
 								</tr>
 							</thead>
 						</table>
 					</dd>
 				</dl>
 				{% for skill in site.data.skills %}
-				{% assign thisDate = skill.startDate | date: "%s" | minus: 604800 %}
-				{% assign duration = nowDate | minus: thisDate | round: 2 | divided_by: 3600 | divided_by: 24 | divided_by: 365 | round: 2 %}
 				<dl class="dl-horizontal competency skill">
 					<dt class="summary">{% if skill.url %}<a target="_blank" href="{{ skill.url }}">{{ skill.name }}</a>{% else %}{{ skill.name }}{% endif %}</dt>
 					<dd>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="10" style="width: {{ duration | times: 10 }}%;">
-								<time class="sr-only duration" datetime="P1096Y">{{ duration }} years</time>
+							<div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="10" style="width: {{ skill.rate | times: 100 }}%;">
+								<time class="sr-only duration" datetime="P1096Y">{{ skill.rate }}</time>
 							</div>
 						</div>
 					</dd>
@@ -127,7 +130,7 @@ permalink: /about/
 				<ol class="list-unstyled list-history">
 					{% for project in site.data.projects %}
 					<li class="h-event vevent">
-						<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ skill.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
+						<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
 						<p class="p-description description">{{ project.description }}</p>
 						{% if project.features.size > 0%}
 						<div class="clearfix show-grid"></div>
