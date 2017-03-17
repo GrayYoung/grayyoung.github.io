@@ -11,12 +11,12 @@ requirejs.config({
 	baseUrl: '/js/lib',
 	paths: {
 		app: '../app',
-		jquery: 'jquery.min',
-		bootstrap: 'bootstrap.min',
-		browser: 'jquery.browser.min',
-		slick: 'slick.min',
+		jquery: 'jquery',
+		bootstrap: 'bootstrap',
+		browser: 'jquery.browser',
+		slick: 'slick',
 		zip: 'jszip',
-		xlsx: 'xlsx.min',
+		xlsx: 'xlsx',
 		ajax: 'ajax.min',
 		googleAPI: 'https://www.google.com/jsapi',
 		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en',
@@ -50,7 +50,7 @@ requirejs.config({
 		exclude: [ 
             '../config'
         ],
-		include: [ ,
+		include: [ 
             'app/model/util',
             'app/model/responsiveness',
             'app/controller/global'

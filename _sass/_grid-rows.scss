@@ -38,14 +38,14 @@
 
 @include make-grid-rows(xs);
 
-@media (min-width: $screen-sm-min) {
+/* @media (min-width: @screen-sm-min) {
   @include make-grid-rows(sm);
 }
 
-@media (min-width: $screen-md-min) {
+@media (min-width: @screen-md-min) {
   @include make-grid-rows(md);
 }
 
-@media (min-width: $screen-lg-min) {
+@media (min-width: @screen-lg-min) {
   @include make-grid-rows(lg);
-}
+} */

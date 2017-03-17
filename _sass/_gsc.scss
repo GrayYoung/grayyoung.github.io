@@ -27,7 +27,7 @@
 			&:hover, &:active, &:focus {
 				transform: scale(1.05, 1.05);
 				transform-origin: center center;
-				background-color: $text-color !important;
+				background-color: $body-color !important;
 				color: white !important;
 			}
 		}

@@ -1,6 +1,7 @@
 ---
 ---
 
+@import "bootstrap/mixins";
 @import "variables";
 @import "mixins/animation";
 @import "mixins/row-framework";
@@ -40,7 +41,7 @@ a.text-danger, a .text-danger {
 }
 
 .btn-inverse {
-	background-color: $text-color;
+	background-color: $body-color;
 	color: white;
 
 	&:hover, &:focus, &.focus {
@@ -61,7 +62,7 @@ a.text-danger, a .text-danger {
 }
 
 .show-grid {
-	margin-bottom: $grid-gutter-width / 2;
+	margin-bottom: $grid-gutter-width-base / 2;
 }
 
 .pull-right > a {
@@ -76,9 +77,9 @@ a.text-danger, a .text-danger {
 
 	> * {
 		> ol {
-			padding-top: $grid-gutter-width / 3;
+			padding-top: $grid-gutter-width-base / 3;
 			border-top: solid 1px $gray-light;
-			margin-top: $grid-gutter-width / 3;
+			margin-top: $grid-gutter-width-base / 3;
 		}
 	}
 }
@@ -102,7 +103,7 @@ section, blockquote{
 
 .h-listing {
 	.h-entry {
-		margin-bottom: $grid-gutter-width;
+		margin-bottom: $grid-gutter-width-base;
 	}
 
 	hr {
@@ -197,7 +198,7 @@ section, blockquote{
 		padding: 0 5px;
 	}
 
-	@media (min-width: $screen-desktop) {
+	@include media-breakpoint-up(md) {
 		.col-md-3 {
 			padding-left: 0;
 		}
@@ -245,7 +246,7 @@ section, blockquote{
 	height: 8px;
 	margin-bottom: -8px;
 	visibility: hidden;
-	background-color: $text-color;
+	background-color: $body-color;
 }
 
 .modal-preview {
@@ -273,14 +274,14 @@ section, blockquote{
 }
 
 .container-404 {
-	margin-top: -$grid-gutter-width;
-	margin-bottom: -$grid-gutter-width / 2;
+	margin-top: -$grid-gutter-width-base;
+	margin-bottom: -$grid-gutter-width-base / 2;
 	overflow: hidden;
-	background-color: $text-color;
+	background-color: $body-color;
 	color: white;
 }
 
-@media (min-width: $grid-float-breakpoint) {
+@include media-breakpoint-down(xs) {
 	#subNavbar + .navbar .nav > li > a > span {
 		display: inline-block;
 	}
@@ -372,7 +373,7 @@ section, blockquote{
 		.modal-body {
 			width: 56.25%;
 			height: 100%;
-			padding-top: $modal-title-padding * 2 + $line-height-base * $font-size-h4 + $grid-gutter-width / 2;
+			padding-top: $modal-inner-padding * 2 + $line-height-base + $grid-gutter-width-base / 2;
 		}
 
 		.modal-footer {
@@ -380,7 +381,7 @@ section, blockquote{
 			right: auto;
 			width: 43.75%;
 			height: 100%;
-			padding-top: $modal-title-padding * 2 + $line-height-base * $font-size-h4;
+			padding-top: $modal-inner-padding * 2 + $line-height-base;
 			padding-bottom: 0;
 
 			.panel {

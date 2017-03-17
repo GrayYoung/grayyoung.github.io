@@ -1,62 +1,80 @@
 {
 	"fontawesomeFont": {
-		"flag": "font",
+		"type": "font",
 		"src": ["fontawesome", "fonts", "*"],
-		"tag": [""]
+		"pipes": [0],
+		"dest": [""]
 	},
 	"fontawesome": {
-		"flag": "style",
+		"type": "style",
 		"src": ["fontawesome", "scss", "**", "*"],
-		"tag": ["../", "_sass", "fontawesome"]
+		"pipes": [0],
+		"dest": ["../", "_sass", "fontawesome"]
 	},
-	"bootstrapCSS": {
-		"flag": "style",
-		"src": ["bootstrap-sass", "assets", "stylesheets", "bootstrap", "**", "*"],
-		"tag": ["../", "_sass", "bootstrap"]
+	"bootstrapSCSS": {
+		"type": "style",
+		"src": ["bootstrap", "scss", "**", "*"],
+		"pipes": [0],
+		"dest": ["../", "_sass", "bootstrap"]
 	},
 	"bootstrapCSSMain": {
-		"flag": "style",
-		"src": ["bootstrap-sass", "assets", "stylesheets", "bootstrap", "_bootstrap.scss"],
-		"tag": []
+		"type": "style",
+		"src": ["bootstrap", "scss", "bootstrap.scss"],
+		"pipes": [0],
+		"dest": []
+	},
+	"html5shiv": {
+		"type": "script",
+		"src": ["html5shiv", "dist", "html5shiv{*,-printshiv}.min.js"],
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"jquery": {
-		"flag": "script",
-		"src": ["jquery", "dist", "jquery.min.js"],
-		"tag": []
+		"type": "script",
+		"src": ["jquery", "dist", "jquery.js"],
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"bootstrap": {
-		"flag": "script",
-		"src": ["bootstrap-sass", "assets", "javascripts", "bootstrap.min.js"],
-		"tag": []
+		"type": "script",
+		"src": ["bootstrap", "dist", "js", "bootstrap.js"],
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"slick": {
-		"flag": "script",
-		"src": ["slick-carousel", "slick", "slick.min.js"],
-		"tag":[]
+		"type": "script",
+		"src": ["slick-carousel", "slick", "slick.js"],
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"jqueryUtilties": {
-		"flag": "script",
-		"src": ["jquery-utilties", "dist", "jquery.{browser}.min.js"],
-		"tag":[]
+		"type": "script",
+		"src": ["jquery-utilties", "dist", "jquery.browser.js"],
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"xlsx": {
-		"flag": "script",
-		"src": ["js-xlsx", "dist", "xlsx.min.js"],
-		"tag":[]
+		"type": "script",
+		"src": ["js-xlsx", "dist", "xlsx.js"],
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"jszip": {
-		"flag": "script",
+		"type": "script",
 		"src": ["js-xlsx", "jszip.js"],
-		"tag":[]
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"ajax": {
-		"flag": "script",
+		"type": "script",
 		"src": ["js-xlsx", "dist", "ajax.min.js"],
-		"tag":[]
+		"pipes": [0],
+		"dest": ["lib"]
 	},
 	"require": {
-		"flag": "script",
+		"type": "script",
 		"src": ["requirejs", "require.js"],
-		"tag": []
+		"pipes": [0],
+		"dest": ["lib"]
 	}
 }
