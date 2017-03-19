@@ -1,86 +1,65 @@
 <header id="header">
-	<div id="subNavbar" class="navbar navbar-inverse">
-		<div class="container">
-			<ul class="nav nav-pills">
-				<li role="presentation"><a href="/">Home</a></li>
-				<li class="pull-right" role="presentation">
-					<a class="text-primary" target="_blank" href="mailto:windpet@live.cn">Send a Email to Me</a>
-				</li>
-				<li class="pull-right" role="presentation">
-					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2195034239&site=qq&menu=yes">QQ<span class="hidden-xs"> 2195034239</span></a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="navbar hidden-xs">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">GRAY</a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li role="presentation">
-					<a target="_blank" href="https://www.facebook.com/profile.php?id=100010823177377">
-						<i class="fa fa-facebook fa-4x" aria-hidden="true"></i> 
-						<span class="hidden-xs"><strong class="text-uppercase">Follow Me on Facebook</strong></span>
+	<nav class="navbar">
+		<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNavBar" aria-controls="mainNavBar" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="/">GRAY</a>
+				<ul class="nav navbar-nav navbar-right">
+			<li role="presentation">
+				<a target="_blank" href="https://github.com/GrayYoung">
+					<i class="fa fa-github-alt fa-lg" aria-hidden="true"></i> 
+					<span class="sr-only"><strong class="text-uppercase">Follow Me on Github</strong></span>
+				</a>
+			</li>
+			<li role="presentation">
+				<a target="_blank" href="https://www.facebook.com/profile.php?id=100010823177377">
+					<i class="fa fa-facebook fa-lg" aria-hidden="true"></i> 
+					<span class="sr-only"><strong class="text-uppercase">Follow Me on Facebook</strong></span>
+				</a>
+			</li>
+			<li role="presentation">
+				<a target="_blank" href="http://weibo.com/MarchGrayYoung/">
+					<i class="fa fa-weibo fa-lg" aria-hidden="true"></i> 
+					<span class="sr-only"><strong class="text-uppercase">Follow Me on Sina</strong></span>
+				</a>
+			</li>
+			<li role="presentation">
+				<a target="_blank" href="https://plus.google.com/u/0/111891129703746085317/posts">
+					<i class="fa fa-google-plus fa-lg" aria-hidden="true"></i> 
+					<span class="sr-only"><strong class="text-uppercase">Follow Me on Google+</strong></span>
+				</a>
+			</li>
+		</ul>
+		<div id="mainNavBar" class="navbar-collapse collapse show" aria-expanded="false" aria-hidden="true">
+			<ul class="nav navbar-nav">
+				{% for item in site.data.navigation %}
+				<li class="nav-item">
+					{% if item.subs %}
+					<a href="{{ item.url | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						{{ item.label }} <i class="fa fa-lg fa-caret-down" aria-hidden="true"></i>
 					</a>
+					<ul class="dropdown-menu">
+						{% for sub in item.subs %}
+						<li>
+							<a href="{{ sub.url | prepend: site.baseurl }}">{{ sub.label }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					{% else %}
+						<a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a>
+					{% endif %}
 				</li>
-				<li role="presentation">
-					<a target="_blank" href="https://plus.google.com/u/0/111891129703746085317/posts">
-						<i class="fa fa-google-plus fa-4x text-danger" aria-hidden="true"></i> 
-						<span class="hidden-xs"><strong class="text-uppercase">Follow Me on Google+</strong></span>
-					</a>
-				</li>
+				{% endfor %}
 			</ul>
-		</div>
-	</div>
-	<nav class="navbar navbar-toggleable-sm">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavBar" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="/">GRAY</a>
-			</div>
-
-			<div id="mainNavBar" class="collapse navbar-collapse" aria-expanded="false" aria-hidden="true">
-				<ul class="nav navbar-nav">
-					{% for item in site.data.navigation %}
-					<li>
-						{% if item.subs %}
-						<a href="{{ item.url | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							{{ item.label }} <i class="fa fa-lg fa-caret-down" aria-hidden="true"></i>
-						</a>
-						<ul class="dropdown-menu">
-							{% for sub in item.subs %}
-							<li>
-								<a href="{{ sub.url | prepend: site.baseurl }}">{{ sub.label }}</a>
-							</li>
-							{% endfor %}
-						</ul>
-						{% else %}
-							<a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a>
-						{% endif %}
-					</li>
-					{% endfor %}
-				</ul>
-				<form id="form-cse-search" class="navbar-form navbar-right" role="search" action="/search">
-					<div class="input-group">
-						<input id="input-cse-search" name="query" type="text" required class="form-control" placeholder="">
-						<span class="input-group-btn">
-							<button type="submit" class="btn btn-inverse btn-sm"><strong>SEARCH</strong></button>
-						</span>
-					</div>
-				</form>
-			</div>
-		</div>
-		<div id="progressBar" class="progress loading active hidden-print">
-			<div class="progress-bar" role="progressbar"></div>
-			<div class="progress-bar" role="progressbar"></div>
-			<div class="progress-bar" role="progressbar"></div>
-			<div class="progress-bar" role="progressbar"></div>
+			<form id="form-cse-search" class="navbar-form navbar-right" role="search" action="/search">
+				<div class="input-group">
+					<input id="input-cse-search" name="query" type="text" required class="form-control" placeholder="">
+					<span class="input-group-btn">
+						<button type="submit" class="btn btn-inverse btn-sm"><strong>SEARCH</strong></button>
+					</span>
+				</div>
+			</form>
 		</div>
 	</nav>
 </header>

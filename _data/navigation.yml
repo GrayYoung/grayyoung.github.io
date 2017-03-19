@@ -27,4 +27,7 @@
       url: /media?t=tv
 
 - label: Printing
-  url: /printing/
+  url: /printing
+
+- label: About Me
+  url: /about
