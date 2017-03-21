@@ -2,22 +2,20 @@
 <html lang="en" manifest="Marching.manifest">
 	{% include head.html %}
 <body>
-	<div>
-		{% include header.html %}
+	{% include header.html %}
 
-		<main id="containerMain" role="main">
-			<div id="progressBar" class="progress loading active hidden-print">
-				<div class="progress-bar" role="progressbar"></div>
-				<div class="progress-bar" role="progressbar"></div>
-				<div class="progress-bar" role="progressbar"></div>
-				<div class="progress-bar" role="progressbar"></div>
-			</div>
-			{{ content }}
-			<div class="clearfix show-grid hidden-print"></div>
-			<div class="clearfix show-grid hidden-print"></div>
-		</main>
+	<main id="containerMain" role="main">
+		<div id="progressBar" class="progress loading active hidden-print">
+			<div class="progress-bar" role="progressbar"></div>
+			<div class="progress-bar" role="progressbar"></div>
+			<div class="progress-bar" role="progressbar"></div>
+			<div class="progress-bar" role="progressbar"></div>
+		</div>
+		{{ content }}
+		<div class="clearfix show-grid hidden-print"></div>
+		<div class="clearfix show-grid hidden-print"></div>
+	</main>
 
-		{% include footer.html %}
-	</div>
+	{% include footer.html %}
 </body>
 </html>

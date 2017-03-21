@@ -1,43 +1,45 @@
 <header id="header">
 	<nav class="navbar">
-		<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNavBar" aria-controls="mainNavBar" aria-expanded="false">
+		<button type="button" class="rounded-circle navbar-toggler collapsed" data-target="#header" aria-controls="header" aria-expanded="false">
 			<span class="sr-only">Toggle navigation</span>
-			<span class="navbar-toggler-icon"></span>
+			<span class="fa fa-bars fa-lg"></span>
 		</button>
-		<a class="navbar-brand" href="/">GRAY</a>
-				<ul class="nav navbar-nav navbar-right">
-			<li role="presentation">
+		<a class="navbar-brand" href="/">
+			<span class="d-block">GRAY</span>
+		</a>
+		<ul class="list-inline text-center">
+			<li class="list-inline-item">
 				<a target="_blank" href="https://github.com/GrayYoung">
 					<i class="fa fa-github-alt fa-lg" aria-hidden="true"></i> 
 					<span class="sr-only"><strong class="text-uppercase">Follow Me on Github</strong></span>
 				</a>
 			</li>
-			<li role="presentation">
+			<li class="list-inline-item">
 				<a target="_blank" href="https://www.facebook.com/profile.php?id=100010823177377">
 					<i class="fa fa-facebook fa-lg" aria-hidden="true"></i> 
 					<span class="sr-only"><strong class="text-uppercase">Follow Me on Facebook</strong></span>
 				</a>
 			</li>
-			<li role="presentation">
+			<li class="list-inline-item">
 				<a target="_blank" href="http://weibo.com/MarchGrayYoung/">
 					<i class="fa fa-weibo fa-lg" aria-hidden="true"></i> 
 					<span class="sr-only"><strong class="text-uppercase">Follow Me on Sina</strong></span>
 				</a>
 			</li>
-			<li role="presentation">
+			<li class="list-inline-item">
 				<a target="_blank" href="https://plus.google.com/u/0/111891129703746085317/posts">
 					<i class="fa fa-google-plus fa-lg" aria-hidden="true"></i> 
 					<span class="sr-only"><strong class="text-uppercase">Follow Me on Google+</strong></span>
 				</a>
 			</li>
 		</ul>
-		<div id="mainNavBar" class="navbar-collapse collapse show" aria-expanded="false" aria-hidden="true">
-			<ul class="nav navbar-nav">
+		<div class="navbar-collapse collapse show">
+			<ul class="navbar-nav">
 				{% for item in site.data.navigation %}
 				<li class="nav-item">
 					{% if item.subs %}
 					<a href="{{ item.url | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						{{ item.label }} <i class="fa fa-lg fa-caret-down" aria-hidden="true"></i>
+						{{ item.label }}
 					</a>
 					<ul class="dropdown-menu">
 						{% for sub in item.subs %}
@@ -52,11 +54,11 @@
 				</li>
 				{% endfor %}
 			</ul>
-			<form id="form-cse-search" class="navbar-form navbar-right" role="search" action="/search">
+			<form id="form-cse-search" class="navbar-form" role="search" action="/search">
 				<div class="input-group">
 					<input id="input-cse-search" name="query" type="text" required class="form-control" placeholder="">
 					<span class="input-group-btn">
-						<button type="submit" class="btn btn-inverse btn-sm"><strong>SEARCH</strong></button>
+						<button type="submit" class="btn btn-inverse btn-sm">SEARCH</button>
 					</span>
 				</div>
 			</form>

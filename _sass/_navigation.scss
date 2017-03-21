@@ -3,10 +3,31 @@
 
 .navbar {
 	padding: 0;
+
+	a {
+		color: $white;
+	}
+
+	> .list-inline a {
+		&:hover, &:focus {
+			opacity: 0.75;
+		}
+	}
+
+	.navbar-collapse {
+		margin-top: 4em;
+	}
+}
+
+.navbar-toggler {
+	position: absolute;
+	top: ceil($grid-gutter-width-base / 2);
+	left: calc(100% + 15px);
 }
 
 .navbar-brand {
 	padding: ceil($grid-gutter-width-base / 2);
+	margin-right: 0;
 	text-align: center;
 	font-family: "Trade Gothic";
 	font-weight: bold;
@@ -14,6 +35,30 @@
 	color: $white !important;
 }
 
-.nav-item {
-	padding: 5px ceil($grid-gutter-width-base / 2);
+.navbar-nav > li {
+	text-transform: uppercase;
+	font-size: $font-size-xs;
+
+	> a {
+		display:  block;
+		padding: 10px ceil($grid-gutter-width-base / 2);
+
+		&:hover, &:focus {
+			background-color: darken($gray-dark, 1.25);
+			text-decoration: none;
+			color: $brand-primary;
+		}
+	}
+
+	&.active > a {
+		border-right: solid 3px $brand-primary;
+		background-color: darken($gray-dark, 1.25);
+		color: $brand-primary;
+	}
+}
+
+.navbar-form {
+	position: fixed;
+	top: ceil($grid-gutter-width-base / 2);
+	right: ceil($grid-gutter-width-base / 2);
 }
