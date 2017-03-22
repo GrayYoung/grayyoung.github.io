@@ -82,7 +82,6 @@
 	0% {
 		z-index:4;
 		transform: rotateY(0);
-		opacity:1;
 	}
 
 	49% {
@@ -309,7 +308,7 @@
 	.planet {
 		width: 40px;
 		height: 40px;
-		background-image: url(/images/solar/earth.png?v=2);
+		background-image: url(/images/solar/earth.png);
 		animation: anti-spin 20s infinite linear;
 	}
 

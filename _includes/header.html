@@ -1,6 +1,6 @@
-<header id="header">
+<header id="header" class="collapse show" aria-expanded="true">
 	<nav class="navbar">
-		<button type="button" class="rounded-circle navbar-toggler collapsed" data-target="#header" aria-controls="header" aria-expanded="false">
+		<button type="button" class="rounded-circle navbar-toggler collapsed" data-toggle="collapse" data-target="#header" aria-controls="header" aria-expanded="false">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="fa fa-bars fa-lg"></span>
 		</button>
@@ -37,7 +37,7 @@
 			<ul class="navbar-nav">
 				{% for item in site.data.navigation %}
 				<li class="nav-item">
-					{% if item.subs %}
+					{% if false || item.subs %}
 					<a href="{{ item.url | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 						{{ item.label }}
 					</a>

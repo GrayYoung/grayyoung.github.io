@@ -21,8 +21,11 @@
 
 .navbar-toggler {
 	position: absolute;
-	top: ceil($grid-gutter-width-base / 2);
+	top: ceil($grid-gutter-width-base / 2 + 2.5px);
 	left: calc(100% + 15px);
+	z-index: $zindex-navbar;
+	padding: 0;
+	transition: left 0.75s;
 }
 
 .navbar-brand {
@@ -61,4 +64,10 @@
 	position: fixed;
 	top: ceil($grid-gutter-width-base / 2);
 	right: ceil($grid-gutter-width-base / 2);
+	transition: right 0.75s;
+
+	.form-control {
+		padding: 2px 10px !important;
+		background-position: 10px center !important;
+	}
 }

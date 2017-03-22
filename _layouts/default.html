@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="Marching.manifest">
+<html lang="en" manifest="/Marching.manifest">
 	{% include head.html %}
 <body>
 	{% include header.html %}
@@ -12,8 +12,7 @@
 			<div class="progress-bar" role="progressbar"></div>
 		</div>
 		{{ content }}
-		<div class="clearfix show-grid hidden-print"></div>
-		<div class="clearfix show-grid hidden-print"></div>
+		<div class="mb-4 clearfix hidden-print"></div>
 	</main>
 
 	{% include footer.html %}
