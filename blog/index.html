@@ -16,7 +16,7 @@ showBC: true
 				<img class="img-fluid mx-auto" width="600" src="{{ post.thumbnail }}" alt="">
 			</div>
 			{% endif %}
-			<div class="clearfix show-grid"></div>
+			<div class="clearfix mb-3"></div>
 			<p>{{ post.excerpt | split:"<!-- more -->" | first | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
 		</li>
 		{% endfor %}
@@ -56,8 +56,8 @@ showBC: true
 		</ul>
 	</nav>
 	<div class="clearfix hidden-md-up">
-		<div class="clearfix show-grid"></div>
-		<div class="clearfix show-grid"></div>
+		<div class="clearfix mb-3"></div>
+		<div class="clearfix mb-3"></div>
 		<div class="btn-group btn-group-justified pagination-primary" role="group" aria-label="pagination">
 			{% if paginator.page > 2 %}
 			<div class="btn-group" role="group">
@@ -87,8 +87,7 @@ showBC: true
 			</div>
 			{% endif %}
 		</div>
-		<div class="clearfix show-grid"></div>
-		<div class="clearfix show-grid"></div>
+		<div class="clearfix mb-4"></div>
 	</div>
 	{% endif %}
 	<p class="rss-subscribe"> subscribe <a href="{{ "/feed.xml" | prepend:site.baseurl }}">via RSS</a> </p>

@@ -6,20 +6,25 @@ permalink: /about/
 
 {% assign nowDate = "now" | date: "%s" | minus : 604800 %}
 
-<article class="container h-resume hresume">
-	<h1 class="h1 col-sm-8 col-xs-12 p-name"><img class="rounded-circle center-block" width="100" height="100" alt="" src="/images/me.png" aria-hidden="true"><strong>Gray</strong> Young <small>Senior Web front-end developer &amp; web designer</small></h1>
-	<div class="col-sm-4 col-xs-12">
-		<dl class="dl-horizontal">
-			<dt>Email:</dt>
-			<dd><a href="mailto:windpet@live.cn">windpet@live.cn</a></dd>
-			<dt>Tel:</dt>
-			<dd><a href="tel:***********">***********</a></dd>
-		</dl>
-	</div>
-	<div class="clearfix"></div>
+<article class="container-fluid h-resume hresume">
+	<header class="row">
+		<h1 class="h1 col-md-8 col-xs-12 p-name">
+			<img class="rounded-circle d-block mx-auto" width="100" height="100" alt="" src="/images/me.png" aria-hidden="true">
+			<strong>Gray</strong> Young 
+			<small>Senior Web front-end developer &amp; web designer</small>
+		</h1>
+		<div class="col-md-4 col-xs-12">
+			<dl class="dl-horizontal">
+				<dt>Email:</dt>
+				<dd><a href="mailto:windpet@live.cn">windpet@live.cn</a></dd>
+				<dt>Tel:</dt>
+				<dd><a href="tel:***********">***********</a></dd>
+			</dl>
+		</div>
+	</header>
 	<hr />
-	<div class="row">
-		<div class="pull-right col-sm-4 col-xs-12">
+	<div class="row flex-md-row-reverse">
+		<div class="col-md-4 col-xs-12">
 			<section class="p-contact contact">
 				<h2>About Me</h2>
 				<dl class="dl-horizontal h-card vcard">
@@ -49,7 +54,7 @@ permalink: /about/
 				</dl>
 			</section>
 		</div>
-		<div class="col-sm-8 col-xs-12">
+		<div class="col-md-8 col-xs-12">
 			<section class="p-education education">
 				<h2>Education</h2>
 				<ol class="list-unstyled list-history">
@@ -65,8 +70,8 @@ permalink: /about/
 			</section>
 		</div>
 	</div>
-	<div class="row">
-		<div class="pull-right col-sm-4 col-xs-12">
+	<div class="row flex-md-row-reverse">
+		<div class="col-md-4 col-xs-12">
 			<section class="p-summary summary">
 				<h2>Objective</h2>
 				<p>I got enough knowledge and solutions from working experiences of years. And I also keep learning latest web front-end technologies and frameworks. I could work at my job easily because of these. 
@@ -74,7 +79,7 @@ I am bigoted, I will do my best to crush any challenges. And I am a neat lover t
 I am also a good member of the team, looking for a opportunity to join a excellent professional team..</p>
 			</section>
 		</div>
-		<div class="col-sm-8 col-xs-12">
+		<div class="col-md-8 col-xs-12">
 			<section class="p-experience experience">
 				<h2>Work Experience</h2>
 				<ol class="list-unstyled list-history">
@@ -90,8 +95,8 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 			</section>
 		</div>
 	</div>
-	<div class="row">
-		<div class="pull-right col-sm-4 col-xs-12">
+	<div class="row flex-md-row-reverse">
+		<div class="col-md-4 col-xs-12">
 			<section class="p-skill skill">
 				<h2>Skills</h2>
 				<dl class="dl-horizontal">
@@ -124,7 +129,7 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 				{% endfor %}
 			</section>
 		</div>
-		<div class="col-sm-8 col-xs-12">
+		<div class="col-md-8 col-xs-12">
 			<section class="p-experience">
 				<h2>Online Projects</h2>
 				<ol class="list-unstyled list-history">
@@ -133,7 +138,7 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 						<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
 						<p class="p-description description">{{ project.description }}</p>
 						{% if project.features.size > 0%}
-						<div class="clearfix show-grid"></div>
+						<div class="clearfix mb-3"></div>
 						<section>
 							<h4 class="h5">Features:</h4>
 							<ul>
@@ -150,8 +155,8 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 			</section>
 		</div>
 	</div>
-	<div class="row">
-		<div class="pull-right col-sm-4 col-xs-12">
+	<div class="row flex-md-row-reverse">
+		<div class="col-md-4 col-xs-12">
 			<section class="">
 				<h2>Reference</h2>
 				<p>N/A</p>

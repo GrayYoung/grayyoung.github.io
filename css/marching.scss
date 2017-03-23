@@ -35,6 +35,7 @@ html {
 	z-index: $zindex-navbar;
 	width: 200px;
 	min-height: 100%;
+	border-right: solid 3px $brand-primary;
 	background-color: $gray-dark;
 	transition: transform 0.5s;
 
@@ -80,8 +81,13 @@ main {
 }
 
 .embed-responsive-1by1125:before {
-	padding-top: 112.5%
+	padding-top: 112.5%;
 }
+
+.embed-responsive-2by1:before {
+	padding-top: 50%;
+}
+
 
 
 ul, ol {
@@ -122,6 +128,10 @@ a.text-danger, a .text-danger {
 	}
 }
 
+.progress {
+	border-radius: 0;
+}
+
 .list-grid {
 	display: flex;
 	flex-flow: row wrap;
@@ -151,6 +161,14 @@ section, blockquote {
 	&:hover, &:focus {
 		z-index: 10;
 		transform: matrix(1.1, 0, 0, 1.1, 0, 0) rotateY(0deg);
+	}
+}
+
+.section-metro {
+	.embed-responsive {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100%;
 	}
 }
 

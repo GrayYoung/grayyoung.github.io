@@ -6,11 +6,11 @@
 		content: " ";
 		position: absolute;
 		top: 15px;
-		left: floor((12.85rem - $font-size-base * 0.75));
+		left: 8.7rem;
 		z-index: 1;
 		display: block;
-		width: 1.5em;
-		height: 1.5em;
+		width: 1.5rem;
+		height: 1.5rem;
 		border: solid 3px $body-bg;
 	}
 
@@ -19,7 +19,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: (12.85rem - 20);
+		width: 9.5rem;
 		height: 100%;
 		padding-top: 15px;
 		padding-right: 20px;
@@ -57,7 +57,7 @@
 }
 
 .h-resume {
-	> .h1 {
+	.h1 {
 		font-size: 5em;
 		font-family: "Trade Gothic";
 		text-align: center;

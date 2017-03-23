@@ -2,10 +2,8 @@
 layout: withBreadcrumbs
 ---
 
-<div class="clearfix show-grid"></div>
-<div class="clearfix show-grid"></div>
-<div class="clearfix show-grid"></div>
-<article class="container" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="clearfix mb-5"></div>
+<article class="container-fluid" itemscope itemtype="http://schema.org/BlogPosting">
 	<header class="text-uppercase post-header">
 		<h1 class="post-title" itemprop="name headline"><span>{{ page.title }}</span></h1>
 		<p class="post-meta">
@@ -15,14 +13,11 @@ layout: withBreadcrumbs
 		{% assign fullURL = page.url | prepend: site.url %}
 		{% include shareLinks.html url=fullURL %}
 	</header>
-	<div class="clearfix show-grid"></div>
+	<div class="clearfix mb-3"></div>
 	<div class="post-content" itemprop="articleBody">
 		{{ content }}
 	</div>
 </article>
-<div class="clearfix show-grid hidden-sm  hidden-xs"></div>
-<div class="clearfix show-grid hidden-xs"></div>
-<div class="clearfix show-grid hidden-xs"></div>
-<div class="clearfix show-grid"></div>
-<div class="clearfix show-grid"></div>
-<div class="clearfix show-grid"></div>
+<div class="clearfix mb-3 hidden-md-down"></div>
+<div class="clearfix mb-4 hidden-md-down"></div>
+<div class="clearfix mb-5"></div>
