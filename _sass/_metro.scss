@@ -1,0 +1,22 @@
+/*## Metro */
+
+.section-metro {
+	background-size: auto, auto 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url("/images/../images/background/matte.png"), url("/images/background/Billie Joe Armstrong.png");
+	background-blend-mode: darken;
+	mix-blend-mode: multiply;
+
+	.embed-responsive {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100%;
+		background-blend-mode: darken;
+		mix-blend-mode: multiply;
+	}
+
+	.embed-responsive-item {
+		border: solid 5px $white;
+	}
+}
