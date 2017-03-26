@@ -94,11 +94,11 @@
 // Start with assigning color names to specific hex values.
 $white:  #fff !default;
 $black:  #000 !default;
-$red:    #d9534f !default;
+$red:    #f15441 !default;
 $orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0275d8 !default;
+$yellow: #fec536 !default;
+$green:  #69c4bd !default;
+$blue:   #2b669f !default;
 $teal:   #5bc0de !default;
 $pink:   #ff5b77 !default;
 $purple: #613d7c !default;
@@ -245,8 +245,8 @@ $grid-gutter-widths: (
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-serif:      Freight, Georgia, "Times New Roman", Times;
+$font-family-monospace:  "Trade Gothic", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New";
 $font-family-base:       $font-family-sans-serif !default;
 
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
@@ -908,7 +908,7 @@ $breadcrumb-padding-y:          .75rem !default;
 $breadcrumb-padding-x:          1rem !default;
 $breadcrumb-item-padding:       .5rem !default;
 
-$breadcrumb-bg:                 $gray-lighter !default;
+$breadcrumb-bg:                 transparent !default;
 $breadcrumb-divider-color:      $gray-light !default;
 $breadcrumb-active-color:       $gray-light !default;
 $breadcrumb-divider:            "/" !default;
@@ -963,8 +963,6 @@ $pre-scrollable-max-height:   340px !default;
 
 //**********************************************************************************************************************
 
-$grid-rows: 						5;
-
 //** Paper
 $A4-width:						8.267in;
 $A4-height:						11.693in;
@@ -985,5 +983,5 @@ $blueC:							#005065;
 
 //** Navbar Toggle
 $toggleCircleSize: 30px;
-$lineSize: 22px;
-$borderWidth: 2px;
+$lineSize: 25px;
+$borderWidth: 3px;

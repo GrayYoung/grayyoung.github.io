@@ -113,6 +113,8 @@
 	}
 
 	.dl-horizontal {
+		clear: both;
+
 		dt {
 			float: left;
 			clear: left;
@@ -137,7 +139,7 @@
 	}
 
 	dd {
-		padding-top: 10px;
+		padding-top: 14px;
 		margin-left: 8em;
 		line-height: 2.4em;
 	}

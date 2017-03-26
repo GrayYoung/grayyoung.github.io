@@ -7,6 +7,7 @@
 @import "slick";
 @import "typography";
 @import "animation";
+@import "responsive";
 @import "navigation";
 @import "carousel";
 @import "metro";
@@ -55,13 +56,17 @@ html {
 			display: block;
 			transform: translateX(-200px);
 
-			.navbar-form {
-				right: calc(-100% - 170px);
+			@include media-breakpoint-up(md) {
+				.navbar-form {
+					right: calc(-100% - 170px);
+				}
 			}
 		}
 
 		&.show ~ * {
-			margin-left: 200px;
+			@include media-breakpoint-up(md) {
+				margin-left: 200px;
+			}
 		}
 	}
 
@@ -79,14 +84,6 @@ main {
 
 .breadcrumb {
 	margin-top: 70px;
-}
-
-.embed-responsive-1by1125:before {
-	padding-top: 112.5%;
-}
-
-.embed-responsive-2by1:before {
-	padding-top: 50%;
 }
 
 ul, ol {
