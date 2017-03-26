@@ -1,66 +1,64 @@
-$ph-height: percentage(1 / 3 / ($A4-height / $A4-width));
+$ph-height: 246px;
 $pb-break: percentage(1 / 3);
 
-.printing {
-	> header {
-		position: relative;
-		height: $ph-height;
+.section-printing {
+	@include media-breakpoint-down(sm) {
+		margin-top: 3rem;
+	}
 
-		.fa {
-			width: $pb-break;
-			height: 100%;
-			position: absolute;
-			top: 100%;
-			left: $pb-break / 2;
-			background-color: #69c4bd;
-			text-align: center;
-			color: white;
-			font-size: 13em;
+	> header {
+		@include media-breakpoint-up(md) {
+			position: relative;
+			padding-left: 40%;
+			height: 246px;
+			margin-bottom: 14em;
+			background-image: linear-gradient(to right, #fec536 0%, #fec536 28.499369%, #0087be 28.499369%, #0087be 100%);
+
+			h1 {
+				padding-top: 0.5em;
+				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+				font-size: 5rem;
+				color: $white;
+
+				> small {
+					display: block;
+					font-weight: bold;
+					font-size: 0.5em;
+					padding-left: 5%;
+					color: $white;
+				}
+			}
 		}
 
-		h2 {
-			position: relative;
-			display: block;
-			padding-top: 5%;
-			padding-right: 15px;
-			margin-top: 0;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			text-align: right;
-			font-weight: bold;
-			font-size: 6em;
+		.arrow-top, .arrow-bottom, .fa-print {
+			position: absolute;
+			top: 0;
+			left: calc(28.499369% - 123px);
+			width: 0;
+			border-color: #f15441 transparent transparent;
+			border-style: solid;
+			border-width: ceil($ph-height / 2) ceil($ph-height / 2) 0;
+
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+
+		.arrow-bottom {
+			top: 50%;
+			border-color: transparent transparent #69c4bd;
+			border-width: 0 ceil($ph-height / 2) ceil($ph-height / 2);
+		}
+
+		.fa-print {
+			top: 100%;
+			padding: 15px 0 40px;
+			width: $ph-height;
+			border: none;
+			background-color: #69c4bd;
+			text-align: center;
+			font-size: 10em;
 			color: white;
-			box-shadow: inset 1px black;
-			background: -moz-linear-gradient(left, #fec536 0%, #fec536 $pb-break, #0087be $pb-break, #0087be 100%);
-			background: -webkit-linear-gradient(left, #fec536 0%, #fec536 $pb-break, #0087be $pb-break, #0087be 100%);
-			background: -ms-linear-gradient(left, #fec536 0%, #fec536 $pb-break, #0087be $pb-break, #0087be 100%);
-			background: linear-gradient(to right, #fec536 0%, #fec536 $pb-break, #0087be $pb-break, #0087be 100%);
-
-			&:before, &:after {
-				content: "";
-				display: block;
-				width: percentage(1 / 3);
-				height: 100%;
-				position: absolute;
-				top: -72.5%;
-				left: percentage(1 / 6);
-				background-color: #f15441;
-				transform: rotate(45deg);
-			}
-	
-			&:after {
-				top: auto;
-				bottom: -72.5%;
-				background-color: #69c4bd;
-			}
-
-			> small {
-				display: block;
-				font-weight: bold;
-				font-size: 0.5em;
-				color: white;
-			}
 		}
 	}
 
@@ -80,24 +78,18 @@ $pb-break: percentage(1 / 3);
 	}
 
 	.text-danger {
-		color: #f15441;
+		color: $brand-primary;
 	}
 
-	@media (min-width: $screen-tablet) {
-		> .col-sm-4 {
+	@include media-breakpoint-up(md) {
+		.row > .col-md-4 {
 			//padding-top: $ph-height * 1.5;
 			margin-left: 11.85436071126164%;
 		}
-	
-		> .col-sm-5 {
+
+		.row > .col-md-5 {
 			//padding-top: $ph-height * 0.5;
-			margin-top: -15%;
-		}
-	}
-	
-	@media (max-width: $screen-xs-max) {
-		& {
-			padding: $grid-gutter-width / 2;
+			margin-top: -10em;
 		}
 	}
 }

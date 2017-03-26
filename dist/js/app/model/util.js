@@ -1,1 +1,0 @@
-define({getUrlParam:function(e,t){var n="";return n=function(e){var n=new RegExp("(^|&)"+e+"=([^&]*)(&|$)",t?"i":"");return location.search.substr(1).match(n)}(e),null!=n?decodeURIComponent(n[2]):""},throttle:function(e,t,n){"number"!=typeof n&&(n=100),clearTimeout(e.timeoutId),e.timeoutId=setTimeout(function(){e.call(t)},n)}});

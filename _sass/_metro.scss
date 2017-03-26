@@ -1,0 +1,136 @@
+/*## Metro */
+
+.section-metro {
+	padding: 4px;
+	background-size: auto calc(90% - 16px);
+	background-repeat: no-repeat;
+	background-position: center 90%;
+	background-image: url("/images/background/Billie Joe Armstrong.png");
+	background-blend-mode: darken;
+	mix-blend-mode: multiply;
+	box-shadow: 0 20px 15px rgba(0, 0, 0, 0.8);
+
+	@include media-breakpoint-down(sm) {
+		padding: 2px;
+		background-size: auto calc(90% - 8px);
+	}
+
+	> .row:first-child {
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		z-index: 1;
+		width: calc(100% - 8px);
+		mix-blend-mode: color;
+		font-size: 3rem;
+
+		@include media-breakpoint-down(sm) {
+			top: 2px;
+			left: 2px;
+			width: calc(100% - 4px);
+			font-size: 2rem;
+		}
+	}
+
+	.embed-responsive {
+		&:not(.no-pattern):before {
+			background-image: url("/images/../images/background/matte.png");
+			background-blend-mode: darken;
+			mix-blend-mode: soft-light;
+			opacity: 0.35;
+		}
+	}
+
+	.embed-responsive-item {
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+		font-family: "Trade Gothic";
+		color: $white;
+
+		&:first-child {
+			mix-blend-mode: color;
+		}
+
+		+ .embed-responsive-item {
+			border: solid 4px $white;
+
+			@include media-breakpoint-down(sm) {
+				border-width: 2px;
+			}
+		}
+
+		> * {
+			@include media-breakpoint-up(lg) {
+				transform: scale(3.5);
+			}
+
+			@include media-breakpoint-only(md) {
+				transform: scale(3);
+			}
+
+			@include media-breakpoint-only(sm) {
+				transform: scale(2);
+			}
+		}
+
+		a {
+			color: $white;
+
+			&:hover, &:focus {
+				text-decoration: none;
+				color: $link-hover-color;
+			}
+		}
+	}
+
+	.embed-responsive-9by2 .embed-responsive-item {
+		padding-left: 5%;
+
+		> * {
+			transform: scaleX(0.8);
+			transform-origin: left Center;
+			letter-spacing: -3px;
+			font-weight: lighter;
+			font-family: $font-family-sans-serif;
+			font-size: 2.5rem;
+
+			@include media-breakpoint-up(xl) {
+				transform: scale(2.8, 3.5);
+			}
+
+			@include media-breakpoint-only(lg) {
+				transform: scale(2.4, 3);
+			}
+
+			@include media-breakpoint-only(md) {
+				transform: scale(1.6, 2);
+			}
+
+			@include media-breakpoint-down(sm) {
+				transform: scale(1.2, 1.5);
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	h2 {
+		@include media-breakpoint-up(xl) {
+			font-size: 10rem;
+		}
+
+		@include media-breakpoint-only(lg) {
+			font-size: 8rem;
+		}
+
+		@include media-breakpoint-only(md) {
+			font-size: 6rem;
+		}
+
+		@include media-breakpoint-only(sm) {
+			font-size: 4rem;
+		}
+
+		@include media-breakpoint-down(xs) {
+			font-size: 2rem;
+		}
+	}
+}

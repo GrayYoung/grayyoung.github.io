@@ -11,12 +11,8 @@ requirejs.config({
 	baseUrl: '/js/lib',
 	paths: {
 		app: '../app',
-		jquery: 'jquery.min',
-		bootstrap: 'bootstrap.min',
-		browser: 'jquery.browser.min',
-		slick: 'slick.min',
+		browser: 'jquery.browser',
 		zip: 'jszip',
-		xlsx: 'xlsx.min',
 		ajax: 'ajax.min',
 		googleAPI: 'https://www.google.com/jsapi',
 		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en',
@@ -24,7 +20,7 @@ requirejs.config({
 		googleWatermark: '//www.google.com/cse/brand?form=form-cse-search&inputbox=input-cse-search'
 	},
 	shim: {
-		bootstrap: ['jquery']
+		bootstrap: ['jquery', 'tether']
 	},
 	map: {
 	},
@@ -50,7 +46,7 @@ requirejs.config({
 		exclude: [ 
             '../config'
         ],
-		include: [ ,
+		include: [ 
             'app/model/util',
             'app/model/responsiveness',
             'app/controller/global'

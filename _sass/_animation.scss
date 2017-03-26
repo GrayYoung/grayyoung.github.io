@@ -142,7 +142,7 @@
 
 @include generateAnimations(1, 75, 0);
 
-.navbar-toggle:not(.collapsed) {
+.navbar-toggler:not(.collapsed) {
 	width: $toggleCircleSize;
 	height: $toggleCircleSize;
 	margin-top: 2px;

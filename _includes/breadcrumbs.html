@@ -1,9 +1,16 @@
-<div class="container hidden-print">
-	<ol class="breadcrumb">
-		<li><a href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i><span class="sr-only">Home</span></a></li>
-		{% for category in include.inpage.categories %}
-		<li><a href="/{{ include.inpage.categories | slice: 0, forloop.index | join: '/' }}">{{ category | capitalize }}</a></li>
-		{% endfor %}
-		<li class="active">{{ include.inpage.title }}</li>
-	</ol>
-</div>
+<ol class="breadcrumb container-fluid hidden-print">
+	<li class="breadcrumb-item">
+		<a href="/">
+			<i class="fa fa-home fa-lg" aria-hidden="true"></i>
+			<span class="sr-only">Home</span>
+		</a>
+	</li>
+	{% for category in include.inpage.categories %}
+		<li class="breadcrumb-item">
+			<a href="/{{ include.inpage.categories | slice: 0, forloop.index | join: '/' }}">
+				{{ category | capitalize }}
+			</a>
+		</li>
+	{% endfor %}
+	<li class="breadcrumb-item active">{{ include.inpage.title }}</li>
+</ol>

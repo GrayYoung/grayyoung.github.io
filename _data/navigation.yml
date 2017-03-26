@@ -1,9 +1,11 @@
-- label: Blog
-  url: /blog/
+- label: Home
+  url: /
 
+- label: Blog
+  url: /blog
 
 - label: Web Front-end
-  url: /web/
+  url: /web
   subs:
     - label: AngularJS API<small>(1.4.10)</small>
       url: /Document/angular-1.4.10/docs
@@ -15,7 +17,7 @@
       url: https://github.com/GrayYoung/jQuery.Utilities
 
 - label: Media
-  url: /media/
+  url: /media
   subs:
     - label: Music
       url: /media?t=music
@@ -27,4 +29,7 @@
       url: /media?t=tv
 
 - label: Printing
-  url: /printing/
+  url: /printing
+
+- label: About Me
+  url: /about

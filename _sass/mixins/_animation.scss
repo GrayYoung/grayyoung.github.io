@@ -10,7 +10,7 @@
 	@keyframes circle {
 		from {
 			clip-path: polygon(0 0);
-			border-color: $text-color;
+			border-color: $body-color;
 		}
 
 		#{$startSecond - 0.001}% {
@@ -41,7 +41,7 @@
 			-webkit-clip-path: polygon($r $r, $r + $toggleCircleSize $r, $r $r - $toggleCircleSize, $r - $toggleCircleSize $r, $r $r + $toggleCircleSize, $r + $toggleCircleSize $r);
 			clip-path: polygon($r $r, $r + $toggleCircleSize $r, $r $r - $toggleCircleSize, $r - $toggleCircleSize $r, $r $r + $toggleCircleSize, $r + $toggleCircleSize $r);
 			padding-top: 7px;
-			border-color: $text-color;
+			border-color: $body-color;
 		}
 	}
 

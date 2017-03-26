@@ -1,1 +1,0 @@
-importScripts("../../lib/jszip.js"),importScripts("../../lib/require.js"),require(["../../config"],function(e){require(["app/model/requests","app/model/excelRequest","xlsx"],function(e,t){t("GET",e.media,postMessage)})});

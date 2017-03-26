@@ -5,70 +5,54 @@
 
 'use strict';
 
-var path = require('path');
-var argv = require('yargs').argv;
-var fs = require('graceful-fs');
-var requirejs = require('requirejs');
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
 
-var gulpfileMap = JSON.parse(fs.readFileSync('./gulpfile.map', 'utf8'))
+var path = require('path'), fs = require('graceful-fs'), 
+	argv = require('yargs').argv, requirejs = require('requirejs'), mergeStream = require('merge-stream'), 
+	gulp = require('gulp'), $ = require('gulp-load-plugins')();
+
+var staticMap = JSON.parse(fs.readFileSync('./gulpfile.map', 'utf8'));
 /* A parameter to control optimization. */
-var optimized = true;
 
-var formats = {
-	script : '*.{js,map}',
-	style : '*.css',
-	font : '*.{eot,svg,ttf,woff,woff2,otf}',
-	image : '*.{png,gif,jpg,ico}'
-};
+var optimized = typeof argv.debug === 'undefined', whichWar = typeof argv.war === 'undefined' ? 0 : argv.war;
 
 var paths = {
-	sources: {
-		stc: argv.SRC_DOCROOT || gulpfileMap.SRC_DOCROOT,
-		war: argv.SRC_WARROOT || gulpfileMap.SRC_WARROOT
+	source: {
+		stc: argv.SRC_DOCROOT || staticMap[whichWar].SRC_DOCROOT,
+		war: argv.SRC_WARROOT || staticMap[whichWar].SRC_WARROOT
 	},
-	target: {
-		stc: argv.DIST_DOCROOT || gulpfileMap.DIST_DOCROOT,
-		war: argv.DIST_WARROOT || gulpfileMap.DIST_WARROOT
+	dest: {
+		stc: argv.DIST_DOCROOT || staticMap[whichWar].DIST_DOCROOT,
+		war: argv.DIST_WARROOT || staticMap[whichWar].DIST_WARROOT
 	},
 	bowerLib : 'bower_components',
 	styles: 'css',
 	scripts: 'js',
 	lib: 'lib',
 	images: 'images',
-	fonts: 'fonts',
-	html: '**/*.{html,pdf,txt}',
-	exclude: [ '!*/**/{build,demos,test,docs,versions,source/dev,source/jquery}/**/*' ],
-	exBootstrap: '!*/**/bootstrap/**/*'
+	fonts: 'fonts'
 };
 
 var sourcesPaths = {
 	styles: {
-		base: [path.join(paths.sources.stc, paths.styles, '**', formats.style), '!' + path.join(paths.sources.stc, paths.styles, 'web', 'interior_style.css')],
-		sass : path.join(paths.sources.stc, paths.styles, '**', '*.{sass,scss}')
+		base: [path.join(paths.source.stc, paths.styles, '**', '*.css')],
+		sass : path.join(paths.source.stc, paths.styles, '**', '*.{sass,scss}')
 	},
 	scripts: {
-		base: path.join(paths.sources.stc, paths.scripts, '**', formats.script)
+		base: path.join(paths.source.stc, paths.scripts, '**', '*.{js,map}')
 	},
 	images: {
-		base: path.join(paths.sources.stc, paths.images, '**', formats.image)
+		base: path.join(paths.source.stc, paths.images, '**', '*.{png,gif,jpg,ico}')
 	},
 	fonts: {
-		base: path.join(paths.sources.stc, paths.fonts, '**', formats.font)
-	},
-	html: {
-		base: path.join(paths.sources.stc, paths.html)
-	},
-	war: [path.join(paths.sources.war, '{WEB-INF,META-INF}', '**', '*'), path.join(paths.sources.war, '**', '*.{html,jsp,jspf}')]
+		base: path.join(paths.source.stc, paths.fonts, '**', '*.{eot,svg,ttf,woff,woff2,otf}')
+	}
 };
 
 var targetPaths = {
-	styles: path.join(paths.target.stc, paths.styles),
-	scripts: path.join(paths.target.stc, paths.scripts),
-	images: path.join(paths.target.stc, paths.images),
-	fonts: path.join(paths.target.stc, paths.fonts),
-	html: path.join(paths.target.stc)
+	styles: path.join(paths.dest.stc, paths.styles),
+	scripts: path.join(paths.dest.stc, paths.scripts),
+	images: path.join(paths.dest.stc, paths.images),
+	fonts: path.join(paths.dest.stc, paths.fonts)
 };
 
 gulp.task('update-bower', function() {
@@ -80,28 +64,38 @@ gulp.task('update-bower', function() {
 });
 
 gulp.task('update-lib', ['update-bower'], function() {
-	var bowerMap = JSON.parse(fs.readFileSync('./bower.map', 'utf8')), property = null;
+	var mainStream = mergeStream(), bowerMap = JSON.parse(fs.readFileSync('./bower.map', 'utf8')), property = null;
+
+	function flushPipes(stream, pipes, dir) {
+		if(pipes.indexOf(whichWar) > -1) {
+			stream.pipe(gulp.dest(path.join(staticMap[whichWar].SRC_DOCROOT, dir, property.dest.join('/'))));
+		}
+
+		return stream;
+	}
 
 	for(var i in bowerMap) {
 		property = bowerMap[i];
-		switch(property.flag) {
+		switch(property.type) {
 			case 'font':
-				gulp.src(path.join(paths.bowerLib, property.src.join('/'))).pipe(gulp.dest(path.join(paths.sources.stc, paths.fonts, property.tag.join('/')))).pipe($.size({
+				mainStream.add(flushPipes(gulp.src(path.join(paths.bowerLib, property.src.join('/'))), property.pipes, paths.fonts).pipe($.size({
 					title: '-> ' + i
-				}));
+				})));
 				break;
 			case 'style':
-				gulp.src(path.join(paths.bowerLib, property.src.join('/'))).pipe(gulp.dest(path.join(paths.sources.stc, paths.styles, property.tag.join('/')))).pipe($.size({
+				mainStream.add(flushPipes(gulp.src(path.join(paths.bowerLib, property.src.join('/'))), property.pipes, paths.styles).pipe($.size({
 					title: '-> ' + i
-				}));
+				})));
 				break;
 			case 'script':
-				gulp.src(path.join(paths.bowerLib, property.src.join('/'))).pipe(gulp.dest(path.join(paths.sources.stc, paths.scripts, paths.lib, property.tag.join('/')))).pipe($.size({
+				mainStream.add(flushPipes(gulp.src(path.join(paths.bowerLib, property.src.join('/'))), property.pipes, paths.scripts).pipe($.size({
 					title: '-> ' + i
-				}));
+				})));
 				break;
 		}
 	}
+
+	return mainStream;
 });
 
 gulp.task('css', function() {
@@ -109,8 +103,8 @@ gulp.task('css', function() {
 		advanced: false,
 		aggressiveMerging: false,
 		keepSpecialComments: 0,
-		mediaMerging: false,
-		processImport: false
+		mediaMerging: optimized,
+		processImport: optimized
 	}, function(error, minified) {
 		if(error.errors.length > 0) {
 			console.log('< minified: ' + minified + ' >');
@@ -123,7 +117,7 @@ gulp.task('css', function() {
 
 gulp.task('sass', function() {
 	return gulp.src(sourcesPaths.styles.sass).pipe($.sass({
-		outputStyle: 'expanded', // nested, expanded, compact, compressed
+		outputStyle: optimized ? 'compressed' : 'expanded',
 		precision: 8
 	})).pipe(gulp.dest(targetPaths.styles)).pipe($.size({
 		title: '-> SASS'
@@ -137,10 +131,10 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return optimized ? requirejs.optimize({
 		allowSourceOverwrites: true,
-		appDir: paths.sources.stc + '/' + paths.scripts,
+		appDir: paths.source.stc + '/' + paths.scripts,
 		baseUrl: paths.lib,
-		dir: paths.target.stc + '/' + paths.scripts,
-		mainConfigFile : paths.sources.stc + '/' + paths.scripts + '/config.js',
+		dir: paths.dest.stc + '/' + paths.scripts,
+		mainConfigFile : paths.source.stc + '/' + paths.scripts + '/config.js',
 		keepBuildDir: true,
 		throwWhen: {
 			optimize : true
@@ -184,13 +178,13 @@ gulp.task('scripts', function() {
 		devel: true,
 		jquery : true,
 		node : false
-	})).pipe($.jshint.reporter(require('jshint-stylish'))).pipe(gulp.dest(targetPaths.scripts)).pipe($.size({
+	}))/* .pipe($.jshint.reporter(require('jshint-stylish'))) */.pipe(gulp.dest(targetPaths.scripts)).pipe($.size({
 		title: '-> Scripts unoptimized'
 	}));
 });
 
 gulp.task('war', function() {
-	return gulp.src(sourcesPaths.war).pipe(gulp.dest(paths.target.war)).pipe($.size({
+	return gulp.src(sourcesPaths.war).pipe(gulp.dest(paths.dest.war)).pipe($.size({
 		title : '-> War'
 	}));
 });
@@ -203,18 +197,12 @@ gulp.task('images', function() {
 
 gulp.task('fonts', function() {
 	return gulp.src(sourcesPaths.fonts.base).pipe(gulp.dest(targetPaths.fonts)).pipe($.size({
-		title : 'Fonts'
-	}));
-});
-
-gulp.task('html', function() {
-	return gulp.src(sourcesPaths.html.base).pipe(gulp.dest(targetPaths.html)).pipe($.size({
-		title : '-> HTML'
+		title : '-> Fonts'
 	}));
 });
 
 gulp.task('clean', function() {
-	return gulp.src([path.join(paths.target.stc, '*'), path.join(paths.target.war, '*')], {
+	return gulp.src([path.join(paths.dest.stc, '*'), path.join(paths.dest.war, '*')], {
 		read : false
 	}).pipe($.clean({
 		force : true
@@ -227,12 +215,10 @@ gulp.task('watch', function(next) {
 	gulp.watch(sourcesPaths.scripts.base, ['scripts']);
 	gulp.watch(sourcesPaths.images.base, ['images']);
 	gulp.watch(sourcesPaths.fonts.base, ['fonts']);
-	gulp.watch(sourcesPaths.html.base, ['html']);
-	gulp.watch(sourcesPaths.war, ['war']);
-	gulp.watch('bower.json', ['update-lib']);
+	gulp.watch(['./bower.json', './bower.map'], ['update-lib']);
 });
 
 // DEFAULT GULP TASK
 gulp.task('default', ['clean'], function() {
-	gulp.start(['images', 'fonts', 'styles', 'html', 'scripts', 'war']);
+	gulp.start(['images', 'fonts', 'styles', 'scripts']);
 });

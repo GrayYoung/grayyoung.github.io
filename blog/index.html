@@ -4,35 +4,25 @@ title: Blog
 showBC: true
 ---
 
-<section class="container">
-	<h1 class="heading-blog text-uppercase">Blog</h1>
-	<ul class="list-unstyled list-blog">
+<section class="container-fluid">
+	<h1 class="sr-only">Blog</h1>
+	<ul class="row list-unstyled list-blog">
 		{% for post in paginator.posts %}
-		<li class="media">
-			<div class="media-left" aria-hidden="true">
-				<a href="{{ post.url | prepend: site.baseurl }}">
-					{% if post.thumbnail %}
-					<img class="media-object img-responsive center-block img-circle" width="100" src="{{ post.thumbnail }}" alt="">
-					{% else %}
-					<canvas class="media-object img-responsive center-block img-circle" width="100" height="100" alt=""></canvas>
-					{% endif %}
-				</a>
+		<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<h2 class="heading">{{ post.title }}</h2>
+			<time class="label label-default" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %y" }}</time>
+			{% if post.thumbnail %}
+			<div aria-hidden="true">
+				<img class="img-fluid mx-auto" width="600" src="{{ post.thumbnail }}" alt="">
 			</div>
-			<div class="media-body">
-				<h2 class="media-heading">{{ post.title }}</h2>
-				<div>
-					<time class="label label-default" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
-					{% assign fullURL = post.url | prepend: site.url %}
-					{% include shareLinks.html url=fullURL %}
-				</div>
-				<div class="clearfix show-grid"></div>
-				<p>{{ post.excerpt | split:"<!-- more -->" | first | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
-			</div>
+			{% endif %}
+			<div class="clearfix mb-3"></div>
+			<p>{{ post.excerpt | split:"<!-- more -->" | first | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
 		</li>
 		{% endfor %}
 	</ul>
 	{% if paginator.total_pages > 1 %}
-	<nav class="hidden-xs">
+	<nav class="hidden-md-down">
 		<ul class="pagination-primary list-unstyled">
 			{% if paginator.previous_page %}
 			<li>
@@ -65,10 +55,9 @@ showBC: true
 			{% endif %}
 		</ul>
 	</nav>
-	{% endif %}
-	<div class="clearfix visible-xs-block">
-		<div class="clearfix show-grid"></div>
-		<div class="clearfix show-grid"></div>
+	<div class="clearfix hidden-md-up">
+		<div class="clearfix mb-3"></div>
+		<div class="clearfix mb-3"></div>
 		<div class="btn-group btn-group-justified pagination-primary" role="group" aria-label="pagination">
 			{% if paginator.page > 2 %}
 			<div class="btn-group" role="group">
@@ -82,7 +71,9 @@ showBC: true
 				</a>
 			</div>
 			{% endif %}
-			<div class="btn-group text-center" role="group">{{paginator.page}}</div>
+			<div class="btn-group text-center" role="group">
+				{{paginator.page}}
+			</div>
 			{% if paginator.next_page %}
 			<div class="btn-group" role="group">
 				<a class="btn normal" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
@@ -96,8 +87,8 @@ showBC: true
 			</div>
 			{% endif %}
 		</div>
-		<div class="clearfix show-grid"></div>
-		<div class="clearfix show-grid"></div>
+		<div class="clearfix mb-4"></div>
 	</div>
+	{% endif %}
 	<p class="rss-subscribe"> subscribe <a href="{{ "/feed.xml" | prepend:site.baseurl }}">via RSS</a> </p>
 </section>

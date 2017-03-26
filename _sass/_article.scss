@@ -1,6 +1,6 @@
 
 
-@media (min-width: $screen-desktop) {
+@include media-breakpoint-up(lg) {
 	article {
 		> .col-md-9 {
 			padding-left: 0;
@@ -10,7 +10,7 @@
 
 				& > ul.affix {
 					position: fixed !important;
-					top: $grid-gutter-width / 2;
+					top: $grid-gutter-width-base / 2;
 				}
 
 				li {
