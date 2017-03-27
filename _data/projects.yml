@@ -7,6 +7,15 @@
   - WCAG2.0
   - Responsive design
 
+- name: Let's Go See
+  description: Visionworks subsite.
+  startDate:  2016-04-20
+  endDate:  2016-05-31
+  url: https://www.letsgosee.net/
+  features:
+  - WCAG2.0
+  - Responsive design
+
 - name: Ashford
   description: Ashford official e-commerce site.
   startDate:  2015-04-01

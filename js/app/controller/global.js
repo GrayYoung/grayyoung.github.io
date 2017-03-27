@@ -59,7 +59,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 		 */
 		$('#progressBar').toggleClass('loading', false);
 		if($.browser.msie) {
-			$('#tip-browser').removeClass('hidden');
+			$('#tip-browser').removeClass('hidden-sm-up');
 		} else {
 			$('#tip-browser').remove();
 		}
