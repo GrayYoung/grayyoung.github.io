@@ -40,18 +40,18 @@
 				{% for item in site.data.navigation %}
 				<li class="nav-item">
 					{% if false || item.subs %}
-					<a href="{{ item.url | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<a href="{{ item.url | prepend: site.baseurl | prepend: site.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 						{{ item.label }}
 					</a>
 					<ul class="dropdown-menu">
 						{% for sub in item.subs %}
 						<li>
-							<a href="{{ sub.url | prepend: site.baseurl }}">{{ sub.label }}</a>
+							<a href="{{ sub.url | prepend: site.baseurl | prepend: site.url }}">{{ sub.label }}</a>
 						</li>
 						{% endfor %}
 					</ul>
 					{% else %}
-						<a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a>
+						<a href="{{ item.url  | prepend: site.baseurl | prepend: site.url }}">{{ item.label }}</a>
 					{% endif %}
 				</li>
 				{% endfor %}

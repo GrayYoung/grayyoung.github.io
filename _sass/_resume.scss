@@ -2,40 +2,50 @@
 	position: relative;
 	padding: 15px 0 15px 12.85rem;
 
+	@include media-breakpoint-down(sm) {
+		padding-left: 0;
+	}
+
 	&:before {
-		content: " ";
-		position: absolute;
-		top: 15px;
-		left: 8.7rem;
-		z-index: 1;
-		display: block;
-		width: 1.5rem;
-		height: 1.5rem;
-		border: solid 3px $body-bg;
+		@include media-breakpoint-up(md) {
+			content: " ";
+			position: absolute;
+			top: 15px;
+			left: 8.7rem;
+			z-index: 1;
+			display: block;
+			width: 1.5rem;
+			height: 1.5rem;
+			border: solid 3px $body-bg;
+		}
 	}
 
 	.dt-duration {
 		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 9.5rem;
-		height: 100%;
-		padding-top: 15px;
 		padding-right: 20px;
-		border-right: solid 1px black;
-		text-align: right;
+		padding-bottom: 10px;
 		line-height: 18px;
 
-		&:after {
-			content: " ";
+		@include media-breakpoint-up(md) {
 			position: absolute;
-			top: 24px;
-			right: -0.75em;
-			display: block;
-			width: 1.5em;
-			height: 1px;
-			background-color: black;
+			top: 0;
+			left: 0;
+			padding-top: 15px;
+			width: 9.5rem;
+			height: 100%;
+			border-right: solid 1px black;
+			text-align: right;
+
+			&:after {
+				content: " ";
+				position: absolute;
+				top: 24px;
+				right: -0.75em;
+				display: block;
+				width: 1.5em;
+				height: 1px;
+				background-color: black;
+			}
 		}
 	}
 
@@ -200,21 +210,6 @@
 		.dl-horizontal {
 			padding-left: 6px;
 			padding-right: 6px;
-		}
-	}
-}
-
-@include media-breakpoint-down(md) {
-	.list-history > li {
-		padding-left: 8em;
-
-		&:before {
-			left: floor(($font-size-base * 6.25));
-		}
-
-		.dt-duration {
-			width: 7em;
-			padding-right: 1em;
 		}
 	}
 }

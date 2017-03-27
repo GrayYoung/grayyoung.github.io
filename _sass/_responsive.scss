@@ -36,3 +36,22 @@
 .embed-responsive-9by2:before {
 	padding-top: 22.2222225%;
 }
+
+.embed-responsive-banner {
+	@include media-breakpoint-up(xl) {
+		&:before {
+			padding-top: 400px;
+		}
+	}
+
+	+ hr {
+		border-width: 3px;
+		margin: 20px auto 50px;
+	}
+}
+
+.embed-responsive-item {
+	background-position: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}

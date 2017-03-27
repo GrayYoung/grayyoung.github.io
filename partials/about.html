@@ -61,9 +61,9 @@ permalink: /about/
 					{% for education in site.data.educations %}
 					<li class="h-event vevent">
 						<h3 class="p-name summary">{{ education.school }}</h3>
+						<time class="dt-duration duration" datatime="PT635D">{{ education.startDate | date: "%Y" }}-{% if education.endDate == "now" %}Present{% else %}{{ education.endDate | date: "%Y" }}{% endif %}</time>
 						<p class="p-category category">{{ education.degree }}</p>
 						<p class="p-description description">{{ education.description }}</p>
-						<time class="dt-duration duration" datatime="PT635D">{{ education.startDate | date: "%Y" }}-{% if education.endDate == "now" %}Present{% else %}{{ education.endDate | date: "%Y" }}{% endif %}</time>
 					</li>
 					{% endfor %}
 				</ol>
@@ -86,9 +86,9 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 					{% for experience in site.data.experiences %}
 					<li class="h-event vevent">
 						<h3 class="p-name summary">{{ experience.company }}</h3>
+						<time class="dt-duration duration" datatime="PT635D">{{ experience.startDate | date: "%Y" }}-{% if experience.endDate == "now" %}Present{% else %}{{ experience.endDate | date: "%Y" }}{% endif %}</time>
 						<p class="p-category category">{{ experience.position }}</p>
 						<p class="p-description description">{{ experience.description }}</p>
-						<time class="dt-duration duration" datatime="PT635D">{{ experience.startDate | date: "%Y" }}-{% if experience.endDate == "now" %}Present{% else %}{{ experience.endDate | date: "%Y" }}{% endif %}</time>
 					</li>
 					{% endfor %}
 				</ol>
@@ -136,6 +136,7 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 					{% for project in site.data.projects %}
 					<li class="h-event vevent">
 						<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
+						<time class="dt-duration duration" datatime="PT270D">{{ project.startDate | date: "%m/%Y" }}-{{ project.endDate | date: "%m/%Y" }}</time>
 						<p class="p-description description">{{ project.description }}</p>
 						{% if project.features.size > 0%}
 						<div class="clearfix mb-3"></div>
@@ -148,7 +149,6 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 							</ul>
 						</section>
 						{% endif %}
-						<time class="dt-duration duration" datatime="PT270D">{{ project.startDate | date: "%m/%Y" }}-{{ project.endDate | date: "%m/%Y" }}</time>
 					</li>
 					{% endfor %}
 				</ol>
