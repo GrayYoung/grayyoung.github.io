@@ -1,6 +1,6 @@
 {
   "name": "Marching",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "gulp": "latest",
     "gulp-bower": "latest",
@@ -10,9 +10,11 @@
     "gulp-load-plugins": "latest",
     "gulp-size": "latest",
     "gulp-sass": "latest",
+    "merge-stream" : "latest",
     "jshint": "latest",
     "jshint-stylish": "latest",
     "requirejs": "latest",
+    "graceful-fs":"latest",
     "yargs": "latest"
   },
   "description": "Base AAXIS Commerce eShop Bootstrap UI",

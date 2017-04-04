@@ -43,12 +43,23 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 		}
 		event.preventDefault();
 	}).ready(function() {
+		var pathPattern = new RegExp(location.pathname.replace(/\/$/, '/?'), 'i');
+
+		$('#header .navbar-nav > li').each(function() {
+			var $this = $(this);
+
+			if(pathPattern.test($this.children('a').attr('href'))) {
+				$this.addClass('active');
+
+				return false;
+			}
+		});
 		/**
 		 * Global Status
 		 */
 		$('#progressBar').toggleClass('loading', false);
 		if($.browser.msie) {
-			$('#tip-browser').removeClass('hidden');
+			$('#tip-browser').removeClass('hidden-sm-up');
 		} else {
 			$('#tip-browser').remove();
 		}

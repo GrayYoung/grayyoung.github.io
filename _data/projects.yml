@@ -7,6 +7,15 @@
   - WCAG2.0
   - Responsive design
 
+- name: Let's Go See
+  description: Visionworks subsite.
+  startDate:  2016-04-20
+  endDate:  2016-05-31
+  url: https://www.letsgosee.net/
+  features:
+  - WCAG2.0
+  - Responsive design
+
 - name: Ashford
   description: Ashford official e-commerce site.
   startDate:  2015-04-01
@@ -16,7 +25,7 @@
   - Responsive design
 
 - name: Donaldson Dynamic Search
-  description: Donaldson catalog advanced search. <br> The official site is http://catalog.donaldson.com. <br> Front-end aspect, <ol><li>Manage third-party frameworks via bower.</li><li>JavaScript & CSS files were packaged by a NodeJS modules named gulp. And modularize JavaScript codes via RequireJS.</li><li>We used customized Bootstrap 3. CSS codes coded using SASS, and compile by node-sass. The site support 3 devices, desktop, tablet and mobile. Minimum breakpoint is 480.  Minimum screen size supported is screen size of iPhone 4.</li><li>4. There are 2 jQuery plugins that were programmed by me base on jQuery.UI widget(https://github.com/GrayYoung/jQuery.UI.Extension)， including Zoom and Carousel.</li><li>There is a feature to manage attributes of products programmed via AngularJS.</li></ol>
+  description: Donaldson catalog advanced search. <br> The official site is http://catalog.donaldson.com. <br> Front-end aspect, <ol><li>Manage third-party frameworks via bower.</li><li>JavaScript & CSS files were packaged by a NodeJS modules named gulp. And modularize JavaScript codes via RequireJS.</li><li>We used customized Bootstrap 3. CSS codes coded using SASS, and compile by node-sass. The site support 3 devices, desktop, tablet and mobile. Minimum breakpoint is 480.  Minimum screen size supported is screen size of iPhone 4.</li><li>4. There are 2 jQuery plugins that were programmed by me base on jQuery.UI widget<wbr>(https://github.com<wbr>/GrayYoung<wbr>/jQuery.UI.Extension), including Zoom and Carousel.</li><li>There is a feature to manage attributes of products programmed via AngularJS.</li></ol>
   startDate:  2014-10-20
   endDate:  2015-01-31
   url: https://catalog.donaldson.com/

@@ -77,7 +77,7 @@ define(function() {
 
 	window.initMap = function() {
 		var eLocatorMap = document.getElementById('locatorMap');
-		var latlng = new google.maps.LatLng(30.543533, 104.043466);
+		var latlng = new google.maps.LatLng(30.557789, 104.037414);
 		var locator = {
 			name: 'Marching Printing',
 			address1: 'Fuhua S Rd No.1606',
@@ -105,7 +105,7 @@ define(function() {
 				storeMap.createMarker(latlng, 'P', locator);
 				//bounds.extend(latlng);
 				//storeMap.map.fitBounds(bounds);
-				storeMap.setCenter(latlng);
+				storeMap.map.setCenter(latlng);
 			}, function(positionError) {
 				storeMap.map.setOptions({
 					center : latlng,
@@ -125,7 +125,7 @@ define(function() {
 	}, [ 'googleMap' ], function(){
 	}, function(error) {
 		if ((error.requireModules && error.requireModules[0]) === 'googleMap') {
-			$('#locatorMap').next().removeClass('hidden').end().remove();
+			$('#locatorMap').html('Google Map Temporarily Unavailable.');
 		}
 	});
 
