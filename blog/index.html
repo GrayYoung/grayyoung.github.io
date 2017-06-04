@@ -18,7 +18,7 @@ showBC: true
 			<time class="label label-default" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %y" }}</time>
 			{% if post.thumbnail %}
 			<div aria-hidden="true">
-				<img class="img-fluid mx-auto" width="600" src="{{ post.thumbnail }}" alt="">
+				<img class="d-block img-fluid mx-auto" src="{{ post.thumbnail }}" alt="">
 			</div>
 			{% endif %}
 			<div class="clearfix mb-3"></div>
@@ -86,7 +86,8 @@ showBC: true
 				</a>
 			</div>
 			{% endif %}
-			{% if paginator.page > paginator.total_pages - 2 %}
+			{% assign endPage = paginator.total_pages | minus:2 %}
+			{% if paginator.page > endPage %}
 			<div class="btn-group" role="group">
 				<a class="btn normal" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}"><span class="fa fa-2x fa-angle-double-right"></span></a>
 			</div>
@@ -95,5 +96,5 @@ showBC: true
 		<div class="clearfix mb-4"></div>
 	</div>
 	{% endif %}
-	<p class="rss-subscribe"> subscribe <a href="{{ "/feed.xml" | prepend:site.baseurl }}">via RSS</a> </p>
+	<p class="rss-subscribe"> subscribe <a href="{{ '/feed.xml' | prepend:site.baseurl }}">via RSS</a> </p>
 </section>

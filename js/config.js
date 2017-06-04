@@ -20,7 +20,10 @@ requirejs.config({
 		googleWatermark: '//www.google.com/cse/brand?form=form-cse-search&inputbox=input-cse-search'
 	},
 	shim: {
-		bootstrap: ['jquery', 'tether']
+		tether: {
+			exports: 'Tether'
+		},
+		bootstrap: ['jquery']
 	},
 	map: {
 	},
