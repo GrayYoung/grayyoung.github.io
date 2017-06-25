@@ -73,7 +73,7 @@ require([ './config' ], function(config) {
 				$modal.find('.loading').addClass('active');
 				$modal.find('.loading').toggleClass('active', false);
 			};
-			img.src = (imdbData.Posters && imdbData.Posters[0]) || ('http://grayyoung.github.io/Flickr/poster/' + imdbData.Title + '.jpg');
+			img.src = (imdbData.Posters && imdbData.Posters[0]) || ('https://grayyoung.github.io/Flickr/poster/' + imdbData.Title + '.jpg');
 			event.preventDefault();
 		}).on('scroll.ls.media', function(event) {
 			util.throttle(listing);
