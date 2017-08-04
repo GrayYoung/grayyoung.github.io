@@ -28,12 +28,16 @@
 }
 
 .navbar-toggler {
-	position: absolute;
+	position: fixed;
 	top: ceil($grid-gutter-width-base / 2 + 2.5px);
-	left: calc(100% + 15px);
+	left: 15px;
 	z-index: $zindex-navbar;
 	padding: 0;
 	transition: left 0.75s;
+
+	@include media-breakpoint-up(lg) {
+		display: none;
+	}
 
 	.icon-bar {
 		display: block;

@@ -25,61 +25,60 @@ requirejs.config({
 		},
 		bootstrap: ['jquery']
 	},
-	map: {
-	},
+	map: {},
 	waitSeconds: 0,
-	modules: [ {
+	modules: [{
 		name: '../config',
-		include: [ 
-            'jquery',
-            'bootstrap',
+		include: [
+			'jquery',
+			'bootstrap',
 			'browser'
-        ]
+		]
 	}, {
 		name: '../marching',
-		exclude: [ 
-            '../config'
-        ],
-		include: [ 
-            'slick',
-            'app/controller/global'
-        ]
+		exclude: [
+			'../config'
+		],
+		include: [
+			'slick',
+			'app/controller/global'
+		]
 	}, {
 		name: '../article',
-		exclude: [ 
-            '../config'
-        ],
-		include: [ 
-            'app/model/util',
-            'app/model/responsiveness',
-            'app/controller/global'
-        ]
+		exclude: [
+			'../config'
+		],
+		include: [
+			'app/model/util',
+			'app/model/responsiveness',
+			'app/controller/global'
+		]
 	}, {
 		name: '../media',
-		include: [ 
-            'app/model/util',
-            'app/model/excelRequest',
-            'app/model/requests',
-            'app/model/iterateMedia',
-            'app/controller/global'
-        ],
-		exclude: [ 
-            '../config'
-        ]
+		include: [
+			'app/model/util',
+			'app/model/excelRequest',
+			'app/model/requests',
+			'app/model/iterateMedia',
+			'app/controller/global'
+		],
+		exclude: [
+			'../config'
+		]
 	}, {
 		name: '../printing',
-		include: [ 
-            'app/model/util',
-            'app/controller/global',
-            'app/controller/locatorMap',
-        ],
-		exclude: [ 
-            '../config'
-        ]
+		include: [
+			'app/model/util',
+			'app/controller/global',
+			'app/controller/locatorMap',
+		],
+		exclude: [
+			'../config'
+		]
 	}, {
 		name: 'app/model/iterateMedia',
-		include: [ 
-            'ajax'
-        ]
-	} ]
+		include: [
+			'ajax'
+		]
+	}]
 });
