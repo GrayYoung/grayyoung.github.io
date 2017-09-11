@@ -22,7 +22,7 @@ showBC: true
 			</div>
 			{% endif %}
 			<div class="clearfix mb-3"></div>
-			<p>{{ post.excerpt | split:"<!-- more -->" | first | strip_html }} <a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
+			<p>{{ post.excerpt | split:"<!-- more -->" | first | strip_html }} <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">Read more</a></p>
 		</li>
 		{% endfor %}
 	</ul>
