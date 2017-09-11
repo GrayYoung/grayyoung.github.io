@@ -7,8 +7,8 @@
 	</li>
 	{% for category in include.inpage.categories %}
 		<li class="breadcrumb-item">
-			<a href="/{{ include.inpage.categories | slice: 0, forloop.index | join: '/' }}">
-				{{ category | capitalize }}
+			<a href="/{{ include.inpage.categories | slice: 0, forloop.index | map: 'path' | join: '/' }}">
+				{{ category.title | capitalize }}
 			</a>
 		</li>
 	{% endfor %}

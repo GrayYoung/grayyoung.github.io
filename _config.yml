@@ -32,7 +32,7 @@ paginate_path: "/blog/page:num/"
 
 collections:
   Holy_Bible:
-    output: false
+    output: true
     permalink: /bible/:path/
 
 gems:
