@@ -11,12 +11,12 @@ require([ './config' ], function(config) {
 		$(document).ready(function() {
 			var $pagination = $('#pagination');
 
-			if($pagination.size() === 0) {
-				var patternNO = /(?:\/dummy_split_)(\d{3})(?:\.html$)/g;
+			if($pagination.length === 0) {
+				var patternNO = /(?:\/)(\d{3})(?:\.html$)/g;
 				var creatItem = function(number, arrow) {
 					var patternN = new RegExp('\\d\{' + number.toString().length + '\}\$');
 
-					return '<li><a href="dummy_split_' + '000'.replace(patternN, number) + '.html" aria-label="Next"><i class="fa ' + arrow + '" aria-hidden="true"></i></a></li>';
+					return '<li><a href="' + '000'.replace(patternN, number) + '.html" aria-label="Next"><i class="fa ' + arrow + '" aria-hidden="true"></i></a></li>';
 				};
 				$pagination = $('<div id="pagination" class="container hidden-print"><hr><nav><ul class="pagination"></ul></nav></div>');
 				var pageNO = parseInt(patternNO.exec(location.pathname)[1], 10);
@@ -29,7 +29,7 @@ require([ './config' ], function(config) {
 			}
 
 			$('a[href]').filter(function() {
-				return $(this).children('sup').size() > 0;
+				return $(this).children('sup').length > 0;
 			}).on('inserted.bs.tooltip', function(event) {
 				var $this = $(this);
 

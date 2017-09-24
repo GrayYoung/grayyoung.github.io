@@ -41,7 +41,7 @@ define(['app/model/util', 'app/model/responsiveness', 'jquery', 'bootstrap'], fu
 	$document.on('scroll.ui.an', function() {
 		util.throttle(matchDestination);
 	}).ready(function() {
-		var $article = $document.find('main > article');
+		var $article = $document.find('main > article').addClass('row');
 		var outlineScanner = function($section) {
 			var $list = $('<ul class="list-unstyled"/>'), $item = $('<li/>');
 			var heading = $section.children('h1,h2,h3,h4,h5,h6').text(), id = 'chapter-' + heading.replace(/\W/g, '');

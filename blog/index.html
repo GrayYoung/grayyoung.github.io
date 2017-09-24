@@ -1,5 +1,8 @@
 ---
 layout: withBreadcrumbs
+pagination: 
+  enabled: true
+  collection: posts
 title: Blog
 showBC: true
 ---
@@ -63,36 +66,36 @@ showBC: true
 	<div class="clearfix hidden-md-up">
 		<div class="clearfix mb-3"></div>
 		<div class="clearfix mb-3"></div>
-		<div class="btn-group btn-group-justified pagination-primary" role="group" aria-label="pagination">
+		<ul class="nav nav-pills nav-fill">
 			{% if paginator.page > 2 %}
-			<div class="btn-group" role="group">
-				<a class="btn normal" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', 1 }}"><span class="fa fa-2x fa-angle-double-left"></span></a>
-			</div>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', 1 }}"><span class="fa fa-2x fa-angle-double-left"></span></a>
+			</li>
 			{% endif %}
 			{% if paginator.previous_page %}
-			<div class="btn-group" role="group">
-				<a class="btn normal" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
 					<span class="fa fa-2x fa-angle-left"></span>
 				</a>
-			</div>
+			</li>
 			{% endif %}
-			<div class="btn-group text-center" role="group">
-				{{paginator.page}}
-			</div>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="javascript:void(0);">{{paginator.page}}</a>
+			</li>
 			{% if paginator.next_page %}
-			<div class="btn-group" role="group">
-				<a class="btn normal" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
 					<span class="fa fa-2x fa-angle-right"></span>
 				</a>
-			</div>
+			</li>
 			{% endif %}
 			{% assign endPage = paginator.total_pages | minus:2 %}
 			{% if paginator.page > endPage %}
-			<div class="btn-group" role="group">
-				<a class="btn normal" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}"><span class="fa fa-2x fa-angle-double-right"></span></a>
-			</div>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}"><span class="fa fa-2x fa-angle-double-right"></span></a>
+			</li>
 			{% endif %}
-		</div>
+		</ul>
 		<div class="clearfix mb-4"></div>
 	</div>
 	{% endif %}

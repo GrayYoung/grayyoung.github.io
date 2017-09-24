@@ -26,7 +26,7 @@ require([ './config' ], function(config) {
 			var leftLimited = current < 1, rightLimited = current > total - 2;
 			var cvsContext, img = new Image();
 	
-			if($modal.size() === 0) {
+			if($modal.length === 0) {
 				$modal = $(document.getElementById('tl-modalPreview').content).children().clone();
 				$modal.on('hidden.bs.modal', function(event) {
 					$(this).remove();
