@@ -30,6 +30,11 @@ html {
 	position: relative;
 }
 
+.container-fluid.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 #header {
 	position: fixed;
 	top: 0;
