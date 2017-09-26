@@ -1,7 +1,11 @@
 
 
-@include media-breakpoint-up(lg) {
-	article {
+article {
+	p {
+		text-indent: 1em;
+	}
+
+	@include media-breakpoint-up(lg) {
 		> .col-md-9 {
 			padding-left: 0;
 	
