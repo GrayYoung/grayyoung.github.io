@@ -31,10 +31,10 @@ showBC: true
 	</ul>
 	{% if paginator.total_pages > 1 %}
 	<nav class="hidden-md-down">
-		<ul class="pagination-primary list-unstyled">
+		<ul class="pagination justify-content-center">
 			{% if paginator.previous_page %}
-			<li>
-				<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
+			<li class="page-item">
+				<a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
 					<span aria-hidden="true">&#8249; Previous</span>
 				</a>
 			</li>
@@ -42,20 +42,22 @@ showBC: true
 
 			{% for page in (1..paginator.total_pages) %}
 				{% if page == paginator.page %}
-				<li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
+				<li class="page-item active">
+					<a class="page-link" href="#">{{ page }} <span class="sr-only">(current)</span></a>
+				</li>
 				{% elsif page == 1 %}
-				<li>
-					<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+				<li class="page-item">
+					<a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
 				</li>
 				{% else %}
-				<li>
-					<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+				<li class="page-item">
+					<a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
 				</li>
 				{% endif %}
 			{% endfor %}
 
 			{% if paginator.next_page %}
-			<li>
+			<li class="page-item">
 				<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next">
 					<span aria-hidden="true">Next &#8250;</span>
 				</a>

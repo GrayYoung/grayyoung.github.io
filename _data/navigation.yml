@@ -4,18 +4,6 @@
 - label: Blog
   url: /blog
 
-- label: Web Front-end
-  url: /web
-  subs:
-    - label: AngularJS API<small>(1.4.10)</small>
-      url: /Document/angular-1.4.10/docs
-
-    - label: jQuery.UI.Extension
-      url: https://github.com/GrayYoung/jQuery.UI.Extension
-
-    - label: jQuery.Utilities
-      url: https://github.com/GrayYoung/jQuery.Utilities
-
 - label: Media
   url: /media
   subs:
