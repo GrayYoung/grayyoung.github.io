@@ -4,8 +4,8 @@
 	counter-reset: section;
 
 	> li {
-		border-right: solid 3px $gray-lighter;
-		margin-bottom: $grid-gutter-width-base;
+		border-right: solid 3px $gray-300;
+		margin-bottom: $grid-gutter-width;
 
 		@include media-breakpoint-up(lg) {
 			&:nth-child(4n) {
@@ -32,7 +32,7 @@
 
 	.heading {
 		padding-bottom: 1em;
-		border-bottom: solid 1px $gray-light;
+		border-bottom: solid 1px $gray-400;
 
 		+ time {
 			display: block;
@@ -42,7 +42,7 @@
 			background-color: $white;
 			font-size: $font-size-sm;
 			font-weight: normal;
-			color: $gray-light;
+			color: $gray-400;
 		}
 	}
 
@@ -70,7 +70,7 @@
 @include media-breakpoint-down(md) {
 	.heading-blog {
 		margin-left: calc(20% + 20px);
-		margin-bottom: $grid-gutter-width-base * 2;
+		margin-bottom: $grid-gutter-width * 2;
 	}
 
 	.list-blog {

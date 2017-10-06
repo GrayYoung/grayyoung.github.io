@@ -14,7 +14,7 @@ article {
 
 				& > ul.affix {
 					position: fixed !important;
-					top: $grid-gutter-width-base / 2;
+					top: $grid-gutter-width / 2;
 				}
 
 				li {
@@ -24,10 +24,10 @@ article {
 						word-break: keep-all;
 						white-space: nowrap;
 						text-overflow: ellipsis;
-						color: $gray-light;
+						color: $gray-400;
 
 						&:hover, &:active, &:hover {
-							color: $brand-primary;
+							color: theme-color("primary");
 							text-decoration: none;
 						}
 					}
@@ -39,8 +39,8 @@ article {
 					&.active {
 						> a {
 							margin-left: -2px;
-							border-left: solid 2px $brand-primary;
-							color: $gray-dark;
+							border-left: solid 2px theme-color("primary");
+							color: $gray-900;
 						}
 
 						> ul {

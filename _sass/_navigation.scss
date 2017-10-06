@@ -29,9 +29,9 @@
 
 .navbar-toggler {
 	position: fixed;
-	top: ceil($grid-gutter-width-base / 2 + 2.5px);
+	top: ceil($grid-gutter-width / 2 + 2.5px);
 	left: 15px;
-	z-index: $zindex-navbar;
+	z-index: $zindex-dropdown;
 	padding: 0;
 	transition: left 0.75s;
 
@@ -43,7 +43,7 @@
 		display: block;
 		width: 22px;
 		height: 3px;
-		background-color: $gray-dark;
+		background-color: $gray-900;
 
 		+ .icon-bar {
 			margin-top: 4px;
@@ -52,7 +52,7 @@
 }
 
 .navbar-brand {
-	padding: ceil($grid-gutter-width-base / 2);
+	padding: ceil($grid-gutter-width / 2);
 	margin-right: 0;
 	text-align: center;
 	font-family: "Trade Gothic";
@@ -63,43 +63,42 @@
 
 .navbar-nav > li {
 	text-transform: uppercase;
-	font-size: $font-size-xs;
+	font-size: $font-size-sm;
 
 	> a {
 		display:  block;
-		padding: 10px ceil($grid-gutter-width-base / 2);
+		padding: 10px ceil($grid-gutter-width / 2);
 
 		&:hover, &:focus {
-			background-color: darken($gray-dark, 1.25);
+			background-color: darken($gray-900, 1.25);
 			text-decoration: none;
-			color: $brand-primary;
+			color: theme-color("primary");
 		}
 	}
 
 	&.active > a {
 		border-right: solid 3px $white;
-		margin-right: -3px;
-		background-color: darken($gray-dark, 1.25%);
-		color: $brand-primary;
+		background-color: darken($gray-900, 1.25%);
+		color: theme-color("primary");
 	}
 }
 
 .navbar-form {
 	@include media-breakpoint-up(md) {
 		position: fixed;
-		top: ceil($grid-gutter-width-base / 2);
-		right: ceil($grid-gutter-width-base / 2);
+		top: ceil($grid-gutter-width / 2);
+		right: ceil($grid-gutter-width / 2);
 		transition: right 0.75s;
 	}
 
 	@include media-breakpoint-down(sm) {
-		padding: 50px ceil($grid-gutter-width-base / 2) $grid-gutter-width-base;
+		padding: 50px ceil($grid-gutter-width / 2) $grid-gutter-width;
 
 		.btn-inverse {
-			border-color: $gray-dark;
+			border-color: $gray-900;
 			border-left-width: 0;
 			background-color: $white;
-			color: $gray-dark;
+			color: $gray-900;
 
 			&:hover, &:focus {
 				color: $link-hover-color;
@@ -109,7 +108,7 @@
 
 	.form-control {
 		padding: 2px 10px !important;
-		border-color: $gray-dark;
+		border-color: $gray-900;
 		background-position: 10px center !important;
 	}
 }
