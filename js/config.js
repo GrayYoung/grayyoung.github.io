@@ -14,6 +14,7 @@ requirejs.config({
 		browser: 'jquery.browser',
 		zip: 'jszip',
 		ajax: 'ajax.min',
+		bootstrap: 'bootstrap.min',
 		googleAPI: 'https://www.google.com/jsapi',
 		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en',
 		googleCSE: 'https://cse.google.com/cse.js?cx=001907108702964322728:jc6j-dfwhfq',
@@ -23,7 +24,8 @@ requirejs.config({
 		tether: {
 			exports: 'Tether'
 		},
-		bootstrap: ['jquery']
+		bootstrap: ['jquery'],
+		affix: ['jquery']
 	},
 	map: {},
 	waitSeconds: 0,

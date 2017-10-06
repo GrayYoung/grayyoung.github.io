@@ -20,7 +20,7 @@
   "dependencies": {
     "html5shiv": "latest",
     "respond": "latest",
-	"tether": "latest",
+    "tether": "latest",
     "bootstrap": "~4.*",
     "fontawesome": "latest",
     "jquery": "latest",
@@ -28,9 +28,9 @@
     "slick-carousel": "latest",
     "requirejs": "latest",
     "js-xlsx": "latest",
-    "ajax": "latest"
+    "ajax": "latest",
+    "popper.js": "^1.12.5"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "private": true
 }

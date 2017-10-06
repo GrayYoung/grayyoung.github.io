@@ -70,7 +70,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 		$('.carousel.slide').each(function() {
 			var $slider = $(this).find('.carousel-inner');
 
-			if($slider.children('.item').length > 1) {
+			if($slider.children('.carousel-item').length > 1) {
 				$slider.slick({
 					autoplay : true,
 					autoplaySpeed : 5000,
@@ -82,8 +82,8 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 							return index < 10 ? '0' + index : index;
 						})(i) + '"><span class="sr-only">' + $('.item', $slider).eq(i).attr('title') + '</span></a>';
 					},
-					prevArrow : $slider.siblings('.carousel-control.left'),
-					nextArrow : $slider.siblings('.carousel-control.right'),
+					prevArrow : $slider.siblings('.carousel-control-prev'),
+					nextArrow : $slider.siblings('.carousel-control-next'),
 					pauseOnFocus : true
 				});
 			} else {

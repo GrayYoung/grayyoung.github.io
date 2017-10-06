@@ -1,17 +1,17 @@
-- title: <span class="text-uppercase"><span class="h1">We <strong>believe</strong></span><span class="h4">core truths for Christian living</span></span>
+- title: '<span class="text-uppercase"><span class="h1">We <strong>believe</strong></span><span class="h4">core truths for Christian living</span></span>'
   category: Book
-  alt: Holy Bible - New International Version
+  alt: "Holy Bible - New International Version"
   background:
-    color: white
+    color: "white"
     image: 
-  image: /images/banner/bible.png
-  url: /partials/Holy Bible/dummy_split_000.html
+  image: "/images/banner/bible.png"
+  url: "/bible/000.html"
 
-- title: 
-  category: Media
-  alt: 
+- title: '<span class="text-uppercase" style="position: absolute; bottom: 0; right: 0;"><span class="h1"><strong>Addicted</strong>/Heroin</span></span>'
+  category: Book
+  alt: "《你丫上瘾了？》 作者：柴鸡蛋（朱文娇）有一种人，就像毒品。沾了一口，此生难戒。"
   background:
-    color: 
-    image: url(/images/banner/music.png)
-  image: /images/banner/music.png
-  url: /media?t=music
+    color: "#e7eff2"
+    image: 
+  image: "/images/banner/addicted.png"
+  url: "/addicted/000.html"

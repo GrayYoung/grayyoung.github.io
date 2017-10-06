@@ -32,8 +32,8 @@ pagination:
   debug: false
   collection: all
   per_page: 8
-  permalink: '/page/:num.html'
-  title: ':title'
+  permalink: "/page/:num.html"
+  title: ":title"
   limit: 0
   trail: 
     before: 2
@@ -41,10 +41,27 @@ pagination:
 
 collections:
   Holy_Bible:
+    permalink: "/bible/:name"
     output: true
-    permalink: '/bible/:name'
+  Addicted:
+    permalink: "/addicted/:name"
+    output: true
 
-gems:
+defaults:
+  - scope:
+      path: ""
+      type: Holy_Bible
+    values:
+      layout: article
+      thumbnail: "/images/thumb/tb-bible.jpg"
+  - scope:
+      path: ""
+      type: Addicted
+    values:
+      layout: article
+      thumbnail: "/images/thumb/tb-addicted.png"
+
+plugins:
   - jekyll-paginate
   - jekyll-paginate-v2
   - jekyll-feed
