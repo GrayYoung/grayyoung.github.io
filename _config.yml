@@ -59,7 +59,7 @@ defaults:
       type: Addicted
     values:
       layout: article
-      thumbnail: "/images/thumb/tb-bible.jpg"
+      thumbnail: "/images/thumb/tb-addicted.png"
 
 plugins:
   - jekyll-paginate-v2

@@ -59,11 +59,15 @@
 	font-weight: bold;
 	font-size: 3rem;
 	color: $white !important;
+
+	&, + .list-inline {
+		flex: 0 0 100%;
+	}
 }
 
 .navbar-nav > li {
 	text-transform: uppercase;
-	font-size: $font-size-sm;
+	font-size: 0.75rem;
 
 	> a {
 		display:  block;

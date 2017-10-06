@@ -1,7 +1,7 @@
 <div class="carousel slide">
 	<div class="carousel-inner" role="listbox">
 		{% for slide in site.data.slides %}
-		<div class="item" style="background-color: {{ slide.background.color }}; background-image: {{ slide.background.image }};">
+		<div class="carousel-item" style="background-color: {{ slide.background.color }}; background-image: {{ slide.background.image }};">
 			<div class="container">
 				<div class="row">
 					<a class="content-fixed text-center" href="{{ slide.url }}">
@@ -14,12 +14,12 @@
 		{% endfor %}
 	</div>
 
-	<a class="left carousel-control" href="#carousel-sliding" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
+	<a class="carousel-control-prev" href="javascript:void(0);" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon fa fa-angle-left fa-5x" aria-hidden="true"></span>
 		<span class="sr-only">Previous</span>
 	</a>
-	<a class="right carousel-control" href="#carousel-sliding" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
+	<a class="carousel-control-next" href="javascript:void(0);" role="button" data-slide="next">
+		<span class="carousel-control-next-icon fa fa-angle-right fa-5x" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
 </div>

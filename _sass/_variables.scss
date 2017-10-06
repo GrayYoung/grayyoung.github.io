@@ -189,10 +189,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+  sm: 566px,
+  md: 568px,
+  lg: 792px,
+  xl: 1000px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -796,17 +796,17 @@ $breadcrumb-divider:            "/" !default;
 
 // Carousel
 
-$carousel-control-color:                      $white !default;
+$carousel-control-color:                      theme-color("primary");
 $carousel-control-width:                      15% !default;
 $carousel-control-opacity:                    .5 !default;
 
 $carousel-indicator-width:                    30px !default;
 $carousel-indicator-height:                   3px !default;
 $carousel-indicator-spacer:                   3px !default;
-$carousel-indicator-active-bg:                $white !default;
+$carousel-indicator-active-bg:                theme-color("primary");
 
 $carousel-caption-width:                      70% !default;
-$carousel-caption-color:                      $white !default;
+$carousel-caption-color:                      theme-color("primary");
 
 $carousel-control-icon-width:                 20px !default;
 

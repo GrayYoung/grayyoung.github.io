@@ -45,6 +45,7 @@
 	{% for script in page.extraJS %}
 	<script type="text/javascript" src="{{ script }}"></script>
 	{% endfor %}
-	<script type="text/javascript" src="/js/lib/tether.js"></script>
+	<script type="text/javascript" src="/js/lib/tether.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script type="text/javascript" defer async data-main="/js/{% if page.pageName %}{{ page.pageName }}{% else %}marching{% endif %}.js" src="/js/lib/require.js"></script>
 </head>

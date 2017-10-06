@@ -3,14 +3,18 @@ main .carousel.slide:first-child {
 	margin-top: -($font-size-base);
 }
 
-.carousel-control {
+.carousel-control-prev, .carousel-control-next {
 	visibility: hidden;
-	background-image: none !important;
-	filter: none !important;
 
 	&:hover, &:focus {
 		visibility: visible;
 	}
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	width: auto;
+	height: auto;
+	background-image: none;
 }
 
 .carousel-inner {
@@ -25,7 +29,7 @@ main .carousel.slide:first-child {
 	}
 
 	&:hover, &:focus {
-		+ .carousel-control, + .carousel-control + .carousel-control {
+		~ .carousel-control-prev, ~ .carousel-control-next  {
 			visibility: visible;
 		}
 	}

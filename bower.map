@@ -35,9 +35,15 @@
 		"pipes": [0],
 		"dest": ["lib"]
 	},
+	"popper": {
+		"type": "script",
+		"src": ["popper.js", "dist", "popper.min.js"],
+		"pipes": [0],
+		"dest": ["lib"]
+	},
 	"tether": {
 		"type": "script",
-		"src": ["tether", "dist", "js", "tether.js"],
+		"src": ["tether", "dist", "js", "tether.min.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
@@ -49,7 +55,7 @@
 	},
 	"bootstrap": {
 		"type": "script",
-		"src": ["bootstrap", "dist", "js", "bootstrap.js"],
+		"src": ["bootstrap", "dist", "js", "bootstrap.min.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},

@@ -6,11 +6,11 @@
  * The following comment tell gulp-jshint variable define is require in another file.
  */ 
 /* global define */
-define(['app/model/util', 'app/model/responsiveness', 'jquery', 'bootstrap'], function(util, rpss, $) {
+define(['app/model/util', 'app/model/responsiveness', 'jquery', 'bootstrap', 'affix'], function(util, rpss, $) {
 	if($(window).width() < rpss.desktop.width) {
 		return;
 	}
-	var $document = $(document), $outline = $('<nav class="col-lg-2 col-md-3 hidden-xs hidden-sm"/>');
+	var $document = $(document), $outline = $('<nav class="order-12 col-xl-2 col-lg-3 col-xs-12 hidden-lg-down"/>');
 
 	function matchDestination() {
 		var $this, $current, $parent, $w = $(window);
@@ -57,13 +57,17 @@ define(['app/model/util', 'app/model/responsiveness', 'jquery', 'bootstrap'], fu
 		};
 
 		$article.children('section').each(function() {
-			$outline.append(outlineScanner($(this).addClass('col-lg-10 col-md-9')));
-		}).end().append($outline);
-		console.log($document.height() - $article.offset().top - $article.height());
+			$outline.append(outlineScanner($(this).addClass('order-1 col-xl-10 col-lg-9 col-xs-12')));
+		}).first().before($outline);
+
 		$outline.children('ul').affix({
 			offset: {
-				top: $outline.offset().top,
-				bottom: $document.height() - $article.offset().top - $article.height()
+				top: function() {
+					return $outline.offset().top - 70;
+				},
+				bottom: function() {
+					return $document.height() - $article.offset().top - $article.height();
+				}
 			}
 		}).on('affixed-top.bs.affix', function() {
 			$(this).css('top', '');
