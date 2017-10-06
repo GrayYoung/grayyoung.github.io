@@ -43,6 +43,9 @@ collections:
   Holy_Bible:
     permalink: "/bible/:name"
     output: true
+  Addicted:
+    permalink: "/addicted/:name"
+    output: true
 
 defaults:
   - scope:
@@ -50,10 +53,15 @@ defaults:
       type: Holy_Bible
     values:
       layout: article
-      title: ":title - Holy Bible"
+      thumbnail: "/images/thumb/tb-bible.jpg"
+  - scope:
+      path: ""
+      type: Addicted
+    values:
+      layout: article
       thumbnail: "/images/thumb/tb-bible.jpg"
 
-gems:
+plugins:
   - jekyll-paginate-v2
   - jekyll-feed
   - jekyll-sitemap
