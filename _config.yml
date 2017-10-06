@@ -45,6 +45,7 @@ collections:
     permalink: '/bible/:name'
 
 gems:
+  - jekyll-paginate
   - jekyll-paginate-v2
   - jekyll-feed
   - jekyll-sitemap
