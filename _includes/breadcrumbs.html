@@ -5,12 +5,12 @@
 			<span class="sr-only">Home</span>
 		</a>
 	</li>
-	{% for category in include.inpage.categories %}
+	{% for breadcrumb in include.inpage.breadcrumbs %}
 		<li class="breadcrumb-item">
-			<a href="/{{ include.inpage.categories | slice: 0, forloop.index | join: '/' }}">
-				{{ category | capitalize }}
+			<a href="{{ breadcrumb.url }}">
+				{{ breadcrumb.name }}
 			</a>
 		</li>
 	{% endfor %}
-	<li class="breadcrumb-item active">{{ include.inpage.title }}</li>
+	<li class="breadcrumb-item active">{{ include.inpage.title | split: " - " | first }}</li>
 </ol>
