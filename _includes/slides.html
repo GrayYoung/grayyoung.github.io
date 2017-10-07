@@ -4,8 +4,10 @@
 		<div class="carousel-item" style="background-color: {{ slide.background.color }}; background-image: {{ slide.background.image }};">
 			<div class="container">
 				<div class="row">
-					<a class="content-fixed text-center" href="{{ slide.url }}">
-						<img src="{{ slide.image }}" alt="{{ slide.alt }}">
+					<a href="{{ slide.url }}">
+						{% if slide.image %}
+						<img class="d-block mx-auto" src="{{ slide.image }}" alt="{{ slide.alt }}">
+						{% endif %}
 						<div class="carousel-caption">{{ slide.title }}</div>
 					</a>
 				</div>

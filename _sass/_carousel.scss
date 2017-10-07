@@ -17,6 +17,12 @@ main .carousel.slide:first-child {
 	background-image: none;
 }
 
+.carousel-item {
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center center;
+}
+
 .carousel-inner {
 	.slick-slide {
 		position: relative;
@@ -24,7 +30,8 @@ main .carousel.slide:first-child {
 		background-position: center top;
 
 		img {
-			display: inline-block;
+			width: auto;
+			height: 100%;
 		}
 	}
 
@@ -42,15 +49,6 @@ main .carousel.slide:first-child {
 			height: 320px;
 		}
 	}
-
-	.content-fixed {
-		position: absolute;
-
-		img {
-			width: auto;
-			height: 100%;
-		}
-	}
 }
 
 .carousel-caption {
@@ -60,6 +58,13 @@ main .carousel.slide:first-child {
 	bottom: 10%;
 	text-align: left;
 	text-shadow: none;
+
+	@include media-breakpoint-down(md) {
+		top: $grid-gutter-width;
+		left: $grid-gutter-width;
+		right: $grid-gutter-width;
+		bottom: $grid-gutter-width;
+	}
 
 	.h1 {
 		display: block;

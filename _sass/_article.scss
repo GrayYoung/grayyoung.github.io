@@ -1,6 +1,6 @@
 
 
-article {
+.book-article {
 	h1 {
 		margin-bottom: 3em;
 		text-align: center;
@@ -37,77 +37,55 @@ article {
 			padding-left: 0;
 		}
 	
-		> nav.col-lg-3 {
+		> .col-lg-3 {
 			padding-right: 0;
 
-			& > ul.affix {
-				position: fixed !important;
-				top: ceil($grid-gutter-width / 2 + 70px);
-				right: ceil($grid-gutter-width / 2);
-				z-index: ($zindex-dropdown - 1);
-
-				@include media-breakpoint-up(xl) {
-					width: calc((100% - #{$grid-gutter-width * 2}) * 0.1666667 - #{$grid-gutter-width});
-				}
-
-				@include media-breakpoint-only(lg) {
-					width: calc((100% - #{$grid-gutter-width * 2}) * 0.25 - #{$grid-gutter-width});
-				}
+			.sticky-top {
+				top: 70px;
+				max-height: calc(100vh - 70px);
+				overflow-y: auto;
 			}
 
-			li {
-				> a {
-					display: block;
-					overflow: hidden;
-					word-break: keep-all;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-					color: $gray-700;
+			.nav-link {
+				padding: 0.1em 0 0.1em 1em;
+				border-radius: 0;
+				overflow: hidden;
+				word-break: keep-all;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				color: $gray-700;
 
-					&:hover, &:active, &:hover {
-						color: theme-color("primary");
-						text-decoration: none;
-					}
+				&:hover, &:active, &:hover {
+					color: theme-color("primary");
+					text-decoration: none;
 				}
 
-				> ul {
-					display: none;
+				+ .nav {
+					height: 0;
+					overflow: hidden;
+					transition: height 0.5s;
 				}
 
 				&.active {
-					> a {
-						margin-left: -2px;
-						border-left: solid 2px theme-color("primary");
-						color: $gray-800;
-					}
-
-					> ul {
-						display: block;
-					}
-				}
-			}
-
-			> ul > li {
-				> a {
-					padding-left: 1em;
+					margin-left: -3px;
+					border-left: solid 3px theme-color("primary");
+					background-color: transparent;
 					font-weight: bold;
-				}
+					color: $gray-900;
 
-				> ul > li {
-					> a {
-						padding-left: 2em;
-					}
-
-					> ul > li > a {
-						padding-left: 3em;
+					+ .nav {
+						height: auto;
+						border-left: solid 1px theme-color("primary");
+						overflow: visible;
 					}
 				}
 			}
+
 		}
 	}
 }
 
-.container-cover {
+.book-cover {
 	position: relative;
 	width: 800px;
 	background-repeat: no-repeat;

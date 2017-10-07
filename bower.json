@@ -18,18 +18,18 @@
     "gulpfile.js"
   ],
   "dependencies": {
-    "html5shiv": "latest",
-    "respond": "latest",
-    "tether": "latest",
+    "html5shiv": "*",
+    "respond": "*",
+    "tether": "*",
     "bootstrap": "~4.*",
-    "fontawesome": "latest",
-    "jquery": "latest",
+    "fontawesome": "*",
+    "jquery": "*",
     "jquery-utilties": "https://github.com/GrayYoung/jQuery.Utilities.git",
-    "slick-carousel": "latest",
-    "requirejs": "latest",
-    "js-xlsx": "latest",
-    "ajax": "latest",
-    "popper.js": "^1.12.5"
+    "slick-carousel": "*",
+    "requirejs": "*",
+    "js-xlsx": "*",
+    "ajax": "*",
+    "popper.js": "*"
   },
   "devDependencies": {},
   "private": true
