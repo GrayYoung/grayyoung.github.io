@@ -4,10 +4,16 @@ layout: withBreadcrumbs
 
 <article id="content" class="container-fluid book-article">
 	<header>
-		<h1>{{ page.categories.last }}</h1>
+		<h1>{{ page.title | split: " - " | last }}</h1>
 	</header>
 	<section>
-		<h2><a href="{{ page.anchor }}">{{ page.chapterTitle }}</a></h2>
+		<h2>
+		{% if page.anchor %}
+			<a href="{{ page.anchor }}">{{ page.chapterTitle }}</a>
+		{% else %}
+			{{ page.chapterTitle }}
+		{% endif %}
+		</h2>
 		{{ content }}
 	</section>
 </article>
