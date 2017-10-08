@@ -9,25 +9,6 @@ require([ './config' ], function(config) {
 
 	require([ 'jquery', 'bootstrap' ], function($) {
 		$(document).ready(function() {
-			var $pagination = $('#pagination');
-
-			if($pagination.length === 0) {
-				var patternNO = /(?:\/)(\d{3})(?:\.html$)/g;
-				var creatItem = function(number, arrow) {
-					var patternN = new RegExp('\\d\{' + number.toString().length + '\}\$');
-
-					return '<li><a href="' + '000'.replace(patternN, number) + '.html" aria-label="Next"><i class="fa ' + arrow + '" aria-hidden="true"></i></a></li>';
-				};
-				$pagination = $('<div id="pagination" class="container hidden-print"><hr><nav><ul class="pagination"></ul></nav></div>');
-				var pageNO = parseInt(patternNO.exec(location.pathname)[1], 10);
-
-				$pagination.find('.pagination').append(creatItem(pageNO + 1, 'fa-angle-double-right'));
-				if(pageNO > 1) {
-					$pagination.find('.pagination').prepend(creatItem(pageNO - 1, 'fa-angle-double-left'));
-				}
-				$('main').append($pagination);
-			}
-
 			$('a[href]').filter(function() {
 				return $(this).children('sup').length > 0;
 			}).on('inserted.bs.tooltip', function(event) {
@@ -41,6 +22,7 @@ require([ './config' ], function(config) {
 					});
 				}
 			}).tooltip({
+				container: '#containerMain',
 				placement : 'top',
 				html : true,
 				title : function() {
