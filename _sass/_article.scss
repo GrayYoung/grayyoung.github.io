@@ -28,6 +28,14 @@
 		text-indent: 1em;
 	}
 
+	[lang="ZH-CN"] {
+		font-family: "SimSun", "宋体";
+	}
+
+	p[lang="ZH-CN"], section[lang="ZH-CN"] > p {
+		text-indent: 2em;
+	}
+
 	> section > section {
 		margin-bottom: 4em;
 	}

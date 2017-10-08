@@ -73,7 +73,7 @@ body {
 		@include media-breakpoint-up(lg) {
 			overflow: hidden;
 
-			~ * {
+			~ main, ~ footer {
 				margin-left: 200px;
 			}
 		}
@@ -151,12 +151,6 @@ a.text-danger, a .text-danger {
 			border-top: solid 1px $gray-400;
 			margin-top: $grid-gutter-width / 3;
 		}
-	}
-}
-
-section, blockquote {
-	> p {
-		text-indent: 1em;
 	}
 }
 
