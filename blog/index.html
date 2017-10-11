@@ -27,7 +27,7 @@ showBC: true
 		{% endfor %}
 	</ul>
 	{% if paginator.total_pages > 1 %}
-	<nav class="hidden-md-down">
+	<nav class="d-none d-md-block">
 		<ul class="pagination justify-content-center">
 			{% if paginator.previous_page %}
 			<li class="page-item">
@@ -62,7 +62,7 @@ showBC: true
 			{% endif %}
 		</ul>
 	</nav>
-	<div class="clearfix hidden-md-up">
+	<div class="clearfix d-md-none">
 		<div class="clearfix mb-3"></div>
 		<div class="clearfix mb-3"></div>
 		<ul class="nav nav-pills nav-fill">
