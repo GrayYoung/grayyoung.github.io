@@ -45,15 +45,52 @@ var sourcesPaths = {
 	},
 	fonts: {
 		base: path.join(paths.source.stc, paths.fonts, '**', '*.{eot,svg,ttf,woff,woff2,otf}')
+	},
+	war: path.join(paths.source.war, '**', '*'),
+	other: {
+		base: path.join(paths.source.stc, '**', '*.{html,pdf,txt}')
 	}
-};
-
-var targetPaths = {
+}, targetPaths = {
 	styles: path.join(paths.dest.stc, paths.styles),
 	scripts: path.join(paths.dest.stc, paths.scripts),
 	images: path.join(paths.dest.stc, paths.images),
-	fonts: path.join(paths.dest.stc, paths.fonts)
+	fonts: path.join(paths.dest.stc, paths.fonts),
+	other: path.join(paths.dest.stc)
 };
+
+function processCSS(glob) {
+	return gulp.src(glob, {
+		base: path.join(paths.source.stc, paths.styles)
+	}).pipe($.cleanCss({
+		advanced: false,
+		aggressiveMerging: false,
+		keepSpecialComments: 0,
+		mediaMerging: optimized,
+		processImport: optimized
+	}, function(error, minified) {
+		if(error.errors.length > 0) {
+			console.log('< minified: ' + minified + ' >');
+			console.log(error);
+		}
+	})).pipe(gulp.dest(targetPaths.styles)).pipe($.size({
+		title: '-> CSS',
+		showFiles: true
+	}));
+}
+
+function processSASS(glob) {
+	var insert = require('gulp-insert');
+
+	return gulp.src(glob, {
+		base: path.join(paths.source.stc, paths.styles)
+	}).pipe(insert.prepend('$build-version: ' + argv.buildVersion + ';')).pipe($.sass({
+		outputStyle: optimized ? 'compressed' : 'expanded',
+		precision: 8
+	})).pipe(gulp.dest(targetPaths.styles)).pipe($.size({
+		title: '-> SASS',
+		showFiles: true
+	}));
+}
 
 gulp.task('update-bower', function() {
 	return $.bower({
@@ -99,29 +136,11 @@ gulp.task('update-lib', ['update-bower'], function() {
 });
 
 gulp.task('css', function() {
-	return gulp.src(sourcesPaths.styles.base).pipe($.cleanCss({
-		advanced: false,
-		aggressiveMerging: false,
-		keepSpecialComments: 0,
-		mediaMerging: optimized,
-		processImport: optimized
-	}, function(error, minified) {
-		if(error.errors.length > 0) {
-			console.log('< minified: ' + minified + ' >');
-			console.log(error);
-		}
-	})).pipe(gulp.dest(targetPaths.styles)).pipe($.size({
-		title: '-> CSS'
-	}));
+	return processCSS(sourcesPaths.styles.base);
 });
 
 gulp.task('sass', function() {
-	return gulp.src(sourcesPaths.styles.sass).pipe($.sass({
-		outputStyle: optimized ? 'compressed' : 'expanded',
-		precision: 8
-	})).pipe(gulp.dest(targetPaths.styles)).pipe($.size({
-		title: '-> SASS'
-	}));
+	return processSASS(sourcesPaths.styles.sass);
 });
 
 gulp.task('styles', function() {
@@ -183,12 +202,6 @@ gulp.task('scripts', function() {
 	}));
 });
 
-gulp.task('war', function() {
-	return gulp.src(sourcesPaths.war).pipe(gulp.dest(paths.dest.war)).pipe($.size({
-		title : '-> War'
-	}));
-});
-
 gulp.task('images', function() {
 	return gulp.src(sourcesPaths.images.base).pipe(gulp.dest(targetPaths.images)).pipe($.size({
 		title : '-> Images'
@@ -201,6 +214,18 @@ gulp.task('fonts', function() {
 	}));
 });
 
+gulp.task('war', function() {
+	return gulp.src(sourcesPaths.war).pipe(gulp.dest(paths.dest.war)).pipe($.size({
+		title : '-> War'
+	}));
+});
+
+gulp.task('other', function() {
+	return gulp.src(sourcesPaths.other.base).pipe(gulp.dest(targetPaths.other)).pipe($.size({
+		title : '-> Other'
+	}));
+});
+
 gulp.task('clean', function() {
 	return gulp.src([path.join(paths.dest.stc, '*'), path.join(paths.dest.war, '*')], {
 		read : false
@@ -210,11 +235,54 @@ gulp.task('clean', function() {
 });
 
 gulp.task('watch', function(next) {
-	gulp.watch(sourcesPaths.styles.base, ['css']);
+	$.watch(sourcesPaths.styles.base, function(vinyl) {
+		 processCSS(vinyl.path);
+	});
 	gulp.watch(sourcesPaths.styles.sass, ['sass']);
-	gulp.watch(sourcesPaths.scripts.base, ['scripts']);
-	gulp.watch(sourcesPaths.images.base, ['images']);
-	gulp.watch(sourcesPaths.fonts.base, ['fonts']);
+	if(optimized) {
+		gulp.watch(sourcesPaths.scripts.base, ['scripts']);
+	} else {
+		$.watch(sourcesPaths.scripts.base, function(vinyl) {
+			 gulp.src(vinyl.path, {
+				base: path.join(paths.source.stc, paths.scripts)
+			}).pipe(gulp.dest(targetPaths.scripts)).pipe($.size({
+				title : '-> Script',
+				showFiles: true
+			}));
+		});
+	}
+	$.watch(sourcesPaths.images.base, function(vinyl) {
+		 gulp.src(vinyl.path, {
+			base: path.join(paths.source.stc, paths.images)
+		}).pipe(gulp.dest(targetPaths.images)).pipe($.size({
+			title : '-> Image',
+			showFiles: true
+		}));
+	});
+	$.watch(sourcesPaths.fonts.base, function(vinyl) {
+		 gulp.src(vinyl.path, {
+			base: path.join(paths.source.stc, paths.fonts)
+		}).pipe(gulp.dest(targetPaths.fonts)).pipe($.size({
+			title : '-> Font',
+			showFiles: true
+		}));
+	});
+	$.watch(path.join(paths.source.war, '**', '*.{jsp,tag,MF,jar,xml}'), function(vinyl) {
+		 gulp.src(vinyl.path, {
+			base: paths.source.war
+		}).pipe(gulp.dest(paths.dest.war)).pipe($.size({
+			title : '-> Fragment',
+			showFiles: true
+		}));
+	});
+	$.watch(sourcesPaths.other.base, function(vinyl) {
+		 gulp.src(vinyl.path, {
+			base: paths.source.stc
+		}).pipe(gulp.dest(targetPaths.other)).pipe($.size({
+			title : '-> Other',
+			showFiles: true
+		}));
+	});
 	gulp.watch(['./bower.json', './bower.map'], ['update-lib']);
 });
 
