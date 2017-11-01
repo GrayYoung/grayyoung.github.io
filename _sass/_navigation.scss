@@ -54,6 +54,8 @@
 .navbar-brand {
 	padding: ceil($grid-gutter-width / 2);
 	margin-right: 0;
+	margin-bottom:  ceil($grid-gutter-width / 2);
+	background-color: $black;
 	text-align: center;
 	font-family: "Trade Gothic";
 	font-weight: bold;
@@ -74,7 +76,7 @@
 		padding: 10px ceil($grid-gutter-width / 2);
 
 		&:hover, &:focus {
-			background-color: darken($gray-900, 1.25);
+			background-color: darken($gray-900, 4);
 			text-decoration: none;
 			color: theme-color("primary");
 		}
@@ -82,7 +84,7 @@
 
 	&.active > a {
 		border-right: solid 3px $white;
-		background-color: darken($gray-900, 1.25%);
+		background-color: darken($gray-900, 4);
 		color: theme-color("primary");
 	}
 }
