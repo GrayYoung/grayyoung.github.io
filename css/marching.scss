@@ -44,7 +44,7 @@ body {
 	width: 200px;
 	height: 100%;
 	border-right: solid 3px theme-color("primary");
-	background-color: $gray-900;
+	background-color: darken($gray-900, 2);
 	transition: all 0.5s;
 
 	> div {
@@ -93,6 +93,13 @@ body {
 main {
 	position: relative;
 	transition: margin-left 0.5s;
+}
+
+#footer {
+	padding: 5px 0;
+	background-color: theme-color("primary");
+	font-size: $font-size-sm;
+	color: white;
 }
 
 .breadcrumb {
