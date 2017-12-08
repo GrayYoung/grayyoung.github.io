@@ -44,7 +44,7 @@ body {
 	width: 200px;
 	height: 100%;
 	border-right: solid 3px theme-color("primary");
-	background-color: darken($gray-900, 2);
+	background-color: $gray-800;
 	transition: all 0.5s;
 
 	> div {
