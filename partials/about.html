@@ -39,7 +39,7 @@ permalink: /about/
 					<dd>Han</dd>
 					<dt>Address:</dt>
 					<dd class="p-adr h-adr adr">
-						<span class="p-street-address street-address">Fuhua S Rd NO.1606 <small class="text-muted">(Poly XinyuShangfu)</small></span>,<br />
+						<span class="p-street-address street-address">Nanhua Rd NO.1300 <small class="text-muted">(Nanhua Jiayuan/Dayuan Shuanghe Phase 4)</small></span>,<br />
 						<span class="p-locality locality">Chengdu</span>
 						<span class="p-region region">Sichuan</span>
 						<span class="p-country-name country-name">China</span>
@@ -72,12 +72,6 @@ permalink: /about/
 	</div>
 	<div class="row flex-md-row-reverse">
 		<div class="col-md-4 col-xs-12">
-			<section class="p-summary summary">
-				<h2>Objective</h2>
-				<p>I got enough knowledge and solutions from working experiences of years. And I also keep learning latest web front-end technologies and frameworks. I could work at my job easily because of these. 
-I am bigoted, I will do my best to crush any challenges. And I am a neat lover that love neat laconical codes. Though I am a senior web font-end developer, I want to be a designer more than front-end developer.
-I am also a good member of the team, looking for a opportunity to join a excellent professional team..</p>
-			</section>
 		</div>
 		<div class="col-md-8 col-xs-12">
 			<section class="p-experience experience">
@@ -137,18 +131,7 @@ I am also a good member of the team, looking for a opportunity to join a excelle
 					<li class="h-event vevent">
 						<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
 						<time class="dt-duration duration" datatime="PT270D">{{ project.startDate | date: "%m/%Y" }}-{{ project.endDate | date: "%m/%Y" }}</time>
-						<p class="p-description description">{{ project.description }}</p>
-						{% if project.features.size > 0%}
-						<div class="clearfix mb-3"></div>
-						<section>
-							<h4 class="h5">Features:</h4>
-							<ul>
-								{% for feature in project.features %}
-								<li>{{ feature }}</li>
-								{% endfor %}
-							</ul>
-						</section>
-						{% endif %}
+						<div class="p-description description">{{ project.description }}</div>
 					</li>
 					{% endfor %}
 				</ol>
