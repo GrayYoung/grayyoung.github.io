@@ -8,13 +8,13 @@
   startDate:  2016-04-20
   endDate:  2016-05-31
   url: https://www.letsgosee.net/
-  description: Visionworks subsite.
+  description: This is a site to help visitor to know more about the Let's Go See program. A user can order an eye exam for school-aged child or children by appointment via the site.<br /> I took on all front-end works of this project, including sliced the PSD files, a focused animated banner that applied HTML5 canvas, embed Youtube video, used Bootstrap-SASS done responsive design of the site, and so on.<br /> Developed this project for 2 monthes, it finally passed UAT and live online.
 
 - name: Ashford
   startDate:  2015-04-01
   endDate:  2015-07-01
-  url: http://www.ashford.com
-  description: Ashford official e-commerce site.
+  url: https://www.ashford.com
+  description: Ashford official e-commerce site that is main selling watches.<br /> This project phase was intended to use Bootstrap make the site support responsive design, and fix known bugs. Worked on this project for 3 monthes, it passed UAT and live online a week early.
 
 - name: Donaldson Dynamic Search
   startDate:  2014-10-20
