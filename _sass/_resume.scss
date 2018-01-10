@@ -61,8 +61,11 @@
 	}
 
 	.p-description {
-		margin-bottom: 0;
-		color: $gray-600;
+		color: $gray-700;
+
+		> p {
+			margin-bottom: 0.5rem;
+		}
 	}
 }
 

@@ -131,7 +131,7 @@ permalink: /about/
 					<li class="h-event vevent">
 						<h3 class="p-name summary">{% if project.url %}<a class="u-url" target="_blank" href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
 						<time class="dt-duration duration" datatime="PT270D">{{ project.startDate | date: "%m/%Y" }}-{{ project.endDate | date: "%m/%Y" }}</time>
-						<p class="p-description description">{{ project.description }}</p>
+						<div class="p-description description">{{ project.description }}</div>
 					</li>
 					{% endfor %}
 				</ol>
