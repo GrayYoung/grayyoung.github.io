@@ -1,33 +1,23 @@
 ﻿- name: Visionworks
-  description: Visionworks official e-commerce site. Including a back-end system —— ACMC, it's a management for client to manage orders, prescriptions uploaded by customers, action logs of agents, and others. Visionworks is a vendor that sell glasses and provide customize glasses service. And the main site provides full support WCAG, because glasses are special products.<br> On this project, front-end aspect JavaScript & CSS files were packaged by a NodeJS modules named gulp. And modularize JavaScript codes via RequireJS. We used customized Bootstrap 3. <br> The site support 3 devices, desktop, tablet and mobile. Minimum screen size supported is screen size of iPhone 5. <br> The front-end code of ACMC written using AngularJS, also combine with RequireJS.
   startDate:  2015-07-01
-  endDate:  2016-04-18
+  endDate:  2018-01-02
   url: https://www.visionworks.com/
-  features:
-  - WCAG2.0
-  - Responsive design
+  description: Visionworks official e-commerce site. Visionwoks is one of the largest glasses retailer, sell glasses and contact lenses by online and offline. A customer even could buy the product with insurance, whatever via online or offline.<br /> A user can reach the proudct detail page directly via searching a product ID. A user also upload a photo to view a appearance of self with a glasses. A user has to fill a valid form of a prescription before add the product into the cart. And there is a management named ACMC, a agent use it to manipulate informtions of users, prescripionts, orders, reviews and so on.<br /> We used jQuery Bootstrap-SASS and RequireJS to developed front-end modules of store site. And used AngularJS Bootstrap-SASS and RequireJS to developed front-end modules that are interfaced to REST of ACMC.<br /> This project has been experienced three phases. Phases 1 was intended to develop selling glasses online, I took on 60% front-end works. Phase ABB was intended to develope selling contact lenses, I took on 85% front-end works. Phase 2 was intented to develop integrating insurance. Whthin pahse 1, I took on 95% front-end works. Within pahse ABB, I took advantage of spare time to learned NodeJS, then optimized the script to build front-end codes, increased execution efficiency of gulp tasks. <br /> This project passed the test on WCAG 2.0 by an accredited third party Bender, all phases passed UAT and live online. And it as a standard project of the company.
 
 - name: Let's Go See
-  description: Visionworks subsite.
   startDate:  2016-04-20
   endDate:  2016-05-31
   url: https://www.letsgosee.net/
-  features:
-  - WCAG2.0
-  - Responsive design
+  description: Visionworks subsite.
 
 - name: Ashford
-  description: Ashford official e-commerce site.
   startDate:  2015-04-01
   endDate:  2015-07-01
   url: http://www.ashford.com
-  features:
-  - Responsive design
+  description: Ashford official e-commerce site.
 
 - name: Donaldson Dynamic Search
-  description: Donaldson catalog advanced search. <br> The official site is http://catalog.donaldson.com. <br> Front-end aspect, <ol><li>Manage third-party frameworks via bower.</li><li>JavaScript & CSS files were packaged by a NodeJS modules named gulp. And modularize JavaScript codes via RequireJS.</li><li>We used customized Bootstrap 3. CSS codes coded using SASS, and compile by node-sass. The site support 3 devices, desktop, tablet and mobile. Minimum breakpoint is 480.  Minimum screen size supported is screen size of iPhone 4.</li><li>4. There are 2 jQuery plugins that were programmed by me base on jQuery.UI widget<wbr>(https://github.com<wbr>/GrayYoung<wbr>/jQuery.UI.Extension), including Zoom and Carousel.</li><li>There is a feature to manage attributes of products programmed via AngularJS.</li></ol>
   startDate:  2014-10-20
   endDate:  2015-01-31
   url: https://catalog.donaldson.com/
-  features:
-  - Responsive design
+  description: Donaldson catalog advanced search. <br> The official site is http://catalog.donaldson.com. <br> Front-end aspect, <ol><li>Manage third-party frameworks via bower.</li><li>JavaScript & CSS files were packaged by a NodeJS modules named gulp. And modularize JavaScript codes via RequireJS.</li><li>We used customized Bootstrap 3. CSS codes coded using SASS, and compile by node-sass. The site support 3 devices, desktop, tablet and mobile. Minimum breakpoint is 480.  Minimum screen size supported is screen size of iPhone 4.</li><li>4. There are 2 jQuery plugins that were programmed by me base on jQuery.UI widget<wbr>(https://github.com<wbr>/GrayYoung<wbr>/jQuery.UI.Extension), including Zoom and Carousel.</li><li>There is a feature to manage attributes of products programmed via AngularJS.</li></ol>
