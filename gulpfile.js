@@ -236,14 +236,46 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function(next) {
 	$.watch(sourcesPaths.styles.base, function(vinyl) {
-		 processCSS(vinyl.path);
+		processCSS(vinyl.path);
 	});
-	gulp.watch(sourcesPaths.styles.sass, ['sass']);
+	$.watch(sourcesPaths.styles.sass, function(vinyl) {
+		var pattern = new RegExp('(^_)(.*)');
+
+		if(pattern.test(vinyl.stem)) {
+			gulp.src([sourcesPaths.styles.sass, '!' + path.join(paths.source.stc, paths.styles, '**', '_*.{sass,scss}')]).pipe((function() {
+				var through = require('through2');
+				var stream = through.obj(function(record, encoding, callback) {
+					if (record.isBuffer()) {
+						var content = record.contents.toString('utf8'), 
+							pathRe = path.relative(path.dirname(record.path), path.dirname(vinyl.path)), 
+							patternIm = new RegExp('\(^|\\s+)@import\\s+(\'|")' + pathRe + (pathRe ? '(\\\\|\/)' : '') + vinyl.stem.replace(pattern, '$1?$2') + '(\\' + vinyl.extname + ')?' + '(\'|");');
+
+						if(patternIm.test(content)) {
+							// make sure the file goes through the next gulp plugin
+							this.push(record);
+							processSASS(record.path);
+						}
+						return callback();
+					}
+					if (record.isStream()) {
+						console.log(record.path + ' is stream.');
+					}
+					// tell the stream engine that we are done with this file
+					callback();
+				});
+
+				// returning the file stream
+				return stream;
+			})());
+		} else {
+			processSASS(vinyl.path);
+		}
+	});
 	if(optimized) {
 		gulp.watch(sourcesPaths.scripts.base, ['scripts']);
 	} else {
 		$.watch(sourcesPaths.scripts.base, function(vinyl) {
-			 gulp.src(vinyl.path, {
+			gulp.src(vinyl.path, {
 				base: path.join(paths.source.stc, paths.scripts)
 			}).pipe(gulp.dest(targetPaths.scripts)).pipe($.size({
 				title : '-> Script',
@@ -252,7 +284,7 @@ gulp.task('watch', function(next) {
 		});
 	}
 	$.watch(sourcesPaths.images.base, function(vinyl) {
-		 gulp.src(vinyl.path, {
+		gulp.src(vinyl.path, {
 			base: path.join(paths.source.stc, paths.images)
 		}).pipe(gulp.dest(targetPaths.images)).pipe($.size({
 			title : '-> Image',
@@ -260,7 +292,7 @@ gulp.task('watch', function(next) {
 		}));
 	});
 	$.watch(sourcesPaths.fonts.base, function(vinyl) {
-		 gulp.src(vinyl.path, {
+		gulp.src(vinyl.path, {
 			base: path.join(paths.source.stc, paths.fonts)
 		}).pipe(gulp.dest(targetPaths.fonts)).pipe($.size({
 			title : '-> Font',
@@ -268,7 +300,7 @@ gulp.task('watch', function(next) {
 		}));
 	});
 	$.watch(path.join(paths.source.war, '**', '*.{jsp,tag,MF,jar,xml}'), function(vinyl) {
-		 gulp.src(vinyl.path, {
+		gulp.src(vinyl.path, {
 			base: paths.source.war
 		}).pipe(gulp.dest(paths.dest.war)).pipe($.size({
 			title : '-> Fragment',
