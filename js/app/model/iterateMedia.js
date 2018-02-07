@@ -50,7 +50,7 @@ define(['app/model/requests', 'ajax'], function(requests, ajax) {
 		_thisParam.offset++;
 		if(_thisParam.type === '' || tPattern.test(preview.Type)) {
 			if(preview.imdbID) {
-				ajax().get(requests.imdb + '?i=' + preview.imdbID + '&plot=full&r=json').then(function(response, xhrObject) {
+				ajax().get(requests.imdb + '?apikey=5b891035&i=' + preview.imdbID + '&plot=full&r=json').then(function(response, xhrObject) {
 					if(preview && preview.PosterList) {
 						response.Posters = preview.PosterList.split(',');
 					}
