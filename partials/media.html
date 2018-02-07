@@ -7,7 +7,7 @@ extraJS: [/js/lib/jszip.js]
 ---
 
 <div class="container-fluid">
-	<ul id="containerListing" class="row list-unstyled list-grid h-listing">
+	<ul id="containerListing" class="list-unstyled card-columns h-listing">
 	</ul>
 </div>
 <div id="fixedProgress" class="loading">
@@ -15,65 +15,60 @@ extraJS: [/js/lib/jszip.js]
 	<div class="progress-label">0</div>
 </div>
 <template id="tl-preview">
-	<li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate">
-		<figure class="thumbnail">
-			<p class="p-category">
+	<li class="h-item h-review-aggregate card bg-dark">
+		<img class="card-img" src="" alt="" aria-hidden="true">
+		<div class="card-img-overlay">
+			<h5 class="card-title p-name"></h5>
+			<p class="p-category card-text">
 				<span class="text-capitalize"></span><span>: </span>
 				<span class="text-capitalize"></span>
 			</p>
-			<hr />
-			<img class="d-block img-fluid mx-auto" src="" alt="" aria-hidden="true">
-			<figcaption>
-				<div class="caption">
-					<h3 class="p-name"><strong></strong></h3>
-					<p class="p-rating">
-						<span style="width: 0em;"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
-						<span class="p-votes">
-							<span class="text-success fa-lg"></span>
-							<small class="text-muted"></small>
-						</span>
-					</p>
-				</div>
-			</figcaption>
-			<a class="u-url" target="_blank" href="http://www.imdb.com/title/">Read more...</a>
-		</figure>
+			<p class="p-rating">
+				<span style="width: 0em;"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
+				<span class="p-votes">
+					<span class="text-success fa-lg"></span>
+					<small class="text-muted"></small>
+				</span>
+			</p>
+			<a class="btn btn-primary btn-sm u-url" target="_blank" href="http://www.imdb.com/title/">Read More</a>
+		</div>
 	</li>
 </template>
 <template id="tl-modalPreview">
 	<div id="modalPreview" class="modal fade modal-preview" tabindex="-1" role="dialog" aria-labelledby="mediaTitle">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="mediaTitle"></h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 				<div class="modal-body">
-					<div class="progress loading d-print-none">
-						<div class="progress-bar" role="progressbar"></div>
-						<div class="progress-bar" role="progressbar"></div>
-						<div class="progress-bar" role="progressbar"></div>
-						<div class="progress-bar" role="progressbar"></div>
-					</div>
-					<div id="carousel-modalPreview" class="carousel slide">
-						<div class="carousel-inner">
-							<div class="item active">
-								<canvas id="posterCanvas" width="900" height="1600" class="img-fluid mx-auto"></canvas>
-								<div class="carousel-caption">
+					<div class="row">
+						<div class="col-12 col-md-7 col-lg-8">
+							<div class="progress loading d-print-none" style="position: absolute; top: 0; left: 15px; right: 15px; bottom: 0; height: auto; margin-top: 0;">
+								<div class="progress-bar" role="progressbar"></div>
+								<div class="progress-bar" role="progressbar"></div>
+								<div class="progress-bar" role="progressbar"></div>
+								<div class="progress-bar" role="progressbar"></div>
+							</div>
+							<div id="carousel-modalPreview" class="carousel slide">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img id="posterCanvas" class="d-block img-fluid mx-auto" />
+									</div>
 								</div>
+								<a class="carousel-control-prev" href="javascript:void(0);" role="button">
+									<span class="carousel-control-prev fa fa-angle-left" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next" href="javascript:void(0);" role="button">
+									<span class="carousel-control-next-icon fa fa-angle-right" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
 							</div>
 						</div>
-						<a class="left carousel-control" href="javascript:void(0);" role="button">
-							<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="right carousel-control" href="javascript:void(0);" role="button">
-							<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<div class="panel">
+						<div class="col-12 col-md-5 col-lg-4">
+							<div class="panel">
 						<div class="panel-body">
 							<dl class="dl-horizontal">
 								<dt>Awards</dt>
@@ -121,6 +116,8 @@ extraJS: [/js/lib/jszip.js]
 								<dt>Runtime</dt>
 								<dd class="p-runtime"></dd>
 							</dl>
+						</div>
+					</div>
 						</div>
 					</div>
 				</div>
