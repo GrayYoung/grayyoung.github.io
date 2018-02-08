@@ -41,7 +41,7 @@
 	}
 
 	@include media-breakpoint-up(lg) {
-		> .row > .col-lg-3 {
+		> .row > .col-md-3 {
 			padding-right: 0;
 
 			.sticky-top {
