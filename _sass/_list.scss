@@ -14,6 +14,10 @@
 }
 
 .card-columns {
+	@include media-breakpoint-up(xl) {
+		column-count: 4;
+	}
+
 	> .card {
 		min-height: 150px;
 	}
