@@ -32,9 +32,9 @@ define(['app/model/util', 'app/model/breakpoints', 'jquery', 'bootstrap'], funct
 	};
 
 	$document.ready(function() {
-		var $article = $document.find('main > article'), $outline = $('<div class="col-xl-2 col-lg-3 col-xs-12 order-12 d-none d-lg-block"><div class="sticky-top" /></div>');
+		var $article = $document.find('main > article'), $outline = $('<div class="col-md-3 col-xs-12 order-12 d-none d-lg-block"><div class="sticky-top" /></div>');
 
-		$outline.children(':first').append(outlineScanner($article.children('section').addClass('col-xl-10 col-lg-9 col-xs-12 order-1'), 0));
+		$outline.children(':first').append(outlineScanner($article.children('section').addClass('col-md-9 col-xs-12 order-1'), 0));
 		$article.children('section').wrapAll('<div class="row" />').first().before($outline);
 
 		$('body').scrollspy({

@@ -1,0 +1,70 @@
+
+
+.list-alpha {
+	padding-left: 0;
+	list-style-position: inside;
+
+	> * {
+		> ol {
+			padding-top: $grid-gutter-width / 3;
+			border-top: solid 1px $gray-400;
+			margin-top: $grid-gutter-width / 3;
+		}
+	}
+}
+
+.card-columns {
+	@include media-breakpoint-up(xl) {
+		column-count: 4;
+	}
+
+	> .card {
+		min-height: 150px;
+	}
+
+	.p-category, .p-summary {
+		margin-bottom: 0;
+		font-style: italic;
+		font-family: "Freight Text";
+	}
+
+	.p-rating {
+		.fa {
+			width: 1em;
+		}
+
+		.fa-lg {
+			vertical-align: baseline;
+		}
+
+		> span:first-child {
+			display: inline-block;
+			margin-right: 1em;
+			overflow: hidden;
+
+			> span {
+				display: inline-block;
+				width: 10em;
+			}
+		}
+	}
+
+	.p-votes {
+		vertical-align: super;
+		font-family: $font-family-sans-serif;
+	}
+}
+
+.card-img-overlay {
+	color: white;
+	text-shadow: 0 0 2px #000000;
+
+	> .btn {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 0;
+		font-style: italic;
+	}
+}
