@@ -1,65 +1,65 @@
 - name: HTML <small>(HTML5)</small>
   startDate:  2010-09-01
-  rate: 0.9
+  rate: 1
   url: https://www.w3.org/TR/html5/
-
-- name: WCAG<small>(2.0)</small>
-  startDate:  2016-01-01
-  rate: 0.65
-  url: https://www.w3.org/TR/WCAG20/
 
 - name: CSS <small>(CSS3)</small>
   startDate:  2010-09-01
-  rate: 0.9
+  rate: 1
   url: https://www.w3.org/TR/CSS/
 
 - name: JavaScript
   startDate:  2011-03-01
-  rate: 0.9
+  rate: 1
 
 - name: jQuery
   startDate:  2011-09-01
-  rate: 0.9
+  rate: 1
   url: http://jquery.com/
 
 - name: AngularJS
   startDate:  2014-10-01
-  rate: 0.8
+  rate: 0.9
   url: https://angularjs.org/
 
 - name: NodeJS
   startDate:  2014-08-01
-  rate: 0.5
+  rate: 0.7
   url: https://angularjs.org/
 
 - name: ReactJS
   startDate:  2016-08-09
-  rate: 0.4
+  rate: 0.2
   url: https://nodejs.org/
+
+- name: WCAG<small>(2.0)</small>
+  startDate:  2016-01-01
+  rate: 0.8
+  url: https://www.w3.org/TR/WCAG20/
 
 - name: Jekyll
   startDate:  2016-04-12
-  rate: 0.6
+  rate: 0.8
   url: https://jekyllrb.com/
 
 - name: Liquid
   startDate:  2016-04-12
-  rate: 0.6
+  rate: 0.8
   url: https://shopify.github.io/liquid/
 
 - name: Markdown
   startDate:  2016-04-12
-  rate: 0.6
+  rate: 0.8
   url: https://daringfireball.net/projects/markdown/
 
 - name: Photoshop
-  rate: 0.75
+  rate: 0.9
   startDate:  2012-09-01
 
 - name: CorelDraw
-  rate: 0.7
+  rate: 0.85
   startDate:  2010-10-01
 
 - name: MS Office
   startDate:  2010-09-01
-  rate: 0.75
+  rate: 0.8
