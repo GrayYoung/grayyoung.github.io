@@ -36,6 +36,16 @@
 		text-indent: 2em;
 	}
 
+	blockquote {
+		padding: 10px 20px;
+		border-left: 5px solid $gray-300;
+		background-color: $gray-200;
+
+		> p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 	> section > section {
 		margin-bottom: 4em;
 	}
@@ -46,12 +56,17 @@
 
 			.sticky-top {
 				top: 70px;
+				z-index: 1;
 				max-height: calc(100vh - 70px);
 				overflow-y: auto;
 			}
 
+			.nav-pills {
+				padding-left: 0.5em;
+			}
+
 			.nav-link {
-				padding: 0.1em 0 0.1em 1em;
+				padding: 0.1em 0;
 				border-radius: 0;
 				overflow: hidden;
 				word-break: keep-all;
