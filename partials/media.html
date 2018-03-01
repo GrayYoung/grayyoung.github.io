@@ -7,7 +7,7 @@ extraJS: [/js/lib/jszip.js]
 ---
 
 <div class="container-fluid">
-	<ul id="containerListing" class="list-unstyled card-columns h-listing">
+	<ul id="containerListing" class="row list-unstyled h-listing">
 	</ul>
 </div>
 <div id="fixedProgress" class="loading">
@@ -15,22 +15,24 @@ extraJS: [/js/lib/jszip.js]
 	<div class="progress-label">0</div>
 </div>
 <template id="tl-preview">
-	<li class="h-item h-review-aggregate card bg-dark">
-		<img class="card-img" src="" alt="" aria-hidden="true">
-		<div class="card-img-overlay">
-			<h5 class="card-title p-name"></h5>
-			<p class="p-category card-text">
-				<span class="text-capitalize"></span><span>: </span>
-				<span class="text-capitalize"></span>
-			</p>
-			<p class="p-rating">
-				<span style="width: 0em;"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
-				<span class="p-votes">
-					<span class="text-success fa-lg"></span>
-					<small class="text-muted"></small>
-				</span>
-			</p>
-			<a class="btn btn-primary btn-sm u-url" target="_blank" href="http://www.imdb.com/title/">Read More</a>
+	<li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 h-item h-review-aggregate card-columns">
+		<div class="card bg-dark">
+			<img class="card-img" src="" alt="" aria-hidden="true">
+			<div class="card-img-overlay">
+				<h5 class="card-title p-name"></h5>
+				<p class="p-category card-text">
+					<span class="text-capitalize"></span><span>: </span>
+					<span class="text-capitalize"></span>
+				</p>
+				<p class="p-rating">
+					<span style="width: 0em;"><span class="p-count text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></span>
+					<span class="p-votes">
+						<span class="text-success fa-lg"></span>
+						<small class="text-muted"></small>
+					</span>
+				</p>
+				<a class="btn btn-primary btn-sm u-url" target="_blank" href="http://www.imdb.com/title/">Read More</a>
+			</div>
 		</div>
 	</li>
 </template>
