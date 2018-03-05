@@ -24,8 +24,7 @@ define(['app/model/requests', 'ajax'], function(requests, ajax) {
 		preview = {
 			Title : _thisParam.sheet[ 'A' + _thisParam.offset ] && _thisParam.sheet[ 'A' + _thisParam.offset ].v,
 			imdbID : _thisParam.sheet[ 'B' + _thisParam.offset ] && _thisParam.sheet[ 'B' + _thisParam.offset ].v,
-			Type :_thisParam.sheet[ 'C' + _thisParam.offset ] && _thisParam.sheet[ 'C' + _thisParam.offset ].v,
-			PosterList : _thisParam.sheet[ 'D' + _thisParam.offset ] && _thisParam.sheet[ 'D' + _thisParam.offset ].v
+			Type :_thisParam.sheet[ 'C' + _thisParam.offset ] && _thisParam.sheet[ 'C' + _thisParam.offset ].v
 		};
 		if(typeof preview.Title === 'undefined' && typeof preview.imdbID === 'undefined') {
 			if(typeof _thisParam.end === 'function') {
