@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# vsersion 0.0.4.0
+# vsersion 0.4.4.0
 
 # Styles
 css/font-awesome.css
@@ -33,7 +33,6 @@ images/solar/sun.png
 images/solar/shadow.png
 images/logo.png
 images/me.png
-images/logo-poly.png
 
 FALLBACK:
 
