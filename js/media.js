@@ -73,12 +73,12 @@ require([ './config' ], function(config) {
 			var setting = {
 				pageSize : 20
 			};
-			var type = util.getUrlParam('type', true), sheet = util.getUrlParam('genre', true);
+			var type = util.getUrlParam('type', true), genre = util.getUrlParam('genre', true);
 			var listItems = function(workbook) {
-				if(sheet && workbook.SheetNames.indexOf(sheet) === -1) {
+				if(genre && workbook.SheetNames.indexOf(genre) === -1) {
 					return;
 				}
-				var sheet = (workbook && workbook.Sheets[sheet || workbook.SheetNames[0]]) || $container.data('sheet');
+				var sheet = (workbook && workbook.Sheets[genre || workbook.SheetNames[0]]) || $container.data('sheet');
 				var offset = $container.data('offset') || 2;
 				var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
 				var callData = function(data) {
