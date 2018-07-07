@@ -4,6 +4,12 @@
   url: https://www.visionworks.com/
   description: <p>Visionworks official e-commerce site. Visionwoks is one of the largest glasses retailer, sell glasses and contact lenses by online and offline. A customer even could buy the product with insurance, whatever via online or offline.</p> <p>A user can reach the proudct detail page directly via searching a product ID. A user also upload a photo to view a appearance of self with a glasses. A user has to fill a valid form of a prescription before add the product into the cart. And there is a management named ACMC, a agent use it to manipulate informtions of users, prescripionts, orders, reviews and so on.</p> <p>We used jQuery Bootstrap-SASS and RequireJS to developed front-end modules of store site. And used AngularJS Bootstrap-SASS and RequireJS to developed front-end modules that are interfaced to REST of ACMC.</p> <p>This project has been experienced three phases. Phases 1 was intended to develop selling glasses online, I took on 60% front-end works. Phase ABB was intended to develope selling contact lenses, I took on 85% front-end works. Phase 2 was intented to develop integrating insurance. Whthin pahse 1, I took on 95% front-end works. Within pahse ABB, I took advantage of spare time to learned NodeJS, then optimized the script to build front-end codes, increased execution efficiency of gulp tasks.</p> <p>This project passed the test on WCAG 2.0 by an accredited third party Bender, all phases passed UAT and live online. And it as a standard project of the company.</p>
 
+- name: Entel
+  startDate:  2016-06-01
+  endDate:  2016-08-10
+  url: http://www.entel.cl
+  description: <p>Entel is a telecom company in Chile. I developed the Google map feature on multiple pages of this project.</p>
+
 - name: Let's Go See
   startDate:  2016-04-20
   endDate:  2016-05-31
