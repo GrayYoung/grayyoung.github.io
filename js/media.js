@@ -75,7 +75,7 @@ require([ './config' ], function(config) {
 			};
 			var type = util.getUrlParam('type', true), genre = util.getUrlParam('genre', true);
 			var listItems = function(workbook) {
-				if(genre && workbook.SheetNames.indexOf(genre) === -1) {
+				if(genre && workbook && workbook.SheetNames.indexOf(genre) === -1) {
 					return;
 				}
 				var sheet = (workbook && workbook.Sheets[genre || workbook.SheetNames[0]]) || $container.data('sheet');
