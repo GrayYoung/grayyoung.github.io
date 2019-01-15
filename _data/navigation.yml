@@ -2,22 +2,22 @@
   url: /
 
 - label: Blog
-  url: /blog
+  url: /blog/
 
 - label: Media
-  url: /media
+  url: /media/
   subs:
     - label: Music
-      url: /media?t=music
+      url: /media/?t=music
 
     - label: Movie
-      url: /media?t=movie
+      url: /media/?t=movie
 
     - label: TV
-      url: /media?t=tv
+      url: /media/?t=tv
 
 - label: Printing
-  url: /printing
+  url: /printing/
 
 - label: About Me
-  url: /about
+  url: /about/
