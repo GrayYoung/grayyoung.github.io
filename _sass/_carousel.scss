@@ -3,9 +3,11 @@
 
 .carousel-control-prev, .carousel-control-next {
 	visibility: hidden;
+	color: theme-color("primary");
 
 	&:hover, &:focus {
 		visibility: visible;
+		color: theme-color("primary");
 	}
 }
 
