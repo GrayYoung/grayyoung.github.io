@@ -1,30 +1,43 @@
 {
-  "name": "Marching",
-  "version": "0.0.4",
-  "dependencies": {
-    "gulp": "latest",
-    "gulp-bower": "latest",
-    "gulp-clean": "latest",
-    "gulp-clean-css": "latest",
-    "gulp-jshint": "latest",
-    "gulp-load-plugins": "latest",
-    "gulp-size": "latest",
-    "gulp-sass": "latest",
-    "merge-stream" : "latest",
-    "jshint": "latest",
-    "jshint-stylish": "latest",
-    "requirejs": "latest",
-    "graceful-fs":"latest",
-    "yargs": "latest"
-  },
-  "description": "Base AAXIS Commerce eShop Bootstrap UI",
-  "main": "gulpfile.js",
-  "author": {
-    "name" : "AAXIS Commerce",
-    "email" : "info@aaxiscommerce.com",
-    "url" : "http://www.aaxiscommerce.com/"
-  },
-  "license": "Copyright 2016",
-  "devDependencies": {
-  }
+	"name": "Marching",
+	"author": {
+		"name": "Marching Gray Young",
+		"email": "windpet@live.cn",
+		"url": "https://grayyoung.github.io/"
+	},
+	"description": "A personal site about Gray.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GrayYoung/grayyoung.github.io.git"
+	},
+	"main": "gulpfile.js",
+	"license": "Copyright 2018",
+	"version": "0.0.4",
+	"devDependencies": {
+		"graceful-fs": "latest",
+		"gulp": "latest",
+		"gulp-clean": "latest",
+		"gulp-clean-css": "latest",
+		"gulp-jshint": "latest",
+		"gulp-load-plugins": "latest",
+		"gulp-sass": "latest",
+		"gulp-size": "latest",
+		"jshint": "latest",
+		"jshint-stylish": "latest",
+		"merge-stream": "latest",
+		"yargs": "latest"
+	},
+	"dependencies": {
+		"@fdaciuk/ajax": "^3.0.4",
+		"@fortawesome/fontawesome-free": "^5.6.3",
+		"bootstrap": "^4.2.1",
+		"html5shiv": "^3.7.3",
+		"jQuery-Utilities": "git+https://github.com/GrayYoung/jQuery.Utilities.git",
+		"jquery": "^3.3.1",
+		"popper.js": "^1.14.6",
+		"respond.js": "^1.4.2",
+		"slick-carousel": "^1.8.1",
+		"requirejs": "^2.3.6",
+		"xlsx": "^0.14.0"
+	}
 }

@@ -24,7 +24,7 @@ var paths = {
 		stc: argv.DIST_DOCROOT || staticMap[whichWar].DIST_DOCROOT,
 		war: argv.DIST_WARROOT || staticMap[whichWar].DIST_WARROOT
 	},
-	bowerLib : 'bower_components',
+	bowerLib : 'node_modules',
 	styles: 'css',
 	scripts: 'js',
 	lib: 'lib',
@@ -93,39 +93,58 @@ function processSASS(glob) {
 }
 
 gulp.task('update-bower', function() {
-	return $.bower({
-		analytics : false,
-		cmd : 'update',
-		directory : paths.bowerLib
+	var exec = require('child_process').exec;
+
+	return exec('npm install --only=prod', function (err, stdout, stderr) {
+		console.log(stdout);
+		console.log(stderr);
+		console.log(err);
 	});
 });
 
-gulp.task('update-lib', ['update-bower'], function() {
-	var mainStream = mergeStream(), bowerMap = JSON.parse(fs.readFileSync('./bower.map', 'utf8')), property = null;
+gulp.task('update-lib', function() {
+	var mainStream = mergeStream(), bowerMap = JSON.parse(fs.readFileSync('./bower.map', 'utf8')), property = null, filesSrc = '', basePath = '';
 
 	function flushPipes(stream, pipes, dir) {
 		if(pipes.indexOf(whichWar) > -1) {
-			stream.pipe(gulp.dest(path.join(staticMap[whichWar].SRC_DOCROOT, dir, property.dest.join('/'))));
+			stream.pipe(gulp.dest(path.join(staticMap[whichWar].SRC_DOCROOT, dir, property.dest.join('/')), {
+				relativeSymlinks: true,
+				useJunctions: false
+			}));
 		}
 
 		return stream;
 	}
 
+	gulp.series('update-bower');
 	for(var i in bowerMap) {
 		property = bowerMap[i];
+		filesSrc = path.join(paths.bowerLib, property.src.join('/'));
+		basePath = path.join(paths.bowerLib, property.src.filter(function(item, index) {
+			if (property.src.length - 1 > index && item.indexOf('.')) {
+				return true;
+			}
+			return item.indexOf('*') === -1 && item.indexOf('.') === -1;
+		}).join('/'));
 		switch(property.type) {
 			case 'font':
-				mainStream.add(flushPipes(gulp.src(path.join(paths.bowerLib, property.src.join('/'))), property.pipes, paths.fonts).pipe($.size({
+				mainStream.add(flushPipes(gulp.src(filesSrc, {
+					base: basePath
+				}), property.pipes, paths.fonts).pipe($.size({
 					title: '-> ' + i
 				})));
 				break;
 			case 'style':
-				mainStream.add(flushPipes(gulp.src(path.join(paths.bowerLib, property.src.join('/'))), property.pipes, paths.styles).pipe($.size({
+				mainStream.add(flushPipes(gulp.src(filesSrc, {
+					base: basePath
+				}), property.pipes, paths.styles).pipe($.size({
 					title: '-> ' + i
 				})));
 				break;
 			case 'script':
-				mainStream.add(flushPipes(gulp.src(path.join(paths.bowerLib, property.src.join('/'))), property.pipes, paths.scripts).pipe($.size({
+				mainStream.add(flushPipes(gulp.src(filesSrc, {
+					base: basePath
+				}), property.pipes, paths.scripts).pipe($.size({
 					title: '-> ' + i
 				})));
 				break;
@@ -144,7 +163,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('styles', function() {
-	return gulp.start(['css', 'sass']);
+	return gulp.series('sass', 'css');
 });
 
 gulp.task('scripts', function() {
@@ -319,6 +338,6 @@ gulp.task('watch', function(next) {
 });
 
 // DEFAULT GULP TASK
-gulp.task('default', ['clean'], function() {
-	gulp.start(['images', 'fonts', 'styles', 'scripts']);
+gulp.task('default', function() {
+	gulp.series('clean', 'images', 'fonts', 'styles', 'scripts');
 });

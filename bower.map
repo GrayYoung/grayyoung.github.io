@@ -1,15 +1,21 @@
 {
 	"fontawesomeFont": {
 		"type": "font",
-		"src": ["fontawesome", "fonts", "*"],
+		"src": ["@fortawesome", "fontawesome-free", "webfonts", "*"],
 		"pipes": [0],
 		"dest": [""]
 	},
 	"fontawesome": {
 		"type": "style",
-		"src": ["fontawesome", "scss", "**", "*"],
+		"src": ["@fortawesome", "fontawesome-free", "scss", "*"],
 		"pipes": [0],
 		"dest": ["../", "_sass", "fontawesome"]
+	},
+	"fontawesomeCSSMain": {
+		"type": "style",
+		"src": ["@fortawesome", "fontawesome-free", "scss", "fontawesome.scss"],
+		"pipes": [0],
+		"dest": []
 	},
 	"bootstrapSCSS": {
 		"type": "style",
@@ -31,7 +37,7 @@
 	},
 	"respond": {
 		"type": "script",
-		"src": ["respond", "dest", "respond.min.js"],
+		"src": ["respond.js", "dest", "respond.min.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
@@ -49,7 +55,7 @@
 	},
 	"jquery": {
 		"type": "script",
-		"src": ["jquery", "dist", "jquery.js"],
+		"src": ["jquery", "dist", "jquery.min.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
@@ -67,25 +73,25 @@
 	},
 	"jqueryUtilties": {
 		"type": "script",
-		"src": ["jquery-utilties", "dist", "jquery.browser.js"],
+		"src": ["jQuery-Utilities", "dist", "jquery.browser.min.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"xlsx": {
 		"type": "script",
-		"src": ["js-xlsx", "dist", "xlsx.js"],
+		"src": ["xlsx", "dist", "xlsx.min.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"jszip": {
 		"type": "script",
-		"src": ["js-xlsx", "jszip.js"],
+		"src": ["xlsx", "dist", "jszip.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"ajax": {
 		"type": "script",
-		"src": ["js-xlsx", "dist", "ajax.min.js"],
+		"src": ["@fdaciuk", "ajax", "dist", "ajax.min.js"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},

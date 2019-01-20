@@ -11,20 +11,19 @@ requirejs.config({
 	baseUrl: '/js/lib',
 	paths: {
 		app: '../app',
-		browser: 'jquery.browser',
-		zip: 'jszip',
 		ajax: 'ajax.min',
-		bootstrap: 'bootstrap.min',
+		browser: 'jquery.browser.min',
+		bootstrap: 'bootstrap.bundle.min',
+		jquery: 'jquery.min',
+		popper: 'popper.min',
+		xlsx: 'xlsx.min',
+		zip: 'jszip',
 		googleAPI: 'https://www.google.com/jsapi',
 		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en',
 		googleCSE: 'https://cse.google.com/cse.js?cx=001907108702964322728:jc6j-dfwhfq',
 		googleWatermark: '//www.google.com/cse/brand?form=form-cse-search&inputbox=input-cse-search'
 	},
 	shim: {
-		tether: {
-			exports: 'Tether'
-		},
-		bootstrap: ['jquery'],
 		affix: ['jquery']
 	},
 	map: {},

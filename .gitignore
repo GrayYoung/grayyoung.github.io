@@ -4,3 +4,4 @@ dist/js/build.txt
 _site/
 .sass-cache
 _notes/
+package-lock.json

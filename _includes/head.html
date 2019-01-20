@@ -27,7 +27,7 @@
 	<meta name="generator" content="Jekyll v{{ jekyll.version }}">
 	<title>{% if page.title %}{{ page.title | escape }} - {{ site.title  | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 	<link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ "/css/font-awesome.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/css/fontawesome.css" | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ "/css/marching.css" | prepend: site.baseurl }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl }}">
@@ -45,7 +45,5 @@
 	{% for script in page.extraJS %}
 	<script type="text/javascript" src="{{ script }}"></script>
 	{% endfor %}
-	<script type="text/javascript" src="/js/lib/tether.min.js"></script>
-	<script type="text/javascript" src="/js/lib/popper.min.js"></script>
 	<script type="text/javascript" defer async data-main="/js/{% if page.pageName %}{{ page.pageName }}{% else %}marching{% endif %}.js" src="/js/lib/require.js"></script>
 </head>

@@ -1,9 +1,9 @@
 CACHE MANIFEST
 
-# vsersion 0.4.4.0
+# vsersion 0.4.4.1
 
 # Styles
-css/font-awesome.css
+css/fontawesome.css
 css/bootstrap.css
 css/marching.css
 
@@ -15,7 +15,9 @@ js/printing.js
 js/article.js
 
 # Fonts
-fonts/fontawesome-webfont.woff2
+fonts/fa-brands-400.woff2
+fonts/fa-regular-400.woff2
+fonts/fa-solid-900.woff2
 fonts/Freight Text W03 Bold Italic.woff2
 fonts/Freight Text W03 Bold.woff2
 fonts/Freight Text W03 Regular Italic.woff2
