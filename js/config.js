@@ -13,7 +13,7 @@ requirejs.config({
 		app: '../app',
 		ajax: 'ajax.min',
 		browser: 'jquery.browser.min',
-		bootstrap: 'bootstrap.min',
+		bootstrap: 'bootstrap.bundle.min',
 		jquery: 'jquery.min',
 		popper: 'popper.min',
 		xlsx: 'xlsx.min',
@@ -24,10 +24,6 @@ requirejs.config({
 		googleWatermark: '//www.google.com/cse/brand?form=form-cse-search&inputbox=input-cse-search'
 	},
 	shim: {
-		tether: {
-			exports: 'Tether'
-		},
-		bootstrap: ['jquery'],
 		affix: ['jquery']
 	},
 	map: {},

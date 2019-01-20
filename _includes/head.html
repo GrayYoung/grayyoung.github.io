@@ -45,7 +45,5 @@
 	{% for script in page.extraJS %}
 	<script type="text/javascript" src="{{ script }}"></script>
 	{% endfor %}
-	<script type="text/javascript" src="/js/lib/tether.min.js"></script>
-	<script type="text/javascript" src="/js/lib/popper.min.js"></script>
 	<script type="text/javascript" defer async data-main="/js/{% if page.pageName %}{{ page.pageName }}{% else %}marching{% endif %}.js" src="/js/lib/require.js"></script>
 </head>

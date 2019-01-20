@@ -25,7 +25,6 @@
 		"jshint": "latest",
 		"jshint-stylish": "latest",
 		"merge-stream": "latest",
-		"requirejs": "^2.3.6",
 		"yargs": "latest"
 	},
 	"dependencies": {
@@ -38,7 +37,7 @@
 		"popper.js": "^1.14.6",
 		"respond.js": "^1.4.2",
 		"slick-carousel": "^1.8.1",
-		"tether": "^1.4.5",
+		"requirejs": "^2.3.6",
 		"xlsx": "^0.14.0"
 	}
 }
