@@ -15,6 +15,7 @@ requirejs.config({
 		browser: 'jquery.browser.min',
 		bootstrap: 'bootstrap.min',
 		jquery: 'jquery.min',
+		popper: 'popper.min',
 		xlsx: 'xlsx.min',
 		zip: 'jszip',
 		googleAPI: 'https://www.google.com/jsapi',

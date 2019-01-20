@@ -34,7 +34,6 @@
 
 	.embed-responsive {
 		&:not(.no-pattern):before {
-			background-image: url("/images/../images/background/matte.png");
 			background-blend-mode: darken;
 			mix-blend-mode: soft-light;
 			opacity: 0.35;
