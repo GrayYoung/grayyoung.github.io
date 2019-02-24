@@ -1,11 +1,10 @@
 CACHE MANIFEST
 
-# vsersion 0.4.4.1
+# vsersion 0.4.4.2
 
 # Styles
 css/fontawesome.css
 css/bootstrap.css
-css/marching.css
 
 # Scripts
 js/config.js
@@ -15,18 +14,10 @@ js/printing.js
 js/article.js
 
 # Fonts
-fonts/fa-brands-400.woff2
-fonts/fa-regular-400.woff2
-fonts/fa-solid-900.woff2
-fonts/Freight Text W03 Bold Italic.woff2
-fonts/Freight Text W03 Bold.woff2
-fonts/Freight Text W03 Regular Italic.woff2
-fonts/Freight Text W03 Regular.woff2
-fonts/Trade Gothic W01 Bold.woff2
-fonts/Trade Gothic W01 Regular.woff2
+
 
 # Images
-images/solar/earch.png
+images/solar/earth.png
 images/solar/jupiter.png
 images/solar/mars.png
 images/solar/mercury.png

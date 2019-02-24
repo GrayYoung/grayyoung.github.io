@@ -14,7 +14,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 			$(document).off('submit', '#form-cse-search').on('submit', '#form-cse-search', function(event) {
 				var $search = $('#input-cse-search');
 				var searchEntry = $.trim($search.val());
-				var element = google.search.cse.element.getElement('searchresults-only0');
+				var element = google.search.cse.element.getElement('gSearchResults');
 		
 				if (searchEntry == '') {
 					element.clearAllResults();
