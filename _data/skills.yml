@@ -22,15 +22,20 @@
   rate: 0.9
   url: https://angularjs.org/
 
+- name: Angular
+  startDate:  2018-01-01
+  rate: 0.8
+  url: https://angular.io/
+
+- name: TypeScript
+  startDate:  2018-01-01
+  rate: 0.7
+  url: http://www.typescriptlang.org
+
 - name: NodeJS
   startDate:  2014-08-01
   rate: 0.7
   url: https://angularjs.org/
-
-- name: ReactJS
-  startDate:  2016-08-09
-  rate: 0.2
-  url: https://nodejs.org/
 
 - name: WCAG<small>(2.0)</small>
   startDate:  2016-01-01
