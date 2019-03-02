@@ -17,13 +17,13 @@ require([ './config' ], function(config) {
 				if ($item.length) {
 					switch ($item.data('type')) {
 						case 'radio':
-							$item.find('li[data-answer="true"]').addClass('text-primary');
+							$item.find(':radio[value="true"]').click();
 							break;
 						case 'yesOrNo':
-							$item.find(':checkbox').prop('checked', $item.data('answer'));
+							$item.find(':checkbox[value="true"]').prop('checked', true);
+							$item.find(':checkbox[value="false"]').prop('checked', false);
 							break;
 						case 'textarea':
-							$item.find('.form-control').replaceWith($('<div class="form-control" style="height: auto;" />').html($item.data('answer')));
 							break;
 					}
 				} else {

@@ -75,6 +75,8 @@ defaults:
     values:
       layout: examination
       breadcrumbs: 
+        - name: "Examination Papers"
+          url: "/examination/"
       thumbnail: "/images/thumb/tb-addicted.png"
 
 plugins:
