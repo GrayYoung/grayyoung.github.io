@@ -19,5 +19,8 @@
 - label: Printing
   url: /printing/
 
+- label: Examination Papers
+  url: /examination/
+
 - label: About Me
   url: /about/

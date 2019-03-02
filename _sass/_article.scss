@@ -120,3 +120,34 @@
 		font-weight: bold;
 	}
 }
+
+#examination {
+	font-size: 11pt;
+	font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,Helvetica Neue,Arial,sans-serif;
+
+	header {
+		> div {
+			font-size: 16pt;
+		}
+
+		> h1 {
+			font-size: 24pt;
+		}
+
+		> small {
+			font-size: 14pt;
+		}
+	}
+
+	h2 {
+		font-size: 16pt;
+	}
+
+	h3, h4, .form-control {
+		font-size: 11pt;
+	}
+
+	.form-control {
+		color: theme-color("primary");
+	}
+}

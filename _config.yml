@@ -37,6 +37,9 @@ collections:
   Addicted:
     permalink: "/addicted/:name"
     output: true
+  Examination:
+    permalink: "/examination/:name"
+    output: true
 
 defaults:
   - scope:
@@ -56,6 +59,13 @@ defaults:
       breadcrumbs: 
         - name: "你丫上瘾了？"
           url: "000.html"
+      thumbnail: "/images/thumb/tb-addicted.png"
+  - scope:
+      path: ""
+      type: Examination
+    values:
+      layout: examination
+      breadcrumbs: 
       thumbnail: "/images/thumb/tb-addicted.png"
 
 plugins:

@@ -96,9 +96,7 @@ gulp.task('update-bower', function() {
 	var exec = require('child_process').exec;
 
 	return exec('npm install --only=prod', function (err, stdout, stderr) {
-		console.log(stdout);
-		console.log(stderr);
-		console.log(err);
+		gulp.series('update-lib');
 	});
 });
 
