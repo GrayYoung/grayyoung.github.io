@@ -5,7 +5,7 @@ permalink: /examination/
 ---
 
 <div class="container-fluid">
-	<ul class="row list-unstyled">
+	<ul class="list-unstyled">
 		{% for examination in site.Examination %}
 		<li class="dropdown-item">
 			<a href="{{ sub.url | prepend: examination.url }}">{{ examination.title }}({{ examination.period }})</a>
