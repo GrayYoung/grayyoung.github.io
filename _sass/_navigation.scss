@@ -3,6 +3,7 @@
 
 .navbar {
 	padding: 0;
+	margin-right: -17px;
 
 	a {
 		color: $white;
@@ -67,25 +68,31 @@
 	}
 }
 
-.navbar-nav > li {
+.navbar-nav {
 	text-transform: uppercase;
 	font-size: 0.75rem;
 
-	> a {
-		display:  block;
-		padding: 10px ceil($grid-gutter-width / 2);
+	> li {
+		> .nav-link {
+			display:  block;
+			padding: 10px ceil($grid-gutter-width / 2);
 
-		&:hover, &:focus {
+			&:hover, &:focus {
+				background-color: $gray-900;
+				text-decoration: none;
+				color: theme-color("primary");
+			}
+		}
+
+		&.active > .nav-link {
+			border-right: solid 3px $white;
 			background-color: $gray-900;
-			text-decoration: none;
 			color: theme-color("primary");
 		}
 	}
 
-	&.active > a {
-		border-right: solid 3px $white;
-		background-color: $gray-900;
-		color: theme-color("primary");
+	.dropdown-menu {
+		background-color: darken($gray-900, 2%);;
 	}
 }
 

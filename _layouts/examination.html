@@ -1,0 +1,70 @@
+---
+layout: withBreadcrumbs
+pageName: examination
+---
+
+<article id="examination" class="container-fluid">
+	<header class="text-center">
+		<div class="mb-3">四川省{{ page.period }}高等教育自学考试</div>
+		<h1 class="mb-3">
+			{{ page.title }} &nbsp;&nbsp;&nbsp;&nbsp; 试卷
+			<a class="mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示所有答案">
+				<i class="fa fa-question-circle"></i>
+			</a>
+		</h1>
+		<small class="d-block mb-1">（课程代码 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{page.number}})</small>
+	</header>
+	<p class="mb-5">{{page.description}}</p>
+	<span class="d-none" aria-hidden="true">{% increment counter %}</span>
+	{% for section in page.sections %}
+	<section class="mb-5">
+		<h2 class="text-center mb-5">{{ section.title }}</h2>
+		{% for topic in section.topics %}
+		<section class="mb-3">
+			<h3 class="mb-3">
+				{{ topic.title }}
+				<a class="mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示本组题答案">
+					<i class="fa fa-question-circle"></i>
+				</a>
+			</h3>
+			<div class="clearfix"></div>
+			<ul class="list-unstyled pl-4">
+			{% for quetion in topic.quetions %}
+				<li class="mb-3" data-type="{{ quetion.type }}" data-answer="{{ quetion.answer }}">
+					<h4 class="clearfix">
+						<span class="d-block float-left">{% increment counter %}、</span>
+						<span class="d-block float-left">
+							{{ quetion.title }}
+							<a class="mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示本题答案">
+								<i class="fa fa-question-circle"></i>
+							</a>
+							{% if quetion.type == 'yesOrNo' %}
+							<div class="custom-control custom-control-inline custom-checkbox align-text-top">
+								<input type="checkbox" class="custom-control-input" id="{{ forloop.parent.forloop.parent.forloop.index  }}{{ forloop.parent.forloop.index  }}{{ forloop.index  }}">
+								<label class="custom-control-label" for="{{ forloop.parent.forloop.parent.forloop.index  }}{{ forloop.parent.forloop.index  }}{{ forloop.index  }}">&nbsp;</label>
+							</div>
+							{% endif %}
+						</span>
+					</h4>
+					<div class="clearfix"></div>
+					{% if quetion.type == 'radio' %}
+					<ul class="row list-unstyled" style="list-style-type: upper-alpha; list-style-position: inside;">
+						{% for option in quetion.options %}
+						<li class="col-12 col-sm-6 col-lg-3" data-answer="{{ option.isTrue }}">
+							{{ option.answer }}
+						</li>
+						{% endfor %}
+					</ul>
+					{% elsif quetion.type == 'textarea' %}
+					<textarea class="form-control" rows="4"></textarea>
+					{% else %}
+					{% endif %}
+				</li>
+			</li>
+			{% endfor %}
+			</ul>
+		</section>
+		{% endfor %}
+	</section>
+	{% endfor %}
+</article>

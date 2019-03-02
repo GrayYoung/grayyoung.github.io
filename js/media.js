@@ -88,6 +88,7 @@ require([ './config' ], function(config) {
 						page: parseInt(offset / setting.pageSize, 10) + 1
 					});
 
+					$container.append($preview);
 					$preview.find('.p-category').children().first().text(data.Type).end().last().text(data.Genre);
 					$preview.find('img').attr('src', data.Poster)/* .get(0).onerror = function() {
 						this.src = (data.Posters && data.Posters[0]) || ('http://grayyoung.github.io/Flickr/poster/' + data.Title + '.jpg');
@@ -97,7 +98,6 @@ require([ './config' ], function(config) {
 					//$preview.find('.p-summary').append(data.Plot);
 					$preview.find('.p-rating').children().first().css('width', data.imdbRating + 'em').next().children().first().text(data.imdbRating).next().text(data.imdbVotes);
 					$preview.find('.u-url').attr('href', 'http://www.imdb.com/title/' + data.imdbID);
-					$container.append($preview);
 					$pLabel.text(parseInt($pLabel.text(), 10) + 1);
 
 					window.parent.postMessage({

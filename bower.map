@@ -61,7 +61,7 @@
 	},
 	"bootstrap": {
 		"type": "script",
-		"src": ["bootstrap", "dist", "js", "bootstrap.min.js"],
+		"src": ["bootstrap", "dist", "js", "bootstrap.bundle.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
