@@ -8,37 +8,41 @@ pageName: examination
 		<div class="mb-3">四川省{{ page.period }}高等教育自学考试</div>
 		<h1 class="mb-3">
 			{{ page.title }} &nbsp;&nbsp;&nbsp;&nbsp; 试卷
-			<a class="mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示所有答案">
+			<a class="d-print-none mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示所有答案">
 				<i class="fa fa-question-circle"></i>
 			</a>
 		</h1>
-		<small class="d-block mb-1">（课程代码 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{page.number}})</small>
+		<small class="d-block mb-1">（课程代码 &nbsp;&nbsp;&nbsp;&nbsp; {{page.courseID}})</small>
 	</header>
 	<p class="mb-5">{{page.description}}</p>
-	<span class="d-none" aria-hidden="true">{% increment counter %}</span>
+	{% assign sectionCounter = 0 %}
+	{% assign topicNOs = '一,二,三,四,五,六,七,八,九,十' | split: ',' %}
+	{% assign topicCounter = 0 %}
+	{% assign counter = 1 %}
 	{% for section in page.sections %}
 	<section class="mb-5">
-		<h2 class="text-center mb-5">{{ section.title }}</h2>
+		<h2 class="text-center mb-5">第{{ topicNOs[sectionCounter] }}部分{{ section.title }}</h2>
 		{% for topic in section.topics %}
 		<section class="mb-3">
-			<h3 class="mb-3">
-				{{ topic.title }}
-				<a class="mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示本组题答案">
+			<h3 class="clearfix mb-3">
+				<span class="d-block float-left">{{topicNOs[topicCounter]}}、</span>
+				<span class="d-block float-left">{{ topic.title }}
+				<a class="d-print-none mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示本组题答案">
 					<i class="fa fa-question-circle"></i>
 				</a>
 			</h3>
 			<div class="clearfix"></div>
 			<ul class="list-unstyled pl-4">
-			{% for quetion in topic.quetions %}
+				{% for quetion in topic.quetions %}
 				<li class="mb-3" data-type="{{ quetion.type }}" data-answer="">
 					<h4 class="clearfix">
-						<span class="d-block float-left">{% increment counter %}、</span>
+						<span class="d-block float-left">{{ counter }}、</span>
 						<span class="d-block float-left">
 							{{ quetion.title }}
-							<a class="mx-2" href="#collapse{{ counter }}" role="button" aria-expanded="false" aria-controls="collapse{{ counter }}" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="显示本题答案"><i class="fa fa-question-circle"></i></a>
+							<a class="d-print-none mx-2" href="#collapse{{ counter }}" role="button" aria-expanded="false" aria-controls="collapse{{ counter }}" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="显示本题答案"><i class="fa fa-question-circle"></i></a>
 							{% if quetion.type == 'yesOrNo' %}
 							<div class="custom-control custom-control-inline custom-checkbox align-text-top">
-								<input type="checkbox" class="custom-control-input" id="checkbox{{ counter }}" value="{{ quetion.answer }}" />
+								<input type="checkbox" class="custom-control-input" id="checkbox{{ counter }}" value="{{ quetion.isTrue }}" />
 								<label class="custom-control-label" for="checkbox{{ counter }}">&nbsp;</label>
 							</div>
 							{% endif %}
@@ -61,14 +65,20 @@ pageName: examination
 					<div class="collapse" id="collapse{{ counter }}">
 						<div class="form-control" style="height: auto;">{{ quetion.answer }}</div>
 					</div>
+					{% elsif quetion.type == 'yesOrNo' and quetion.isTrue == false %}
+					<div class="collapse" id="collapse{{ counter }}">
+						<div class="form-control" style="height: auto;">{{ quetion.answer }}</div>
+					</div>
 					{% else %}
 					{% endif %}
 				</li>
-			</li>
-			{% endfor %}
+				{% assign counter = counter | plus: 1 %}
+				{% endfor %}
 			</ul>
 		</section>
+		{% assign topicCounter = topicCounter | plus: 1 %}
 		{% endfor %}
 	</section>
+	{% assign sectionCounter = sectionCounter | plus: 1 %}
 	{% endfor %}
 </article>
