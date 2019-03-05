@@ -23,6 +23,22 @@ require([ './config' ], function(config) {
 							$item.find(':checkbox[value="true"]').prop('checked', true);
 							$item.find(':checkbox[value="false"]').prop('checked', false);
 							break;
+						case 'text':
+							var values = $($this.attr('href') + 'Answer').find('.form-control').text();
+							
+							if (values) {
+								values = values.split('|');
+								$item.find('input.form-control').each(function(index) {
+									var $input = $(this);
+
+									if ($input.hasClass('text-success')) {
+										$input.val('').removeClass('text-success');
+									} else {
+										$input.val(values[index]).addClass('text-success');
+									}
+								});
+							}
+							break;
 						case 'textarea':
 							break;
 					}
