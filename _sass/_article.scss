@@ -147,7 +147,18 @@
 		font-size: 11pt;
 	}
 
-	.form-control {
-		color: theme-color("primary");
+	h4 {
+		line-height: $input-height-sm;
+	}
+
+	input.form-control {
+		width: auto;
+		border-radius: 0;
+		border-width: 0 0 1px 0;
+	}
+
+	div.form-control {
+		height: auto;
+		min-height: $input-height;
 	}
 }
