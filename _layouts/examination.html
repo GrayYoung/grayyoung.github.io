@@ -12,7 +12,7 @@ pageName: examination
 				<i class="fa fa-question-circle"></i>
 			</a>
 		</h1>
-		<small class="d-block mb-1">（课程代码 &nbsp;&nbsp; {{page.courseID}})</small>
+		<small class="d-block mb-1">（课程代码 &nbsp;&nbsp; {{page.courseID}}）</small>
 	</header>
 	<p class="mb-5">{{page.description}}</p>
 	{% assign sectionCounter = 0 %}
@@ -68,15 +68,15 @@ pageName: examination
 						{% elsif quetion.type == 'textarea' %}
 						<textarea class="form-control" rows="4"></textarea>
 						<div class="collapse" id="collapse{{ counter }}">
-							<div class="form-control border-success text-success">{{ quetion.answer }}</div>
+							<div class="form-control border-info text-info">{{ quetion.answer }}</div>
 						</div>
 						{% elsif quetion.type == 'yesOrNo' and quetion.isTrue == false %}
 						<div class="collapse" id="collapse{{ counter }}">
-							<div class="form-control border-success text-success">{{ quetion.answer }}</div>
+							<div class="form-control border-info text-info">{{ quetion.answer }}</div>
 						</div>
 						{% elsif quetion.type == 'text' %}
 						<div class="collapse" id="collapse{{ counter }}Answer">
-							<div class="form-control border-success text-success">{{ quetion.answer }}</div>
+							<div class="form-control border-info text-info">{{ quetion.answer }}</div>
 						</div>
 						{% else %}
 						{% endif %}

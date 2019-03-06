@@ -8,7 +8,9 @@ permalink: /examination/
 	<ul class="list-unstyled">
 		{% for examination in site.Examination %}
 		<li class="dropdown-item">
-			<a href="{{ sub.url | prepend: examination.url }}">{{ examination.title }}({{ examination.period }})</a>
+			<a href="{{ sub.url | prepend: examination.url }}">
+				四川省{{ examination.period }}高等教育自学考试 {{ examination.title }}({{ examination.courseID }})
+			</a>
 		</li>
 		{% endfor %}
 	</ul>

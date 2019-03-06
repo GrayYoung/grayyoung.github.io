@@ -161,4 +161,13 @@
 		height: auto;
 		min-height: $input-height;
 	}
+
+	.custom-control-input:checked ~ .custom-control-label::before {
+		border-color: theme-color("info");
+		background-color: theme-color("info");
+	}
+
+	.custom-control-input:focus ~ .custom-control-label::before {
+		box-shadow: 0 0 0 $input-btn-focus-width rgba(theme-color("info"), .25);
+	}
 }
