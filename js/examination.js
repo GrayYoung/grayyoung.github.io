@@ -31,10 +31,10 @@ require([ './config' ], function(config) {
 								$item.find('input.form-control').each(function(index) {
 									var $input = $(this);
 
-									if ($input.hasClass('text-success')) {
-										$input.val('').removeClass('text-success');
+									if ($input.hasClass('text-info')) {
+										$input.val('').removeClass('text-info');
 									} else {
-										$input.val(values[index]).addClass('text-success');
+										$input.val(values[index]).addClass('text-info');
 									}
 								});
 							}
