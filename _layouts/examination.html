@@ -25,20 +25,22 @@ pageName: examination
 			<h2 class="text-center mb-5">第{{ topicNOs[sectionCounter] }}部分{{ section.title }}</h2>
 			{% for topic in section.topics %}
 			<section class="mb-3">
-				<h3 class="clearfix mb-3">
-					<span class="d-block float-left">{{topicNOs[topicCounter]}}、</span>
-					<span class="d-block float-left">{{ topic.title }}
-					<a class="d-print-none mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示本组题答案">
-						<i class="fa fa-question-circle"></i>
-					</a>
+				<h3 class="row no-gutters mb-3">
+					<span class="col" style="flex-grow: 0;">{{topicNOs[topicCounter]}}、</span>
+					<span class="col">
+						{{ topic.title }}
+						<a class="d-print-none mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示本组题答案">
+							<i class="fa fa-question-circle"></i>
+						</a>
+					</span>
 				</h3>
 				<div class="clearfix"></div>
 				<ul class="list-unstyled pl-4">
 					{% for quetion in topic.quetions %}
 					<li class="mb-3" data-type="{{ quetion.type }}">
-						<h4 class="clearfix">
-							<span class="d-block float-left">{{ counter }}、</span>
-							<span class="d-block float-left">
+						<h4 class="row no-gutters">
+							<span class="col" style="flex-grow: 0;">{{ counter }}、</span>
+							<span class="col">
 								{% if quetion.type == 'text' %}
 								{{ quetion.title | replace: '________', '<input class="d-inline-block form-control form-control-sm" type="text" />' }}
 								{% else %}
@@ -54,32 +56,34 @@ pageName: examination
 							</span>
 						</h4>
 						<div class="clearfix"></div>
-						{% if quetion.type == 'radio' %}
-						<ul class="row list-unstyled" style="list-style-type: upper-alpha; list-style-position: inside;">
-							{% for option in quetion.options %}
-							<li class="col-12 col-sm-6 col-lg-3">
-								<div class="custom-control custom-control-inline custom-radio align-text-top mr-0">
-									<input name="radio{{ counter }}" type="radio" class="custom-control-input" id="radio{{ counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
-									<label class="custom-control-label" for="radio{{ counter }}{{ forloop.index }}">{{ option.answer }}</label>
-								</div>
-							</li>
-							{% endfor %}
-						</ul>
-						{% elsif quetion.type == 'textarea' %}
-						<textarea class="form-control" rows="4"></textarea>
-						<div class="collapse" id="collapse{{ counter }}">
-							<div class="form-control border-info text-info">{{ quetion.answer }}</div>
+						<div class="pl-4">
+							{% if quetion.type == 'radio' %}
+							<ul class="row list-unstyled" style="list-style-type: upper-alpha; list-style-position: inside;">
+								{% for option in quetion.options %}
+								<li class="col-12 col-sm-6 col-lg-3">
+									<div class="custom-control custom-control-inline custom-radio align-text-top mr-0">
+										<input name="radio{{ counter }}" type="radio" class="custom-control-input" id="radio{{ counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
+										<label class="custom-control-label" for="radio{{ counter }}{{ forloop.index }}">{{ option.answer }}</label>
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
+							{% elsif quetion.type == 'textarea' %}
+							<textarea class="form-control" rows="4"></textarea>
+							<div class="collapse" id="collapse{{ counter }}">
+								<div class="form-control border-info text-info">{{ quetion.answer }}</div>
+							</div>
+							{% elsif quetion.type == 'yesOrNo' and quetion.isTrue == false %}
+							<div class="collapse" id="collapse{{ counter }}">
+								<div class="form-control border-info text-info">{{ quetion.answer }}</div>
+							</div>
+							{% elsif quetion.type == 'text' %}
+							<div class="collapse" id="collapse{{ counter }}Answer">
+								<div class="form-control border-info text-info">{{ quetion.answer }}</div>
+							</div>
+							{% else %}
+							{% endif %}
 						</div>
-						{% elsif quetion.type == 'yesOrNo' and quetion.isTrue == false %}
-						<div class="collapse" id="collapse{{ counter }}">
-							<div class="form-control border-info text-info">{{ quetion.answer }}</div>
-						</div>
-						{% elsif quetion.type == 'text' %}
-						<div class="collapse" id="collapse{{ counter }}Answer">
-							<div class="form-control border-info text-info">{{ quetion.answer }}</div>
-						</div>
-						{% else %}
-						{% endif %}
 					</li>
 					{% assign counter = counter | plus: 1 %}
 					{% endfor %}
