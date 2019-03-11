@@ -7,7 +7,7 @@ permalink: /examination/
 <div class="container-fluid">
 	<ul class="list-unstyled">
 		{% for examination in site.Examination %}
-		<li class="dropdown-item">
+		<li class="dropdown-item" style="white-space: normal;">
 			<a href="{{ sub.url | prepend: examination.url }}">
 				四川省{{ examination.period }}高等教育自学考试 {{ examination.title }}({{ examination.courseID }})
 			</a>
