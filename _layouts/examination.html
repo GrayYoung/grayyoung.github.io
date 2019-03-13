@@ -48,10 +48,11 @@ pageName: examination
 								{% endif %}
 								<a class="d-print-none mx-2" href="#collapse{{ counter }}" role="button" aria-expanded="false" aria-controls="collapse{{ counter }}" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="显示本题答案"><i class="fa fa-question-circle"></i></a>
 								{% if quetion.type == 'yesOrNo' %}
-								<div class="custom-control custom-control-inline custom-checkbox align-text-top">
+								<div class="custom-control custom-control-inline custom-checkbox align-text-top mr-1">
 									<input type="checkbox" class="custom-control-input" id="checkbox{{ counter }}" value="{{ quetion.isTrue }}" />
 									<label class="custom-control-label" for="checkbox{{ counter }}">&nbsp;</label>
 								</div>
+								<input id="input{{ counter }}" class="d-inline-block form-control form-control-sm" type="text" />
 								{% endif %}
 							</span>
 						</h4>
@@ -74,7 +75,7 @@ pageName: examination
 								<div class="form-control border-info text-info">{{ quetion.answer }}</div>
 							</div>
 							{% elsif quetion.type == 'yesOrNo' and quetion.isTrue == false %}
-							<div class="collapse" id="collapse{{ counter }}">
+							<div class="collapse" id="collapse{{ counter }}Answer">
 								<div class="form-control border-info text-info">{{ quetion.answer }}</div>
 							</div>
 							{% elsif quetion.type == 'text' %}
