@@ -155,6 +155,15 @@
 		width: auto;
 		border-radius: 0;
 		border-width: 0 0 1px 0;
+
+		&[type="text"] {
+			box-shadow: none;
+
+			&:focus {
+				border-color: theme-color("info");
+				border-bottom-width: $input-btn-focus-width;
+			}
+		}
 	}
 
 	div.form-control {
