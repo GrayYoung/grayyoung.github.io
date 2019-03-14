@@ -151,24 +151,35 @@
 		line-height: $input-height-sm;
 	}
 
-	input.form-control {
-		width: auto;
-		border-radius: 0;
-		border-width: 0 0 1px 0;
+	div.form-control {
+		min-width: 12rem;
+		height: auto;
+		min-height: $input-height-sm;
+	}
 
-		&[type="text"] {
+	.embed-responsive.d-inline-block {
+		width: auto;
+
+		input.form-control {
+			border-radius: 0;
+			border-width: 0 0 $input-btn-focus-width 0;
 			box-shadow: none;
 
 			&:focus {
 				border-color: theme-color("info");
 				border-bottom-width: $input-btn-focus-width;
 			}
+
+			~ .collapse > div.form-control, ~ .collapsing > div.form-control {
+				border-radius: 0;
+				border-color: theme-color("info");
+				border-width: 0 0 $input-btn-focus-width 0;;
+			}
 		}
 	}
 
-	div.form-control {
-		height: auto;
-		min-height: $input-height;
+	.embed-responsive-item.form-control {
+		border: solid $input-border-color $input-border-width;
 	}
 
 	.custom-control-input:checked ~ .custom-control-label::before {
@@ -179,4 +190,27 @@
 	.custom-control-input:focus ~ .custom-control-label::before {
 		box-shadow: 0 0 0 $input-btn-focus-width rgba(theme-color("info"), .25);
 	}
+
+	.collapsing {
+		display: block;
+		opacity: 0.5;
+		height: auto !important;
+		transition: opacity 0.15s linear;
+	}
+
+	.collapse {
+		transition: opacity 0.15s linear;
+
+		&:not(.show) {
+			display: block;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&.show {
+			position: relative;
+			z-index: 1;
+			opacity: 1;
+		}
+    }
 }
