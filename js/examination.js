@@ -20,32 +20,11 @@ require([ './config' ], function(config) {
 							$item.find(':radio[value="true"]').click();
 							break;
 						case 'yesOrNo':
-							var value = $($this.attr('href') + 'Answer').find('.form-control').text();
-							var $input = $item.find('input.form-control');
-
 							$item.find(':checkbox[value="true"]').prop('checked', true);
 							$item.find(':checkbox[value="false"]').prop('checked', false);
-							if ($input.hasClass('text-info')) {
-								$input.val('').removeClass('text-info');
-							} else {
-								$input.val(value).addClass('text-info');
-							}
 							break;
 						case 'text':
-							var values = $($this.attr('href') + 'Answer').find('.form-control').text();
-
-							if (values) {
-								values = values.split('|');
-								$item.find('input.form-control').each(function(index) {
-									var $input = $(this);
-
-									if ($input.hasClass('text-info')) {
-										$input.val('').removeClass('text-info');
-									} else {
-										$input.val(values[index]).addClass('text-info');
-									}
-								});
-							}
+							$item.find('.embed-responsive > .collapse').collapse('toggle');
 							break;
 						case 'textarea':
 							break;
@@ -56,14 +35,26 @@ require([ './config' ], function(config) {
 						$item = $this.closest('article');
 					}
 					$item.find('h4 a').filter(function() {
-						return $(this).children('.fa-question-circle').length
+						return $(this).children('.fa-question-circle').length;
 					}).click();
 				}
 			}
 		}).ready(function() {
+            $('li[data-type="text"]').each(function() {
+                $('.embed-responsive > .collapse', this).each(function(index) {
+                    var $control = $('div.form-control', this);
+                    var values = $control.text();
+
+                    if (values) {
+                        values = values.split('|');
+                        $control.html(values[index]);
+                    }
+                });
+            });
 			$('[data-toggle="tooltip"]').tooltip({
 				container: '#containerMain'
-			});
+            });
+            $('#examination.invisible').removeClass('invisible');
 		});
 	});
 });
