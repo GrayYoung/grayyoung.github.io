@@ -152,34 +152,17 @@
 	}
 
 	div.form-control {
-		min-width: 12rem;
+		min-width: 8rem;
 		height: auto;
 		min-height: $input-height-sm;
-	}
 
-	.embed-responsive.d-inline-block {
-		width: auto;
-
-		input.form-control {
-			border-radius: 0;
-			border-width: 0 0 $input-btn-focus-width 0;
-			box-shadow: none;
-
-			&:focus {
-				border-color: theme-color("info");
-				border-bottom-width: $input-btn-focus-width;
-			}
-
-			~ .collapse > div.form-control, ~ .collapsing > div.form-control {
-				border-radius: 0;
-				border-color: theme-color("info");
-				border-width: 0 0 $input-btn-focus-width 0;;
-			}
+		.pl-1 {
+			padding-left: 1rem !important;
 		}
-	}
 
-	.embed-responsive-item.form-control {
-		border: solid $input-border-color $input-border-width;
+		.pl-2 {
+			padding-left: 2rem !important;
+		}
 	}
 
 	.custom-control-input:checked ~ .custom-control-label::before {
@@ -187,8 +170,37 @@
 		background-color: theme-color("info");
 	}
 
-	.custom-control-input:focus ~ .custom-control-label::before {
+	.custom-control-input:focus ~ .custom-control-label::before, .embed-responsive-item.form-control:focus {
 		box-shadow: 0 0 0 $input-btn-focus-width rgba(theme-color("info"), .25);
+	}
+
+	.embed-responsive-item.form-control {
+		border: solid $input-border-color $input-border-width;
+	}
+
+	.embed-responsive {
+		overflow: visible;
+
+		&.d-inline-block {
+			width: auto;
+
+			input.form-control {
+				border-radius: 0;
+				border-width: 0 0 $input-btn-focus-width 0;
+				box-shadow: none;
+
+				&:focus {
+					border-color: theme-color("info");
+					border-bottom-width: $input-btn-focus-width;
+				}
+
+				~ .collapse > div.form-control, ~ .collapsing > div.form-control {
+					border-radius: 0;
+					border-color: theme-color("info");
+					border-width: 0 0 $input-btn-focus-width 0;;
+				}
+			}
+		}
 	}
 
 	.collapsing {
@@ -212,5 +224,5 @@
 			z-index: 1;
 			opacity: 1;
 		}
-    }
+	}
 }
