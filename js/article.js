@@ -15,6 +15,7 @@ require([ './config' ], function(config) {
 				var $this = $(this);
 
 				if($this.attr('data-original-title') === '') {
+					$this.attr('data-original-title', '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...');
 					$.get($this.attr('href'), function(data) {
 						var supStr = $(data).find($this.attr('href').match(/(\#[\w, \d]+)/g)[0]).html();
 
@@ -26,7 +27,7 @@ require([ './config' ], function(config) {
 				placement : 'top',
 				html : true,
 				title : function() {
-					return $(this).attr('data-original-title') || '<i class="fa fa-circle-o-notch fa-spin" aria-label="Loading" />...';
+					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
 				}
 			});
 		});

@@ -7,7 +7,7 @@
 require([ './config' ], function(config) {
 	require([ 'app/controller/global' ]);
 
-	require([ 'jquery', 'bootstrap' ], function($) {
+	require([ 'jquery', 'bootstrap', 'app/model/translate' ], function($, bs, translate) {
 		$(document).on('click', '#examination a', function(event) {
 			var $this = $(this);
 			var $item = $this.closest('li');
@@ -40,21 +40,48 @@ require([ './config' ], function(config) {
 				}
 			}
 		}).ready(function() {
-            $('li[data-type="text"]').each(function() {
-                $('.embed-responsive > .collapse', this).each(function(index) {
-                    var $control = $('div.form-control', this);
-                    var values = $control.text();
+			$('li[data-type="text"]').each(function() {
+				$('.embed-responsive > .collapse', this).each(function(index) {
+					var $control = $('div.form-control', this);
+					var values = $control.text();
 
-                    if (values) {
-                        values = values.split('|');
-                        $control.html(values[index]);
-                    }
-                });
-            });
+					if (values) {
+						values = values.split('|');
+						$control.html(values[index]);
+					}
+				});
+			});
 			$('[data-toggle="tooltip"]').tooltip({
 				container: '#containerMain'
-            });
-            $('#examination.invisible').removeClass('invisible');
+			});
+			$('.custom-control-label, u').on('inserted.bs.tooltip', function(event) {
+				var $this = $(this);
+
+				if($this.attr('data-original-title') === '') {
+					$this.attr('data-original-title', '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...');
+					translate({
+						from: 'zh-CN',
+						to: 'en',
+						query: $.trim($this.text())
+					}, function(enData) {
+						translate({
+							from: 'en',
+							to: 'zh-CN',
+							query: enData.translated
+						}, function(zhData) {
+							$this.attr('data-original-title', enData.translated + ' | ' + zhData.translated).tooltip('show');
+						});
+					});
+				}
+			}).tooltip({
+				container: '#containerMain',
+				placement : 'top',
+				html : true,
+				title : function() {
+					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
+				}
+			});
+			$('#examination.invisible').removeClass('invisible');
 		});
 	});
 });
