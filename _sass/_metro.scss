@@ -1,21 +1,34 @@
 /*## Metro */
 
 .section-metro {
-	padding: 4px;
-	background-size: auto calc(90% - 16px);
-	background-repeat: no-repeat;
-	background-position: center 90%;
-	background-image: url("/images/background/Chester Bennington.png");
-	background-blend-mode: darken;
-	mix-blend-mode: multiply;
-	box-shadow: 0 20px 15px rgba(0, 0, 0, 0.8);
+	padding: 0;
 
-	@include media-breakpoint-down(sm) {
-		padding: 2px;
-		background-size: auto calc(90% - 8px);
+	@include media-breakpoint-up(md) {
+		padding: 10% 15%;
 	}
 
-	> .row:first-child {
+	> div {
+		position: relative;
+		padding: 4px;
+		background-size: auto calc(90% - 16px);
+		background-repeat: no-repeat;
+		background-position: center 90%;
+		background-image: url("/images/background/Chester Bennington.png");
+		background-blend-mode: darken;
+		mix-blend-mode: multiply;
+		box-shadow: 0 5px 0px 5px rgba(0, 0, 0, 0.8);
+
+		@include media-breakpoint-up(md) {
+			box-shadow: 0 15px 25px 5px rgba(0, 0, 0, 0.8);
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: 2px;
+			background-size: auto calc(90% - 8px);
+		}
+	}
+
+	> div > .row:first-child {
 		position: absolute;
 		top: 4px;
 		left: 4px;
@@ -41,6 +54,7 @@
 	}
 
 	.embed-responsive-item {
+		line-height: 1.2;
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 		font-family: "Trade Gothic";
 		color: $white;
@@ -59,11 +73,11 @@
 
 		> * {
 			@include media-breakpoint-up(lg) {
-				transform: scale(3.5);
+				transform: scale(2);
 			}
 
 			@include media-breakpoint-only(md) {
-				transform: scale(3);
+				transform: scale(2);
 			}
 
 			@include media-breakpoint-only(sm) {
@@ -113,19 +127,19 @@
 
 	h2 {
 		@include media-breakpoint-up(xl) {
-			font-size: 10rem;
+			font-size: 7rem;
 		}
 
 		@include media-breakpoint-only(lg) {
-			font-size: 8rem;
-		}
-
-		@include media-breakpoint-only(md) {
 			font-size: 6rem;
 		}
 
-		@include media-breakpoint-only(sm) {
+		@include media-breakpoint-only(md) {
 			font-size: 4rem;
+		}
+
+		@include media-breakpoint-only(sm) {
+			font-size: 3rem;
 		}
 
 		@include media-breakpoint-down(xs) {

@@ -3,7 +3,7 @@ layout: withBreadcrumbs
 pageName: examination
 ---
 
-<article id="examination" class="container-fluid invisible">
+<article id="examination" class="container-fluid">
 	<header class="text-center">
 		<div class="mb-3">四川省{{ page.period }}高等教育自学考试</div>
 		<h1 class="mb-3">
@@ -46,7 +46,7 @@ pageName: examination
 								<div class="embed-responsive d-inline-block align-middle">
 									<input class="form-control form-control-sm embed-responsive-item" type="text" />
 									<div class="collapse">
-										<div class="form-control border-info text-nowrap text-info">{{quetion.answer}}</div>
+										<div class="form-control border-success text-nowrap text-success">{{quetion.answer}}</div>
 									</div>
 								</div>
 								{% endcapture %}
@@ -63,7 +63,7 @@ pageName: examination
 								<div class="embed-responsive d-inline-block align-middle">
 									<input id="input{{ counter }}" class="form-control form-control-sm embed-responsive-item" type="text" />
 									<div class="collapse" id="collapse{{ counter }}">
-										<div class="form-control border-info text-nowrap text-info">{{ quetion.answer }}</div>
+										<div class="form-control border-success text-nowrap text-success">{{ quetion.answer }}</div>
 									</div>
 								</div>
 								{% endif %}
@@ -86,7 +86,7 @@ pageName: examination
 							<div class="embed-responsive">
 								<textarea class="form-control embed-responsive-item" rows="4"></textarea>
 								<div class="collapse" id="collapse{{ counter }}">
-									<div class="form-control form-control-sm border-info text-info">{{ quetion.answer }}</div>
+									<div class="form-control form-control-sm border-success text-success">{{ quetion.answer }}</div>
 								</div>
 							</div>
 							{% else %}

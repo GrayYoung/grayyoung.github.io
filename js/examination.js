@@ -17,7 +17,9 @@ require([ './config' ], function(config) {
 				if ($item.length) {
 					switch ($item.data('type')) {
 						case 'radio':
-							$item.find(':radio[value="true"]').click();
+							var $option = $item.find(':radio[value="true"]').closest('li');
+
+							$option.toggleClass('text-success', !$option.hasClass('text-success'));
 							break;
 						case 'yesOrNo':
 							$item.find(':checkbox[value="true"]').prop('checked', true);
@@ -77,11 +79,11 @@ require([ './config' ], function(config) {
 				container: '#containerMain',
 				placement : 'top',
 				html : true,
+				trigger: 'click focus',
 				title : function() {
 					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
 				}
 			});
-			$('#examination.invisible').removeClass('invisible');
 		});
 	});
 });
