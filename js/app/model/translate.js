@@ -9,7 +9,6 @@ define([ 'jquery' ], function($) {
 		return $.post('https://translation.googleapis.com/language/translate/v2', {
 			key: 'AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k',
 			format: 'text',
-			model: 'nmt',
 			source: params.from,
 			target: params.to,
 			q: params.query

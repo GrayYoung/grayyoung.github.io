@@ -225,4 +225,12 @@
 			opacity: 1;
 		}
 	}
+
+	.text-success {
+		color: darken(theme-color("success"), 20%) !important;
+
+		.custom-control-label {
+			font-weight: bold;
+		}
+	}
 }
