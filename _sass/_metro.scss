@@ -3,10 +3,6 @@
 .section-metro {
 	padding: 0;
 
-	@include media-breakpoint-up(md) {
-		padding: 10% 15%;
-	}
-
 	> div {
 		position: relative;
 		padding: 4px;
@@ -16,11 +12,7 @@
 		background-image: url("/images/background/Chester Bennington.png");
 		background-blend-mode: darken;
 		mix-blend-mode: multiply;
-		box-shadow: 0 5px 0px 5px rgba(0, 0, 0, 0.8);
-
-		@include media-breakpoint-up(md) {
-			box-shadow: 0 15px 25px 5px rgba(0, 0, 0, 0.8);
-		}
+		box-shadow: 0 20px 0 4px rgba(0, 0, 0, 0.8);
 
 		@include media-breakpoint-down(sm) {
 			padding: 2px;
@@ -54,7 +46,6 @@
 	}
 
 	.embed-responsive-item {
-		line-height: 1.2;
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 		font-family: "Trade Gothic";
 		color: $white;
@@ -73,11 +64,11 @@
 
 		> * {
 			@include media-breakpoint-up(lg) {
-				transform: scale(2);
+				transform: scale(3.5);
 			}
 
 			@include media-breakpoint-only(md) {
-				transform: scale(2);
+				transform: scale(3);
 			}
 
 			@include media-breakpoint-only(sm) {
@@ -127,19 +118,19 @@
 
 	h2 {
 		@include media-breakpoint-up(xl) {
-			font-size: 7rem;
+			font-size: 10rem;
 		}
 
 		@include media-breakpoint-only(lg) {
-			font-size: 6rem;
+			font-size: 8rem;
 		}
 
 		@include media-breakpoint-only(md) {
-			font-size: 4rem;
+			font-size: 6rem;
 		}
 
 		@include media-breakpoint-only(sm) {
-			font-size: 3rem;
+			font-size: 4rem;
 		}
 
 		@include media-breakpoint-down(xs) {
