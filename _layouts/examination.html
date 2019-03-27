@@ -82,6 +82,17 @@ pageName: examination
 								</li>
 								{% endfor %}
 							</ul>
+							{% elsif quetion.type == 'checkbox' %}
+							<ul class="row list-unstyled" style="list-style-type: upper-alpha; list-style-position: inside;">
+								{% for option in quetion.options %}
+								<li class="col-12 col-sm-6 col-lg-4">
+									<div class="custom-control custom-control-inline custom-checkbox align-text-top mr-0">
+										<input name="checkbox{{ counter }}" type="checkbox" class="custom-control-input" id="checkbox{{ counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
+										<label class="custom-control-label" for="checkbox{{ counter }}{{ forloop.index }}">{{ option.answer }}</label>
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
 							{% elsif quetion.type == 'textarea' %}
 							<div class="embed-responsive">
 								<textarea class="form-control embed-responsive-item" rows="4"></textarea>
