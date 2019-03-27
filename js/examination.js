@@ -21,6 +21,15 @@ require([ './config' ], function(config) {
 
 							$option.toggleClass('text-success', !$option.hasClass('text-success'));
 							break;
+						case 'checkbox':
+							var $option = $item.find(':checkbox[value="true"]').closest('li');
+
+							$option.each(function() {
+								var $checkbox = $(this);
+
+								$checkbox.toggleClass('text-success', !$checkbox.hasClass('text-success'));
+							});
+							break;
 						case 'yesOrNo':
 							$item.find(':checkbox[value="true"]').prop('checked', true);
 							$item.find(':checkbox[value="false"]').prop('checked', false);
