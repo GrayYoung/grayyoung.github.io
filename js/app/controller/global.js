@@ -28,7 +28,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 			$this.submit();
 		} else {
 			$.ajax({
-				url: location.protocol + '/' + searchPath,
+				url: location.protocol + '//' + location.host + searchPath,
 				dataType: 'html',
 				success: function(data) {
 					var $documentB = $(data);
