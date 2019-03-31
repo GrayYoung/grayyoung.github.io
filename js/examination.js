@@ -65,7 +65,7 @@ require([ './config' ], function(config) {
 			$('[data-toggle="tooltip"]').tooltip({
 				container: '#containerMain'
 			});
-			$('.custom-control-label, u').on('inserted.bs.tooltip', function(event) {
+			/* $('.custom-control-label, u').on('inserted.bs.tooltip', function(event) {
 				var $this = $(this);
 
 				if($this.attr('data-original-title') === '') {
@@ -92,7 +92,7 @@ require([ './config' ], function(config) {
 				title : function() {
 					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
 				}
-			});
+			}); */
 		});
 	});
 });
