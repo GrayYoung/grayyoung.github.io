@@ -77,7 +77,6 @@ defaults:
       breadcrumbs: 
         - name: "Examination Papers"
           url: "/examination/"
-      thumbnail: "/images/thumb/tb-addicted.png"
 
 plugins:
   - jekyll-paginate-v2
