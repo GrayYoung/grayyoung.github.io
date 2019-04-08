@@ -28,7 +28,7 @@ showBC: true
 		</li>
 		{% endfor %}
 	</ul>
-	{% if paginator.total_pages > 1 %}
+	{% if paginator.total_pages < 0 %}
 	<nav class="d-none d-md-block">
 		<ul class="pagination justify-content-center">
 			{% if paginator.previous_page %}
