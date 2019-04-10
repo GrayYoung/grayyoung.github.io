@@ -1,5 +1,5 @@
 ---
-layout: withBreadcrumbs
+layout: withBreadcrumbsNPagination
 pageName: examination
 ---
 
@@ -46,7 +46,7 @@ pageName: examination
 								<div class="embed-responsive d-inline-block align-middle">
 									<input class="form-control form-control-sm embed-responsive-item" type="text" />
 									<div class="collapse">
-										<div class="form-control border-success text-nowrap text-success">{{quetion.answer}}</div>
+										<div class="form-control form-control-sm border-success text-success">{{quetion.answer}}</div>
 									</div>
 								</div>
 								{% endcapture %}
@@ -63,7 +63,7 @@ pageName: examination
 								<div class="embed-responsive d-inline-block align-middle">
 									<input id="input{{ counter }}" class="form-control form-control-sm embed-responsive-item" type="text" />
 									<div class="collapse" id="collapse{{ counter }}">
-										<div class="form-control border-success text-nowrap text-success">{{ quetion.answer }}</div>
+										<div class="form-control form-control-sm border-success text-success">{{ quetion.answer }}</div>
 									</div>
 								</div>
 								{% endif %}
