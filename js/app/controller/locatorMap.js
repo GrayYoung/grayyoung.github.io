@@ -24,9 +24,9 @@ define(function() {
 		context.arc(17, 17, 9, 0, 2 * Math.PI);
 		context.fillStyle = 'white';
 		context.fill();
-		context.font = '57.5px FontAwesome';
+		context.font = '57.5px "Font Awesome 5 Brands"';
 		context.fillStyle = '#f15441';
-		context.fillText('\uf041', 0, 46);
+		context.fillText('\uf3c5', 0, 46);
 		context.font = '10px "Myriad Pro"';
 		context.fillStyle = '#ce1126';
 		context.fillText(labelText, 16 - labelText.length * 5 / 2, 20);
