@@ -1,0 +1,137 @@
+---
+layout: withBreadcrumbsNPagination
+pageName: examination
+---
+
+<article id="examination" class="container-fluid">
+	<header class="text-center">
+		<h1 class="mb-5">
+			英语四级{{ page.period }}考试 试卷
+			<a class="d-print-none mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示所有答案">
+				<i class="fa fa-question-circle"></i>
+			</a>
+		</h1>
+	</header>
+	{% assign partCounter = 0 %}
+	{% assign partNOs = 'I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII' | split: ',' %}
+	{% assign letters = '0,A,B,C,D,E,F,H,I,J,K' | split: ',' %}
+	{% assign passageNOs = 'One,Two,Three' | split: ',' %}
+	{% assign sectionCounter = 0 %}
+	{% assign counter = 1 %}
+	<form>
+		{% for part in page.parts %}
+		<section class="mb-5">
+			<h2 class="mb-5">
+				<strong class="row">
+					<span class="col-4">Part {{ partNOs[partCounter] }}</span>
+					<span class="col-4 text-center">{{ part.title }}</span>
+					<span class="col-4 text-right">{{ part.length }} minutes</span>
+				</strong>
+			</h2>
+			{% if part.description %}
+			<div class="card">
+				<div class="card-header bg-light text-center">
+					{{ part.description }}
+				</div>
+				<div class="card-body">
+					<p class="row no-gutters mb-3">
+						<span class="col pr-3" style="flex-grow: 0;"><strong>Directions: </strong></span>
+						<span class="col"><i>{{ part.directions }}</i></span>
+					</p>
+					{% if part.quetions %}
+					{% for quetion in part.quetions %}
+					{% if quetion.type == 'textarea' %}
+					<div class="embed-responsive">
+						<textarea class="form-control embed-responsive-item" rows="10"></textarea>
+						<div class="collapse" id="collapse{{ counter }}">
+							<div class="form-control form-control-sm border-success text-success">{{ quetion.answer }}</div>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+					{% endif %}
+				</div>
+				{% if part.tip %}
+				<div class="card-footer bg-light text-center">
+					{{ part.tip }}
+				</div>
+				{% endif %}
+			</div>
+			{% endif %}
+			{% for section in part.sections %}
+			<section class="mb-4">
+				{% if section.title %}
+				<h3 class="mb-1"><strong>{{ section.title }}</strong></h3>
+				{% endif %}
+				<p class="row no-gutters mb-3">
+					<span class="col pr-3" style="flex-grow: 0;"><strong>Directions: </strong></span>
+					<span class="col"><i>{{ section.directions }}</i></span>
+				</p>
+				<div class="clearfix">
+					{{ section.article }}
+				</div>
+				<ul class="list-unstyled">
+					{% for quetion in section.quetions %}
+					<li class="mb-3" data-type="{{ quetion.type }}">
+						<h4><strong>{{ quetion.title }}</strong></h4>
+						<div class="row no-gutters">
+							<div class="col pr-3" style="flex-grow: 0;">{{ counter }}.</div>
+							<div class="col">
+								{% if quetion.type == 'radio' %}
+								<ul class="row list-unstyled">
+									{% for option in quetion.options %}
+									<li class="col-12 col-sm-6 col-lg-3">
+										{{ letters[forloop.index] }}) 
+										<div class="custom-control custom-control-inline custom-radio align-text-top mr-0">
+											<input name="radio{{ counter }}" type="radio" class="custom-control-input" id="radio{{ counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
+											<label class="custom-control-label" for="radio{{ counter }}{{ forloop.index }}">{{ option.answer }}</label>
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+								{% endif %}
+							</div>
+						</div>
+					</li>
+					{% assign counter = counter | plus: 1 %}
+					{% endfor %}
+				</ul>
+
+				{% for passage in section.passages %}
+				<section class="mb-4">
+					<h3 class="mb-1"><strong>{{ passageNOs[forloop.index] }}<br />{{ passage.title }}</strong></h3>
+					<div class="clearfix">
+						{{ passage.article }}
+					</div>
+					<ul class="list-unstyled">
+						{% for quetion in passage.quetions %}
+						<li class="mb-3" data-type="{{ quetion.type }}">
+							<h4><strong>{{ counter }}. {{ quetion.title }}</strong></h4>
+							{% if quetion.type == 'radio' %}
+							<ul class="row list-unstyled">
+								{% for option in quetion.options %}
+								<li class="col-12 col-sm-6 col-lg-3">
+									{{ letters[forloop.index] }}) 
+									<div class="custom-control custom-control-inline custom-radio align-text-top mr-0">
+										<input name="radio{{ counter }}" type="radio" class="custom-control-input" id="radio{{ counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
+										<label class="custom-control-label" for="radio{{ counter }}{{ forloop.index }}">{{ option.answer }}</label>
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
+							{% endif %}
+						</li>
+						{% assign counter = counter | plus: 1 %}
+						{% endfor %}
+					</ul>
+				</section>
+				{% assign sectionCounter = sectionCounter | plus: 1 %}
+				{% endfor %}
+			</section>
+			{% assign sectionCounter = sectionCounter | plus: 1 %}
+			{% endfor %}
+		</section>
+		{% assign partCounter = partCounter | plus: 1 %}
+		{% endfor %}
+	</form>
+</article>

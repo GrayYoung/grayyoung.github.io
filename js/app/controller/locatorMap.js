@@ -34,6 +34,11 @@ define(function() {
 		gMarker = new google.maps.Marker({
 			map : storeMap.map,
 			position : latlng,
+			zoom: 10,
+			center: {
+				lng: 104.03315,
+				lat: 30.55621
+			},
 			/* label : {
 				color : '#ce1126',
 				fontFamily : 'Myriad Pro',
