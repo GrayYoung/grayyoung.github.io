@@ -34,7 +34,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 					var $documentB = $(data);
 
 					document.title = $documentB.filter('title').text();
-					$('main').replaceWith($documentB.find('main'));
+					$('main').replaceWith($documentB.filter('main'));
 					google.search.cse.element.go('searchResults');
 					history.pushState(null, null, searchPath);
 					$this.submit();
