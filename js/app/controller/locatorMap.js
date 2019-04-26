@@ -21,24 +21,19 @@ define(function() {
 		}
 		canvas.width = 34, canvas.height = 50;
 		context = canvas.getContext('2d');
-		context.arc(17, 17, 9, 0, 2 * Math.PI);
+		context.arc(17, 17, 15, 0, 2 * Math.PI);
 		context.fillStyle = 'white';
 		context.fill();
-		context.font = '57.5px "Font Awesome 5 Brands"';
+		context.font = 'normal 900 45px/1 "Font Awesome 5 Free"';
 		context.fillStyle = '#f15441';
-		context.fillText('\uf3c5', 0, 46);
+		context.fillText('\uf3c5', 0, 40);
 		context.font = '10px "Myriad Pro"';
 		context.fillStyle = '#ce1126';
-		context.fillText(labelText, 16 - labelText.length * 5 / 2, 20);
+		context.fillText(labelText, 16 - labelText.length * 5 / 2, 22);
 
 		gMarker = new google.maps.Marker({
 			map : storeMap.map,
 			position : latlng,
-			zoom: 10,
-			center: {
-				lng: 104.03315,
-				lat: 30.55621
-			},
 			/* label : {
 				color : '#ce1126',
 				fontFamily : 'Myriad Pro',
@@ -47,13 +42,13 @@ define(function() {
 			}, */
 			icon : {
 				url : canvas.toDataURL('image/png'),
-				size : new google.maps.Size(34, 50),
+				size : new google.maps.Size(34, 45),
 				origin : new google.maps.Point(0, 0),
-				anchor : new google.maps.Point(17, 50),
+				anchor : new google.maps.Point(17, 45),
 				labelOrigin : new google.maps.Point(17, 17)
 			},
 			shape : {
-				coords : [ 17, 0, 5, 5, 0, 16, 8, 37, 17, 50, 25, 37, 34, 16, 22, 5 ],
+				coords : [17, 0, 8, 8, 0, 17, 17, 45, 25, 37, 34, 17, 25, 8],
 				type : 'poly'
 			}
 		});
@@ -98,7 +93,14 @@ define(function() {
 			return false;
 		}
 		storeMap.infoWindow = new google.maps.InfoWindow();
-		storeMap.map = new google.maps.Map(eLocatorMap);
+		storeMap.map = new google.maps.Map(eLocatorMap, {
+			zoom: 10,
+			center: {
+				lng: 104.03315,
+				lat: 30.55621
+			}
+		});
+		storeMap.createMarker(latlng, 'P', locator);
 
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
@@ -107,7 +109,6 @@ define(function() {
 					zoom : 15,
 					mapTypeId : google.maps.MapTypeId.ROADMAP
 				});
-				storeMap.createMarker(latlng, 'P', locator);
 				//bounds.extend(latlng);
 				//storeMap.map.fitBounds(bounds);
 				storeMap.map.setCenter(latlng);
@@ -118,7 +119,6 @@ define(function() {
 					mapTypeId : google.maps.MapTypeId.ROADMAP
 				});
 				console.log(positionError);
-				storeMap.createMarker(latlng, 'P', locator);
 				//bounds.extend(latlng);
 				//storeMap.map.fitBounds(bounds);
 			});

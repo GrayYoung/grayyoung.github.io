@@ -9,8 +9,12 @@ permalink: /examination/
 		{% for examination in site.Examination %}
 		<li class="dropdown-item" style="white-space: normal;">
 			<a href="{{ sub.url | prepend: examination.url }}">
-                四川省<strong>{{ examination.period }}</strong>高等教育自学考试
-                <strong>{{ examination.title }}</strong>({{ examination.courseID }})
+				{% if examination.courseID %}
+					四川省<strong>{{ examination.period }}</strong>高等教育自学考试
+					<strong>{{ examination.title }}</strong>({{ examination.courseID }})
+				{% else %}
+					<strong>{{ examination.period }} {{ examination.title }}</strong>
+				{% endif %}
 			</a>
 		</li>
 		{% endfor %}

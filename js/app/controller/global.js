@@ -36,6 +36,7 @@ define([ 'app/model/requests', 'app/model/util', 'jquery', 'bootstrap', 'slick',
 					document.title = $documentB.filter('title').text();
 					$('main').replaceWith($documentB.filter('main'));
 					google.search.cse.element.go('searchResults');
+					$('#progressBar').toggleClass('loading', false);
 					history.pushState(null, null, searchPath);
 					$this.submit();
 				}

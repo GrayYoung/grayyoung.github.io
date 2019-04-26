@@ -7,15 +7,13 @@ pageName: examination
 	<header class="text-center">
 		<h1 class="mb-5">
 			英语四级{{ page.period }}考试 试卷
-			<a class="d-print-none mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="显示所有答案">
-				<i class="fa fa-question-circle"></i>
-			</a>
+			{% include tooltip.html is_single="false" tip="显示所有答案" %}
 		</h1>
 	</header>
 	{% assign partCounter = 0 %}
 	{% assign partNOs = 'I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII' | split: ',' %}
-	{% assign letters = '0,A,B,C,D,E,F,H,I,J,K' | split: ',' %}
-	{% assign passageNOs = 'One,Two,Three' | split: ',' %}
+	{% assign letters = ',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
+	{% assign passageNOs = 'Zero,One,Two,Three' | split: ',' %}
 	{% assign sectionCounter = 0 %}
 	{% assign counter = 1 %}
 	<form>
@@ -24,27 +22,38 @@ pageName: examination
 			<h2 class="mb-5">
 				<strong class="row">
 					<span class="col-4">Part {{ partNOs[partCounter] }}</span>
-					<span class="col-4 text-center">{{ part.title }}</span>
+					<span class="col-4 text-center">
+						{{ part.title }}
+						{% include tooltip.html is_single="false" tip="显示本组题答案" %}
+					</span>
 					<span class="col-4 text-right">{{ part.length }} minutes</span>
 				</strong>
 			</h2>
-			{% if part.description %}
+			{% if part.directions %}
 			<div class="card">
+				{% if part.description %}
 				<div class="card-header bg-light text-center">
 					{{ part.description }}
 				</div>
+				{% endif %}
 				<div class="card-body">
 					<p class="row no-gutters mb-3">
-						<span class="col pr-3" style="flex-grow: 0;"><strong>Directions: </strong></span>
+						<span class="col pr-3 flex-grow-0"><strong>Directions: </strong></span>
 						<span class="col"><i>{{ part.directions }}</i></span>
 					</p>
-					{% if part.quetions %}
-					{% for quetion in part.quetions %}
-					{% if quetion.type == 'textarea' %}
+					{% if part.questions %}
+					{% for question in part.questions %}
+					{% if question.title %}
+					<p>
+						{{ question.title }}
+						{% include tooltip.html is_single="true" tip="显示本题答案" %}
+					</p>
+					{% endif %}
+					{% if question.type == 'textarea' %}
 					<div class="embed-responsive">
 						<textarea class="form-control embed-responsive-item" rows="10"></textarea>
 						<div class="collapse" id="collapse{{ counter }}">
-							<div class="form-control form-control-sm border-success text-success">{{ quetion.answer }}</div>
+							<div class="form-control form-control-sm border-success text-success">{{ question.answer }}</div>
 						</div>
 					</div>
 					{% endif %}
@@ -58,40 +67,57 @@ pageName: examination
 				{% endif %}
 			</div>
 			{% endif %}
+
 			{% for section in part.sections %}
 			<section class="mb-4">
 				{% if section.title %}
 				<h3 class="mb-1"><strong>{{ section.title }}</strong></h3>
 				{% endif %}
 				<p class="row no-gutters mb-3">
-					<span class="col pr-3" style="flex-grow: 0;"><strong>Directions: </strong></span>
+					<span class="col pr-3 flex-grow-0"><strong>Directions: </strong></span>
 					<span class="col"><i>{{ section.directions }}</i></span>
 				</p>
 				<div class="clearfix">
 					{{ section.article }}
 				</div>
+
+				{% if section.options %}
+				<div class="border border-dark p-4 mb-3">
+					<ul class="row flex-column list-unstyled mb-0" style="height: {{ section.options | size | divided_by: 2.0 | ceil | times: 1.5625 | ceil }}rem;">
+						{% for option in section.options %}
+						<li class="col-6 mb-1" style="flex-basis: auto;">
+							{{ letters[forloop.index] }}) {{ option.answer }}
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% endif %}
+
 				<ul class="list-unstyled">
-					{% for quetion in section.quetions %}
-					<li class="mb-3" data-type="{{ quetion.type }}">
-						<h4><strong>{{ quetion.title }}</strong></h4>
-						<div class="row no-gutters">
-							<div class="col pr-3" style="flex-grow: 0;">{{ counter }}.</div>
-							<div class="col">
-								{% if quetion.type == 'radio' %}
-								<ul class="row list-unstyled">
-									{% for option in quetion.options %}
-									<li class="col-12 col-sm-6 col-lg-3">
-										{{ letters[forloop.index] }}) 
-										<div class="custom-control custom-control-inline custom-radio align-text-top mr-0">
-											<input name="radio{{ counter }}" type="radio" class="custom-control-input" id="radio{{ counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
-											<label class="custom-control-label" for="radio{{ counter }}{{ forloop.index }}">{{ option.answer }}</label>
-										</div>
-									</li>
-									{% endfor %}
-								</ul>
-								{% endif %}
-							</div>
-						</div>
+					{% for question in section.questions %}
+					<li class="mb-3" data-type="{{ question.type }}">
+						{% if question.type == 'select' %}
+						<h4 class="row no-gutters">
+							<span class="col flex-grow-0 pr-2">{{ counter }}.</span>
+							<span class="col">
+								<strong class="mr-3">{{ question.title }}</strong>
+								{% include tooltip.html is_single="true" tip="显示本题答案" %}
+								<span class="d-inline-block">
+									<select class="form-control form-control-sm">
+										{% for option in letters %}
+										<option value="{{ option }}">{{ option }}</option>
+										{% endfor %}
+									</select>
+								</span>
+							</span>
+						</h4>
+						{% else %}
+						<h4>
+							{{ counter }}. <strong>{{ question.title }}</strong>
+							{% include tooltip.html is_single="true" tip="显示本题答案" %}
+						</h4>
+						{% include options.html type=question.type options=question.options counter=counter col_width="col-12 col-md-6 col-xl-3" %}
+						{% endif %}
 					</li>
 					{% assign counter = counter | plus: 1 %}
 					{% endfor %}
@@ -99,27 +125,21 @@ pageName: examination
 
 				{% for passage in section.passages %}
 				<section class="mb-4">
-					<h3 class="mb-1"><strong>{{ passageNOs[forloop.index] }}<br />{{ passage.title }}</strong></h3>
+					<h3 class="mb-4">
+						<strong>Passage {{ passageNOs[forloop.index] }}<br />{{ passage.title }}</strong>
+						{% include tooltip.html is_single="false" tip="显示本组题答案" %}
+					</h3>
 					<div class="clearfix">
 						{{ passage.article }}
 					</div>
 					<ul class="list-unstyled">
-						{% for quetion in passage.quetions %}
-						<li class="mb-3" data-type="{{ quetion.type }}">
-							<h4><strong>{{ counter }}. {{ quetion.title }}</strong></h4>
-							{% if quetion.type == 'radio' %}
-							<ul class="row list-unstyled">
-								{% for option in quetion.options %}
-								<li class="col-12 col-sm-6 col-lg-3">
-									{{ letters[forloop.index] }}) 
-									<div class="custom-control custom-control-inline custom-radio align-text-top mr-0">
-										<input name="radio{{ counter }}" type="radio" class="custom-control-input" id="radio{{ counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
-										<label class="custom-control-label" for="radio{{ counter }}{{ forloop.index }}">{{ option.answer }}</label>
-									</div>
-								</li>
-								{% endfor %}
-							</ul>
-							{% endif %}
+						{% for question in passage.questions %}
+						<li class="mb-3" data-type="{{ question.type }}">
+							<h4>
+								<strong>{{ counter }}. {{ question.title }}</strong>
+								{% include tooltip.html is_single="true" tip="显示本题答案" %}
+							</h4>
+							{% include options.html type=question.type options=question.options counter=counter col_width="col-12 col-md-6 col-xl-3" %}
 						</li>
 						{% assign counter = counter | plus: 1 %}
 						{% endfor %}
@@ -131,6 +151,7 @@ pageName: examination
 			{% assign sectionCounter = sectionCounter | plus: 1 %}
 			{% endfor %}
 		</section>
+		<hr style="border-top-width: 5px;" />
 		{% assign partCounter = partCounter | plus: 1 %}
 		{% endfor %}
 	</form>

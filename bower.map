@@ -95,6 +95,12 @@
 		"pipes": [0],
 		"dest": ["lib"]
 	},
+	"audiojs": {
+		"type": "script",
+		"src": ["audiojs", "build", "main.js"],
+		"pipes": [0],
+		"dest": ["lib", "audiojs.js"]
+	},
 	"require": {
 		"type": "script",
 		"src": ["requirejs", "require.js"],

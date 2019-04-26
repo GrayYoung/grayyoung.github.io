@@ -105,6 +105,17 @@ gulp.task('update-lib', function() {
 
 	function flushPipes(stream, pipes, dir) {
 		if(pipes.indexOf(whichWar) > -1) {
+			var fileName = property.dest[property.dest.length - 1];
+
+			if (fileName && fileName.indexOf('.') > -1) {
+				var names = fileName ? fileName.split('.') : ['', ''];
+ 
+				property.dest.pop();
+				stream = stream.pipe($.rename(function(path) {
+					path.extname = '.' + names.pop();
+					path.basename = names.join('');
+				}));
+			}
 			stream.pipe(gulp.dest(path.join(staticMap[whichWar].SRC_DOCROOT, dir, property.dest.join('/')), {
 				relativeSymlinks: true,
 				useJunctions: false
