@@ -130,7 +130,7 @@ gulp.task('update-lib', function() {
 		property = bowerMap[i];
 		filesSrc = path.join(paths.bowerLib, property.src.join('/'));
 		basePath = path.join(paths.bowerLib, property.src.filter(function(item, index) {
-			if (property.src.length - 1 > index && item.indexOf('.')) {
+			if (property.src.length - 1 > index && item.indexOf('.') > -1) {
 				return true;
 			}
 			return item.indexOf('*') === -1 && item.indexOf('.') === -1;
@@ -154,6 +154,13 @@ gulp.task('update-lib', function() {
 				mainStream.add(flushPipes(gulp.src(filesSrc, {
 					base: basePath
 				}), property.pipes, paths.scripts).pipe($.size({
+					title: '-> ' + i
+				})));
+				break;
+			case 'image':
+				mainStream.add(flushPipes(gulp.src(filesSrc, {
+					base: basePath
+				}), property.pipes, paths.images).pipe($.size({
 					title: '-> ' + i
 				})));
 				break;

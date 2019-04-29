@@ -32,11 +32,11 @@
   "dependencies": {
     "@fdaciuk/ajax": "^3.0.4",
     "@fortawesome/fontawesome-free": "^5.8.1",
-    "audiojs": "^0.1.0",
     "bootstrap": "^4.3.1",
     "html5shiv": "^3.7.3",
     "jQuery-Utilities": "git+https://github.com/GrayYoung/jQuery.Utilities.git",
     "jquery": "^3.3.1",
+    "plyr": "^3.5.4",
     "popper.js": "^1.14.6",
     "requirejs": "^2.3.6",
     "respond.js": "^1.4.2",
