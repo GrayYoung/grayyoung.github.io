@@ -1,8 +1,10 @@
 ---
 layout: withBreadcrumbsNPagination
 pageName: examination
+extraJS: [/js/lib/plyr.polyfilled.min.js]
 ---
 
+<link rel="stylesheet" href="/css/plyr.css" />
 <article id="examination" class="container-fluid">
 	<header class="text-center">
 		<h1 class="mb-5">
@@ -29,6 +31,11 @@ pageName: examination
 					<span class="col-4 text-right">{{ part.length }} minutes</span>
 				</strong>
 			</h2>
+			{% if part.audio %}
+			<audio id="player" controls>
+				<source src="{{ part.audio }}" type="audio/mp3" />
+			</audio>
+			{% endif %}
 			{% if part.directions %}
 			<div class="card">
 				{% if part.description %}
@@ -103,7 +110,7 @@ pageName: examination
 								<strong class="mr-3">{{ question.title }}</strong>
 								{% include tooltip.html is_single="true" tip="显示本题答案" %}
 								<span class="d-inline-block">
-									<select class="form-control form-control-sm">
+									<select class="form-control form-control-sm" data-value="{{ question.answer }}">
 										{% for option in letters %}
 										<option value="{{ option }}">{{ option }}</option>
 										{% endfor %}

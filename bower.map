@@ -3,13 +3,13 @@
 		"type": "font",
 		"src": ["@fortawesome", "fontawesome-free", "webfonts", "*"],
 		"pipes": [0],
-		"dest": [""]
+		"dest": []
 	},
 	"fontawesome": {
 		"type": "style",
 		"src": ["@fortawesome", "fontawesome-free", "scss", "*"],
 		"pipes": [0],
-		"dest": ["../", "_sass", "fontawesome"]
+		"dest": ["..", "_sass", "fontawesome"]
 	},
 	"fontawesomeCSSMain": {
 		"type": "style",
@@ -21,11 +21,23 @@
 		"type": "style",
 		"src": ["bootstrap", "scss", "**", "*"],
 		"pipes": [0],
-		"dest": ["../", "_sass", "bootstrap"]
+		"dest": ["..", "_sass", "bootstrap"]
 	},
 	"bootstrapCSSMain": {
 		"type": "style",
 		"src": ["bootstrap", "scss", "bootstrap.scss"],
+		"pipes": [0],
+		"dest": []
+	},
+	"playerCSS": {
+		"type": "style",
+		"src": ["plyr", "dist", "plyr.css"],
+		"pipes": [0],
+		"dest": []
+	},
+	"playerImage": {
+		"type": "image",
+		"src": ["plyr", "dist", "plyr.svg"],
 		"pipes": [0],
 		"dest": []
 	},
@@ -95,11 +107,11 @@
 		"pipes": [0],
 		"dest": ["lib"]
 	},
-	"audiojs": {
+	"player": {
 		"type": "script",
-		"src": ["audiojs", "build", "main.js"],
+		"src": ["plyr", "dist", "plyr.polyfilled.min.js"],
 		"pipes": [0],
-		"dest": ["lib", "audiojs.js"]
+		"dest": ["lib"]
 	},
 	"require": {
 		"type": "script",

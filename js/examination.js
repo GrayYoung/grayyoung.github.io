@@ -7,7 +7,7 @@
 require([ './config' ], function(config) {
 	require([ 'app/controller/global' ]);
 
-	require([ 'jquery', 'bootstrap', 'app/model/translate' ], function($, bs, translate) {
+	require([ 'jquery', 'bootstrap', 'app/model/translate', 'Plyr' ], function($, bs, translate, Plyr) {
 		$(document).on('click', '#examination a', function(event) {
 			var $this = $(this);
 			var $item = $this.closest('li');
@@ -29,6 +29,11 @@ require([ './config' ], function(config) {
 
 								$checkbox.toggleClass('text-success', !$checkbox.hasClass('text-success'));
 							});
+							break;
+						case 'select':
+							var $select = $this.closest('li').find('select');
+
+							$select.val($select.data('value'));
 							break;
 						case 'yesOrNo':
 							$item.find(':checkbox[value="true"]').prop('checked', true);
@@ -92,7 +97,8 @@ require([ './config' ], function(config) {
 				title : function() {
 					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
 				}
-			}); */
-		});
+            }); */
+            var player = new Plyr('#player');
+        });
 	});
 });

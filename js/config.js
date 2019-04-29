@@ -18,6 +18,7 @@ requirejs.config({
 		popper: 'popper.min',
 		xlsx: 'xlsx.min',
 		zip: 'jszip',
+		Plyr: 'plyr.polyfilled.min',
 		googleAPI: 'https://www.google.com/jsapi',
 		googleMap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBECsgJK9qsTirYdxvaPWfOywXxiwdYe5k&callback=initMap&language=en',
 		googleCSE: 'https://cse.google.com/cse.js?cx=001907108702964322728:jc6j-dfwhfq',
