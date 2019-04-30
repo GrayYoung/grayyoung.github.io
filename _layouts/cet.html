@@ -87,7 +87,9 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 				<div class="clearfix">
 					{{ section.article }}
 				</div>
-
+				{% for content in section.paragraphs %}
+				<p class="row"><span class="col flex-grow-0 pr-0">[{{ letters[forloop.index] }}]</span><span class="col">{{ content }}</span></p>
+				{% endfor %}
 				{% if section.options %}
 				<div class="border border-dark p-4 mb-3">
 					<ul class="row flex-column list-unstyled mb-0" style="height: {{ section.options | size | divided_by: 2.0 | ceil | times: 1.5625 | ceil }}rem;">
@@ -109,13 +111,16 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 							<span class="col">
 								<strong class="mr-3">{{ question.title }}</strong>
 								{% include tooltip.html is_single="true" tip="显示本题答案" %}
-								<span class="d-inline-block">
-									<select class="form-control form-control-sm" data-value="{{ question.answer }}">
+								<div class="embed-responsive d-inline-block align-middle">
+									<select id="input{{ counter }}" class="form-control form-control-sm embed-responsive-item">
 										{% for option in letters %}
 										<option value="{{ option }}">{{ option }}</option>
 										{% endfor %}
 									</select>
-								</span>
+									<div class="collapse" id="collapse{{ counter }}">
+										<div class="form-control form-control-sm border-success text-success">{{ question.answer }}</div>
+									</div>
+								</div>
 							</span>
 						</h4>
 						{% else %}
