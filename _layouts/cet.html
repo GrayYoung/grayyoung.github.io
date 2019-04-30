@@ -48,24 +48,25 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 						<span class="col pr-3 flex-grow-0"><strong>Directions: </strong></span>
 						<span class="col"><i>{{ part.directions }}</i></span>
 					</p>
-					{% if part.questions %}
-					{% for question in part.questions %}
-					{% if question.title %}
-					<p>
-						{{ question.title }}
-						{% include tooltip.html is_single="true" tip="显示本题答案" %}
-					</p>
-					{% endif %}
-					{% if question.type == 'textarea' %}
-					<div class="embed-responsive">
-						<textarea class="form-control embed-responsive-item" rows="10"></textarea>
-						<div class="collapse" id="collapse{{ counter }}">
-							<div class="form-control form-control-sm border-success text-success">{{ question.answer }}</div>
-						</div>
-					</div>
-					{% endif %}
-					{% endfor %}
-					{% endif %}
+					<ul class="list-unstyled mb-0">
+						{% for question in part.questions %}
+						<li>
+							<h4>
+								{{ question.title }}
+								{% include tooltip.html is_single="true" tip="显示本题答案" %}
+							</h4>
+							{% if question.type == 'textarea' %}
+							<div class="embed-responsive">
+								<textarea class="form-control embed-responsive-item" rows="10"></textarea>
+								<div class="collapse" id="collapse{{ counter }}">
+									<div class="form-control form-control-sm border-success text-success">{{ question.answer }}</div>
+								</div>
+							</div>
+							{% endif %}
+						</li>
+						{% assign counter = counter | plus: 1 %}
+						{% endfor %}
+					</ul>
 				</div>
 				{% if part.tip %}
 				<div class="card-footer bg-light text-center">
