@@ -53,11 +53,19 @@
 	}
 }
 
+.gsc-imageResult-classic, .gsc-imageResult-column {
+	border-left: 0 !important;
+	border-bottom-width: 2px !important;
+}
+
 .cse .gsc-webResult.gsc-result:hover,
 .gsc-webResult.gsc-result:hover,
-.gsc-webResult.gsc-result.gsc-promotion:hover,
+.gsc-webResult.gsc-result.gsc-promotion:hover {
+	border-left: 0 !important;
+	border-bottom: 1px solid theme-color("primary") !important;
+}
+
 .gsc-results .gsc-imageResult-classic:hover,
 .gsc-results .gsc-imageResult-column:hover {
-	border-left: 0 !important;
-	border-bottom: 1px solid $input-border-color !important;
+	border-color: theme-color("primary") !important;
 }

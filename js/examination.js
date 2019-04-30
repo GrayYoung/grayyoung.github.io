@@ -97,8 +97,10 @@ require([ './config' ], function(config) {
 				title : function() {
 					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
 				}
-            }); */
-            var player = new Plyr('#player');
-        });
+			}); */
+			if ($('#player').length) {
+				var player = new Plyr('#player');
+			}
+		});
 	});
 });
