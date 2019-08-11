@@ -87,10 +87,6 @@
 		}
 
 		+ div .dl-horizontal {
-			@include media-breakpoint-up(md) {
-				padding-top: 10em;
-			}
-
 			dt {
 				width: 6em;
 				line-height: 2.4em;
@@ -111,8 +107,6 @@
 		}
 
 		> section {
-			margin-bottom: 2em;
-
 			> h2 {
 				padding-bottom: 0.4em;
 				border-bottom: solid 2px black;
