@@ -30,15 +30,11 @@ require([ './config' ], function(config) {
 								$checkbox.toggleClass('text-success', !$checkbox.hasClass('text-success'));
 							});
 							break;
-						case 'select':
-							var $select = $this.closest('li').find('select');
-
-							$select.val($select.data('value'));
-							break;
 						case 'yesOrNo':
 							$item.find(':checkbox[value="true"]').prop('checked', true);
 							$item.find(':checkbox[value="false"]').prop('checked', false);
 							break;
+						case 'select':
 						case 'text':
 							$item.find('.embed-responsive > .collapse').collapse('toggle');
 							break;

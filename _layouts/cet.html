@@ -17,7 +17,7 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 	{% assign letters = ',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
 	{% assign passageNOs = 'Zero,One,Two,Three' | split: ',' %}
 	{% assign sectionCounter = 0 %}
-	{% assign counter = 1 %}
+	{% assign counter = 0 %}
 	<form>
 		{% for part in page.parts %}
 		<section class="mb-5">
