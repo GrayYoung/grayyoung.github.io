@@ -35,7 +35,12 @@
 - name: NodeJS
   startDate:  2014-08-01
   rate: 0.7
-  url: https://angularjs.org/
+  url: https://nodejs.org
+
+- name: React-Native
+  startDate:  2019-10-22
+  rate: 0.4
+  url: https://facebook.github.io/react-native/
 
 - name: WCAG<small>(2.0)</small>
   startDate:  2016-01-01
