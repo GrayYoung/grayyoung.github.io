@@ -1,5 +1,11 @@
+- school: Sichuan University
+  degree: Bachelor Degree
+  description: Art / Art Design
+  startDate:  2018-09-01
+  endDate:  now
+
 - school: Chengdu Neusoft University
-  degree: Associate degree
+  degree: Associate Degree
   description: Department of Computer Science and Technology / Software Technology
   startDate:  2010-09-01
   endDate:  2013-06-23
