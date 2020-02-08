@@ -1,22 +1,60 @@
 CACHE MANIFEST
 
-# vsersion 0.4.4.2
+# vsersion 0.4.4.3
 
 # Styles
+css/plyr.css
 css/fontawesome.css
 css/bootstrap.css
+css/marching.css
 
 # Scripts
+js/app/controller/affixNavigation.js
+js/app/controller/global.js
+js/app/controller/locatorMap.js
+js/app/model/breakpoints.js
+js/app/model/excelRequest.js
+js/app/model/iterateMedia.js
+js/app/model/requests.js
+js/app/model/translate.js
+js/app/model/util.js
+js/lib/affix.js
+js/lib/ajax.min.js
+js/lib/bootstrap.bundle.min.js
+js/lib/bootstrap.bundle.min.js.map
+js/lib/jquery.browser.min.js
+js/lib/jquery.min.js
+js/lib/jszip.js
+js/lib/plyr.polyfilled.min.js
+js/lib/popper.min.js
+js/lib/require.js
+js/lib/slick.js
+js/lib/xlsx.min.js
+js/article.js
 js/config.js
+js/examination.js
 js/marching.js
 js/media.js
 js/printing.js
-js/article.js
 
 # Fonts
-
+fonts/fa-brands-400.woff2
+fonts/fa-regular-400.woff2
+fonts/fa-solid-900.woff2
+fonts/fa-regular-400.woff2
+fonts/Freight-Text-W03-Bold-Italic.woff2
+fonts/Freight-Text-W03-Bold.woff2
+fonts/Freight-Text-W03-Regular-Italic.woff2
+fonts/Freight-Text-W03-Regular.woff2
+fonts/Trade-Gothic-W01-Bold.woff2
+fonts/Trade-Gothic-W01-Regular.woff2
+fonts/Vani-Bold.ttf
+fonts/Vani.ttf
 
 # Images
+favicon.ico
+images/banner/addicted.png
+images/banner/bible.png
 images/solar/earth.png
 images/solar/jupiter.png
 images/solar/mars.png
@@ -24,8 +62,12 @@ images/solar/mercury.png
 images/solar/venus.png
 images/solar/sun.png
 images/solar/shadow.png
+images/logo-chrome.png
+images/logo-firefox.png
+images/logo-internet-explorer.png
 images/logo.png
-images/me.png
+images/me-2018.png
+images/plyr.svg
 
 FALLBACK:
 
