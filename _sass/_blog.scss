@@ -31,14 +31,14 @@
 	}
 
 	.heading {
-		padding-bottom: 1em;
+		padding-bottom: 1rem;
 		border-bottom: solid 1px $gray-600;
 
 		+ time {
 			display: block;
 			float: left;
-			padding-right: 0.2em;
-			margin-top: -1.5em;
+			padding-right: 0.2rem;
+			margin-top: -1.5rem;
 			background-color: $white;
 			font-size: $font-size-sm;
 			font-weight: normal;

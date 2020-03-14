@@ -11,11 +11,11 @@
     "url": "https://github.com/GrayYoung/grayyoung.github.io.git"
   },
   "main": "gulpfile.js",
-  "license": "Copyright 2018",
+  "license": "Copyright 2020",
   "version": "0.0.4",
   "devDependencies": {
-    "graceful-fs": "latest",
-    "gulp": "latest",
+    "graceful-fs": "^4.2.3",
+    "gulp": "^4.0.2",
     "gulp-clean": "latest",
     "gulp-clean-css": "latest",
     "gulp-jshint": "latest",
@@ -27,17 +27,18 @@
     "jshint-stylish": "latest",
     "merge-stream": "latest",
     "tether": "^1.4.6",
-    "yargs": "latest"
+    "yargs": "^15.3.0"
   },
   "dependencies": {
     "@fdaciuk/ajax": "^3.0.4",
-    "@fortawesome/fontawesome-free": "^5.8.1",
-    "bootstrap": "^4.3.1",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1",
     "html5shiv": "^3.7.3",
     "jQuery-Utilities": "git+https://github.com/GrayYoung/jQuery.Utilities.git",
     "jquery": "^3.3.1",
-    "plyr": "^3.5.4",
-    "popper.js": "^1.14.6",
+    "node-sass": "^4.13.1",
+    "plyr": "^3.5.10",
+    "popper.js": "^1.16.0",
     "requirejs": "^2.3.6",
     "respond.js": "^1.4.2",
     "slick-carousel": "^1.8.1",
