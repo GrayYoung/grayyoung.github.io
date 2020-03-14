@@ -35,7 +35,7 @@
 
 	.p-rating {
 		.fa {
-			width: 1em;
+			width: 1rem;
 		}
 
 		.fa-lg {
@@ -44,12 +44,12 @@
 
 		> span:first-child {
 			display: inline-block;
-			margin-right: 1em;
+			margin-right: 1rem;
 			overflow: hidden;
 
 			> span {
 				display: inline-block;
-				width: 10em;
+				width: 10rem;
 			}
 		}
 	}

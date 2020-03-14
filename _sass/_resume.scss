@@ -1,6 +1,6 @@
 .list-history > li {
 	position: relative;
-	padding: 15px 0 15px 12.85rem;
+	padding: 1.5rem 0 1.5rem 12.85rem;
 
 	@include media-breakpoint-down(sm) {
 		padding-left: 0;
@@ -10,8 +10,8 @@
 		@include media-breakpoint-up(md) {
 			content: " ";
 			position: absolute;
-			top: 15px;
-			left: 8.7rem;
+			top: 1.5rem;
+			left: 8.75rem;
 			z-index: 1;
 			display: block;
 			width: 1.5rem;
@@ -22,15 +22,15 @@
 
 	.dt-duration {
 		display: block;
-		padding-right: 20px;
-		padding-bottom: 10px;
-		line-height: 18px;
+		padding-right: 1.5rem;
+		padding-bottom: 1rem;
+		line-height: 1.5rem;
 
 		@include media-breakpoint-up(md) {
 			position: absolute;
 			top: 0;
 			left: 0;
-			padding-top: 15px;
+			padding-top: 1.5rem;
 			width: 9.5rem;
 			height: 100%;
 			border-right: solid 1px black;
@@ -39,10 +39,11 @@
 			&:after {
 				content: " ";
 				position: absolute;
-				top: 24px;
-				right: -0.75em;
+				top: calc(2.25rem - 1px);
+				right: calc(-0.75rem + 3px);
+				z-index: 0;
 				display: block;
-				width: 1.5em;
+				width: calc(1.5rem - 6px);
 				height: 1px;
 				background-color: black;
 			}
@@ -65,14 +66,14 @@
 
 		> p {
 			margin-bottom: 0.5rem;
-			text-indent: 1em;
+			text-indent: 1rem;
 		}
 	}
 }
 
 .h-resume {
 	.h1 {
-		font-size: 5em;
+		font-size: 5rem;
 		font-family: "Trade Gothic";
 		text-align: center;
 		letter-spacing: -5px;
@@ -88,14 +89,14 @@
 
 		+ div .dl-horizontal {
 			dt {
-				width: 6em;
-				line-height: 2.4em;
+				width: 6rem;
+				line-height: 2.4rem;
 				text-align: right;
 			}
 
 			dd {
-				margin-left: 7em;
-				line-height: 2.4em;
+				margin-left: 7rem;
+				line-height: 2.4rem;
 			}
 		}
 	}
@@ -108,9 +109,9 @@
 
 		> section {
 			> h2 {
-				padding-bottom: 0.4em;
+				padding-bottom: 0.4rem;
 				border-bottom: solid 2px black;
-				text-indent: 0.25em;
+				text-indent: 0.25rem;
 			}
 		}
 	}
@@ -137,23 +138,23 @@
 	margin-bottom: 0;
 
 	dt {
-		width: 7em;
-		line-height: 2.4em;
+		width: 7rem;
+		line-height: 2.4rem;
 
 		> small {
-			font-size: 0.75em;
+			font-size: 0.75rem;
 			color: $gray-600;
 		}
 	}
 
 	dd {
-		padding-top: 14px;
-		margin-left: 8em;
-		line-height: 2.4em;
+		padding-top: 1rem;
+		margin-left: 8rem;
+		line-height: 2.4rem;
 	}
 
 	.progress {
-		height: 14px;
+		height: 1rem;
 	}
 
 	.table-bordered {
@@ -170,7 +171,7 @@
 		}
 
 		> thead > tr > th {
-			padding: 8px 0;
+			padding: 0.5rem 0;
 			border-color: $gray-600;
 			border-bottom-width: 0;
 		}
@@ -179,25 +180,18 @@
 
 .p-contact .dl-horizontal {
 	dt {
-		width: 7em;
-		line-height: 1.8em;
+		width: 7rem;
+		line-height: 1.8rem;
 		text-align: left;
 	}
 
 	dd {
-		margin-left: 8em;
-		line-height: 1.8em;
+		margin-left: 8rem;
+		line-height: 1.8rem;
 	}
 }
 
 @include media-breakpoint-up(md) {
-	.h-resume > h2 > img {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		margin-left: -250px;
-	}
-
 	.p-skill .dl-horizontal {
 		dt {
 			text-align: right;
@@ -206,8 +200,8 @@
 
 	.p-skill, .p-contact {
 		.dl-horizontal {
-			padding-left: 6px;
-			padding-right: 6px;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
 		}
 	}
 }

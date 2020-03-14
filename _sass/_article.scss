@@ -4,30 +4,30 @@
 
 .book-article {
 	h1 {
-		margin-bottom: 3em;
+		margin-bottom: 3rem;
 		text-align: center;
 	}
 
 	h2 {
-		margin-bottom: 2.5em;
+		margin-bottom: 2.5rem;
 		text-align: center;
 	}
 
 	h3 {
-		margin-bottom: 2em;
+		margin-bottom: 2rem;
 		text-align: center;
 	}
 
 	h4 {
-		margin-bottom: 1.5em;
+		margin-bottom: 1.5rem;
 	}
 
 	h5 {
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 	}
 
 	p {
-		text-indent: 1em;
+		text-indent: 1rem;
 	}
 
 	[lang="ZH-CN"] {
@@ -35,7 +35,7 @@
 	}
 
 	p[lang="ZH-CN"], section[lang="ZH-CN"] > p {
-		text-indent: 2em;
+		text-indent: 2rem;
 	}
 
 	blockquote {
@@ -49,7 +49,7 @@
 	}
 
 	> section > section {
-		margin-bottom: 4em;
+		margin-bottom: 4rem;
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -64,11 +64,11 @@
 			}
 
 			.nav-pills {
-				padding-left: 0.5em;
+				padding-left: 0.5rem;
 			}
 
 			.nav-link {
-				padding: 0.1em 0;
+				padding: 0.1rem 0;
 				border-radius: 0;
 				overflow: hidden;
 				word-break: keep-all;

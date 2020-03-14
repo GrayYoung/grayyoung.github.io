@@ -12,11 +12,11 @@
 }
 
 .gsc-webResult.gsc-result {
-	margin-bottom: 2em !important;
+	margin-bottom: 2rem !important;
 }
 
 .gs-result .gs-title {
-	margin-bottom: 0.5em !important;
+	margin-bottom: 0.5rem !important;
 }
 
 .gsc-url-bottom {
@@ -68,4 +68,12 @@
 .gsc-results .gsc-imageResult-classic:hover,
 .gsc-results .gsc-imageResult-column:hover {
 	border-color: theme-color("primary") !important;
+}
+
+.gs-no-results-result.gs-imageResult {
+	margin-left: -0.5em;
+}
+
+.gcsc-branding {
+	width: 100%;
 }
