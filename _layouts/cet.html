@@ -138,7 +138,7 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 
 				{% for passage in section.passages %}
 				<section class="mb-4">
-					<h3 class="mb-4">
+					<h3 class="d-flex mb-4">
 						<strong>Passage {{ passageNOs[forloop.index] }}<br />{{ passage.title }}</strong>
 						{% include tooltip.html is_single="false" tip="显示本组题答案" %}
 					</h3>

@@ -120,17 +120,6 @@ parts:
                 isTrue: false
               - answer: I believe not
                 isTrue: true
-          - title: 
-            type: radio
-            options:
-              - answer: 
-                isTrue: false
-              - answer: 
-                isTrue: false
-              - answer: 
-                isTrue: false
-              - answer: 
-                isTrue: false
   - title: 阅读理解
     sections: 
       - title: 
@@ -252,7 +241,7 @@ parts:
                   - answer: in theUnited States, people who want to commit suicide call a network of centers to get help
                     isTrue: false
           - title: 
-            article: <p class="pgh-indent">To swim across the English Channel takes at least nine hours.It 's a hard work and it makes you short of breath. To fly over the Channel takes only twenty minutes （as long as you’re not held up at the airport. , but it 's an expensive way to travel.You can travel by hovercraft if you don’t mind the noise, and that takes forty minutes. Otherwise you can go by boat, if you forget your sea-sickness ills. All these means of transport have their problems and the weary（不耐烦的）traveler often dreams of being able to drive to France in his own car. “Not possible”, you say, Well, wait a minute.People are once again considering the idea of a Channel tunnel or bridge.</p><p class="pgh-indent">This time, the Greater London Council is looking into the possibility of building a Channel link straight to London. A bridge would cost far more than a tunnel, but you would be able to go by rail or by car on a bridge, whereas a tunnel would provide ar all link only.</p><p class="pgh-indent">Why is this idea being discussed again? Is Britain becoming more conscious of the need for links with Europe as a result of joining the EEC（欧供体）? Well, perhaps.The main reason, though, is that a tunnel or bridge would reach the twenty square kilometers of London 's disused dockland（船坞地）. A link from London to the continent would stimulate trade and re-vitalize（使……重新有活力）the port, and would make London a main trading center in Europe. With alink over the Channel, you could buy your fish and chips in England, and be able to eat them in France while they were still warm！</p>
+            article: <p class="pgh-indent">To swim across the English Channel takes at least nine hours.It's a hard work and it makes you short of breath. To fly over the Channel takes only twenty minutes （as long as you’re not held up at the airport. , but it's an expensive way to travel.You can travel by hovercraft if you don’t mind the noise, and that takes forty minutes. Otherwise you can go by boat, if you forget your sea-sickness ills. All these means of transport have their problems and the weary（不耐烦的）traveler often dreams of being able to drive to France in his own car. “Not possible”, you say, Well, wait a minute.People are once again considering the idea of a Channel tunnel or bridge.</p><p class="pgh-indent">This time, the Greater London Council is looking into the possibility of building a Channel link straight to London. A bridge would cost far more than a tunnel, but you would be able to go by rail or by car on a bridge, whereas a tunnel would provide ar all link only.</p><p class="pgh-indent">Why is this idea being discussed again? Is Britain becoming more conscious of the need for links with Europe as a result of joining the EEC（欧供体）? Well, perhaps.The main reason, though, is that a tunnel or bridge would reach the twenty square kilometers of London's disused dockland（船坞地）. A link from London to the continent would stimulate trade and re-vitalize（使……重新有活力）the port, and would make London a main trading center in Europe. With alink over the Channel, you could buy your fish and chips in England, and be able to eat them in France while they were still warm！</p>
             questions: 
               - title: Which of the following statements is TRUE?
                 type: radio
@@ -287,7 +276,7 @@ parts:
                     isTrue: false
                   - answer: only take a bus
                     isTrue: false
-              - title: It can be concluded that many of London 's dockyards are （）
+              - title: It can be concluded that many of London's dockyards are （）
                 type: radio
                 options:
                   - answer: not used
@@ -305,7 +294,7 @@ parts:
                     isTrue: false
                   - answer: make the journey from Europe to England dangerous but easier and faster
                     isTrue: false
-                  - answer: decrease more trade forLondon 's dockyards
+                  - answer: decrease more trade forLondon's dockyards
                     isTrue: false
                   - answer: makeLondon more prosperous again
                     isTrue: false
@@ -367,6 +356,230 @@ parts:
                     isTrue: false
                   - answer: to have face-to-face talks with foreign businessmen
                     isTrue: false
+  - title: 词汇和语法
+    sections: 
+      - title: 
+        questions: 
+          - title: Mr. Wilson said that he did not want to _____ any further responsibilities.
+            type: radio
+            options:
+              - answer: take on
+                isTrue: true
+              - answer: get on
+                isTrue: false
+              - answer: put up
+                isTrue: false
+              - answer: look up
+                isTrue: false
+          - title: Having no money but _____ to know, he simply said he would go without dinner.
+            type: radio
+            options:
+              - answer: not to want anyone
+                isTrue: false
+              - answer: not wanting anyone
+                isTrue: true
+              - answer: wanted no one
+                isTrue: false
+              - answer: to want no one
+                isTrue: false
+          - title: We desire that the tour leader _____ us immediately of any change in plans.
+            type: radio
+            options:
+              - answer: inform
+                isTrue: true
+              - answer: informs
+                isTrue: false
+              - answer: informed
+                isTrue: false
+              - answer: has informed
+                isTrue: false
+          - title: Not _____, the process of choosing names varies widely from culture to culture.
+            type: radio
+            options:
+              - answer: obviously
+                isTrue: false
+              - answer: surprisingly
+                isTrue: true
+              - answer: particularly
+                isTrue: false
+              - answer: normally
+                isTrue: false
+          - title: A man escaped from the prison last night. It was a long time _____ the guards discovered what.
+            type: radio
+            options:
+              - answer: before
+                isTrue: true
+              - answer: until
+                isTrue: false
+              - answer: since
+                isTrue: false
+              - answer: when
+                isTrue: false
+          - title: Jane had promised to give me a timetable for tomorrow. She failed, ______.
+            type: radio
+            options:
+              - answer: either
+                isTrue: false
+              - answer: though
+                isTrue: true
+              - answer: but
+                isTrue: false
+              - answer: too
+                isTrue: false
+          - title: When I got to the company, the meeting ______ for five minutes.
+            type: radio
+            options:
+              - answer: had begun
+                isTrue: false
+              - answer: has been on
+                isTrue: false
+              - answer: has begun
+                isTrue: false
+              - answer: had been on
+                isTrue: true
+          - title: —I wonder why Mr. Brown hasn't showed up at the meeting yet.<br/>—I' m not sure, but he ______ in a traffic jam driving here.
+            type: radio
+            options:
+              - answer: could be stuck
+                isTrue: false
+              - answer: might stuck
+                isTrue: false
+              - answer: might have been stuck
+                isTrue: true
+              - answer: must have stuck
+                isTrue: false
+          - title: With the development of the Internet, people's life ______ in the past few years.
+            type: radio
+            options:
+              - answer: is improved
+                isTrue: false
+              - answer: has been improved
+                isTrue: true
+              - answer: is improving
+                isTrue: false
+              - answer: had been improved
+                isTrue: false
+          - title: Mary is always ready. to help others when they are in trouble and she never ______ their requests.
+            type: radio
+            options:
+              - answer: turns up
+                isTrue: false
+              - answer: turns over
+                isTrue: false
+              - answer: turns in
+                isTrue: false
+              - answer: turns down
+                isTrue: true
+          - title: —Good evening. I ______ to see Mary.<br/>—Oh, good evening. I'm sorry, but she is not in.
+            type: radio
+            options:
+              - answer: came
+                isTrue: false
+              - answer: come
+                isTrue: false
+              - answer: had come
+                isTrue: true
+              - answer: have come
+                isTrue: false
+          - title: Is it true ______ the snow stops, it will be as hot as in the summer here?
+            type: radio
+            options:
+              - answer: when
+                isTrue: false
+              - answer: that when
+                isTrue: true
+              - answer: whenever
+                isTrue: false
+              - answer: that
+                isTrue: false
+          - title: The time he has devoted in the past years ______ the disabled is now considered ______ of great value.
+            type: radio
+            options:
+              - answer: to help; being
+                isTrue: false
+              - answer: to helping; to be
+                isTrue: true
+              - answer: to help; to be
+                isTrue: false
+              - answer: helping; being
+                isTrue: false
+          - title: ______ different life today is ______ what it was 15 years ago.
+            type: radio
+            options:
+              - answer: How; from
+                isTrue: true
+              - answer: What a; from
+                isTrue: false
+              - answer: What; from
+                isTrue: false
+              - answer: How; with
+                isTrue: false
+          - title: I will have begun to do the work ______ 5 o' clock this afternoon.
+            type: radio
+            options:
+              - answer: by
+                isTrue: true
+              - answer: at
+                isTrue: false
+              - answer: after
+                isTrue: false
+              - answer: before
+                isTrue: false
+          - title: The news of the mayor's coming to our school for a visit was _____ on the radio yesterday.
+            type: radio
+            options:
+              - answer: turned out
+                isTrue: false
+              - answer: found out
+                isTrue: false
+              - answer: given out
+                isTrue: true
+              - answer: carried out
+                isTrue: false
+          - title: Don't be _____ by products promising to make you lose weight quickly.
+            type: radio
+            options:
+              - answer: taken off
+                isTrue: false
+              - answer: taken out
+                isTrue: false
+              - answer: taken away
+                isTrue: false
+              - answer: taken in
+                isTrue: true
+          - title: —Do you think that housing price will keep _____ in the years to come?<br/>—Sorry, I have no idea.
+            type: radio
+            options:
+              - answer: lifting up
+                isTrue: false
+              - answer: going up
+                isTrue: true
+              - answer: bringing up
+                isTrue: false
+              - answer: growing up
+                isTrue: false
+          - title: In this seaside resort, you can _____ all the comfort and convenience of modern tourism.
+            type: radio
+            options:
+              - answer: enjoy
+                isTrue: true
+              - answer: apply
+                isTrue: false
+              - answer: receive
+                isTrue: false
+              - answer: achieve
+                isTrue: false
+          - title: For all these years I have been working for others. I'm _____ hoping I’ll my own business someday.
+            type: radio
+            options:
+              - answer: turn up
+                isTrue: false
+              - answer: fix up
+                isTrue: false
+              - answer: set up
+                isTrue: true
+              - answer: make up
+                isTrue: false
   - title: 翻译（英译汉）
     directions: N/A
     questions: 
