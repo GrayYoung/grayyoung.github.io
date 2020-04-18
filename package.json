@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@fdaciuk/ajax": "^3.0.4",
-    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "bootstrap": "^4.4.1",
     "html5shiv": "^3.7.3",
     "jQuery-Utilities": "git+https://github.com/GrayYoung/jQuery.Utilities.git",

@@ -92,7 +92,7 @@ function processSASS(glob) {
 	}));
 }
 
-gulp.task('update-bower', function() {
+gulp.task('update-package', function() {
 	var exec = require('child_process').exec;
 
 	return exec('npm install --only=prod', function (err, stdout, stderr) {
@@ -101,7 +101,7 @@ gulp.task('update-bower', function() {
 });
 
 gulp.task('update-lib', function() {
-	var mainStream = mergeStream(), bowerMap = JSON.parse(fs.readFileSync('./bower.map', 'utf8')), property = null, filesSrc = '', basePath = '';
+	var mainStream = mergeStream(), packageMap = JSON.parse(fs.readFileSync('./package.map', 'utf8')), property = null, filesSrc = '', basePath = '';
 
 	function flushPipes(stream, pipes, dir) {
 		if(pipes.indexOf(whichWar) > -1) {
@@ -125,9 +125,9 @@ gulp.task('update-lib', function() {
 		return stream;
 	}
 
-	gulp.series('update-bower');
-	for(var i in bowerMap) {
-		property = bowerMap[i];
+	gulp.series('update-package');
+	for(var i in packageMap) {
+		property = packageMap[i];
 		filesSrc = path.join(paths.bowerLib, property.src.join('/'));
 		basePath = path.join(paths.bowerLib, property.src.filter(function(item, index) {
 			if (property.src.length - 1 > index && item.indexOf('.') > -1) {
@@ -350,7 +350,7 @@ gulp.task('watch', function(next) {
 			showFiles: true
 		}));
 	});
-	gulp.watch(['./bower.json', './bower.map'], ['update-lib']);
+	gulp.watch(['./package.json', './package.map'], ['update-lib']);
 });
 
 // DEFAULT GULP TASK
