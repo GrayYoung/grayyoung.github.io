@@ -8,7 +8,7 @@
 # Site settings
 title: Marching Gray Young
 email: windpet@live.cn
-description: > # this means to ignore newlines until "baseurl:"
+description: # this means to ignore newlines until "baseurl:"
   I am web front-end developer, as well as a web designer. In here, you can find my resume, movies or TVs that I have watched, music that I like, and some JavaScript packages I build.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://grayyoung.github.io" # the base hostname & protocol for your site
@@ -20,9 +20,10 @@ encoding: "utf-8"
 
 exclude:
   - _site
-  - bower_components
+  - .jekyll-cache
+  - .sass-cache
   - node_modules
-  - [LICENSE, README.md, bower.json, package.json, gulpfile.js]
+  - [LICENSE, README.md, package.json, package.map, gulpfile.js, .editorconfig, .gitignore, .project]
 
 sass:
   style: compressed
