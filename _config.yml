@@ -20,10 +20,11 @@ encoding: "utf-8"
 
 exclude:
   - _site
-  - .jekyll-cache
-  - .sass-cache
-  - node_modules
-  - [LICENSE, README.md, package.json, package.map, gulpfile.js, .editorconfig, .gitignore, .project]
+  - LICENSE
+  - README.md
+  - package.json
+  - package.map
+  - gulpfile.js
 
 sass:
   style: compressed
