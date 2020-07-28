@@ -1,7 +1,7 @@
 ---
 layout: cet
 pageName: examination
-title: 2017四川学位英语考试预测题及答案
+title: 四川学位英语考试预测题及答案
 period: 2017年04月
 courseID: 
 description: 
