@@ -19,6 +19,7 @@ markdown: kramdown
 encoding: "utf-8"
 
 exclude:
+  - node_modules
   - _site
   - LICENSE
   - README.md
@@ -27,6 +28,8 @@ exclude:
   - gulpfile.js
 
 sass:
+  load_paths:
+    - node_modules
   style: compressed
 
 paginate: 8

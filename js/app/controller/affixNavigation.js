@@ -6,7 +6,7 @@
  * The following comment tell gulp-jshint variable define is require in another file.
  */ 
 /* global define */
-define(['app/model/util', 'app/model/breakpoints', 'jquery', 'bootstrap'], function(util, bps, $) {
+define(['app/model/util', 'app/model/breakpoints', 'jquery', 'bootstrap'], function(util, bps, $, bootstrap) {
 	if($(window).width() < bps.desktop.width) {
 		return;
 	}
@@ -32,13 +32,14 @@ define(['app/model/util', 'app/model/breakpoints', 'jquery', 'bootstrap'], funct
 	};
 
 	$document.ready(function() {
-		var $article = $document.find('main > article'), $outline = $('<div class="col-md-3 col-xs-12 order-12 d-none d-lg-block"><div class="sticky-top" /></div>');
+		var $article = $document.find('main > article'), $outline = $('<div class="col-md-3 col-xs-12 order-5 d-none d-lg-block"><div class="sticky-top" /></div>');
 
 		$outline.children(':first').append(outlineScanner($article.children('section').addClass('col-md-9 col-xs-12 order-1'), 0));
 		$article.children('section').wrapAll('<div class="row" />').first().before($outline);
 
-		$('body').scrollspy({
-			target: '.sticky-top .nav'
-		});
+    var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+      target: '.sticky-top .nav'
+    })
+    
 	});
 });

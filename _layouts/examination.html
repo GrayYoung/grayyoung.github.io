@@ -1,11 +1,14 @@
 ---
 layout: withBreadcrumbsNPagination
-pageName: examination
+pageName: examination,
+title: test
 ---
+
+{% assign page.title = page.title | append: page.courseID | append: paginator.period %}
 
 <article id="examination" class="container-fluid">
 	<header class="text-center">
-		<div class="mb-3">四川省{{ page.period }}高等教育自学考试</div>
+		<p class="mb-3">四川省{{ page.period }}高等教育自学考试</p>
 		<h1 class="mb-3">
 			{{ page.title }} &nbsp;&nbsp;&nbsp;&nbsp; 试卷
 			{% include tooltip.html is_single="false" tip="显示所有答案" %}
@@ -24,7 +27,7 @@ pageName: examination
 			<h2 class="text-center mb-5">第{{ topicNOs[sectionCounter] }}部分{{ section.title }}</h2>
 			{% for topic in section.topics %}
 			<section class="mb-3">
-				<h3 class="row no-gutters mb-3">
+				<h3 class="row g-0 mb-3">
 					<span class="col flex-grow-0">{{topicNOs[topicCounter]}}、</span>
 					<span class="col">
 						{{ topic.title }}
@@ -32,16 +35,16 @@ pageName: examination
 					</span>
 				</h3>
 				<div class="clearfix"></div>
-				<ul class="list-unstyled pl-4">
+				<ul class="list-unstyled ps-4">
 					{% for question in topic.questions %}
 					<li class="mb-3" data-type="{{ question.type }}">
-						<h4 class="row no-gutters">
+						<h4 class="row g-0">
 							<span class="col flex-grow-0">{{ counter }}、</span>
 							<span class="col">
 								{% if question.type == 'text' %}
 								{% capture input %}
-								<div class="embed-responsive d-inline-block align-middle">
-									<input class="form-control form-control-sm embed-responsive-item" type="text" />
+								<div class="ratio d-inline-block align-middle">
+									<input class="form-control form-control-sm ratio-item" type="text" autocomplete="off" />
 									<div class="collapse">
 										<div class="form-control form-control-sm border-success text-success">{{question.answer}}</div>
 									</div>
@@ -53,12 +56,12 @@ pageName: examination
 								{% endif %}
 								{% include tooltip.html is_single="true" tip="显示本题答案" %}
 								{% if question.type == 'yesOrNo' %}
-								<div class="custom-control custom-control-inline custom-checkbox align-text-top mr-1">
-									<input type="checkbox" class="custom-control-input" id="checkbox{{ counter }}" value="{{ question.isTrue }}" />
-									<label class="custom-control-label" for="checkbox{{ counter }}">&nbsp;</label>
+								<div class="d-inline-block form-check align-text-top me-1">
+									<input type="checkbox" autocomplete="off" class="form-check-input" id="checkbox{{ counter }}" value="{{ question.isTrue }}" />
+									<label class="form-check-label" for="checkbox{{ counter }}">&nbsp;</label>
 								</div>
-								<div class="embed-responsive d-inline-block align-middle">
-									<input id="input{{ counter }}" class="form-control form-control-sm embed-responsive-item" type="text" />
+								<div class="ratio d-inline-block align-middle">
+									<input id="input{{ counter }}" class="form-control form-control-sm ratio-item" type="text" autocomplete="off" />
 									<div class="collapse" id="collapse{{ counter }}">
 										<div class="form-control form-control-sm border-success text-success">{{ question.answer }}</div>
 									</div>
@@ -67,14 +70,14 @@ pageName: examination
 							</span>
 						</h4>
 						<div class="clearfix"></div>
-						<div class="pl-4">
+						<div class="ps-4">
 							{% if question.type == 'radio' %}
 							{% include options.html type=question.type options=question.options counter=counter col_width='col-12 col-sm-6 col-lg-3' %}
 							{% elsif question.type == 'checkbox' %}
 							{% include options.html type=question.type options=question.options counter=counter col_width='col-12 col-sm-6 col-lg-3' %}
 							{% elsif question.type == 'textarea' %}
-							<div class="embed-responsive">
-								<textarea class="form-control embed-responsive-item" rows="4"></textarea>
+							<div class="ratio">
+								<textarea class="form-control ratio-item" rows="4"></textarea>
 								<div class="collapse" id="collapse{{ counter }}">
 									<div class="form-control form-control-sm border-success text-success">{{ question.answer }}</div>
 								</div>

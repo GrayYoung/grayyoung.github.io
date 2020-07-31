@@ -5,23 +5,11 @@
 		"pipes": [0],
 		"dest": []
 	},
-	"fontawesome": {
-		"type": "style",
-		"src": ["@fortawesome", "fontawesome-free", "scss", "*"],
-		"pipes": [0],
-		"dest": ["..", "_sass", "fontawesome"]
-	},
 	"fontawesomeCSSMain": {
 		"type": "style",
 		"src": ["@fortawesome", "fontawesome-free", "scss", "fontawesome.scss"],
 		"pipes": [0],
 		"dest": []
-	},
-	"bootstrapSCSS": {
-		"type": "style",
-		"src": ["bootstrap", "scss", "**", "*"],
-		"pipes": [0],
-		"dest": ["..", "_sass", "bootstrap"]
 	},
 	"bootstrapCSSMain": {
 		"type": "style",
@@ -43,79 +31,79 @@
 	},
 	"html5shiv": {
 		"type": "script",
-		"src": ["html5shiv", "dist", "html5shiv{*,-printshiv}.min.js"],
+		"src": ["html5shiv", "dist", "html5shiv{*,-printshiv}.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"respond": {
 		"type": "script",
-		"src": ["respond.js", "dest", "respond.min.js"],
+		"src": ["respond.js", "dest", "respond.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
+	},
+	"@popperjs": {
+		"type": "script",
+		"src": ["@popperjs", "core", "dist", "umd", "popper.min.{js,map}"],
+		"pipes": [0],
+		"dest": ["lib", "@popperjs"]
 	},
 	"popper": {
 		"type": "script",
-		"src": ["popper.js", "dist", "popper.min.js"],
-		"pipes": [0],
-		"dest": ["lib"]
-	},
-	"tether": {
-		"type": "script",
-		"src": ["tether", "dist", "js", "tether.min.js"],
+		"src": ["popper.js", "dist", "umd", "popper.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"jquery": {
 		"type": "script",
-		"src": ["jquery", "dist", "jquery.min.js"],
+		"src": ["jquery", "dist", "jquery.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"bootstrap": {
 		"type": "script",
-		"src": ["bootstrap", "dist", "js", "bootstrap.bundle.min.{js,map}"],
+		"src": ["bootstrap", "dist", "js", "bootstrap.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"slick": {
 		"type": "script",
-		"src": ["slick-carousel", "slick", "slick.js"],
+		"src": ["slick-carousel", "slick", "slick.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"jqueryUtilties": {
 		"type": "script",
-		"src": ["jQuery-Utilities", "dist", "jquery.browser.min.js"],
+		"src": ["jQuery-Utilities", "dist", "jquery.browser.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"xlsx": {
 		"type": "script",
-		"src": ["xlsx", "dist", "xlsx.min.js"],
+		"src": ["xlsx", "dist", "xlsx.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"jszip": {
 		"type": "script",
-		"src": ["xlsx", "dist", "jszip.js"],
+		"src": ["xlsx", "dist", "jszip.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"ajax": {
 		"type": "script",
-		"src": ["@fdaciuk", "ajax", "dist", "ajax.min.js"],
+		"src": ["@fdaciuk", "ajax", "dist", "ajax.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"player": {
 		"type": "script",
-		"src": ["plyr", "dist", "plyr.polyfilled.min.js"],
+		"src": ["plyr", "dist", "plyr.polyfilled.min.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	},
 	"require": {
 		"type": "script",
-		"src": ["requirejs", "require.js"],
+		"src": ["requirejs", "require.{js,map}"],
 		"pipes": [0],
 		"dest": ["lib"]
 	}

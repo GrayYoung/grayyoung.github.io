@@ -1,0 +1,114 @@
+#examination {
+	font-size: 11pt;
+	font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,Helvetica Neue,Arial,sans-serif;
+
+	header {
+		> p {
+			font-size: 16pt;
+		}
+
+		> h1 {
+			font-size: 24pt;
+		}
+
+		> small {
+			font-size: 14pt;
+		}
+	}
+
+	h2 {
+		font-size: 16pt;
+	}
+
+	h3, h4, .form-control {
+		font-size: 11pt;
+	}
+
+	h4 {
+		line-height: $input-height-sm;
+	}
+
+	div.form-control {
+		min-width: 8rem;
+		height: auto;
+		min-height: $input-height-sm;
+
+		.pl-1 {
+			padding-left: 1rem !important;
+		}
+
+		.pl-2 {
+			padding-left: 2rem !important;
+		}
+	}
+
+	.form-control-input:checked ~ .form-control-label::before {
+		border-color: $info;
+		background-color: $info;
+	}
+
+	.form-control-input:focus ~ .form-control-label::before, .ratio-item.form-control:focus {
+		box-shadow: 0 0 0 $input-btn-focus-width rgba($info, .25);
+	}
+
+	.ratio-item.form-control {
+		border: solid $input-border-color $input-border-width;
+	}
+
+	.ratio {
+		overflow: visible;
+
+		&.d-inline-block {
+			width: auto;
+
+			input.form-control {
+				border-radius: 0;
+				border-width: 0 0 $input-btn-focus-width 0;
+				box-shadow: none;
+
+				&:focus {
+					border-color: $info;
+					border-bottom-width: $input-btn-focus-width;
+				}
+
+				~ .collapse > div.form-control, ~ .collapsing > div.form-control {
+					border-radius: 0;
+					border-color: $info;
+					border-width: 0 0 $input-btn-focus-width 0;;
+				}
+			}
+		}
+	}
+
+	.collapsing {
+    position: relative;
+		display: block;
+		opacity: 0.5;
+		height: auto !important;
+		transition: opacity 0.15s linear;
+	}
+
+	.collapse {
+    position: relative;
+		transition: opacity 0.15s linear;
+
+		&:not(.show) {
+			display: block;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&.show {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	.text-success {
+		color: darken($success, 20%) !important;
+
+		.form-check-label {
+			font-weight: bold;
+		}
+	}
+}

@@ -3,5 +3,5 @@ _notes/
 .sass-cache/
 .jekyll-cache/
 node_modules/
-dist/js/build.txt
+dist/
 package-lock.json

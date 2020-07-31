@@ -1,9 +1,9 @@
 ---
 ---
 
-@import "bootstrap/functions";
+@import "bootstrap/scss/functions";
 @import "variables";
-@import "bootstrap/mixins";
+@import "bootstrap/scss/mixins";
 @import "mixins/animation";
 @import "slick";
 @import "typography";
@@ -14,6 +14,7 @@
 @import "metro";
 @import "article";
 @import "blog";
+@import "examination";
 @import "list";
 @import "resume";
 @import "printing";
@@ -44,7 +45,7 @@ body {
 	z-index: $zindex-dropdown;
 	width: 200px;
 	height: 100%;
-	border-right: solid 3px theme-color("primary");
+	border-right: solid 3px $primary;
 	background-color: $gray-900;
 	transition: all 0.5s;
 
@@ -63,15 +64,9 @@ body {
 			@include media-breakpoint-down(md) {
 				left: -200px;
 			}
-
-			@include media-breakpoint-only(md) {
-				.navbar-form {
-					right: calc(-100% - 170px);
-				}
-			}
 		}
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(md) {
 			overflow: hidden;
 
 			~ main, ~ footer {
@@ -98,12 +93,13 @@ main {
 
 #footer {
 	padding: 5px 0;
-	background-color: theme-color("primary");
+	background-color: $primary;
 	font-size: $font-size-sm;
 	color: white;
 }
 
 .breadcrumb {
+  padding: 0 $container-padding-x;
 	margin-top: 70px;
 }
 
@@ -120,7 +116,7 @@ var.text-warning {
 
 a.text-danger, a .text-danger {
 	&:hover, &:focus {
-		color: darken(theme-color("danger"), 15%);
+		color: darken($danger, 15%);
 	}
 }
 
@@ -137,10 +133,10 @@ a.text-danger, a .text-danger {
 	text-align: left;
 
 	a {
-		color: theme-color("warning");
+		color: $warning;
 
 		&:hover, &:active, &:focus {
-			color: darken(theme-color("warning"), 15%);
+			color: darken($warning, 15%);
 		}
 	}
 }
@@ -162,7 +158,7 @@ a.text-danger, a .text-danger {
 		height: 100%;
 		border-radius: 50%;
 		background-color: white;
-		box-shadow: 0 0 15px 1px theme-color("primary");
+		box-shadow: 0 0 15px 1px $primary;
 	}
 
 	.progress-label {
@@ -185,7 +181,7 @@ a.text-danger, a .text-danger {
 	
 #progressBar {
 	position: absolute;
-	top: 0;
+	top: -8px;
 	width: 100%;
 	height: 8px;
 	visibility: hidden;
@@ -226,10 +222,6 @@ a.text-danger, a .text-danger {
 	overflow: hidden;
 	background-color: $black;
 	color: white;
-
-	.jumbotron {
-		background-color: transparent;
-	}
 }
 
 nav .pagination {

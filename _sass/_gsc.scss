@@ -1,5 +1,9 @@
 //#== Google Custom Search Results
 
+#input-cse-search {
+	height: 31px !important;
+}
+
 .gsc-tabsArea {
 	> .gsc-tabHeader {
 		height: auto !important;
@@ -63,12 +67,12 @@
 .gsc-webResult.gsc-result:hover,
 .gsc-webResult.gsc-result.gsc-promotion:hover {
 	border-left: 0 !important;
-	border-bottom: 1px solid theme-color("primary") !important;
+	border-bottom: 1px solid $primary !important;
 }
 
 .gsc-results .gsc-imageResult-classic:hover,
 .gsc-results .gsc-imageResult-column:hover {
-	border-color: theme-color("primary") !important;
+	border-color: $primary !important;
 }
 
 .gs-no-results-result.gs-imageResult {
