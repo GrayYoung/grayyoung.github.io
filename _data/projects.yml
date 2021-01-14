@@ -7,7 +7,7 @@
 
 - name: ISM
   startDate:  2018-05-18
-  endDate:  now
+  endDate:  2019-10-21
   url: null
   description: <p>ISM is a web application that monitor network devices and remote control those devices, also could observe status information of the devices on charts and tables, such as CPU utilization memory utilization and sent data or received data.</p>
   responsibility: <p>I'm mainly responsible for web front-end development, make the datas be visual, and show the datas on the map.</p>
