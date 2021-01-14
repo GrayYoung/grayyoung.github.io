@@ -71,7 +71,7 @@ require([ './config' ], function(config) {
 		}).ready(function(){
 			var $container = $('#containerListing');
 			var setting = {
-				pageSize : 20
+				pageSize : 40
 			};
 			var type = util.getUrlParam('type', true), genre = util.getUrlParam('genre', true);
 			var listItems = function(workbook) {
