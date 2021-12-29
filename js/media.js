@@ -7,7 +7,7 @@
 /* global require */
 require([ './config' ], function(config) {
 	require([ 'app/controller/global' ]);
-	require([ 'app/model/util', 'app/model/requests', 'app/model/excelRequest', 'app/model/iterateMedia', 'jquery', 'bootstrap', 'xlsx' ], function(util, requests, excelRequest, iterateMedia, $) {
+	require([ 'app/model/util', 'app/model/requests', 'app/model/excelRequest', 'app/model/iterateMedia', 'jquery', 'bootstrap', 'xlsx' ], function(util, requests, excelRequest, iterateMedia, $, bootstrap) {
 		$(document).on('mousewheel.ls.media', function(event) {
 			this.event = event;
 			util.throttle(scrollEventHandler, this);
@@ -32,7 +32,8 @@ require([ './config' ], function(config) {
 					$(this).remove();
 				});
 				$this.parent().after($modal);
-				$modal.modal('show');
+				var previewModal = new bootstrap.Modal($modal);
+        previewModal.show();
 			}
 			$modal.find('.carousel-control-prev, .carousel-control-next').off('click').one('click', function(event) {
 				var $arrow = $(this);

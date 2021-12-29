@@ -1,7 +1,7 @@
 {% if include.is_single %}
-<a class="d-print-none mx-2" href="#collapse{{ counter }}" role="button" aria-expanded="false" aria-controls="collapse{{ counter }}" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="{{ include.tip }}"><i class="fa fa-question-circle"></i></a>
+<a class="d-print-none mx-2" href="#collapse{{ counter }}" role="button" aria-expanded="false" aria-controls="collapse{{ counter }}" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ include.tip }}"><i class="fa fa-question-circle"></i></a>
 {% else %}
-<a class="d-print-none mx-2" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="{{ include.tip }}">
+<a class="d-print-none mx-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ include.tip }}">
 	<i class="fa fa-question-circle"></i>
 </a>
 {% endif %}

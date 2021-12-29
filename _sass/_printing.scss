@@ -10,7 +10,7 @@ $pb-break: percentage(1 / 3);
 		@include media-breakpoint-up(md) {
 			position: relative;
 			padding-left: 40%;
-			height: 246px;
+			height: 244px;
 			margin-bottom: 14rem;
 			background-image: linear-gradient(to right, #fec536 0%, #fec536 28.499369%, #0087be 28.499369%, #0087be 100%);
 
@@ -45,7 +45,8 @@ $pb-break: percentage(1 / 3);
 		}
 
 		.arrow-bottom {
-			top: 50%;
+			top: auto;
+			bottom: 0;
 			border-color: transparent transparent #69c4bd;
 			border-width: 0 ceil($ph-height / 2) ceil($ph-height / 2);
 		}
@@ -78,7 +79,7 @@ $pb-break: percentage(1 / 3);
 	}
 
 	.text-danger {
-		color: theme-color("primary");
+		color: $primary;
 	}
 
 	@include media-breakpoint-up(md) {

@@ -92,14 +92,6 @@ function processSASS(glob) {
 	}));
 }
 
-gulp.task('update-package', function() {
-	var exec = require('child_process').exec;
-
-	return exec('npm install --only=prod', function (err, stdout, stderr) {
-		gulp.series('update-lib');
-	});
-});
-
 gulp.task('update-lib', function() {
 	var mainStream = mergeStream(), packageMap = JSON.parse(fs.readFileSync('./package.map', 'utf8')), property = null, filesSrc = '', basePath = '';
 
@@ -125,7 +117,6 @@ gulp.task('update-lib', function() {
 		return stream;
 	}
 
-	gulp.series('update-package');
 	for(var i in packageMap) {
 		property = packageMap[i];
 		filesSrc = path.join(paths.bowerLib, property.src.join('/'));

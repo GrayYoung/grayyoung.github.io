@@ -3,9 +3,9 @@
 <ul class="row list-unstyled">
 	{% for option in include.options %}
 	<li class="{{ include.col_width }} mb-1">
-		<div class="custom-control custom-control-inline custom-{{ include.type }} align-text-top mr-0">
-			<input name="{{ include.type }}{{ include.counter }}" type="{{ include.type }}" class="custom-control-input" id="{{ include.type }}{{ include.counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
-			<label class="custom-control-label" for="{{ include.type }}{{ include.counter }}{{ forloop.index }}">{{ letters[forloop.index] }}) {{ option.answer }}</label>
+		<div class="form-check align-text-top me-0">
+			<input name="{{ include.type }}{{ include.counter }}" type="{{ include.type }}" autocomplete="off" class="form-check-input" id="{{ include.type }}{{ include.counter }}{{ forloop.index }}" value="{{ option.isTrue }}" />
+			<label class="form-check-label" for="{{ include.type }}{{ include.counter }}{{ forloop.index }}">{{ letters[forloop.index] }}) {{ option.answer }}</label>
 		</div>
 	</li>
 	{% endfor %}

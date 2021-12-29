@@ -37,7 +37,7 @@
 		}
 	}
 
-	.embed-responsive {
+	.ratio {
 		&:not(.no-pattern):before {
 			background-blend-mode: darken;
 			mix-blend-mode: soft-light;
@@ -45,7 +45,7 @@
 		}
 	}
 
-	.embed-responsive-item {
+	.ratio-item {
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 		font-family: "Trade Gothic";
 		color: $white;
@@ -54,7 +54,7 @@
 			mix-blend-mode: color;
 		}
 
-		+ .embed-responsive-item {
+		+ .ratio-item {
 			border: solid 4px $white;
 
 			@include media-breakpoint-down(sm) {
@@ -77,6 +77,7 @@
 		}
 
 		a {
+      text-decoration: none;
 			color: $white;
 
 			&:hover, &:focus {
@@ -86,7 +87,7 @@
 		}
 	}
 
-	.embed-responsive-9by2 .embed-responsive-item {
+	.ratio-9x2 .ratio-item {
 		padding-left: 5%;
 
 		> * {

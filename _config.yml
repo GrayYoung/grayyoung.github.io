@@ -27,6 +27,8 @@ exclude:
   - gulpfile.js
 
 sass:
+  load_paths:
+    - node_modules
   style: compressed
 
 paginate: 8
