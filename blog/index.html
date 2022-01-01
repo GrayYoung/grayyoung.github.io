@@ -12,7 +12,7 @@ showBC: true
 </div>
 <section class="container-fluid">
 	<hr>
-	<h1 class="sr-only">Blog</h1>
+	<h1 class="visually-hidden">Blog</h1>
 	<ul class="row list-unstyled list-blog">
 		{% for post in paginator.posts %}
 		<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
@@ -42,7 +42,7 @@ showBC: true
 			{% for page in (1..paginator.total_pages) %}
 				{% if page == paginator.page %}
 				<li class="page-item active">
-					<a class="page-link" href="#">{{ page }} <span class="sr-only">(current)</span></a>
+					<a class="page-link" href="#">{{ page }} <span class="visually-hidden">(current)</span></a>
 				</li>
 				{% elsif page == 1 %}
 				<li class="page-item">

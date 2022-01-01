@@ -29,7 +29,7 @@
 
 .navbar-toggler {
 	position: fixed;
-	top: ceil($grid-gutter-width / 2 + 2.5px);
+	top: calc(#{ceil($grid-gutter-width / 2)} + 2.5px);
 	left: 15px;
 	z-index: $zindex-dropdown;
 	padding: 0;
@@ -79,14 +79,14 @@
 			&:hover, &:focus {
 				background-color: $gray-900;
 				text-decoration: none;
-				color: theme-color("primary");
+				color: $primary;
 			}
 		}
 
 		&.active > .nav-link {
 			border-right: solid 3px $white;
 			background-color: $gray-900;
-			color: theme-color("primary");
+			color: $primary;
 		}
 	}
 
@@ -103,11 +103,10 @@
 		transition: right 0.75s;
 	}
 
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		padding: 50px ceil($grid-gutter-width / 2) $grid-gutter-width;
 
 		.btn-inverse {
-			padding-left: 0;
 			border-color: $gray-900;
 			border-left-width: 0 !important;
 			background-color: $white;

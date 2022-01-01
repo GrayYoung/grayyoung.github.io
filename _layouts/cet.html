@@ -28,7 +28,7 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 						{{ part.title }}
 						{% include tooltip.html is_single="false" tip="显示本组题答案" %}
 					</span>
-					<span class="col-4 text-right">{{ part.length }} minutes</span>
+					<span class="col-4 text-end">{{ part.length }} minutes</span>
 				</strong>
 			</h2>
 			{% if part.audio %}
@@ -44,8 +44,8 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 				</div>
 				{% endif %}
 				<div class="card-body">
-					<p class="row no-gutters mb-3">
-						<span class="col pr-3 flex-grow-0"><strong>Directions: </strong></span>
+					<p class="row g-0 mb-3">
+						<span class="col pe-3 flex-grow-0"><strong>Directions: </strong></span>
 						<span class="col"><i>{{ part.directions }}</i></span>
 					</p>
 					<ul class="list-unstyled mb-0">
@@ -56,8 +56,8 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 								{% include tooltip.html is_single="true" tip="显示本题答案" %}
 							</h4>
 							{% if question.type == 'textarea' %}
-							<div class="embed-responsive">
-								<textarea class="form-control embed-responsive-item" rows="10"></textarea>
+							<div class="ratio">
+								<textarea class="form-control ratio-item" rows="10"></textarea>
 								<div class="collapse" id="collapse{{ counter }}">
 									<div class="form-control form-control-sm border-success text-success">{{ question.answer }}</div>
 								</div>
@@ -81,15 +81,15 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 				{% if section.title %}
 				<h3 class="mb-1"><strong>{{ section.title }}</strong></h3>
 				{% endif %}
-				<p class="row no-gutters mb-3">
-					<span class="col pr-3 flex-grow-0"><strong>Directions: </strong></span>
+				<p class="row g-0 mb-3">
+					<span class="col pe-3 flex-grow-0"><strong>Directions: </strong></span>
 					<span class="col"><i>{{ section.directions }}</i></span>
 				</p>
 				<div class="clearfix">
 					{{ section.article }}
 				</div>
 				{% for content in section.paragraphs %}
-				<p class="row"><span class="col flex-grow-0 pr-0">[{{ letters[forloop.index] }}]</span><span class="col">{{ content }}</span></p>
+				<p class="row"><span class="col flex-grow-0 pe-0">[{{ letters[forloop.index] }}]</span><span class="col">{{ content }}</span></p>
 				{% endfor %}
 				{% if section.options %}
 				<div class="border border-dark p-4 mb-3">
@@ -107,13 +107,13 @@ extraJS: [/js/lib/plyr.polyfilled.min.js]
 					{% for question in section.questions %}
 					<li class="mb-3" data-type="{{ question.type }}">
 						{% if question.type == 'select' %}
-						<h4 class="row no-gutters">
-							<span class="col flex-grow-0 pr-2">{{ counter }}.</span>
+						<h4 class="row g-0">
+							<span class="col flex-grow-0 pe-2">{{ counter }}.</span>
 							<span class="col">
-								<strong class="mr-3">{{ question.title }}</strong>
+								<strong class="me-3">{{ question.title }}</strong>
 								{% include tooltip.html is_single="true" tip="显示本题答案" %}
-								<div class="embed-responsive d-inline-block align-middle">
-									<select id="input{{ counter }}" class="form-control form-control-sm embed-responsive-item">
+								<div class="ratio d-inline-block align-middle">
+									<select id="input{{ counter }}" class="form-control form-control-sm ratio-item">
 										{% for option in letters %}
 										<option value="{{ option }}">{{ option }}</option>
 										{% endfor %}

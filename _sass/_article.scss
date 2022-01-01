@@ -61,23 +61,24 @@
 				z-index: 1;
 				max-height: calc(100vh - 70px);
 				overflow-y: auto;
-			}
 
-			.nav-pills {
-				padding-left: 0.5rem;
+        > .nav-pills {
+          box-sizing: border-box;
+          border-left: solid 1px $primary;
+        }
 			}
 
 			.nav-link {
-				padding: 0.1rem 0;
+        box-sizing: border-box;
+				padding: 0.1rem 0 0.1rem 0.5rem;
 				border-radius: 0;
 				overflow: hidden;
-				word-break: keep-all;
-				white-space: nowrap;
+        word-break: break-word;
 				text-overflow: ellipsis;
 				color: $gray-700;
 
 				&:hover, &:active, &:hover {
-					color: theme-color("primary");
+					color: $primary;
 					text-decoration: none;
 				}
 
@@ -88,19 +89,19 @@
 				}
 
 				&.active {
-					border-left: solid 3px theme-color("primary");
+          padding-left: calc(0.25rem + 3px);
+					border-left: solid 3px $primary;
 					background-color: transparent;
 					font-weight: bold;
 					color: $gray-900;
 
 					+ .nav {
 						height: auto;
-						border-left: solid 1px theme-color("primary");
+						margin-left: 0.5rem;
 						overflow: visible;
 					}
 				}
 			}
-
 		}
 	}
 }
@@ -118,7 +119,7 @@
 		left: 0;
 		width: 100%;
 		text-align: center;
-		text-shadow: 1px 1px 1px theme-color("dark");
+		text-shadow: 1px 1px 1px $dark;
 		font-weight: bold;
 	}
 }
@@ -167,20 +168,20 @@
 		}
 	}
 
-	.custom-control-input:checked ~ .custom-control-label::before {
-		border-color: theme-color("info");
-		background-color: theme-color("info");
+	.form-control-input:checked ~ .form-control-label::before {
+		border-color: $info;
+		background-color: $info;
 	}
 
-	.custom-control-input:focus ~ .custom-control-label::before, .embed-responsive-item.form-control:focus {
-		box-shadow: 0 0 0 $input-btn-focus-width rgba(theme-color("info"), .25);
+	.form-control-input:focus ~ .form-control-label::before, .ratio-item.form-control:focus {
+		box-shadow: 0 0 0 $input-btn-focus-width rgba($info, .25);
 	}
 
-	.embed-responsive-item.form-control {
+	.ratio-item.form-control {
 		border: solid $input-border-color $input-border-width;
 	}
 
-	.embed-responsive {
+	.ratio {
 		overflow: visible;
 
 		&.d-inline-block {
@@ -192,13 +193,13 @@
 				box-shadow: none;
 
 				&:focus {
-					border-color: theme-color("info");
+					border-color: $info;
 					border-bottom-width: $input-btn-focus-width;
 				}
 
 				~ .collapse > div.form-control, ~ .collapsing > div.form-control {
 					border-radius: 0;
-					border-color: theme-color("info");
+					border-color: $info;
 					border-width: 0 0 $input-btn-focus-width 0;;
 				}
 			}
@@ -206,6 +207,7 @@
 	}
 
 	.collapsing {
+    position: relative;
 		display: block;
 		opacity: 0.5;
 		height: auto !important;
@@ -213,6 +215,7 @@
 	}
 
 	.collapse {
+    position: relative;
 		transition: opacity 0.15s linear;
 
 		&:not(.show) {
@@ -222,16 +225,15 @@
 		}
 
 		&.show {
-			position: relative;
 			z-index: 1;
 			opacity: 1;
 		}
 	}
 
 	.text-success {
-		color: darken(theme-color("success"), 20%) !important;
+		color: darken($success, 20%) !important;
 
-		.custom-control-label {
+		.form-check-label {
 			font-weight: bold;
 		}
 	}

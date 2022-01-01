@@ -13,9 +13,7 @@
 	}
 }
 
-.card-columns {
-	column-count: 1;
-	column-gap: 0;
+#containerListing > li {
 
 	> .card {
 		min-height: 300px;

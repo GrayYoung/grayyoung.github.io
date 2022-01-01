@@ -7,7 +7,7 @@
 require([ './config' ], function(config) {
 	require([ 'app/controller/global', 'app/controller/affixNavigation' ]);
 
-	require([ 'jquery', 'bootstrap' ], function($) {
+	require([ 'jquery', 'bootstrap' ], function($, bootstrap) {
 		$(document).ready(function() {
 			$('a[href]').filter(function() {
 				return $(this).children('sup').length > 0;
@@ -18,18 +18,22 @@ require([ './config' ], function(config) {
 					$this.attr('data-original-title', '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...');
 					$.get($this.attr('href'), function(data) {
 						var supStr = $(data).find($this.attr('href').match(/(\#[\w, \d]+)/g)[0]).html();
+            var bsTooltip = new bootstrap.Tooltip(this);
 
-						$this.attr('data-original-title', supStr).tooltip('show');
+						$this.attr('data-original-title', supStr);
+            bsTooltip.show();
 					});
 				}
-			}).tooltip({
-				container: '#containerMain',
-				placement : 'top',
-				html : true,
-				title : function() {
-					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
-				}
-			});
+			}).each(function () {
+        var bsTooltip = new bootstrap.Tooltip(this, {
+          container: '#containerMain',
+          placement : 'top',
+          html : true,
+          title : function() {
+            return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
+          }
+        });
+      });
 		});
 	});
 });
