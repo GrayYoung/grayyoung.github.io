@@ -37,9 +37,9 @@ define(['app/model/util', 'app/model/breakpoints', 'jquery', 'bootstrap'], funct
 		$outline.children(':first').append(outlineScanner($article.children('section').addClass('col-md-9 col-xs-12 order-1'), 0));
 		$article.children('section').wrapAll('<div class="row" />').first().before($outline);
 
-    var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-      target: '.sticky-top .nav'
-    })
-    
+		var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+			target: '.sticky-top .nav'
+		})
+		
 	});
 });

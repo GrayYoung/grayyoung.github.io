@@ -1,74 +1,74 @@
 <header id="header" class="collapse" aria-expanded="false">
-  <div>
-    <nav class="navbar">
-      <button type="button" class="rounded-circle navbar-toggler collapsed" data-bs-toggle="collapse"
-        data-bs-target="#header" aria-controls="header" aria-expanded="false">
-        <span class="visually-hidden">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">
-        <span class="d-block">GRAY</span>
-      </a>
-      <ul class="list-inline text-center">
-        <li class="list-inline-item">
-          <a target="_blank" href="https://github.com/GrayYoung">
-            <i class="fab fa-github" aria-hidden="true"></i>
-            <span class="visually-hidden"><strong class="text-uppercase">Follow Me on Github</strong></span>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a target="_blank" href="https://www.facebook.com/profile.php?id=100010823177377">
-            <i class="fab fa-facebook" aria-hidden="true"></i>
-            <span class="visually-hidden"><strong class="text-uppercase">Follow Me on Facebook</strong></span>
-          </a>
-        </li>
-        <li class="list-inline-item d-none">
-          <a target="_blank" href="http://weibo.com/MarchGrayYoung/">
-            <i class="fab fa-weibo" aria-hidden="true"></i>
-            <span class="visually-hidden"><strong class="text-uppercase">Follow Me on Sina</strong></span>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a target="_blank" href="https://plus.google.com/u/0/111891129703746085317/posts">
-            <i class="fab fa-google-plus" aria-hidden="true"></i>
-            <span class="visually-hidden"><strong class="text-uppercase">Follow Me on Google+</strong></span>
-          </a>
-        </li>
-      </ul>
-      <div class="navbar-collapse collapse show">
-        <ul class="navbar-nav">
-          {% for item in site.data.navigation %}
-          <li class="nav-item">
-            {% if false || item.subs %}
-            <a href="{{ item.url | prepend: site.baseurl }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-              role="button" aria-haspopup="true" aria-expanded="false">
-              {{ item.label }}
-            </a>
-            <ul class="dropdown-menu">
-              {% for sub in item.subs %}
-              <li class="dropdown-item">
-                <a href="{{ sub.url | prepend: site.baseurl }}">{{ sub.label }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-            {% else %}
-            <a class="nav-link" href="{{ item.url  | prepend: site.baseurl }}">{{ item.label }}</a>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-        <form id="form-cse-search" class="navbar-form" role="search" action="/search/">
-          <div class="input-group input-group-sm">
-            <input id="input-cse-search" name="query" type="text" required class="form-control" placeholder="">
-            <button type="submit" class="btn btn-inverse">
-              <span class="d-none d-md-inline">SEARCH</span>
-              <i class="fa fa-search d-md-none" aria-label="Search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </nav>
-  </div>
+	<div>
+		<nav class="navbar">
+			<button type="button" class="rounded-circle navbar-toggler collapsed" data-bs-toggle="collapse"
+				data-bs-target="#header" aria-controls="header" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">
+				<span class="d-block">GRAY</span>
+			</a>
+			<ul class="list-inline text-center">
+				<li class="list-inline-item">
+					<a target="_blank" href="https://github.com/GrayYoung">
+						<i class="fab fa-github" aria-hidden="true"></i>
+						<span class="visually-hidden"><strong class="text-uppercase">Follow Me on Github</strong></span>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a target="_blank" href="https://www.facebook.com/profile.php?id=100010823177377">
+						<i class="fab fa-facebook" aria-hidden="true"></i>
+						<span class="visually-hidden"><strong class="text-uppercase">Follow Me on Facebook</strong></span>
+					</a>
+				</li>
+				<li class="list-inline-item d-none">
+					<a target="_blank" href="http://weibo.com/MarchGrayYoung/">
+						<i class="fab fa-weibo" aria-hidden="true"></i>
+						<span class="visually-hidden"><strong class="text-uppercase">Follow Me on Sina</strong></span>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a target="_blank" href="https://plus.google.com/u/0/111891129703746085317/posts">
+						<i class="fab fa-google-plus" aria-hidden="true"></i>
+						<span class="visually-hidden"><strong class="text-uppercase">Follow Me on Google+</strong></span>
+					</a>
+				</li>
+			</ul>
+			<div class="navbar-collapse collapse show">
+				<ul class="navbar-nav">
+					{% for item in site.data.navigation %}
+					<li class="nav-item">
+						{% if false || item.subs %}
+						<a href="{{ item.url | prepend: site.baseurl }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+							role="button" aria-haspopup="true" aria-expanded="false">
+							{{ item.label }}
+						</a>
+						<ul class="dropdown-menu">
+							{% for sub in item.subs %}
+							<li class="dropdown-item">
+								<a href="{{ sub.url | prepend: site.baseurl }}">{{ sub.label }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+						{% else %}
+						<a class="nav-link" href="{{ item.url	| prepend: site.baseurl }}">{{ item.label }}</a>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</ul>
+				<form id="form-cse-search" class="navbar-form" role="search" action="/search/">
+					<div class="input-group input-group-sm">
+						<input id="input-cse-search" name="query" type="text" required class="form-control" placeholder="">
+						<button type="submit" class="btn btn-inverse">
+							<span class="d-none d-md-inline">SEARCH</span>
+							<i class="fa fa-search d-md-none" aria-label="Search"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</nav>
+	</div>
 </header>

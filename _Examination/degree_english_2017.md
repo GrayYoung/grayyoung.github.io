@@ -3,13 +3,13 @@ layout: cet
 pageName: examination
 title: 四川学位英语考试预测题及答案
 period: 2017年04月
-courseID: 
-description: 
+courseID:
+description:
 parts:
   - title: 完成对话
-    sections: 
-      - title: 
-        questions: 
+    sections:
+      - title:
+        questions:
           - title: "Harry: Do you mind my smoking here?<br/>Lynn: ______"
             type: radio
             options:
@@ -121,10 +121,10 @@ parts:
               - answer: I believe not
                 isTrue: true
   - title: 阅读理解
-    sections: 
-      - title: 
+    sections:
+      - title:
         passages:
-          - title: 
+          - title:
             article: <p class="pgh-indent">Animals seem to have the sense to eat when they are hungry and they do not eat more than their bodies need. It has been demonstrated that rats will, when given a choice over a period of time, prefer water with vitamins to water without vitamins even though there is no difference in taste or smell between the two water bottles. When a fragrant flavor was added to the vitamin enriched fluid, the rats did seem to develop a taste for it and kept drinking it, even after the vitamins were switched to the clear water. In time, however, they broke the habit and went back to where the necessary vitamins were.</p><p class="pgh-indent">In a classic experiment, babies of 6 to 12 months old were placed in a cafeteria feeding arrangement, with a wide selection of baby food before them. They were given whatever food they pointed to or appeared interested in. We are told that at first they showed some unusual eating patterns, but that over a period of time they managed to select well-balanced diet.</p><p class="pgh-indent">So, in selecting food, rats and babies do seem to know and act on what‘s best for them.Apparently, there is a kind of "body wisdom" . which hmnans soon lose.Most of us do not eat as wisely as we could.</p><p class="pgh-indent">Many of our food preferences are culturally determined and influenced by long-established habits. Some people eat fox, dog and blackbirds, while we eat cows and pigs. So what people eat and how much they eat seem to be greatly influenced by what is going on around them.</p>
             questions:
               - title: In the experiment on rats, a fragrant flavor was added to the rat‘s drinking water to
@@ -182,9 +182,9 @@ parts:
                     isTrue: false
                   - answer: both develop a taste for the same kinds of flavors
                     isTrue: false
-          - title: 
+          - title:
             article: <p class="pgh-indent">Suicide has been a cause of concern in most societies for a long time. The classical Greeks, for example, required people who wanted to kill themselves to get permission from the senate. While this law is not without humor by today' s standards, it clearly shows an awareness of the problem in times gone by.</p><p class="pgh-indent">In today' s society, suicide is much more prevalent than we want to admit. Why do people try to take their own lives?</p><p class="pgh-indent">The motives for suicide can be categorized into areas such as a failure, wrath（暴怒）, the needfor attention, stress, and so on. However, the qualities of a person who wants to take his own life change from person to person, making it difficult to depict（描写）the typical victim. To make the problem even more confusing, people will often camouflage（掩盖）their true feelings, thus causing their friends to disregard problems that should be viewed as serious.</p><p class="pgh-indent">In the United States, a network of centers has been created to attempt to prevent suicides.People who are bitter, worded, or depressed are encouraged to contact workers at these centers. These workers, often trained volunteers, offer benevolent advice to the callers, trying to help the callers to see that suicide as a solutions to problems is an illusion. The accomplishments of these centers, insofar（到这个程度）as their effectiveness to reduce suicide is concerned, are minimal However, they have helped a lot of people with a wide variety of problems.So, in the somewhat amorphous（难以名状的）area of man helping his fellow man, they are certainly a success.</p>
-            questions: 
+            questions:
               - title: Which of the following statements is TRUE according to the article?
                 type: radio
                 options:
@@ -240,9 +240,9 @@ parts:
                     isTrue: true
                   - answer: in the United States, people who want to commit suicide call a network of centers to get help
                     isTrue: false
-          - title: 
+          - title:
             article: <p class="pgh-indent">To swim across the English Channel takes at least nine hours.It's a hard work and it makes you short of breath. To fly over the Channel takes only twenty minutes （as long as you’re not held up at the airport. , but it's an expensive way to travel.You can travel by hovercraft if you don’t mind the noise, and that takes forty minutes. Otherwise you can go by boat, if you forget your sea-sickness ills. All these means of transport have their problems and the weary（不耐烦的）traveler often dreams of being able to drive to France in his own car. “Not possible”, you say, Well, wait a minute.People are once again considering the idea of a Channel tunnel or bridge.</p><p class="pgh-indent">This time, the Greater London Council is looking into the possibility of building a Channel link straight to London. A bridge would cost far more than a tunnel, but you would be able to go by rail or by car on a bridge, whereas a tunnel would provide ar all link only.</p><p class="pgh-indent">Why is this idea being discussed again? Is Britain becoming more conscious of the need for links with Europe as a result of joining the EEC（欧供体）? Well, perhaps.The main reason, though, is that a tunnel or bridge would reach the twenty square kilometers of London's disused dockland（船坞地）. A link from London to the continent would stimulate trade and re-vitalize（使……重新有活力）the port, and would make London a main trading center in Europe. With alink over the Channel, you could buy your fish and chips in England, and be able to eat them in France while they were still warm！</p>
-            questions: 
+            questions:
               - title: Which of the following statements is TRUE?
                 type: radio
                 options:
@@ -298,9 +298,9 @@ parts:
                     isTrue: false
                   - answer: make London more prosperous again
                     isTrue: true
-          - title: 
+          - title:
             article: <p class="pgh-indent">The market investigation is indispensable to sales promotion.They are closely related as the lips and teeth, so to speak.What you produce is for sale on the market. It would be impossible to succeed in selling a product without first investigating the market.</p><p class="pgh-indent">In the international market, goods on sale coming from different countries and suppliers are always facing keen competition. Under such circumstances, they will try everything possible to familiarize themselves with the market conditions.In making investigations, we ought to get information about what similar items the competitors are offering on the market, what prices they are quoting（报价）, what features their products have, who are their regular customers, etc. Then, how can we obtain such information? There are many channels that we ean make use of in doing this sort of work.The commercial counselor‘s offices of our embassies stationed abroad can help us in making market investigations.</p><p class="pgh-indent">Nowadays, our import and export corporations send their trade groups abroad every now and then. One of their purposes is to make market surveys on the spot.</p><p class="pgh-indent">Certainly, face-to-face talks with foreign businessmen are also important channels to get market information.The Chinese Export Commodities Fairs and some other fairs of similar nature as well as visits of foreign businessmen provide us with such opportunities.Of course, there are some other ways of making market investigations.</p>
-            questions: 
+            questions:
               - title: In making market investigation, one should （ ）
                 type: radio
                 options:
@@ -357,9 +357,9 @@ parts:
                   - answer: to have face-to-face talks with foreign businessmen
                     isTrue: false
   - title: 词汇和语法
-    sections: 
-      - title: 
-        questions: 
+    sections:
+      - title:
+        questions:
           - title: Mr. Wilson said that he did not want to _____ any further responsibilities.
             type: radio
             options:
@@ -582,13 +582,13 @@ parts:
                 isTrue: false
   - title: 翻译（英译汉）
     directions: N/A
-    questions: 
+    questions:
       - title: While it cannot be scientifically proven （or disproved, for that matter. that global warming caused any particular extreme event, we can say that global warming very likely makes many kinds of extreme weather both more frequent and more severe.
         type: textarea
         answer: 尽管在科学上还无法证明（或否定）是全球变暖导致了某些特定的极端天气，我们还是可以说全球变暖很可能使多种极端天气发生得更频繁、更恶劣。
   - title: 写作
     directions: N/A
-    questions: 
+    questions:
       - title: "Directions: For this part , you are allowed 30 minutes to write a composition on the topic “ How I Fi-nance My College Education”. You should write at least 120 words, and base your composition on the outline given in Chinese below：<br/>1.上大学的费用（tuition and fees.可以通过多种途径解决；<br/>2.哪种途径适合于我（说明理由）。"
         type: textarea
         answer: <h5 class="text-center">How I Finance My College Education</h5><p class="pgh-indent">It is a fact that college is becoming more and more expensive and college life is becoming especially hard for the students who were born in needy families. However, there are several ways in which these students can cover their tuition that their parents are not able to afford. Finding a part-time job, for example, is an ideal way. Besides, one can ask the bank for a loan and repay it when he has the ability. Finally, one can seek assistance from the society.</p><p class="pgh-indent">For me, earning tuition by doing part-time jobs is the most suitable way. First, I learn to be independent both mentally and economically in this way. Apart from this, I no longer need to wor-ry my parents with so heavy a burden. Finally, since I earn my own living, I will be more confi-dent with myself and, therefore, I can live a busy but meaningful college life.</p>

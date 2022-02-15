@@ -15,11 +15,11 @@ require([ './config' ], function(config) {
 			if ($this.children('.fa-question-circle').length) {
 				event.preventDefault();
 				if ($item.length) {
-          $item.find('.ratio > .collapse').each(function() {
-            var bsCollapse = new bootstrap.Collapse(this);
-  
-            bsCollapse.toggle();
-          });
+					$item.find('.ratio > .collapse').each(function() {
+						var bsCollapse = new bootstrap.Collapse(this);
+	
+						bsCollapse.toggle();
+					});
 
 					switch ($item.data('type')) {
 						case 'radio':
@@ -42,7 +42,7 @@ require([ './config' ], function(config) {
 							break;
 						case 'select':
 						case 'text':
-            case 'textarea':
+						case 'textarea':
 					}
 				} else {
 					$item = $this.closest('section');
@@ -67,17 +67,17 @@ require([ './config' ], function(config) {
 				});
 			});
 
-      $('[data-bs-toggle="tooltip"]').each(function () {
-        var bsTooltip = new bootstrap.Tooltip(this, {
-          container: '#containerMain'
-        });
-      });
+			$('[data-bs-toggle="tooltip"]').each(function () {
+				var bsTooltip = new bootstrap.Tooltip(this, {
+					container: '#containerMain'
+				});
+			});
 
 			/* $('.form-control-label, u').on('inserted.bs.tooltip', function(event) {
 				var $this = $(this);
 
-				if($this.attr('data-original-title') === '') {
-					$this.attr('data-original-title', '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...');
+				if($this.attr('data-bs-original-title') === '') {
+					$this.attr('data-bs-original-title', '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...');
 					translate({
 						from: 'zh-CN',
 						to: 'en',
@@ -88,7 +88,7 @@ require([ './config' ], function(config) {
 							to: 'zh-CN',
 							query: enData.translated
 						}, function(zhData) {
-							$this.attr('data-original-title', enData.translated + ' | ' + zhData.translated).tooltip('show');
+							$this.attr('data-bs-original-title', enData.translated + ' | ' + zhData.translated).tooltip('show');
 						});
 					});
 				}
@@ -98,7 +98,7 @@ require([ './config' ], function(config) {
 				html : true,
 				trigger: 'click focus',
 				title : function() {
-					return $(this).attr('data-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
+					return $(this).attr('data-bs-original-title') || '<i class="fa fa-circle-notch fa-spin" aria-label="Loading"></i>...';
 				}
 			}); */
 			if ($('#player').length) {

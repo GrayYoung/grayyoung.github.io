@@ -3,6 +3,7 @@
 
 .carousel-control-prev, .carousel-control-next {
 	visibility: hidden;
+	text-decoration: none;
 	color: $primary;
 
 	&:hover, &:focus {

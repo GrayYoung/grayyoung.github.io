@@ -54,7 +54,7 @@
 .navbar-brand {
 	padding: ceil($grid-gutter-width / 2);
 	margin-right: 0;
-	margin-bottom:  ceil($grid-gutter-width / 2);
+	margin-bottom: ceil($grid-gutter-width / 2);
 	background-color: $gray-900;
 	text-align: center;
 	font-family: "Trade Gothic";
@@ -73,7 +73,7 @@
 
 	> li {
 		> .nav-link {
-			display:  block;
+			display: block;
 			padding: 10px ceil($grid-gutter-width / 2);
 
 			&:hover, &:focus {

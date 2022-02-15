@@ -33,7 +33,7 @@ require([ './config' ], function(config) {
 				});
 				$this.parent().after($modal);
 				var previewModal = new bootstrap.Modal($modal);
-        previewModal.show();
+				previewModal.show();
 			}
 			$modal.find('.carousel-control-prev, .carousel-control-next').off('click').one('click', function(event) {
 				var $arrow = $(this);
@@ -81,9 +81,9 @@ require([ './config' ], function(config) {
 				}
 				var sheet = (workbook && workbook.Sheets[genre || workbook.SheetNames[0]]) || $container.data('sheet');
 				var offset = $container.data('offset') || 2;
-				var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
+				var $p = $('#fixedProgress'), $pLabel = $('.progress-label', $p);
 				var callData = function(data) {
-					var $p = $('#fixedProgress'), $pLabel =  $('.progress-label', $p);
+					var $p = $('#fixedProgress'), $pLabel = $('.progress-label', $p);
 					var $preview = $(document.getElementById('tl-preview').content).children().clone().data({
 						imdbData: data,
 						page: parseInt(offset / setting.pageSize, 10) + 1
