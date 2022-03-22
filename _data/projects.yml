@@ -2,8 +2,8 @@
   startDate: 2019-11-01
   endDate: now
   url: https://fieldbrowser.com
-  description: <p>FieldBrowser is a web application for assisting farmers to view data of fields and analyze the data for the past years, and improve yield. A user uses this application to view different map layers, such as NDVI(normalized difference vegetation index), field elevation, cloud-free imagery, and more than these. The user also can manage rovers what are robots that work on farms, control the missions, how many tasks to perform per week. And view session statuses of rovers.</p><p>Developed it with Angular.</p>
-  responsibility: <p>Mission control, timeline bar, layer-selector, map drawing tools, product tour, bookmark feature, field basket feature.</p>
+  description: <p>FieldBrowser is a web application for assisting farmers to view data of fields and analyze the data for the past years, and improve yield. A user uses this application to view different map layers, such as NDVI(normalized difference vegetation index), field elevation, cloud-free imagery, and more than these. The user also can manage rovers which are robots that work on farms, control the missions, and how many tasks to perform per week. And view session statuses of rovers.</p><p>Developed it with Angular.</p>
+  responsibility: <p>Implement features like Mission control, timeline bar, layer-selector, map-drawing tools, product tour, bookmark and field basket. And draw a zoomable draggable selectable plot heatmap chart with D3.</p>
 
 - name: Buzz
   startDate: 2019-10-22

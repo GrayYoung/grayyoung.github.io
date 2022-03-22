@@ -1,75 +1,90 @@
 - name: HTML <small>(HTML5)</small>
-  startDate:  2010-09-01
+  startDate: 2010-09-01
   rate: 1
   url: https://www.w3.org/TR/html5/
 
 - name: CSS <small>(CSS3)</small>
-  startDate:  2010-09-01
+  startDate: 2010-09-01
   rate: 1
   url: https://www.w3.org/TR/CSS/
 
 - name: JavaScript
-  startDate:  2011-03-01
+  startDate: 2011-03-01
   rate: 1
 
+- name: TypeScript
+  startDate: 2018-01-01
+  rate: 0.9
+  url: http://www.typescriptlang.org
+
 - name: jQuery
-  startDate:  2011-09-01
+  startDate: 2011-09-01
   rate: 1
   url: http://jquery.com/
 
 - name: AngularJS
-  startDate:  2014-10-01
+  startDate: 2014-10-01
   rate: 0.9
   url: https://angularjs.org/
 
 - name: Angular
-  startDate:  2018-01-01
-  rate: 0.8
+  startDate: 2018-01-01
+  rate: 0.9
   url: https://angular.io/
 
-- name: TypeScript
-  startDate:  2018-01-01
+- name: D3
+  startDate: 2021-02-05
   rate: 0.7
-  url: http://www.typescriptlang.org
+  url: https://d3js.org
+
+- name: Highcharts
+  startDate: 2018-05-21
+  rate: 0.9
+  url: https://www.highcharts.com/
+
+- name: Google Charts
+  startDate: 2020-06-15
+  rate: 0.9
+  url: https://developers.google.com/chart
 
 - name: NodeJS
-  startDate:  2014-08-01
+  startDate: 2014-08-01
   rate: 0.7
   url: https://nodejs.org
 
 - name: React-Native
-  startDate:  2019-10-22
+  startDate: 2019-10-22
   rate: 0.4
   url: https://facebook.github.io/react-native/
 
 - name: WCAG<small>(2.0)</small>
-  startDate:  2016-01-01
+  startDate: 2016-01-01
   rate: 0.8
   url: https://www.w3.org/TR/WCAG20/
 
 - name: Jekyll
-  startDate:  2016-04-12
+  startDate: 2016-04-12
   rate: 0.8
   url: https://jekyllrb.com/
 
 - name: Liquid
-  startDate:  2016-04-12
+  startDate: 2016-04-12
   rate: 0.8
   url: https://shopify.github.io/liquid/
 
 - name: Markdown
-  startDate:  2016-04-12
+  startDate: 2016-04-12
   rate: 0.8
   url: https://daringfireball.net/projects/markdown/
 
 - name: Photoshop
   rate: 0.9
-  startDate:  2012-09-01
+  startDate: 2012-09-01
 
 - name: CorelDraw
   rate: 0.85
-  startDate:  2010-10-01
+  startDate: 2010-10-01
 
 - name: MS Office
-  startDate:  2010-09-01
+  startDate: 2010-09-01
   rate: 0.8
