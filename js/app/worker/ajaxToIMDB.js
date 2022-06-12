@@ -3,9 +3,9 @@ importScripts('../../lib/require.js');
 require([ '../../config' ], function(config) {
 	require(['app/model/iterateMedia'], function(iterateMedia) {
 		onmessage = function(event) {
-			if(event.data.sheet) {
+			if(event.data.listData) {
 				iterateMedia({
-					sheet: event.data.sheet,
+					listData: event.data.listData,
 					offset: event.data.offset,
 					setting: event.data.setting,
 					type: event.data.type,

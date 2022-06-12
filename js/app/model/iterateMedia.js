@@ -21,11 +21,14 @@ define(['app/model/requests', 'ajax'], function(requests, ajax) {
 		if(typeof _thisParam.init === 'function') {
 			_thisParam.init();
 		}
+		const row = _thisParam.listData[_thisParam.offset];
+
 		preview = {
-			Title : _thisParam.sheet[ 'A' + _thisParam.offset ] && _thisParam.sheet[ 'A' + _thisParam.offset ].v,
-			imdbID : _thisParam.sheet[ 'B' + _thisParam.offset ] && _thisParam.sheet[ 'B' + _thisParam.offset ].v,
-			Type :_thisParam.sheet[ 'C' + _thisParam.offset ] && _thisParam.sheet[ 'C' + _thisParam.offset ].v
+			Title : row.Title,
+			imdbID : row.IMDB_ID,
+			Type : row.Type
 		};
+		_thisParam.listData[_thisParam.offset] = null;
 		if(typeof preview.Title === 'undefined' && typeof preview.imdbID === 'undefined') {
 			if(typeof _thisParam.end === 'function') {
 				_thisParam.end();
@@ -42,10 +45,7 @@ define(['app/model/requests', 'ajax'], function(requests, ajax) {
 
 			return true;
 		}
-		delete _thisParam.sheet[ 'A' + _thisParam.offset ];
-		delete _thisParam.sheet[ 'B' + _thisParam.offset ];
-		delete _thisParam.sheet[ 'C' + _thisParam.offset ];
-		delete _thisParam.sheet[ 'D' + _thisParam.offset ];
+
 		_thisParam.offset++;
 		if(_thisParam.type === '' || tPattern.test(preview.Type)) {
 			if(preview.imdbID) {

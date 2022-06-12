@@ -79,10 +79,12 @@ require([ './config' ], function(config) {
 				if(genre && workbook && workbook.SheetNames.indexOf(genre) === -1) {
 					return;
 				}
-				var sheet = (workbook && workbook.Sheets[genre || workbook.SheetNames[0]]) || $container.data('sheet');
-				var offset = $container.data('offset') || 2;
-				var $p = $('#fixedProgress'), $pLabel = $('.progress-label', $p);
-				var callData = function(data) {
+				const sheet = (workbook && workbook.Sheets[genre || workbook.SheetNames[0]]);
+				const listData = sheet ? XLSX.utils.sheet_to_json(sheet).reverse() : ($container.data('listData') || []);
+
+				var offset = $container.data('offset') || 0;
+				const $p = $('#fixedProgress'), $pLabel = $('.progress-label', $p);
+				const callData = function(data) {
 					var $p = $('#fixedProgress'), $pLabel = $('.progress-label', $p);
 					var $preview = $(document.getElementById('tl-preview').content).children().clone().data({
 						imdbData: data,
@@ -105,14 +107,14 @@ require([ './config' ], function(config) {
 						docHeight: $(document).height()
 					}, '*');
 				};
-				$container.data('sheet', sheet);
+				$container.data('listData', listData);
 				if(window.Worker) {
 					var ajaxWorker = new Worker('/js/app/worker/ajaxToIMDB.js');
 
 					ajaxWorker.onmessage = function(event) {
 						if(event.data.status === 1) {
 							ajaxWorker.postMessage({
-								sheet: sheet,
+								listData: listData,
 								offset: offset,
 								setting: setting,
 								type: type
@@ -132,7 +134,7 @@ require([ './config' ], function(config) {
 					};
 				} else {
 					iterateMedia({
-						sheet: sheet,
+						listData: listData,
 						offset: offset,
 						setting: setting,
 						type: type,
@@ -170,7 +172,7 @@ require([ './config' ], function(config) {
 				}
 				$container.data('loading', true);
 				$p.toggleClass('loading', true);
-				if($container.data('sheet')) {
+				if($container.data('listData')) {
 					listItems();
 				} else {
 					if(window.Worker) {
