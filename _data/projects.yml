@@ -3,88 +3,88 @@
   endDate: now
   url: https://fieldbrowser.com
   description: <p>FieldBrowser is a web application for assisting farmers to view data of fields and analyze the data for the past years, and improve yield. A user uses this application to view different map layers, such as NDVI(normalized difference vegetation index), field elevation, cloud-free imagery, and more than these. The user also can manage rovers which are robots that work on farms, control the missions, and how many tasks to perform per week. And view session statuses of rovers.</p><p>Developed it with Angular.</p>
-  responsibility: <p>Implement features like Mission control, timeline bar, layer-selector, map-drawing tools, product tour, bookmark and field basket. And draw a zoomable draggable selectable plot heatmap chart with D3.</p>
+  responsibility: <p>Implement features like Mission Control, timeline bar, layer-selector, map-drawing tools, product tour, bookmark and field basket. And draw a zoomable draggable selectable plot heatmap chart with D3.</p>
 
 - name: Buzz
   startDate: 2019-10-22
   endDate: 2019-11-29
   url: null
-  description: <p>Buzz is a mobile app for beekeepers, works on Android and the ISO platform. This app assists beekeepers to record situations of hives and bees./p><p>Developed it with React-Native.</p>
-  responsibility: <p>Hive list, entry list, editing hive nad editing entry.</p>
+  description: <p>Buzz is a mobile app for beekeepers, that works on Android and the ISO platform. This app assists beekeepers to record situations of hives and bees./p><p>Developed it with React-Native.</p>
+  responsibility: <p>Hive list, entry list, editing hive and editing entry.</p>
 
 - name: ISM
   startDate: 2018-05-18
   endDate: 2019-10-21
   url: null
-  description: <p>ISM is a web application that monitor network devices and remote control those devices, also could observe status information of the devices on charts and tables, such as CPU utilization memory utilization and sent data or received data.</p>
-  responsibility: <p>I'm mainly responsible for web front-end development, make the datas be visual, and show the datas on the map.</p>
+  description: <p>ISM is a web application that monitors network devices and remote control those devices, also could observe the status information of the devices on charts and tables, such as CPU utilization memory utilization and sent data or received data.</p>
+  responsibility: <p>I'm mainly responsible for web front-end development, making the data visualization, and showing the data on the map.</p>
 
 - name: Visionworks
   startDate: 2015-07-01
   endDate: 2018-01-02
   url: https://www.visionworks.com/
-  description: <p>Visionworks official e-commerce site. Visionwoks is one of the largest glasses retailer, sell glasses and contact lenses by online and offline. A customer even could buy the product with insurance, whatever via online or offline.</p> <p>A user can reach the proudct detail page directly via searching a product ID. A user also upload a photo to view a appearance of self with a glasses. A user has to fill a valid form of a prescription before add the product into the cart. And there is a management named ACMC, a agent use it to manipulate informtions of users, prescripionts, orders, reviews and so on.</p> <p>We used jQuery Bootstrap-SASS and RequireJS to developed front-end modules of store site. And used AngularJS Bootstrap-SASS and RequireJS to developed front-end modules that are interfaced to REST of ACMC.</p> <p>This project has been experienced three phases. Phases 1 was intended to develop selling glasses online, I took on 60% front-end works. Phase ABB was intended to develope selling contact lenses, I took on 85% front-end works. Phase 2 was intented to develop integrating insurance. Whthin pahse 1, I took on 95% front-end works. Within pahse ABB, I took advantage of spare time to learned NodeJS, then optimized the script to build front-end codes, increased execution efficiency of gulp tasks.</p> <p>This project passed the test on WCAG 2.0 by an accredited third party Bender, all phases passed UAT and live online. And it as a standard project of the company.</p>
+  description: <p>Visionworks official e-commerce site. Visionworks is one of the largest glasses retailers, selling glasses and contact lenses online and offline. A customer even could buy the product with insurance, whether online or offline.</p> <p>A user can reach the product detail page directly by searching for a product ID. A user also uploads a photo to view the appearance of self with glasses. A user has to fill out a valid form of a prescription before adding the product to the cart. And there is a management named ACMC, and an agent uses it to manipulate information about users, prescriptions, orders, reviews and so on.</p> <p>We used jQuery Bootstrap-SASS and RequireJS to developed front-end modules of the store site. And used AngularJS Bootstrap-SASS and RequireJS to develop front-end modules that are interfaced with to REST of ACMC.</p> <p>This project has experienced three phases. Phase 1 was intended to develop selling glasses online, I took on 60% front-end work. Phase ABB was intended to develop selling contact lenses, and I took on 85% of the front-end work. Phase 2 was intended to develop integrating insurance. Within phase 1, I took on 95% of the front-end work. Within phase ABB, I took advantage of my spare time to learn NodeJS, then optimized the script to build front-end codes, and increased the execution efficiency of gulp tasks.</p> <p>This project passed the test on WCAG 2.0 by an accredited third party Bender, all phases passed UAT and live online. And it is a standard project of the company.</p>
   responsibility: 
 
 - name: Entel
   startDate: 2016-06-01
   endDate: 2016-08-10
   url: http://www.entel.cl
-  description: <p>Entel is a telecom company in Chile. I developed the Google map feature on multiple pages of this project.</p>
-  responsibility: <p>I'was mainly responsible for developing Google map feature of the project. And this feature is to show stores on the map.</p>
+  description: <p>Entel is a telecom company in Chile. I developed the Google Map feature on multiple pages of this project.</p>
+  responsibility: <p>I was mainly responsible for developing the Google Map feature of the project. And this feature is to show stores on the map.</p>
 
 - name: Let's Go See
   startDate: 2016-04-20
   endDate: 2016-05-31
   url: https://www.letsgosee.net/
-  description: <p>This is a site to help visitor to know more about the Let's Go See program. A user can order an eye exam for school-aged child or children by appointment via the site.</p> <p>I took on all front-end works of this project, including sliced the PSD files, a focused animated banner that applied HTML5 canvas, embed Youtube video, used Bootstrap-SASS done responsive design of the site, and so on.</p> <p>Developed this project for 2 monthes, it finally passed UAT and live online.</p>
-  responsibility: <p>I'was mainly responsible for web front-end development of whole site, including canvas animation of the hero banner, form validation, embed Youtube video, responsive design and other interaction effects.</p>
+  description: <p>This is a site to help visitor to know more about the Let's Go See program. A user can order an eye exam for a school-aged child or children by appointment via the site.</p> <p>I took on all front-end works of this project, including slicing the PSD files, a focused animated banner that applied HTML5 canvas, embedding Youtube video, using Bootstrap-SASS done responsive design of the site, and so on.</p> <p>Developed this project for 2 months, it finally passed UAT and live online.</p>
+  responsibility: <p>I was mainly responsible for web front-end development of the whole site, including canvas animation of the hero banner, form validation, embedding Youtube video, responsive design and other interaction effects.</p>
 
 - name: Ashford
   startDate: 2015-04-01
   endDate: 2015-07-01
   url: https://www.ashford.com
-  description: <p>Ashford official e-commerce site that is main selling watches.</p> <p>This project phase was intended to use Bootstrap make the site support responsive design, and fix known bugs. Worked on this project for 3 monthes, it passed UAT and live online a week early.</p>
-  responsibility: <p>I'was mainly responsible for fix bugs, and took 40 percent of web front-end development of the project.</p>
+  description: <p>Ashford official e-commerce site that is main sells watches.</p> <p>This project phase was intended to use Bootstrap to make the site support responsive design and fix known bugs. Worked on this project for 3 months, and it passed UAT and live online a week early.</p>
+  responsibility: <p>I was mainly responsible for fixing bugs and took 40 percent of the web front-end development of the project.</p>
 
 - name: Donaldson Dynamic Search
   startDate: 2014-10-20
   endDate: 2015-01-31
   url: https://catalog.donaldson.com/
-  description: <p>Donaldson catalog advanced search, provide more precise ways to search products. A user is able to search products by product attributes, and agent also configure attributes of products via the management.</p> <p>I took on all front-end works of this project, achieved earching typehead, attributes searching and zooming product photo, so on features. And I applied jQuery Bootstrap-SASS and RequireJS those frameworks to the projects.</p> <p>It finally passed UAT and live online.</p>
-  responsibility: <p>I'was mainly responsible for whole web front-end development of the project.</p>
+  description: <p>Donaldson catalog advanced search, provide more precise ways to search products. A user is able to search products by product attributes, and the agent also configures attributes of products via the management.</p> <p>I took on all front-end works of this project, achieved searching typehead, attributes searching and zooming product photos, and so on features. And I applied jQuery Bootstrap-SASS and RequireJS those frameworks to the projects.</p> <p>It finally passed UAT and published.</p>
+  responsibility: <p>I was mainly responsible for the whole web front-end development of the project.</p>
 
 - name: Jinshang Vacation Car Life Forum
   startDate: 2014-04-23
   endDate: 2014-05-28
   url: null
-  description: <p>  The project was developed from a open source project that is called Discuz!3. It's a forum for who loves cars or beginners and drivers. The main promotion target is the test drive activities. And release information and articles of car-related.</p>
-  responsibility: <p>I'was mainly responsible for whole web front-end development and web design of the project, manage the contents of the web sites.</p>
+  description: <p>The project was developed from an open-source project that is called Discuz!3. It's a forum for those who love cars or beginners and drivers. The main promotion target is the test drive activities. And release information and articles on car-related.</p>
+  responsibility: <p>I was mainly responsible for the whole web front-end development and web design of the project, managing the contents of the websites.</p>
 
 - name: the Valley of Stars
   startDate: 2013-08-24
   endDate: 2014-04-20
   url: null
-  description: <p>This a web site of Xingzhigu CO.,LTD.</p>
-  responsibility: <p>I'was mainly responsible for whole web front-end development and web design of the project.</p>
+  description: <p>This a website of Xingzhigu CO., LTD.</p>
+  responsibility: <p>I was mainly responsible for the whole web front-end development and web design of the project.</p>
 
 - name: Xingyunwang
   startDate: 2013-08-24
   endDate: 2014-05-20
   url: null
   description: <p>It's a O2O web site for advertising.</p>
-  responsibility: <p>I'was mainly responsible for web front-end development and web design, product advertisement banners, and develop online web games.</p>
+  responsibility: <p>I was mainly responsible for web front-end development and web design, product advertisement banners, and developing online web games.</p>
 
 - name: Steplook
   startDate: 2013-07-01
   endDate: 2013-7-31
   url: null
-  description: <p>This is a web site, only static HTML pages.</p>
-  responsibility: <p>I'was mainly responsible for whole web front-end development of the project</p>
+  description: <p>This is a website, only static HTML pages.</p>
+  responsibility: <p>I was mainly responsible for the whole web front-end development of the project</p>
 
 - name: Ejane
   startDate: 2012-12-01
   endDate: 2012-12-31
   url: null
-  description: <p>This is a web site, only static HTML pages.</p>
-  responsibility: <p>I'was mainly responsible for whole web front-end development of the project</p>
+  description: <p>This is a website, only static HTML pages.</p>
+  responsibility: <p>I was mainly responsible for the whole web front-end development of the project</p>
