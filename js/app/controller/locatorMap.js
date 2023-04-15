@@ -77,10 +77,10 @@ define(function() {
 
 	window.initMap = function() {
 		var eLocatorMap = document.getElementById('locatorMap');
-		var latlng = new google.maps.LatLng(30.557789, 104.037414);
+		var latlng = new google.maps.LatLng(30.465404, 104.089004);
 		var locator = {
 			name: 'Marching Printing',
-			address1: 'Fuhua S Rd No.1606',
+			address1: 'Tianjin Ed East Section No.1234',
 			address2: '',
 			city: 'Chengdu',
 			state: 'Sichuan',
@@ -95,10 +95,7 @@ define(function() {
 		storeMap.infoWindow = new google.maps.InfoWindow();
 		storeMap.map = new google.maps.Map(eLocatorMap, {
 			zoom: 10,
-			center: {
-				lng: 104.03315,
-				lat: 30.55621
-			}
+			center: latlng
 		});
 		storeMap.createMarker(latlng, 'P', locator);
 
