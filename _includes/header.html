@@ -2,11 +2,9 @@
 	<div>
 		<nav class="navbar">
 			<button type="button" class="rounded-circle navbar-toggler collapsed" data-bs-toggle="collapse"
-				data-bs-target="#header" aria-controls="header" aria-expanded="false">
+							data-bs-target="#header" aria-controls="header" aria-expanded="false">
 				<span class="visually-hidden">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
 			<a class="navbar-brand" href="/">
 				<span class="d-block">GRAY</span>
@@ -43,7 +41,7 @@
 					<li class="nav-item">
 						{% if false || item.subs %}
 						<a href="{{ item.url | prepend: site.baseurl }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-							role="button" aria-haspopup="true" aria-expanded="false">
+							 role="button" aria-haspopup="true" aria-expanded="false">
 							{{ item.label }}
 						</a>
 						<ul class="dropdown-menu">

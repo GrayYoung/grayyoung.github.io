@@ -4,7 +4,6 @@
 @import "bootstrap/scss/functions";
 @import "variables";
 @import "bootstrap/scss/mixins";
-@import "mixins/animation";
 @import "slick";
 @import "typography";
 @import "animation";
@@ -47,7 +46,7 @@ body {
 	height: 100%;
 	border-right: solid 3px $primary;
 	background-color: $gray-900;
-	transition: all 0.5s;
+	transition: all 0.35s ease;
 
 	> div {
 		height: 100%;

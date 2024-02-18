@@ -1,49 +1,49 @@
 {
-  "name": "marching",
-  "author": {
-    "name": "Marching Gray Young",
-    "email": "windpet@live.cn",
-    "url": "https://grayyoung.github.io/"
-  },
-  "scripts": {
-    "update-package": "ncu -u -s false -e 2 & npm install --include dev & gulp update-lib"
-  },
-  "description": "A personal site about Gray.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GrayYoung/grayyoung.github.io.git"
-  },
-  "main": "gulpfile.js",
-  "license": "Copyright 2020",
-  "version": "0.0.4",
-  "devDependencies": {
-    "graceful-fs": "^4.2.11",
-    "gulp": "^4.0.2",
-    "gulp-clean": "latest",
-    "gulp-clean-css": "latest",
-    "gulp-jshint": "latest",
-    "gulp-load-plugins": "latest",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "latest",
-    "gulp-size": "latest",
-    "jshint": "latest",
-    "jshint-stylish": "latest",
-    "merge-stream": "latest",
-    "node-sass": "^8.0.0",
-    "yargs": "^17.7.1"
-  },
-  "dependencies": {
-    "@fdaciuk/ajax": "^3.0.4",
-    "@fortawesome/fontawesome-free": "^6.4.0",
-    "bootstrap": "^5.2.3",
-    "html5shiv": "^3.7.3",
-    "jquery": "^3.6.4",
-    "jQuery-Utilities": "git+https://github.com/GrayYoung/jQuery.Utilities.git",
-    "plyr": "^3.7.8",
-    "popper.js": "^1.16.0",
-    "requirejs": "^2.3.6",
-    "respond.js": "^1.4.2",
-    "slick-carousel": "^1.8.1",
-    "xlsx": "^0.18.5"
-  }
+	"name": "marching",
+	"author": {
+		"name": "Marching Gray Young",
+		"email": "windpet@live.cn",
+		"url": "https://grayyoung.github.io/"
+	},
+	"scripts": {
+		"update-package": "ncu -u -s false -e 2 && npm install --include dev && gulp update-lib"
+	},
+	"description": "A personal site about Gray.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GrayYoung/grayyoung.github.io.git"
+	},
+	"main": "gulpfile.js",
+	"license": "Copyright 2020",
+	"version": "0.0.5",
+	"devDependencies": {
+		"graceful-fs": "^4.2.11",
+		"gulp": "^4.0.2",
+		"gulp-clean": "latest",
+		"gulp-clean-css": "latest",
+		"gulp-jshint": "latest",
+		"gulp-load-plugins": "latest",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "latest",
+		"gulp-size": "latest",
+		"jshint": "latest",
+		"jshint-stylish": "latest",
+		"merge-stream": "latest",
+		"node-sass": "^9.0.0",
+		"yargs": "^17.7.2"
+	},
+	"dependencies": {
+		"@fdaciuk/ajax": "^3.0.4",
+		"@fortawesome/fontawesome-free": "^6.5.1",
+		"bootstrap": "^5.3.2",
+		"html5shiv": "^3.7.3",
+		"jquery": "^3.7.1",
+		"jQuery-Utilities": "git+https://github.com/GrayYoung/jQuery.Utilities.git",
+		"plyr": "^3.7.8",
+		"popper.js": "^1.16.0",
+		"requirejs": "^2.3.6",
+		"respond.js": "^1.4.2",
+		"slick-carousel": "^1.8.1",
+		"xlsx": "^0.18.5"
+	}
 }

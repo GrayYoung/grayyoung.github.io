@@ -27,28 +27,71 @@
 	}
 }
 
+.navbar-toggler::before,
+.navbar-toggler::after,
+.navbar-toggler-icon {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: $black;
+  transition: transform 0.35s ease-in-out;
+}
+
 .navbar-toggler {
 	position: fixed;
 	top: calc(#{ceil($grid-gutter-width / 2)} + 2.5px);
 	left: 15px;
 	z-index: $zindex-dropdown;
-	padding: 0;
-	transition: left 0.75s;
+	transition: left 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.185rem 0;
+  border: none;
+  border-radius: 100%;
+  width: $navbar-toggler-size;
+  height: $navbar-toggler-size;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &::before,
+  &::after {
+    content: " ";
+  }
+
+  &::before {
+    transform-origin: 0% 0%;
+  }
+
+  &::after {
+    transform-origin: 0% 100%;
+  }
 
 	@include media-breakpoint-up(lg) {
 		display: none;
 	}
+}
 
-	.icon-bar {
-		display: block;
-		width: 22px;
-		height: 3px;
-		background-color: $gray-900;
+.navbar-toggler-icon {
+  background-image: none;
+}
 
-		+ .icon-bar {
-			margin-top: 4px;
-		}
-	}
+.navbar-toggler:not(.collapsed) {
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  .navbar-toggler-icon {
+    transform: scaleY(0);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 .navbar-brand {
